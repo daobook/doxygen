@@ -10,7 +10,7 @@ PROJECT_LOGO           =
 OUTPUT_DIRECTORY       = doxygen_docs
 CREATE_SUBDIRS         = YES
 ALLOW_UNICODE_NAMES    = NO
-OUTPUT_LANGUAGE        = English
+OUTPUT_LANGUAGE        = Chinese
 BRIEF_MEMBER_DESC      = YES
 REPEAT_BRIEF           = YES
 ABBREVIATE_BRIEF       =
@@ -244,7 +244,7 @@ MAN_LINKS              = NO
 #---------------------------------------------------------------------------
 # Configuration options related to the XML output
 #---------------------------------------------------------------------------
-GENERATE_XML           = NO
+GENERATE_XML           = YES
 XML_OUTPUT             = xml
 XML_PROGRAMLISTING     = YES
 XML_NS_MEMB_FILE_SCOPE = NO
