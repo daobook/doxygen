@@ -1,0 +1,1012 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/dotdirdeps.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('da/d45/dotdirdeps_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">dotdirdeps.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../d3/dcf/dotdirdeps_8h_source.html">dotdirdeps.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d3c/util_8h_source.html">util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/da1/doxygen_8h_source.html">doxygen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d16/config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/db2/image_8h_source.html">image.h</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;iterator&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;map&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> dotdirdeps.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+</div>
+</div>
+<p><a href="../../da/d45/dotdirdeps_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Properties are used to format the directories in the graph distinctively.  <a href="../../d0/d22/struct_dot_dir_property.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d6f/class_dot_dir_property_builder.html">DotDirPropertyBuilder</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builder helper to create instances of the <a class="el" href="../../d0/d22/struct_dot_dir_property.html" title="Properties are used to format the directories in the graph distinctively.">DotDirProperty</a> struct  <a href="../../d1/d6f/class_dot_dir_property_builder.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:aa012bdc6c0e896cccb8121b3c6b7ad60"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#aa012bdc6c0e896cccb8121b3c6b7ad60">DirDefMap</a> = std::map&lt; std::string, const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> * &gt;</td></tr>
+<tr class="separator:aa012bdc6c0e896cccb8121b3c6b7ad60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0540771f72e56700a0d30f72580d0065"><td class="memItemLeft" align="right" valign="top">typedef std::vector&lt; std::pair&lt; std::unique_ptr&lt; <a class="el" href="../../d6/db3/class_dir_relation.html">DirRelation</a> &gt;, bool &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a0540771f72e56700a0d30f72580d0065">DirRelations</a></td></tr>
+<tr class="memdesc:a0540771f72e56700a0d30f72580d0065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Elements consist of (1) directory relation and (2) whether it is pointing only to inherited dependees.  <a href="../../da/d45/dotdirdeps_8cpp.html#a0540771f72e56700a0d30f72580d0065">更多...</a><br /></td></tr>
+<tr class="separator:a0540771f72e56700a0d30f72580d0065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a683792f7f7df231861acd54ff905211d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a683792f7f7df231861acd54ff905211d">getDirectoryBackgroundColor</a> (int depthIndex)</td></tr>
+<tr class="memdesc:a683792f7f7df231861acd54ff905211d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a DOT color name according to the directory depth.  <a href="../../da/d45/dotdirdeps_8cpp.html#a683792f7f7df231861acd54ff905211d">更多...</a><br /></td></tr>
+<tr class="separator:a683792f7f7df231861acd54ff905211d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09fd1a586201220ccbea7e2638ec8ae8"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a09fd1a586201220ccbea7e2638ec8ae8">getDirectoryBorderColor</a> (const <a class="el" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> &amp;property)</td></tr>
+<tr class="memdesc:a09fd1a586201220ccbea7e2638ec8ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a DOT color name according to the directory properties.  <a href="../../da/d45/dotdirdeps_8cpp.html#a09fd1a586201220ccbea7e2638ec8ae8">更多...</a><br /></td></tr>
+<tr class="separator:a09fd1a586201220ccbea7e2638ec8ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aa3fa8ed5c1cb6cfe4a5f821d1c776f"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a6aa3fa8ed5c1cb6cfe4a5f821d1c776f">getDirectoryBorderStyle</a> (const <a class="el" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> &amp;property)</td></tr>
+<tr class="memdesc:a6aa3fa8ed5c1cb6cfe4a5f821d1c776f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a DOT node style according to the directory properties.  <a href="../../da/d45/dotdirdeps_8cpp.html#a6aa3fa8ed5c1cb6cfe4a5f821d1c776f">更多...</a><br /></td></tr>
+<tr class="separator:a6aa3fa8ed5c1cb6cfe4a5f821d1c776f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a840611db0f9ff308b7167b3fd3e0c4d2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a840611db0f9ff308b7167b3fd3e0c4d2">drawDirectory</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t, const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *const directory, const <a class="el" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> &amp;property, <a class="el" href="../../da/d45/dotdirdeps_8cpp.html#aa012bdc6c0e896cccb8121b3c6b7ad60">DirDefMap</a> &amp;directoriesInGraph, int startLevel)</td></tr>
+<tr class="memdesc:a840611db0f9ff308b7167b3fd3e0c4d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts DOT code for drawing directory to stream and adds it to the list.  <a href="../../da/d45/dotdirdeps_8cpp.html#a840611db0f9ff308b7167b3fd3e0c4d2">更多...</a><br /></td></tr>
+<tr class="separator:a840611db0f9ff308b7167b3fd3e0c4d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20837cde372c359b1ce5070096d472e0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a20837cde372c359b1ce5070096d472e0">isAtMaxDepth</a> (const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *const directory, const int startLevel)</td></tr>
+<tr class="memdesc:a20837cde372c359b1ce5070096d472e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks, if the directory is a the maximum drawn directory level.  <a href="../../da/d45/dotdirdeps_8cpp.html#a20837cde372c359b1ce5070096d472e0">更多...</a><br /></td></tr>
+<tr class="separator:a20837cde372c359b1ce5070096d472e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c294bd8cf4c31b846744d5e5ca845fa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a8c294bd8cf4c31b846744d5e5ca845fa">drawClusterOpening</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;outputStream, const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *const directory, const <a class="el" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> &amp;directoryProperty, <a class="el" href="../../da/d45/dotdirdeps_8cpp.html#aa012bdc6c0e896cccb8121b3c6b7ad60">DirDefMap</a> &amp;directoriesInGraph, const bool isAncestor, int startLevel)</td></tr>
+<tr class="memdesc:a8c294bd8cf4c31b846744d5e5ca845fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes DOT code for opening a cluster subgraph to stream.  <a href="../../da/d45/dotdirdeps_8cpp.html#a8c294bd8cf4c31b846744d5e5ca845fa">更多...</a><br /></td></tr>
+<tr class="separator:a8c294bd8cf4c31b846744d5e5ca845fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ec4e307f44771f6dfa0a0fe76c00495"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a3ec4e307f44771f6dfa0a0fe76c00495">drawClusterClosing</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t)</td></tr>
+<tr class="separator:a3ec4e307f44771f6dfa0a0fe76c00495"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4cae8568157c4b4b1c9a96af855d2b85"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a4cae8568157c4b4b1c9a96af855d2b85">addDependencies</a> (<a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a0540771f72e56700a0d30f72580d0065">DirRelations</a> &amp;dependencies, const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *const srcDir, bool isLeaf)</td></tr>
+<tr class="memdesc:a4cae8568157c4b4b1c9a96af855d2b85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assembles a list of the directory relations and whether or not they result from "inheritance".  <a href="../../da/d45/dotdirdeps_8cpp.html#a4cae8568157c4b4b1c9a96af855d2b85">更多...</a><br /></td></tr>
+<tr class="separator:a4cae8568157c4b4b1c9a96af855d2b85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa598dce9105a7992d33b10a15beb70d5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#aa598dce9105a7992d33b10a15beb70d5">drawTree</a> (<a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a0540771f72e56700a0d30f72580d0065">DirRelations</a> &amp;dependencies, <a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t, const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *const directory, int startLevel, <a class="el" href="../../da/d45/dotdirdeps_8cpp.html#aa012bdc6c0e896cccb8121b3c6b7ad60">DirDefMap</a> &amp;directoriesInGraph, const bool isTreeRoot)</td></tr>
+<tr class="memdesc:aa598dce9105a7992d33b10a15beb70d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursively draws directory tree.  <a href="../../da/d45/dotdirdeps_8cpp.html#aa598dce9105a7992d33b10a15beb70d5">更多...</a><br /></td></tr>
+<tr class="separator:aa598dce9105a7992d33b10a15beb70d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4e7090b3ce2c42151afd6b83298096f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#ac4e7090b3ce2c42151afd6b83298096f">writeDotDirDepGraph</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t, const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *dd, bool linkRelations)</td></tr>
+<tr class="memdesc:ac4e7090b3ce2c42151afd6b83298096f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write DOT code for directory dependency graph.  <a href="../../da/d45/dotdirdeps_8cpp.html#ac4e7090b3ce2c42151afd6b83298096f">更多...</a><br /></td></tr>
+<tr class="separator:ac4e7090b3ce2c42151afd6b83298096f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="aa012bdc6c0e896cccb8121b3c6b7ad60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa012bdc6c0e896cccb8121b3c6b7ad60">&#9670;&nbsp;</a></span>DirDefMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../da/d45/dotdirdeps_8cpp.html#aa012bdc6c0e896cccb8121b3c6b7ad60">DirDefMap</a> =  std::map&lt;std::string,const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a0540771f72e56700a0d30f72580d0065"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0540771f72e56700a0d30f72580d0065">&#9670;&nbsp;</a></span>DirRelations</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::vector&lt; std::pair&lt; std::unique_ptr&lt;<a class="el" href="../../d6/db3/class_dir_relation.html">DirRelation</a>&gt;, bool&gt; &gt; <a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a0540771f72e56700a0d30f72580d0065">DirRelations</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Elements consist of (1) directory relation and (2) whether it is pointing only to inherited dependees. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00060">60</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a4cae8568157c4b4b1c9a96af855d2b85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4cae8568157c4b4b1c9a96af855d2b85">&#9670;&nbsp;</a></span>addDependencies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void addDependencies </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a0540771f72e56700a0d30f72580d0065">DirRelations</a> &amp;&#160;</td>
+          <td class="paramname"><em>dependencies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *const&#160;</td>
+          <td class="paramname"><em>srcDir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isLeaf</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Assembles a list of the directory relations and whether or not they result from "inheritance". </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dependencies</td><td>Array to add the dependencies to. </td></tr>
+    <tr><td class="paramname">srcDir</td><td>is the source of the dependency. </td></tr>
+    <tr><td class="paramname">isLeaf</td><td>true, if no children are drawn for this directory. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00212">212</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;{</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;usedDirectory : srcDir-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a6eafeec80e3bd8cdae3c8082b857a8a8">usedDirs</a>())</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;  {</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> dstDir = usedDirectory-&gt;dir();</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    <span class="keywordflow">if</span> (!dstDir-&gt;isParentOf(srcDir) &amp;&amp; (isLeaf || usedDirectory-&gt;hasDirectSrcDeps()))</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> relationName;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      relationName.<a class="code" href="../../d9/d45/class_q_c_string.html#aa2dccf89cb25346c3ee81d75aa5859da">sprintf</a>(<span class="stringliteral">&quot;dir_%06d_%06d&quot;</span>, srcDir-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#af01c314d69c65e2ad2eab58bf818d362">dirCount</a>(), dstDir-&gt;dirCount());</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      <span class="keywordtype">bool</span> directRelation = isLeaf ? usedDirectory-&gt;hasDirectDstDeps() : usedDirectory-&gt;hasDirectDeps();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;      <span class="keyword">auto</span> &amp;&amp;dependency = std::make_unique&lt;DirRelation&gt;(relationName, srcDir, usedDirectory.get());</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;      <span class="keyword">auto</span> &amp;&amp;pair = std::make_pair(std::move(dependency),directRelation);</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;      dependencies.emplace_back(std::move(pair));</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    }</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  }</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/dd4/class_dir_def.html#af01c314d69c65e2ad2eab58bf818d362">DirDef::dirCount()</a>, <a class="el" href="../../d5/d3e/qcstring_8cpp_source.html#l00024">QCString::sprintf()</a> , 以及 <a class="el" href="../../d4/dd4/class_dir_def.html#a6eafeec80e3bd8cdae3c8082b857a8a8">DirDef::usedDirs()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00230">drawTree()</a>.</p>
+
+</div>
+</div>
+<a id="a3ec4e307f44771f6dfa0a0fe76c00495"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ec4e307f44771f6dfa0a0fe76c00495">&#9670;&nbsp;</a></span>drawClusterClosing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void drawClusterClosing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00201">201</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  t &lt;&lt; <span class="stringliteral">&quot;  }\n&quot;</span>;</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00230">drawTree()</a>.</p>
+
+</div>
+</div>
+<a id="a8c294bd8cf4c31b846744d5e5ca845fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c294bd8cf4c31b846744d5e5ca845fa">&#9670;&nbsp;</a></span>drawClusterOpening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void drawClusterOpening </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>outputStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *const&#160;</td>
+          <td class="paramname"><em>directory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> &amp;&#160;</td>
+          <td class="paramname"><em>directoryProperty</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#aa012bdc6c0e896cccb8121b3c6b7ad60">DirDefMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>directoriesInGraph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>isAncestor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startLevel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes DOT code for opening a cluster subgraph to stream. </p>
+<p>Ancestor clusters directly get a label. Other clusters get a plain text node with a label instead. This is because the plain text node can be used to draw dependency relationships. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00174">174</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;{</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  outputStream &lt;&lt; <span class="stringliteral">&quot;  subgraph cluster&quot;</span> &lt;&lt; directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">getOutputFileBase</a>() &lt;&lt; <span class="stringliteral">&quot; {\n&quot;</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      <span class="stringliteral">&quot;    graph [ &quot;</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;      <span class="stringliteral">&quot;bgcolor=\&quot;&quot;</span>  &lt;&lt; <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a683792f7f7df231861acd54ff905211d">getDirectoryBackgroundColor</a>(directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a033ad6b8c0287ed15da29dadca48eb6f">level</a>()-startLevel) &lt;&lt; <span class="stringliteral">&quot;\&quot;, &quot;</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;      <span class="stringliteral">&quot;pencolor=\&quot;&quot;</span> &lt;&lt; <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a09fd1a586201220ccbea7e2638ec8ae8">getDirectoryBorderColor</a>(directoryProperty) &lt;&lt; <span class="stringliteral">&quot;\&quot;, &quot;</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <span class="stringliteral">&quot;style=\&quot;&quot;</span>    &lt;&lt; <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a6aa3fa8ed5c1cb6cfe4a5f821d1c776f">getDirectoryBorderStyle</a>(directoryProperty) &lt;&lt; <span class="stringliteral">&quot;\&quot;, &quot;</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      <span class="stringliteral">&quot;label=\&quot;&quot;</span>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="keywordflow">if</span> (isAncestor)</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    outputStream &lt;&lt; directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">shortName</a>();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  outputStream &lt;&lt; <span class="stringliteral">&quot;\&quot;, &quot;</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;      <span class="stringliteral">&quot;fontname=\&quot;&quot;</span> &lt;&lt; <a class="code" href="../../db/d16/config_8h.html#a737741e6991bdb5694a50075437a9d89">Config_getString</a>(DOT_FONTNAME) &lt;&lt; <span class="stringliteral">&quot;\&quot;, &quot;</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      <span class="stringliteral">&quot;fontsize=\&quot;&quot;</span> &lt;&lt; <a class="code" href="../../db/d16/config_8h.html#a06b59c3720174e9078f613095a89b295">Config_getInt</a>(DOT_FONTSIZE) &lt;&lt; <span class="stringliteral">&quot;\&quot;, &quot;</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      <span class="stringliteral">&quot;URL=\&quot;&quot;</span> &lt;&lt; <a class="code" href="../../df/d2d/util_8cpp.html#a36c74291c5a9adc05d5cb6c0932f6b82">addHtmlExtensionIfMissing</a>(directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">getOutputFileBase</a>()) &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      <span class="stringliteral">&quot;]\n&quot;</span>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="keywordflow">if</span> (!isAncestor)</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  {</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    outputStream &lt;&lt; <span class="stringliteral">&quot;    &quot;</span> &lt;&lt; directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">getOutputFileBase</a>() &lt;&lt; <span class="stringliteral">&quot; [shape=plaintext, &quot;</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;        <span class="stringliteral">&quot;label=\&quot;&quot;</span> &lt;&lt; directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">shortName</a>() &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="stringliteral">&quot;];\n&quot;</span>;</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    directoriesInGraph.<a class="code" href="../../d9/d45/class_q_c_string.html#a8223c15b5070eded310706e6680cc82f">insert</a>(std::make_pair(directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">getOutputFileBase</a>().<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>(), directory));</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../df/d2d/util_8cpp_source.html#l05275">addHtmlExtensionIfMissing()</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00034">Config_getInt</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00032">Config_getString</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00063">getDirectoryBackgroundColor()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00097">getDirectoryBorderColor()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00118">getDirectoryBorderStyle()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">DirDef::getOutputFileBase()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00274">QCString::insert()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#a033ad6b8c0287ed15da29dadca48eb6f">DirDef::level()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">DirDef::shortName()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00442">QCString::str()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00230">drawTree()</a> , 以及 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00284">writeDotDirDepGraph()</a>.</p>
+
+</div>
+</div>
+<a id="a840611db0f9ff308b7167b3fd3e0c4d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a840611db0f9ff308b7167b3fd3e0c4d2">&#9670;&nbsp;</a></span>drawDirectory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void drawDirectory </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *const&#160;</td>
+          <td class="paramname"><em>directory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> &amp;&#160;</td>
+          <td class="paramname"><em>property</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#aa012bdc6c0e896cccb8121b3c6b7ad60">DirDefMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>directoriesInGraph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startLevel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Puts DOT code for drawing directory to stream and adds it to the list. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">t</td><td>stream to which the DOT code is written to </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">directory</td><td>will be mapped to a node in DOT code </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">property</td><td>are evaluated for formatting </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">directoriesInGraph</td><td>lists the directories which have been written to the output stream </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">startLevel</td><td>current level to calculate relative distances from to determine the background color </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00148">148</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  t &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">getOutputFileBase</a>() &lt;&lt; <span class="stringliteral">&quot; [&quot;</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <span class="stringliteral">&quot;shape=box, &quot;</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="stringliteral">&quot;label=\&quot;&quot;</span>     &lt;&lt; directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">shortName</a>()                                       &lt;&lt; <span class="stringliteral">&quot;\&quot;, &quot;</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;      <span class="stringliteral">&quot;style=\&quot;&quot;</span>     &lt;&lt; <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a6aa3fa8ed5c1cb6cfe4a5f821d1c776f">getDirectoryBorderStyle</a>(property)                            &lt;&lt; <span class="stringliteral">&quot;\&quot;, &quot;</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;      <span class="stringliteral">&quot;fillcolor=\&quot;&quot;</span> &lt;&lt; <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a683792f7f7df231861acd54ff905211d">getDirectoryBackgroundColor</a>(directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a033ad6b8c0287ed15da29dadca48eb6f">level</a>()-startLevel)   &lt;&lt; <span class="stringliteral">&quot;\&quot;, &quot;</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;      <span class="stringliteral">&quot;color=\&quot;&quot;</span>     &lt;&lt; <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a09fd1a586201220ccbea7e2638ec8ae8">getDirectoryBorderColor</a>(property)                            &lt;&lt; <span class="stringliteral">&quot;\&quot;, &quot;</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;      <span class="stringliteral">&quot;URL=\&quot;&quot;</span>       &lt;&lt; <a class="code" href="../../df/d2d/util_8cpp.html#a36c74291c5a9adc05d5cb6c0932f6b82">addHtmlExtensionIfMissing</a>(directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">getOutputFileBase</a>())    &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;      <span class="stringliteral">&quot;];\n&quot;</span>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  directoriesInGraph.<a class="code" href="../../d9/d45/class_q_c_string.html#a8223c15b5070eded310706e6680cc82f">insert</a>(std::make_pair(directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">getOutputFileBase</a>().<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>(), directory));</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../df/d2d/util_8cpp_source.html#l05275">addHtmlExtensionIfMissing()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00063">getDirectoryBackgroundColor()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00097">getDirectoryBorderColor()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00118">getDirectoryBorderStyle()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">DirDef::getOutputFileBase()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00274">QCString::insert()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#a033ad6b8c0287ed15da29dadca48eb6f">DirDef::level()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">DirDef::shortName()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00442">QCString::str()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00230">drawTree()</a>.</p>
+
+</div>
+</div>
+<a id="aa598dce9105a7992d33b10a15beb70d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa598dce9105a7992d33b10a15beb70d5">&#9670;&nbsp;</a></span>drawTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void drawTree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#a0540771f72e56700a0d30f72580d0065">DirRelations</a> &amp;&#160;</td>
+          <td class="paramname"><em>dependencies</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *const&#160;</td>
+          <td class="paramname"><em>directory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startLevel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html#aa012bdc6c0e896cccb8121b3c6b7ad60">DirDefMap</a> &amp;&#160;</td>
+          <td class="paramname"><em>directoriesInGraph</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>isTreeRoot</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Recursively draws directory tree. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00230">230</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;{</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="keywordflow">if</span> (!directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#afa5aedb69f8e651bb29d872f2f143a8d">hasSubdirs</a>())</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> directoryProperty = <a class="code" href="../../d1/d6f/class_dot_dir_property_builder.html">DotDirPropertyBuilder</a>().<a class="code" href="../../d1/d6f/class_dot_dir_property_builder.html#a5e73d127b90d2471f41f7e02824c41b4">makeOriginal</a>(isTreeRoot);</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a840611db0f9ff308b7167b3fd3e0c4d2">drawDirectory</a>(t, directory, directoryProperty, directoriesInGraph,startLevel);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a4cae8568157c4b4b1c9a96af855d2b85">addDependencies</a>(dependencies, directory, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  }</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a20837cde372c359b1ce5070096d472e0">isAtMaxDepth</a>(directory, startLevel)) <span class="comment">// maximum nesting level reached</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      <span class="keyword">const</span> <a class="code" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> directoryProperty = <a class="code" href="../../d1/d6f/class_dot_dir_property_builder.html">DotDirPropertyBuilder</a>().<a class="code" href="../../d1/d6f/class_dot_dir_property_builder.html#a5e73d127b90d2471f41f7e02824c41b4">makeOriginal</a>(isTreeRoot);</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a840611db0f9ff308b7167b3fd3e0c4d2">drawDirectory</a>(t, directory, directoryProperty, directoriesInGraph,startLevel);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a4cae8568157c4b4b1c9a96af855d2b85">addDependencies</a>(dependencies, directory, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    }</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">else</span> <span class="comment">// start a new nesting level</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;      <span class="comment">// open cluster</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;      {</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        <span class="keyword">const</span> <a class="code" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> directoryProperty = <a class="code" href="../../d1/d6f/class_dot_dir_property_builder.html">DotDirPropertyBuilder</a>().<a class="code" href="../../d1/d6f/class_dot_dir_property_builder.html#a5e73d127b90d2471f41f7e02824c41b4">makeOriginal</a>(isTreeRoot);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a8c294bd8cf4c31b846744d5e5ca845fa">drawClusterOpening</a>(t, directory, directoryProperty, directoriesInGraph, <span class="keyword">false</span>, startLevel);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a4cae8568157c4b4b1c9a96af855d2b85">addDependencies</a>(dependencies, directory, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;      }</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;      <span class="comment">// process all sub directories</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> subDirectory : directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a0a22cb736d9cfbf5b1fe455cac37521f">subDirs</a>())</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;      {</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#aa598dce9105a7992d33b10a15beb70d5">drawTree</a>(dependencies, t, subDirectory, startLevel, directoriesInGraph, <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;      }</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;      <span class="comment">// close cluster</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;      {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a3ec4e307f44771f6dfa0a0fe76c00495">drawClusterClosing</a>(t);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;      }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  }</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00212">addDependencies()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00201">drawClusterClosing()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00174">drawClusterOpening()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00148">drawDirectory()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#afa5aedb69f8e651bb29d872f2f143a8d">DirDef::hasSubdirs()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00163">isAtMaxDepth()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00052">DotDirPropertyBuilder::makeOriginal()</a> , 以及 <a class="el" href="../../d4/dd4/class_dir_def.html#a0a22cb736d9cfbf5b1fe455cac37521f">DirDef::subDirs()</a>.</p>
+
+</div>
+</div>
+<a id="a683792f7f7df231861acd54ff905211d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a683792f7f7df231861acd54ff905211d">&#9670;&nbsp;</a></span>getDirectoryBackgroundColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> getDirectoryBackgroundColor </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>depthIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a DOT color name according to the directory depth. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00063">63</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> hue   = <a class="code" href="../../db/d16/config_8h.html#a06b59c3720174e9078f613095a89b295">Config_getInt</a>(HTML_COLORSTYLE_HUE);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> sat   = <a class="code" href="../../db/d16/config_8h.html#a06b59c3720174e9078f613095a89b295">Config_getInt</a>(HTML_COLORSTYLE_SAT);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> gamma = <a class="code" href="../../db/d16/config_8h.html#a06b59c3720174e9078f613095a89b295">Config_getInt</a>(HTML_COLORSTYLE_GAMMA);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  assert(depthIndex&gt;=0 &amp;&amp; depthIndex&lt;=<a class="code" href="../../db/d16/config_8h.html#a06b59c3720174e9078f613095a89b295">Config_getInt</a>(DIR_GRAPH_MAX_DEPTH));</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keywordtype">float</span> fraction = (float)depthIndex/(<span class="keywordtype">float</span>)<a class="code" href="../../db/d16/config_8h.html#a06b59c3720174e9078f613095a89b295">Config_getInt</a>(DIR_GRAPH_MAX_DEPTH);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> <a class="code" href="../../da/db0/htmldocvisitor_8cpp.html#af6d39adaeb2e454e5ad70f6e7cb83416">hex</a>[] = <span class="stringliteral">&quot;0123456789abcdef&quot;</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">int</span> range = 0x40; <span class="comment">// range from darkest color to lightest color</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">int</span> luma   = 0xef-(int)(fraction*range); <span class="comment">// interpolation</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="keywordtype">double</span> r,g,b;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <a class="code" href="../../dc/da6/class_colored_image.html#aa28cffecb75cf52b6b457178851704c5">ColoredImage::hsl2rgb</a>(hue/360.0,sat/255.0,</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        pow(luma/255.0,gamma/100.0),&amp;r,&amp;g,&amp;b);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">int</span> red   = (int)(r*255.0);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">int</span> green = (int)(g*255.0);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordtype">int</span> blue  = (int)(b*255.0);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  assert(red&gt;=0   &amp;&amp; red&lt;=255);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  assert(green&gt;=0 &amp;&amp; green&lt;=255);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  assert(blue&gt;=0  &amp;&amp; blue&lt;=255);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordtype">char</span> colStr[8];</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  colStr[0]=<span class="charliteral">&#39;#&#39;</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  colStr[1]=<a class="code" href="../../da/db0/htmldocvisitor_8cpp.html#af6d39adaeb2e454e5ad70f6e7cb83416">hex</a>[red&gt;&gt;4];</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  colStr[2]=<a class="code" href="../../da/db0/htmldocvisitor_8cpp.html#af6d39adaeb2e454e5ad70f6e7cb83416">hex</a>[red&amp;0xf];</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  colStr[3]=<a class="code" href="../../da/db0/htmldocvisitor_8cpp.html#af6d39adaeb2e454e5ad70f6e7cb83416">hex</a>[green&gt;&gt;4];</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  colStr[4]=<a class="code" href="../../da/db0/htmldocvisitor_8cpp.html#af6d39adaeb2e454e5ad70f6e7cb83416">hex</a>[green&amp;0xf];</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  colStr[5]=<a class="code" href="../../da/db0/htmldocvisitor_8cpp.html#af6d39adaeb2e454e5ad70f6e7cb83416">hex</a>[blue&gt;&gt;4];</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  colStr[6]=<a class="code" href="../../da/db0/htmldocvisitor_8cpp.html#af6d39adaeb2e454e5ad70f6e7cb83416">hex</a>[blue&amp;0xf];</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  colStr[7]=0;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="comment">//printf(&quot;i=%d max=%d fraction=%f luma=%d %02x %02x %02x -&gt; color=%s\n&quot;,</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">//    depthIndex,Config_getInt(DIR_GRAPH_MAX_DEPTH),fraction,luma,red,green,blue,colStr);</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">return</span> colStr;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d16/config_8h_source.html#l00034">Config_getInt</a>, <a class="el" href="../../da/db0/htmldocvisitor_8cpp_source.html#l00065">hex</a> , 以及 <a class="el" href="../../db/d11/image_8cpp_source.html#l00412">ColoredImage::hsl2rgb()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00174">drawClusterOpening()</a> , 以及 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00148">drawDirectory()</a>.</p>
+
+</div>
+</div>
+<a id="a09fd1a586201220ccbea7e2638ec8ae8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09fd1a586201220ccbea7e2638ec8ae8">&#9670;&nbsp;</a></span>getDirectoryBorderColor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char* getDirectoryBorderColor </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> &amp;&#160;</td>
+          <td class="paramname"><em>property</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a DOT color name according to the directory properties. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00097">97</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keywordflow">if</span> (property.<a class="code" href="../../d0/d22/struct_dot_dir_property.html#a13d7c0ae8df6a6a0d7d1298ce5b2fbd5">isTruncated</a> &amp;&amp; property.<a class="code" href="../../d0/d22/struct_dot_dir_property.html#a725a202c71456e1caf086cdd20a9baf9">isOrphaned</a>)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;red&quot;</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (property.<a class="code" href="../../d0/d22/struct_dot_dir_property.html#a13d7c0ae8df6a6a0d7d1298ce5b2fbd5">isTruncated</a>)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;red&quot;</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (property.<a class="code" href="../../d0/d22/struct_dot_dir_property.html#a725a202c71456e1caf086cdd20a9baf9">isOrphaned</a>)</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;grey50&quot;</span>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;grey25&quot;</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00039">DotDirProperty::isOrphaned</a> , 以及 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00040">DotDirProperty::isTruncated</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00174">drawClusterOpening()</a> , 以及 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00148">drawDirectory()</a>.</p>
+
+</div>
+</div>
+<a id="a6aa3fa8ed5c1cb6cfe4a5f821d1c776f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aa3fa8ed5c1cb6cfe4a5f821d1c776f">&#9670;&nbsp;</a></span>getDirectoryBorderStyle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string getDirectoryBorderStyle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> &amp;&#160;</td>
+          <td class="paramname"><em>property</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns a DOT node style according to the directory properties. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00118">118</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  std::string style;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;  <span class="keywordflow">if</span> (!property.<a class="code" href="../../d0/d22/struct_dot_dir_property.html#ae497ee1efde3231d5f26bd05a05480e1">isPeripheral</a>)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    style += <span class="stringliteral">&quot;filled,&quot;</span>;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  <span class="keywordflow">if</span> (property.<a class="code" href="../../d0/d22/struct_dot_dir_property.html#ac8ed0c0d9a9e5638b80ba4d96b1f7b7b">isOriginal</a>)</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    style += <span class="stringliteral">&quot;bold,&quot;</span>;</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  }</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="keywordflow">if</span> (property.<a class="code" href="../../d0/d22/struct_dot_dir_property.html#afa37640375733ea38413a589b3f90718">isIncomplete</a>)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    style += <span class="stringliteral">&quot;dashed,&quot;</span>;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (property.<a class="code" href="../../d0/d22/struct_dot_dir_property.html#a13d7c0ae8df6a6a0d7d1298ce5b2fbd5">isTruncated</a> &amp;&amp; property.<a class="code" href="../../d0/d22/struct_dot_dir_property.html#a725a202c71456e1caf086cdd20a9baf9">isOrphaned</a>)</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  {</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    style += <span class="stringliteral">&quot;dashed,&quot;</span>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keywordflow">return</span> style;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00038">DotDirProperty::isIncomplete</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00041">DotDirProperty::isOriginal</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00039">DotDirProperty::isOrphaned</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00042">DotDirProperty::isPeripheral</a> , 以及 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00040">DotDirProperty::isTruncated</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00174">drawClusterOpening()</a> , 以及 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00148">drawDirectory()</a>.</p>
+
+</div>
+</div>
+<a id="a20837cde372c359b1ce5070096d472e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20837cde372c359b1ce5070096d472e0">&#9670;&nbsp;</a></span>isAtMaxDepth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool isAtMaxDepth </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *const&#160;</td>
+          <td class="paramname"><em>directory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>startLevel</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks, if the directory is a the maximum drawn directory level. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00163">163</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordflow">return</span> (directory-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a033ad6b8c0287ed15da29dadca48eb6f">level</a>() - startLevel) &gt;= <a class="code" href="../../db/d16/config_8h.html#a06b59c3720174e9078f613095a89b295">Config_getInt</a>(DIR_GRAPH_MAX_DEPTH);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d16/config_8h_source.html#l00034">Config_getInt</a> , 以及 <a class="el" href="../../d4/dd4/class_dir_def.html#a033ad6b8c0287ed15da29dadca48eb6f">DirDef::level()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00230">drawTree()</a>.</p>
+
+</div>
+</div>
+<a id="ac4e7090b3ce2c42151afd6b83298096f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4e7090b3ce2c42151afd6b83298096f">&#9670;&nbsp;</a></span>writeDotDirDepGraph()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeDotDirDepGraph </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&#160;</td>
+          <td class="paramname"><em>dd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>linkRelations</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write DOT code for directory dependency graph. </p>
+<p>Code is generated for a directory. Successors (sub-directories) of this directory are recursively drawn. Recursion is limited by <code>DIR_GRAPH_MAX_DEPTH</code>. The dependencies of those directories are drawn.</p>
+<p>If a dependee is not part of directory tree above, then the dependency is drawn to the first parent of the dependee, whose parent is an ancestor (sub-directory) of the original directory.</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>stream where the DOT code is written to </td></tr>
+    <tr><td class="paramname">dd</td><td>directory for which the graph is generated for </td></tr>
+    <tr><td class="paramname">linkRelations</td><td>if true, hyperlinks to the list of file dependencies are added </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html">dotdirdeps.cpp</a> 第 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00284">284</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;{</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;  <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#aa012bdc6c0e896cccb8121b3c6b7ad60">DirDefMap</a> dirsInGraph;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  dirsInGraph.insert(std::make_pair(dd-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">getOutputFileBase</a>().<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>(),dd));</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  std::vector&lt;const DirDef *&gt; usedDirsNotDrawn, usedDirsDrawn;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; usedDir : dd-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a6eafeec80e3bd8cdae3c8082b857a8a8">usedDirs</a>())</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  {</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    usedDirsNotDrawn.push_back(usedDir-&gt;dir());</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;  }</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;  <span class="keyword">auto</span> moveDrawnDirs = [&amp;usedDirsDrawn,&amp;usedDirsNotDrawn](<span class="keyword">const</span> std::vector&lt;const DirDef *&gt;::iterator &amp;newEnd)</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;  {</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="comment">// usedDirsNotDrawn is split into two segments: [begin()....newEnd-1] and [newEnd....end()]</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="comment">// where the second segment starting at newEnd has been drawn, so append this segment to the usedDirsDrawn list and</span></div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="comment">// remove it from the usedDirsNotDrawn list.</span></div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    std::move(newEnd, <a class="code" href="../../d3/d48/dir_8cpp.html#abb4720f72b574f81dc4f7aea0e653a64">std::end</a>(usedDirsNotDrawn), std::back_inserter(usedDirsDrawn));</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    usedDirsNotDrawn.erase(newEnd, usedDirsNotDrawn.end());</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;  };</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="comment">// if dd has a parent draw it as the outer layer</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> parent = dd-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#af7f7dfe879363192967b8b8ad11149b7">parent</a>();</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;  <span class="keywordflow">if</span> (parent)</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a> parentDirProperty = <a class="code" href="../../d1/d6f/class_dot_dir_property_builder.html">DotDirPropertyBuilder</a>().</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                                             makeIncomplete().</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                                             makeOrphaned(parent-&gt;parent()!=<span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a8c294bd8cf4c31b846744d5e5ca845fa">drawClusterOpening</a>(t, parent, parentDirProperty, dirsInGraph, <span class="keyword">true</span>, parent-&gt;level());</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;      <span class="comment">// draw all directories which have `dd-&gt;parent()` as parent and `dd` as dependent</span></div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> newEnd = std::stable_partition(usedDirsNotDrawn.begin(), usedDirsNotDrawn.end(),</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        [&amp;](<span class="keyword">const</span> <a class="code" href="../../d4/dd4/class_dir_def.html">DirDef</a> *<span class="keyword">const</span> usedDir)</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        {</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;          if (dd!=usedDir &amp;&amp; dd-&gt;parent()==usedDir-&gt;parent()) <span class="comment">// usedDir and dd share the same parent</span></div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;          {</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;            const DotDirProperty usedDirProperty = DotDirPropertyBuilder().makeTruncated(usedDir-&gt;hasSubdirs());</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            drawDirectory(t, usedDir, usedDirProperty, dirsInGraph, parent-&gt;level());</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            return false; <span class="comment">// part of the drawn partition</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;          }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;          <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">// part of the not-drawn partition</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        });</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;      moveDrawnDirs(newEnd);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="comment">// draw the directory tree with dd as root</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a0540771f72e56700a0d30f72580d0065">DirRelations</a> dependencies;</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#aa598dce9105a7992d33b10a15beb70d5">drawTree</a>(dependencies, t, dd, dd-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a033ad6b8c0287ed15da29dadca48eb6f">level</a>(), dirsInGraph, <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;  <span class="keywordflow">if</span> (parent)</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a3ec4e307f44771f6dfa0a0fe76c00495">drawClusterClosing</a>(t);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  }</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="comment">// add nodes for other used directories (i.e. outside of the cluster of directories directly connected to dd)</span></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> newEnd = std::stable_partition(usedDirsNotDrawn.begin(), usedDirsNotDrawn.end(),</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;     [&amp;](<span class="keyword">const</span> <a class="code" href="../../d4/dd4/class_dir_def.html">DirDef</a> *<span class="keyword">const</span> usedDir) <span class="comment">// for each used dir (=directly used or a parent of a directly used dir)</span></div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;     {</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;       const DirDef *dir=dd;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;       while (dir)</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;       {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;         if (dir!=usedDir &amp;&amp; dir-&gt;parent()==usedDir-&gt;parent()) <span class="comment">// include if both have the same parent (or no parent)</span></div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;         {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;           const DotDirProperty usedDirProperty = DotDirPropertyBuilder().</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                                                  makeOrphaned(usedDir-&gt;parent()!=nullptr).</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                                                  makeTruncated(usedDir-&gt;hasSubdirs()).</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                                                  makePeripheral();</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;           drawDirectory(t, usedDir, usedDirProperty, dirsInGraph, dir-&gt;level());</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;           return false; <span class="comment">// part of the drawn partition</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;         }</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;         dir=dir-&gt;parent();</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;       }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;       <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">// part of the not-drawn partition</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;     });</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    moveDrawnDirs(newEnd);</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;  }</div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;  <span class="comment">// add relations between all selected directories</span></div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;  {</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;relationPair : dependencies)</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    {</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> &amp;relation         = relationPair.first;</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">bool</span> directRelation    = relationPair.second;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> udir              = relation-&gt;destination();</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> usedDir           = udir-&gt;dir();</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">bool</span> destIsSibling     = std::find(<a class="code" href="../../d3/d48/dir_8cpp.html#a6c544e0039887bf39e3c9e85f55d8ebc">std::begin</a>(usedDirsDrawn), <a class="code" href="../../d3/d48/dir_8cpp.html#abb4720f72b574f81dc4f7aea0e653a64">std::end</a>(usedDirsDrawn), usedDir) != <a class="code" href="../../d3/d48/dir_8cpp.html#abb4720f72b574f81dc4f7aea0e653a64">std::end</a>(usedDirsDrawn);</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">bool</span> destIsDrawn       = dirsInGraph.find(usedDir-&gt;getOutputFileBase().str())!=dirsInGraph.end(); <span class="comment">// only point to nodes that are in the graph</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;      <span class="keyword">const</span> <span class="keywordtype">bool</span> atMaxDepth        = <a class="code" href="../../da/d45/dotdirdeps_8cpp.html#a20837cde372c359b1ce5070096d472e0">isAtMaxDepth</a>(usedDir, dd-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a033ad6b8c0287ed15da29dadca48eb6f">level</a>());</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160; </div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;      <span class="keywordflow">if</span> (destIsSibling || (destIsDrawn &amp;&amp; (directRelation || atMaxDepth)))</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;      {</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> relationName = relation-&gt;getOutputFileBase();</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keyword">const</span> <span class="keyword">auto</span> dir = relation-&gt;source();</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;        <a class="code" href="../../de/d6a/class_doxygen.html#aeb009dfd4eca1e806843a68765b975db">Doxygen::dirRelations</a>.<a class="code" href="../../d0/d2c/class_linked_map.html#a93ff454b46989db86c69338aef8feba9">add</a>(relationName,</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            std::make_unique&lt;DirRelation&gt;(</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;               relationName,dir,udir));</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;        <span class="keywordtype">size_t</span> nrefs = udir-&gt;filePairs().size();</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot;  &quot;</span> &lt;&lt; dir-&gt;getOutputFileBase() &lt;&lt; <span class="stringliteral">&quot;-&gt;&quot;</span></div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;          &lt;&lt; usedDir-&gt;getOutputFileBase();</div>
+<div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot; [headlabel=\&quot;&quot;</span> &lt;&lt; (<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>)nrefs &lt;&lt; <span class="stringliteral">&quot;\&quot;, labeldistance=1.5&quot;</span>;</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <span class="keywordflow">if</span> (linkRelations)</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;        {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;          t &lt;&lt; <span class="stringliteral">&quot; headhref=\&quot;&quot;</span> &lt;&lt; <a class="code" href="../../df/d2d/util_8cpp.html#a36c74291c5a9adc05d5cb6c0932f6b82">addHtmlExtensionIfMissing</a>(relationName) &lt;&lt; <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;        }</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot;];\n&quot;</span>;</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;      }</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;    }</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;  }</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00174">drawClusterOpening()</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00128">end()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">DirDef::getOutputFileBase()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#af7f7dfe879363192967b8b8ad11149b7">DirDef::parent()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00442">QCString::str()</a> , 以及 <a class="el" href="../../d4/dd4/class_dir_def.html#a6eafeec80e3bd8cdae3c8082b857a8a8">DirDef::usedDirs()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00411">DotDirDeps::computeTheGraph()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_colored_image_html_aa28cffecb75cf52b6b457178851704c5"><div class="ttname"><a href="../../dc/da6/class_colored_image.html#aa28cffecb75cf52b6b457178851704c5">ColoredImage::hsl2rgb</a></div><div class="ttdeci">static void hsl2rgb(double h, double s, double l, double *pRed, double *pGreen, double *pBlue)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00412">image.cpp:412</a></div></div>
+<div class="ttc" id="astruct_dot_dir_property_html_afa37640375733ea38413a589b3f90718"><div class="ttname"><a href="../../d0/d22/struct_dot_dir_property.html#afa37640375733ea38413a589b3f90718">DotDirProperty::isIncomplete</a></div><div class="ttdeci">bool isIncomplete</div><div class="ttdoc">true if not all successors of a cluster are drawn</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00038">dotdirdeps.cpp:38</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_a0540771f72e56700a0d30f72580d0065"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#a0540771f72e56700a0d30f72580d0065">DirRelations</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; std::unique_ptr&lt; DirRelation &gt;, bool &gt; &gt; DirRelations</div><div class="ttdoc">Elements consist of (1) directory relation and (2) whether it is pointing only to inherited dependees...</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00060">dotdirdeps.cpp:60</a></div></div>
+<div class="ttc" id="aclass_dir_def_html_af01c314d69c65e2ad2eab58bf818d362"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#af01c314d69c65e2ad2eab58bf818d362">DirDef::dirCount</a></div><div class="ttdeci">virtual int dirCount() const =0</div></div>
+<div class="ttc" id="aclass_dir_def_html_a6eafeec80e3bd8cdae3c8082b857a8a8"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#a6eafeec80e3bd8cdae3c8082b857a8a8">DirDef::usedDirs</a></div><div class="ttdeci">virtual const UsedDirLinkedMap &amp; usedDirs() const =0</div></div>
+<div class="ttc" id="astruct_dot_dir_property_html_a725a202c71456e1caf086cdd20a9baf9"><div class="ttname"><a href="../../d0/d22/struct_dot_dir_property.html#a725a202c71456e1caf086cdd20a9baf9">DotDirProperty::isOrphaned</a></div><div class="ttdeci">bool isOrphaned</div><div class="ttdoc">true if parent is not drawn</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00039">dotdirdeps.cpp:39</a></div></div>
+<div class="ttc" id="aclass_dir_def_html"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html">DirDef</a></div><div class="ttdoc">A model of a directory symbol.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d15/dirdef_8h_source.html#l00110">dirdef.h:110</a></div></div>
+<div class="ttc" id="aclass_linked_map_html_a93ff454b46989db86c69338aef8feba9"><div class="ttname"><a href="../../d0/d2c/class_linked_map.html#a93ff454b46989db86c69338aef8feba9">LinkedMap::add</a></div><div class="ttdeci">T * add(const char *k, Args &amp;&amp;... args)</div><div class="ttdoc">Adds a new object to the ordered vector if it was not added already.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de1/linkedmap_8h_source.html#l00103">linkedmap.h:103</a></div></div>
+<div class="ttc" id="astruct_dot_dir_property_html_a13d7c0ae8df6a6a0d7d1298ce5b2fbd5"><div class="ttname"><a href="../../d0/d22/struct_dot_dir_property.html#a13d7c0ae8df6a6a0d7d1298ce5b2fbd5">DotDirProperty::isTruncated</a></div><div class="ttdeci">bool isTruncated</div><div class="ttdoc">true has successors, none is drawn</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00040">dotdirdeps.cpp:40</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a9824b07232eea418ab3b3e7dc3178eec"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">QCString::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00442">qcstring.h:442</a></div></div>
+<div class="ttc" id="astruct_dot_dir_property_html_ae497ee1efde3231d5f26bd05a05480e1"><div class="ttname"><a href="../../d0/d22/struct_dot_dir_property.html#ae497ee1efde3231d5f26bd05a05480e1">DotDirProperty::isPeripheral</a></div><div class="ttdeci">bool isPeripheral</div><div class="ttdoc">true if no successor of parent of original directory</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00042">dotdirdeps.cpp:42</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_a8c294bd8cf4c31b846744d5e5ca845fa"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#a8c294bd8cf4c31b846744d5e5ca845fa">drawClusterOpening</a></div><div class="ttdeci">static void drawClusterOpening(TextStream &amp;outputStream, const DirDef *const directory, const DotDirProperty &amp;directoryProperty, DirDefMap &amp;directoriesInGraph, const bool isAncestor, int startLevel)</div><div class="ttdoc">Writes DOT code for opening a cluster subgraph to stream.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00174">dotdirdeps.cpp:174</a></div></div>
+<div class="ttc" id="aclass_dir_def_html_afa5aedb69f8e651bb29d872f2f143a8d"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#afa5aedb69f8e651bb29d872f2f143a8d">DirDef::hasSubdirs</a></div><div class="ttdeci">virtual bool hasSubdirs() const =0</div></div>
+<div class="ttc" id="aclass_dir_def_html_a033ad6b8c0287ed15da29dadca48eb6f"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#a033ad6b8c0287ed15da29dadca48eb6f">DirDef::level</a></div><div class="ttdeci">virtual int level() const =0</div></div>
+<div class="ttc" id="adir_8cpp_html_a6c544e0039887bf39e3c9e85f55d8ebc"><div class="ttname"><a href="../../d3/d48/dir_8cpp.html#a6c544e0039887bf39e3c9e85f55d8ebc">begin</a></div><div class="ttdeci">DirIterator begin(DirIterator it) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00123">dir.cpp:123</a></div></div>
+<div class="ttc" id="adir_8cpp_html_abb4720f72b574f81dc4f7aea0e653a64"><div class="ttname"><a href="../../d3/d48/dir_8cpp.html#abb4720f72b574f81dc4f7aea0e653a64">end</a></div><div class="ttdeci">DirIterator end(const DirIterator &amp;) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00128">dir.cpp:128</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_a683792f7f7df231861acd54ff905211d"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#a683792f7f7df231861acd54ff905211d">getDirectoryBackgroundColor</a></div><div class="ttdeci">static QCString getDirectoryBackgroundColor(int depthIndex)</div><div class="ttdoc">Returns a DOT color name according to the directory depth.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00063">dotdirdeps.cpp:63</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a4d3943ddea65db7163a58e6c7e8df95a"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a></div><div class="ttdeci">unsigned uint</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00040">qcstring.h:40</a></div></div>
+<div class="ttc" id="astruct_dot_dir_property_html"><div class="ttname"><a href="../../d0/d22/struct_dot_dir_property.html">DotDirProperty</a></div><div class="ttdoc">Properties are used to format the directories in the graph distinctively.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00036">dotdirdeps.cpp:36</a></div></div>
+<div class="ttc" id="aclass_dir_def_html_a1fdadd32de095dd846b619f8d220f03c"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">DirDef::getOutputFileBase</a></div><div class="ttdeci">virtual QCString getOutputFileBase() const =0</div></div>
+<div class="ttc" id="autil_8cpp_html_a36c74291c5a9adc05d5cb6c0932f6b82"><div class="ttname"><a href="../../df/d2d/util_8cpp.html#a36c74291c5a9adc05d5cb6c0932f6b82">addHtmlExtensionIfMissing</a></div><div class="ttdeci">QCString addHtmlExtensionIfMissing(const QCString &amp;fName)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d2d/util_8cpp_source.html#l05275">util.cpp:5275</a></div></div>
+<div class="ttc" id="aclass_dir_def_html_aa198c67f6d58fdae57c8502913ed35d7"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">DirDef::shortName</a></div><div class="ttdeci">virtual const QCString shortName() const =0</div></div>
+<div class="ttc" id="aconfig_8h_html_a06b59c3720174e9078f613095a89b295"><div class="ttname"><a href="../../db/d16/config_8h.html#a06b59c3720174e9078f613095a89b295">Config_getInt</a></div><div class="ttdeci">#define Config_getInt(name)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/config_8h_source.html#l00034">config.h:34</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a8223c15b5070eded310706e6680cc82f"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a8223c15b5070eded310706e6680cc82f">QCString::insert</a></div><div class="ttdeci">QCString &amp; insert(size_t index, const QCString &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00274">qcstring.h:274</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_aa598dce9105a7992d33b10a15beb70d5"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#aa598dce9105a7992d33b10a15beb70d5">drawTree</a></div><div class="ttdeci">static void drawTree(DirRelations &amp;dependencies, TextStream &amp;t, const DirDef *const directory, int startLevel, DirDefMap &amp;directoriesInGraph, const bool isTreeRoot)</div><div class="ttdoc">Recursively draws directory tree.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00230">dotdirdeps.cpp:230</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_aa012bdc6c0e896cccb8121b3c6b7ad60"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#aa012bdc6c0e896cccb8121b3c6b7ad60">DirDefMap</a></div><div class="ttdeci">std::map&lt; std::string, const DirDef * &gt; DirDefMap</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00033">dotdirdeps.cpp:33</a></div></div>
+<div class="ttc" id="aclass_dot_dir_property_builder_html"><div class="ttname"><a href="../../d1/d6f/class_dot_dir_property_builder.html">DotDirPropertyBuilder</a></div><div class="ttdoc">Builder helper to create instances of the DotDirProperty struct</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00046">dotdirdeps.cpp:46</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_a6aa3fa8ed5c1cb6cfe4a5f821d1c776f"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#a6aa3fa8ed5c1cb6cfe4a5f821d1c776f">getDirectoryBorderStyle</a></div><div class="ttdeci">static std::string getDirectoryBorderStyle(const DotDirProperty &amp;property)</div><div class="ttdoc">Returns a DOT node style according to the directory properties.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00118">dotdirdeps.cpp:118</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_a840611db0f9ff308b7167b3fd3e0c4d2"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#a840611db0f9ff308b7167b3fd3e0c4d2">drawDirectory</a></div><div class="ttdeci">static void drawDirectory(TextStream &amp;t, const DirDef *const directory, const DotDirProperty &amp;property, DirDefMap &amp;directoriesInGraph, int startLevel)</div><div class="ttdoc">Puts DOT code for drawing directory to stream and adds it to the list.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00148">dotdirdeps.cpp:148</a></div></div>
+<div class="ttc" id="aclass_doxygen_html_aeb009dfd4eca1e806843a68765b975db"><div class="ttname"><a href="../../de/d6a/class_doxygen.html#aeb009dfd4eca1e806843a68765b975db">Doxygen::dirRelations</a></div><div class="ttdeci">static DirRelationLinkedMap dirRelations</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da1/doxygen_8h_source.html#l00110">doxygen.h:110</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_a3ec4e307f44771f6dfa0a0fe76c00495"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#a3ec4e307f44771f6dfa0a0fe76c00495">drawClusterClosing</a></div><div class="ttdeci">static void drawClusterClosing(TextStream &amp;t)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00201">dotdirdeps.cpp:201</a></div></div>
+<div class="ttc" id="ahtmldocvisitor_8cpp_html_af6d39adaeb2e454e5ad70f6e7cb83416"><div class="ttname"><a href="../../da/db0/htmldocvisitor_8cpp.html#af6d39adaeb2e454e5ad70f6e7cb83416">hex</a></div><div class="ttdeci">static const char * hex</div><div class="ttdef"><b>Definition:</b> <a href="../../da/db0/htmldocvisitor_8cpp_source.html#l00065">htmldocvisitor.cpp:65</a></div></div>
+<div class="ttc" id="aconfig_8h_html_a737741e6991bdb5694a50075437a9d89"><div class="ttname"><a href="../../db/d16/config_8h.html#a737741e6991bdb5694a50075437a9d89">Config_getString</a></div><div class="ttdeci">#define Config_getString(name)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/config_8h_source.html#l00032">config.h:32</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_a09fd1a586201220ccbea7e2638ec8ae8"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#a09fd1a586201220ccbea7e2638ec8ae8">getDirectoryBorderColor</a></div><div class="ttdeci">static const char * getDirectoryBorderColor(const DotDirProperty &amp;property)</div><div class="ttdoc">Returns a DOT color name according to the directory properties.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00097">dotdirdeps.cpp:97</a></div></div>
+<div class="ttc" id="astruct_dot_dir_property_html_ac8ed0c0d9a9e5638b80ba4d96b1f7b7b"><div class="ttname"><a href="../../d0/d22/struct_dot_dir_property.html#ac8ed0c0d9a9e5638b80ba4d96b1f7b7b">DotDirProperty::isOriginal</a></div><div class="ttdeci">bool isOriginal</div><div class="ttdoc">true if is the directory for which the graph is drawn</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00041">dotdirdeps.cpp:41</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_a20837cde372c359b1ce5070096d472e0"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#a20837cde372c359b1ce5070096d472e0">isAtMaxDepth</a></div><div class="ttdeci">static bool isAtMaxDepth(const DirDef *const directory, const int startLevel)</div><div class="ttdoc">Checks, if the directory is a the maximum drawn directory level.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00163">dotdirdeps.cpp:163</a></div></div>
+<div class="ttc" id="adotdirdeps_8cpp_html_a4cae8568157c4b4b1c9a96af855d2b85"><div class="ttname"><a href="../../da/d45/dotdirdeps_8cpp.html#a4cae8568157c4b4b1c9a96af855d2b85">addDependencies</a></div><div class="ttdeci">static void addDependencies(DirRelations &amp;dependencies, const DirDef *const srcDir, bool isLeaf)</div><div class="ttdoc">Assembles a list of the directory relations and whether or not they result from &quot;inheritance&quot;.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00212">dotdirdeps.cpp:212</a></div></div>
+<div class="ttc" id="aclass_dot_dir_property_builder_html_a5e73d127b90d2471f41f7e02824c41b4"><div class="ttname"><a href="../../d1/d6f/class_dot_dir_property_builder.html#a5e73d127b90d2471f41f7e02824c41b4">DotDirPropertyBuilder::makeOriginal</a></div><div class="ttdeci">DotDirPropertyBuilder &amp; makeOriginal(bool b=true)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d45/dotdirdeps_8cpp_source.html#l00052">dotdirdeps.cpp:52</a></div></div>
+<div class="ttc" id="aclass_dir_def_html_a0a22cb736d9cfbf5b1fe455cac37521f"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#a0a22cb736d9cfbf5b1fe455cac37521f">DirDef::subDirs</a></div><div class="ttdeci">virtual const DirList &amp; subDirs() const =0</div></div>
+<div class="ttc" id="aclass_dir_def_html_af7f7dfe879363192967b8b8ad11149b7"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#af7f7dfe879363192967b8b8ad11149b7">DirDef::parent</a></div><div class="ttdeci">virtual DirDef * parent() const =0</div></div>
+<div class="ttc" id="aclass_q_c_string_html_aa2dccf89cb25346c3ee81d75aa5859da"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#aa2dccf89cb25346c3ee81d75aa5859da">QCString::sprintf</a></div><div class="ttdeci">QCString &amp; sprintf(const char *format,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d3e/qcstring_8cpp_source.html#l00024">qcstring.cpp:24</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../da/d45/dotdirdeps_8cpp.html">dotdirdeps.cpp</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:56 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

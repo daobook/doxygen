@@ -1,0 +1,537 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/dot.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('de/daa/dot_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">dot.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d16/config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d4a/dot_8h_source.html">dot.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/dd1/dotrunner_8h_source.html">dotrunner.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d38/dotfilepatcher_8h_source.html">dotfilepatcher.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d3c/util_8h_source.html">util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/de2/portable_8h_source.html">portable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d0d/message_8h_source.html">message.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/da1/doxygen_8h_source.html">doxygen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/dce/language_8h_source.html">language.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/db5/index_8h_source.html">index.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d9c/dir_8h_source.html">dir.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> dot.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+</div>
+</div>
+<p><a href="../../de/daa/dot_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:a8e61450eb94b16e866568ad3aed2d9f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/dot_8cpp.html#a8e61450eb94b16e866568ad3aed2d9f1">MAP_CMD</a>&#160;&#160;&#160;&quot;cmapx&quot;</td></tr>
+<tr class="separator:a8e61450eb94b16e866568ad3aed2d9f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a3d9eb667db4f11f9bd15cfc0b8fe45b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/dot_8cpp.html#a3d9eb667db4f11f9bd15cfc0b8fe45b4">setDotFontPath</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;path)</td></tr>
+<tr class="separator:a3d9eb667db4f11f9bd15cfc0b8fe45b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74cb640833073a036af5b7fa13cd16c6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/dot_8cpp.html#a74cb640833073a036af5b7fa13cd16c6">unsetDotFontPath</a> ()</td></tr>
+<tr class="separator:a74cb640833073a036af5b7fa13cd16c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee48308a96887ccde586df24f0b73ca4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/dot_8cpp.html#aee48308a96887ccde586df24f0b73ca4">writeDotGraphFromFile</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;inFile, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;outDir, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;outFile, <a class="el" href="../../d0/daa/dotgraph_8h.html#ac60ef98d62b78366a17c9f1bda96523f">GraphOutputFormat</a> format, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;srcFile, int srcLine)</td></tr>
+<tr class="separator:aee48308a96887ccde586df24f0b73ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada988a5303d67622cb43bd75c247fec2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/dot_8cpp.html#ada988a5303d67622cb43bd75c247fec2">writeDotImageMapFromFile</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;inFile, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;outDir, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;relPath, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;baseName, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;context, int graphId, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;srcFile, int srcLine)</td></tr>
+<tr class="separator:ada988a5303d67622cb43bd75c247fec2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a60d30e2e6c2496b226540c48f7a6fca7"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a></td></tr>
+<tr class="separator:a60d30e2e6c2496b226540c48f7a6fca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="a8e61450eb94b16e866568ad3aed2d9f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e61450eb94b16e866568ad3aed2d9f1">&#9670;&nbsp;</a></span>MAP_CMD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAP_CMD&#160;&#160;&#160;&quot;cmapx&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a> 第 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00033">33</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a3d9eb667db4f11f9bd15cfc0b8fe45b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d9eb667db4f11f9bd15cfc0b8fe45b4">&#9670;&nbsp;</a></span>setDotFontPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void setDotFontPath </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a> 第 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00039">39</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d7/d5c/qcstring_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a>(<a class="code" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>());</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <a class="code" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a> = <a class="code" href="../../d7/d6f/namespace_portable.html#ae1a7516287ca7c75eebc3fa7aa12e970">Portable::getenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> newFontPath = <a class="code" href="../../db/d16/config_8h.html#a737741e6991bdb5694a50075437a9d89">Config_getString</a>(DOT_FONTPATH);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keywordflow">if</span> (!newFontPath.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; !path.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    newFontPath.<a class="code" href="../../d9/d45/class_q_c_string.html#abb958f7fcfea738e38de8979c8342dce">prepend</a>(path+<a class="code" href="../../d7/d6f/namespace_portable.html#a33ec52ac55c4d58e0748239920ee3e14">Portable::pathListSeparator</a>());</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (newFontPath.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; !path.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    newFontPath=path;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <a class="code" href="../../d7/d6f/namespace_portable.html#ac2e29048cffc72c3bed439cff5b02cd4">Portable::unsetenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d7/d6f/namespace_portable.html#abd244447df22d110ad410b69c357fdf3">Portable::setenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>,newFontPath);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00044">ASSERT</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00032">Config_getString</a>, <a class="el" href="../../de/daa/dot_8cpp_source.html#l00037">g_dotFontPath</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00279">Portable::getenv()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00356">Portable::pathListSeparator()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00339">QCString::prepend()</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00246">Portable::setenv()</a> , 以及 <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00260">Portable::unsetenv()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00154">DotManager::run()</a>.</p>
+
+</div>
+</div>
+<a id="a74cb640833073a036af5b7fa13cd16c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74cb640833073a036af5b7fa13cd16c6">&#9670;&nbsp;</a></span>unsetDotFontPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void unsetDotFontPath </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a> 第 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00060">60</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  {</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../d7/d6f/namespace_portable.html#ac2e29048cffc72c3bed439cff5b02cd4">Portable::unsetenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="../../d7/d6f/namespace_portable.html#abd244447df22d110ad410b69c357fdf3">Portable::setenv</a>(<span class="stringliteral">&quot;DOTFONTPATH&quot;</span>,<a class="code" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <a class="code" href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a>=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00037">g_dotFontPath</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00246">Portable::setenv()</a> , 以及 <a class="el" href="../../d0/d1c/portable_8cpp_source.html#l00260">Portable::unsetenv()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00154">DotManager::run()</a>.</p>
+
+</div>
+</div>
+<a id="aee48308a96887ccde586df24f0b73ca4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee48308a96887ccde586df24f0b73ca4">&#9670;&nbsp;</a></span>writeDotGraphFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeDotGraphFromFile </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>inFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>outDir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>outFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/daa/dotgraph_8h.html#ac60ef98d62b78366a17c9f1bda96523f">GraphOutputFormat</a>&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>srcFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>srcLine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a> 第 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00272">272</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;{</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;  <a class="code" href="../../d2/dc2/class_dir.html">Dir</a> d(outDir.<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>());</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="keywordflow">if</span> (!d.exists())</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  {</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <a class="code" href="../../d8/d6a/message_8cpp.html#ad8f29ff28015ffeb164a592dd68f89c7">term</a>(<span class="stringliteral">&quot;Output dir %s does not exist!\n&quot;</span>,<a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(outDir));</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  }</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> imgExt = <a class="code" href="../../df/d2d/util_8cpp.html#ab1cc08326518f249ccae693a16f6a10d">getDotImageExtension</a>();</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> imgName = (<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>)outFile+<span class="stringliteral">&quot;.&quot;</span>+imgExt;</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> absImgName = <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>(d.absPath())+<span class="stringliteral">&quot;/&quot;</span>+imgName;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> absOutFile = <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>(d.absPath())+<span class="stringliteral">&quot;/&quot;</span>+outFile;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160; </div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;  <a class="code" href="../../d1/de9/class_dot_runner.html">DotRunner</a> dotRun(inFile);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="keywordflow">if</span> (format==<a class="code" href="../../d0/daa/dotgraph_8h.html#ac60ef98d62b78366a17c9f1bda96523fa4cab0638aeb754692801b1e07fa3db74">GOF_BITMAP</a>)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;  {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    dotRun.addJob(<a class="code" href="../../db/d16/config_8h.html#a251399cde30dd4c356bbd5634c6eb472">Config_getEnumAsString</a>(DOT_IMAGE_FORMAT),absImgName,srcFile,srcLine);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;  <span class="keywordflow">else</span> <span class="comment">// format==GOF_EPS</span></div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;  {</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../db/d16/config_8h.html#a5373d0332a31f16ad7a42037733e8c79">Config_getBool</a>(USE_PDFLATEX))</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    {</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;      dotRun.addJob(<span class="stringliteral">&quot;pdf&quot;</span>,absOutFile+<span class="stringliteral">&quot;.pdf&quot;</span>,srcFile,srcLine);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    {</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;      dotRun.addJob(<span class="stringliteral">&quot;ps&quot;</span>,absOutFile+<span class="stringliteral">&quot;.eps&quot;</span>,srcFile,srcLine);</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    }</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  }</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160; </div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  dotRun.preventCleanUp();</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;  <span class="keywordflow">if</span> (!dotRun.run())</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;     <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <a class="code" href="../../de/d6a/class_doxygen.html#a91aa9805ef52783816d9da5e457b8cfb">Doxygen::indexList</a>-&gt;<a class="code" href="../../d9/d57/class_index_list.html#aac3c1b70be363f488269cd9054cc7621">addImageFile</a>(imgName);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00305">Dir::absPath()</a>, <a class="el" href="../../d1/db5/index_8h_source.html#l00105">IndexList::addImageFile()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00150">DotRunner::addJob()</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00033">Config_getBool</a>, <a class="el" href="../../db/d16/config_8h_source.html#l00036">Config_getEnumAsString</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00199">Dir::exists()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l07032">getDotImageExtension()</a>, <a class="el" href="../../d0/daa/dotgraph_8h_source.html#l00027">GOF_BITMAP</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00114">Doxygen::indexList</a>, <a class="el" href="../../d2/dd1/dotrunner_8h_source.html#l00067">DotRunner::preventCleanUp()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00589">qPrint()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00172">DotRunner::run()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00442">QCString::str()</a> , 以及 <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00220">term()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d05/docbookvisitor_8cpp_source.html#l01800">DocbookDocVisitor::startDotFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01961">LatexDocVisitor::startDotFile()</a>, <a class="el" href="../../da/db0/htmldocvisitor_8cpp_source.html#l02255">HtmlDocVisitor::writeDotFile()</a>, <a class="el" href="../../de/d9a/rtfdocvisitor_8cpp_source.html#l01863">RTFDocVisitor::writeDotFile()</a> , 以及 <a class="el" href="../../dc/d05/docbookvisitor_8cpp_source.html#l01784">DocbookDocVisitor::writeDotFile()</a>.</p>
+
+</div>
+</div>
+<a id="ada988a5303d67622cb43bd75c247fec2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada988a5303d67622cb43bd75c247fec2">&#9670;&nbsp;</a></span>writeDotImageMapFromFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeDotImageMapFromFile </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>inFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>outDir</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>relPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>baseName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>graphId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>srcFile</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>srcLine</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Writes user defined image map to the output. </p><dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>text stream to write to </td></tr>
+    <tr><td class="paramname">inFile</td><td>just the basename part of the filename </td></tr>
+    <tr><td class="paramname">outDir</td><td>output directory </td></tr>
+    <tr><td class="paramname">relPath</td><td>relative path the to root of the output dir </td></tr>
+    <tr><td class="paramname">baseName</td><td>the base name of the output files </td></tr>
+    <tr><td class="paramname">context</td><td>the scope in which this graph is found (for resolving links) </td></tr>
+    <tr><td class="paramname">graphId</td><td>a unique id for this graph, use for dynamic sections </td></tr>
+    <tr><td class="paramname">srcFile</td><td>the source file </td></tr>
+    <tr><td class="paramname">srcLine</td><td>the line number in the source file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a> 第 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00325">325</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;{</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160; </div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <a class="code" href="../../d2/dc2/class_dir.html">Dir</a> d(outDir.<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>());</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  <span class="keywordflow">if</span> (!d.exists())</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;  {</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <a class="code" href="../../d8/d6a/message_8cpp.html#ad8f29ff28015ffeb164a592dd68f89c7">term</a>(<span class="stringliteral">&quot;Output dir %s does not exist!\n&quot;</span>,<a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(outDir));</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;  }</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160; </div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> mapName = baseName+<span class="stringliteral">&quot;.map&quot;</span>;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> imgExt = <a class="code" href="../../df/d2d/util_8cpp.html#ab1cc08326518f249ccae693a16f6a10d">getDotImageExtension</a>();</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> imgName = baseName+<span class="stringliteral">&quot;.&quot;</span>+imgExt;</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> absOutFile = <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>(d.absPath())+<span class="stringliteral">&quot;/&quot;</span>+mapName;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <a class="code" href="../../d1/de9/class_dot_runner.html">DotRunner</a> dotRun(inFile);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  dotRun.addJob(<a class="code" href="../../de/daa/dot_8cpp.html#a8e61450eb94b16e866568ad3aed2d9f1">MAP_CMD</a>,absOutFile,srcFile,srcLine);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;  dotRun.preventCleanUp();</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  <span class="keywordflow">if</span> (!dotRun.run())</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  {</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;  }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  <span class="keywordflow">if</span> (imgExt==<span class="stringliteral">&quot;svg&quot;</span>) <span class="comment">// vector graphics</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  {</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> svgName = outDir+<span class="stringliteral">&quot;/&quot;</span>+baseName+<span class="stringliteral">&quot;.svg&quot;</span>;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;    <a class="code" href="../../db/daa/class_dot_file_patcher.html#ae41b4e8b1817e1d1de1732e4c4f9069c">DotFilePatcher::writeSVGFigureLink</a>(t,relPath,baseName,svgName);</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <a class="code" href="../../db/daa/class_dot_file_patcher.html">DotFilePatcher</a> patcher(svgName);</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    patcher.addSVGConversion(<span class="stringliteral">&quot;&quot;</span>,<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>,context,<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>,graphId);</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    patcher.run();</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  }</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;  <span class="keywordflow">else</span> <span class="comment">// bitmap graphics</span></div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;  {</div>
+<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> tt;</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    t &lt;&lt; <span class="stringliteral">&quot;&lt;img src=\&quot;&quot;</span> &lt;&lt; relPath &lt;&lt; imgName &lt;&lt; <span class="stringliteral">&quot;\&quot; alt=\&quot;&quot;</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;      &lt;&lt; imgName &lt;&lt; <span class="stringliteral">&quot;\&quot; border=\&quot;0\&quot; usemap=\&quot;#&quot;</span> &lt;&lt; mapName &lt;&lt; <span class="stringliteral">&quot;\&quot;/&gt;\n&quot;</span>;</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <a class="code" href="../../db/daa/class_dot_file_patcher.html#a28f0ce1e173d0f12f0a4425af69958a5">DotFilePatcher::convertMapFile</a>(tt, absOutFile, relPath ,<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>, context);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;    <span class="keywordflow">if</span> (!tt.<a class="code" href="../../d3/d30/class_text_stream.html#a0859a9bfd6a7b6bafc7050d9f3aef046">empty</a>())</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    {</div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;&lt;map name=\&quot;&quot;</span> &lt;&lt; mapName &lt;&lt; <span class="stringliteral">&quot;\&quot; id=\&quot;&quot;</span> &lt;&lt; mapName &lt;&lt; <span class="stringliteral">&quot;\&quot;&gt;&quot;</span>;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;      t &lt;&lt; tt.<a class="code" href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">str</a>();</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;&lt;/map&gt;\n&quot;</span>;</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    }</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  d.remove(absOutFile.<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>());</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00305">Dir::absPath()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00150">DotRunner::addJob()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00274">DotFilePatcher::addSVGConversion()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00214">DotFilePatcher::convertMapFile()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00232">TextStream::empty()</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00199">Dir::exists()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l07032">getDotImageExtension()</a>, <a class="el" href="../../de/daa/dot_8cpp_source.html#l00033">MAP_CMD</a>, <a class="el" href="../../d2/dd1/dotrunner_8h_source.html#l00067">DotRunner::preventCleanUp()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00589">qPrint()</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00256">Dir::remove()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00292">DotFilePatcher::run()</a>, <a class="el" href="../../d1/dfe/dotrunner_8cpp_source.html#l00172">DotRunner::run()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00208">TextStream::str()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00442">QCString::str()</a>, <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00220">term()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a> , 以及 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00539">DotFilePatcher::writeSVGFigureLink()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/db0/htmldocvisitor_8cpp_source.html#l02255">HtmlDocVisitor::writeDotFile()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a60d30e2e6c2496b226540c48f7a6fca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60d30e2e6c2496b226540c48f7a6fca7">&#9670;&nbsp;</a></span>g_dotFontPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> g_dotFontPath</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/daa/dot_8cpp_source.html">dot.cpp</a> 第 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00037">37</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00039">setDotFontPath()</a> , 以及 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00060">unsetDotFontPath()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="autil_8cpp_html_ab1cc08326518f249ccae693a16f6a10d"><div class="ttname"><a href="../../df/d2d/util_8cpp.html#ab1cc08326518f249ccae693a16f6a10d">getDotImageExtension</a></div><div class="ttdeci">QCString getDotImageExtension()</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d2d/util_8cpp_source.html#l07032">util.cpp:7032</a></div></div>
+<div class="ttc" id="adot_8cpp_html_a60d30e2e6c2496b226540c48f7a6fca7"><div class="ttname"><a href="../../de/daa/dot_8cpp.html#a60d30e2e6c2496b226540c48f7a6fca7">g_dotFontPath</a></div><div class="ttdeci">static QCString g_dotFontPath</div><div class="ttdef"><b>Definition:</b> <a href="../../de/daa/dot_8cpp_source.html#l00037">dot.cpp:37</a></div></div>
+<div class="ttc" id="aclass_dir_html"><div class="ttname"><a href="../../d2/dc2/class_dir.html">Dir</a></div><div class="ttdoc">Class representing a directory in the file system</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/dir_8h_source.html#l00068">dir.h:68</a></div></div>
+<div class="ttc" id="aclass_dot_runner_html"><div class="ttname"><a href="../../d1/de9/class_dot_runner.html">DotRunner</a></div><div class="ttdoc">Helper class to run dot from doxygen from multiple threads.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dd1/dotrunner_8h_source.html#l00030">dotrunner.h:30</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a621c4090d69ad7d05ef8e5234376c3d8"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">QCString::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Returns TRUE iff the string is empty</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00144">qcstring.h:144</a></div></div>
+<div class="ttc" id="aclass_doxygen_html_a91aa9805ef52783816d9da5e457b8cfb"><div class="ttname"><a href="../../de/d6a/class_doxygen.html#a91aa9805ef52783816d9da5e457b8cfb">Doxygen::indexList</a></div><div class="ttdeci">static IndexList * indexList</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da1/doxygen_8h_source.html#l00114">doxygen.h:114</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a9824b07232eea418ab3b3e7dc3178eec"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">QCString::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00442">qcstring.h:442</a></div></div>
+<div class="ttc" id="aclass_text_stream_html"><div class="ttname"><a href="../../d3/d30/class_text_stream.html">TextStream</a></div><div class="ttdoc">Text streaming class that buffers data.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00033">textstream.h:33</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a0859a9bfd6a7b6bafc7050d9f3aef046"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a0859a9bfd6a7b6bafc7050d9f3aef046">TextStream::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Returns true iff the buffer is empty</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00232">textstream.h:232</a></div></div>
+<div class="ttc" id="anamespace_portable_html_ae1a7516287ca7c75eebc3fa7aa12e970"><div class="ttname"><a href="../../d7/d6f/namespace_portable.html#ae1a7516287ca7c75eebc3fa7aa12e970">Portable::getenv</a></div><div class="ttdeci">QCString getenv(const QCString &amp;variable)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d1c/portable_8cpp_source.html#l00279">portable.cpp:279</a></div></div>
+<div class="ttc" id="aclass_dot_file_patcher_html"><div class="ttname"><a href="../../db/daa/class_dot_file_patcher.html">DotFilePatcher</a></div><div class="ttdoc">Helper class to insert a set of map file into an output file</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d38/dotfilepatcher_8h_source.html#l00026">dotfilepatcher.h:26</a></div></div>
+<div class="ttc" id="anamespace_portable_html_ac2e29048cffc72c3bed439cff5b02cd4"><div class="ttname"><a href="../../d7/d6f/namespace_portable.html#ac2e29048cffc72c3bed439cff5b02cd4">Portable::unsetenv</a></div><div class="ttdeci">void unsetenv(const QCString &amp;variable)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d1c/portable_8cpp_source.html#l00260">portable.cpp:260</a></div></div>
+<div class="ttc" id="aclass_index_list_html_aac3c1b70be363f488269cd9054cc7621"><div class="ttname"><a href="../../d9/d57/class_index_list.html#aac3c1b70be363f488269cd9054cc7621">IndexList::addImageFile</a></div><div class="ttdeci">void addImageFile(const QCString &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/db5/index_8h_source.html#l00105">index.h:105</a></div></div>
+<div class="ttc" id="aconfig_8h_html_a251399cde30dd4c356bbd5634c6eb472"><div class="ttname"><a href="../../db/d16/config_8h.html#a251399cde30dd4c356bbd5634c6eb472">Config_getEnumAsString</a></div><div class="ttdeci">#define Config_getEnumAsString(name)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/config_8h_source.html#l00036">config.h:36</a></div></div>
+<div class="ttc" id="aclass_dot_file_patcher_html_ae41b4e8b1817e1d1de1732e4c4f9069c"><div class="ttname"><a href="../../db/daa/class_dot_file_patcher.html#ae41b4e8b1817e1d1de1732e4c4f9069c">DotFilePatcher::writeSVGFigureLink</a></div><div class="ttdeci">static bool writeSVGFigureLink(TextStream &amp;out, const QCString &amp;relPath, const QCString &amp;baseName, const QCString &amp;absImgName)</div><div class="ttdoc">Check if a reference to a SVG figure can be written and do so if possible.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00539">dotfilepatcher.cpp:539</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00036">qcstring.h:36</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_aca8457da22d874f4eb30b35ffe87ebd0"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">TextStream::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdoc">Return the contents of the buffer as a std::string object</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00208">textstream.h:208</a></div></div>
+<div class="ttc" id="adot_8cpp_html_a8e61450eb94b16e866568ad3aed2d9f1"><div class="ttname"><a href="../../de/daa/dot_8cpp.html#a8e61450eb94b16e866568ad3aed2d9f1">MAP_CMD</a></div><div class="ttdeci">#define MAP_CMD</div><div class="ttdef"><b>Definition:</b> <a href="../../de/daa/dot_8cpp_source.html#l00033">dot.cpp:33</a></div></div>
+<div class="ttc" id="anamespace_portable_html_a33ec52ac55c4d58e0748239920ee3e14"><div class="ttname"><a href="../../d7/d6f/namespace_portable.html#a33ec52ac55c4d58e0748239920ee3e14">Portable::pathListSeparator</a></div><div class="ttdeci">QCString pathListSeparator()</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d1c/portable_8cpp_source.html#l00356">portable.cpp:356</a></div></div>
+<div class="ttc" id="adotgraph_8h_html_ac60ef98d62b78366a17c9f1bda96523fa4cab0638aeb754692801b1e07fa3db74"><div class="ttname"><a href="../../d0/daa/dotgraph_8h.html#ac60ef98d62b78366a17c9f1bda96523fa4cab0638aeb754692801b1e07fa3db74">GOF_BITMAP</a></div><div class="ttdeci">@ GOF_BITMAP</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/daa/dotgraph_8h_source.html#l00027">dotgraph.h:27</a></div></div>
+<div class="ttc" id="aconfig_8h_html_a5373d0332a31f16ad7a42037733e8c79"><div class="ttname"><a href="../../db/d16/config_8h.html#a5373d0332a31f16ad7a42037733e8c79">Config_getBool</a></div><div class="ttdeci">#define Config_getBool(name)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/config_8h_source.html#l00033">config.h:33</a></div></div>
+<div class="ttc" id="amessage_8cpp_html_ad8f29ff28015ffeb164a592dd68f89c7"><div class="ttname"><a href="../../d8/d6a/message_8cpp.html#ad8f29ff28015ffeb164a592dd68f89c7">term</a></div><div class="ttdeci">void term(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d6a/message_8cpp_source.html#l00220">message.cpp:220</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a890ee170378f24ba7c44f92c35ec95ce"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a></div><div class="ttdeci">const char * qPrint(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00589">qcstring.h:589</a></div></div>
+<div class="ttc" id="aconfig_8h_html_a737741e6991bdb5694a50075437a9d89"><div class="ttname"><a href="../../db/d16/config_8h.html#a737741e6991bdb5694a50075437a9d89">Config_getString</a></div><div class="ttdeci">#define Config_getString(name)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/config_8h_source.html#l00032">config.h:32</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aca68c0d4ac8df0838e209fb5300f7be3"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aca68c0d4ac8df0838e209fb5300f7be3">ASSERT</a></div><div class="ttdeci">#define ASSERT(x)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00044">qcstring.h:44</a></div></div>
+<div class="ttc" id="anamespace_portable_html_abd244447df22d110ad410b69c357fdf3"><div class="ttname"><a href="../../d7/d6f/namespace_portable.html#abd244447df22d110ad410b69c357fdf3">Portable::setenv</a></div><div class="ttdeci">void setenv(const QCString &amp;variable, const QCString &amp;value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d1c/portable_8cpp_source.html#l00246">portable.cpp:246</a></div></div>
+<div class="ttc" id="aclass_dot_file_patcher_html_a28f0ce1e173d0f12f0a4425af69958a5"><div class="ttname"><a href="../../db/daa/class_dot_file_patcher.html#a28f0ce1e173d0f12f0a4425af69958a5">DotFilePatcher::convertMapFile</a></div><div class="ttdeci">static bool convertMapFile(TextStream &amp;t, const QCString &amp;mapName, const QCString &amp;relPath, bool urlOnly=FALSE, const QCString &amp;context=QCString())</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00214">dotfilepatcher.cpp:214</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_abb958f7fcfea738e38de8979c8342dce"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#abb958f7fcfea738e38de8979c8342dce">QCString::prepend</a></div><div class="ttdeci">QCString &amp; prepend(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00339">qcstring.h:339</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../de/daa/dot_8cpp.html">dot.cpp</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:56 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

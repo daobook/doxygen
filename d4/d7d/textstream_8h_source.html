@@ -1,0 +1,365 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/textstream.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d4/d7d/textstream_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">textstream.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d4/d7d/textstream_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright (C) 1997-2021 by Dimitri van Heesch.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Permission to use, copy, modify, and distribute this software and its</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * documentation under the terms of the GNU General Public License is hereby</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * granted. No representations are made about the suitability of this software</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * for any purpose. It is provided &quot;as is&quot; without express or implied warranty.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * See the GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Documents produced by Doxygen are derivative works derived from the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * input used in their production; they are not affected by this license.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef TEXTSTREAM_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define TEXTSTREAM_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d5c/qcstring_8h.html">qcstring.h</a>&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">/** @brief Text streaming class that buffers data.</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment"> *  Simpler version of std::ostringstream that has much better</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"> *  performance.</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html">   33</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> final</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../d3/d30/class_text_stream.html#aed326642b4edbab68d47dbd9c2f7901f">INITIAL_CAPACITY</a> = 4096;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">    /** Creates an empty stream object.</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html#a19208bde949dfeaef287d8cb4f247fea">TextStream</a>()</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.reserve(<a class="code" href="../../d3/d30/class_text_stream.html#aed326642b4edbab68d47dbd9c2f7901f">INITIAL_CAPACITY</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }<span class="comment"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    /** Create a text stream object for writing to a std::ostream.</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">     *  @note data is buffered until flush() is called or the object is destroyed.</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html#a19208bde949dfeaef287d8cb4f247fea">TextStream</a>(std::ostream *s) : <a class="code" href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">m_s</a>(s)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#aed326642b4edbab68d47dbd9c2f7901f">   48</a></span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.reserve(<a class="code" href="../../d3/d30/class_text_stream.html#aed326642b4edbab68d47dbd9c2f7901f">INITIAL_CAPACITY</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }<span class="comment"></span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    /** Create a text stream, initializing the buffer with string \a s</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a19208bde949dfeaef287d8cb4f247fea">   52</a></span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html#a19208bde949dfeaef287d8cb4f247fea">TextStream</a>(<span class="keyword">const</span> std::string &amp;s) : <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>(s)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.reserve(s.length()+<a class="code" href="../../d3/d30/class_text_stream.html#aed326642b4edbab68d47dbd9c2f7901f">INITIAL_CAPACITY</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">    /** Writes any data that is buffered to the attached std::ostream */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;   <a class="code" href="../../d3/d30/class_text_stream.html#aca4cd037475e8c6f85c2665fe16b7dfb">~TextStream</a>() { <a class="code" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">flush</a>(); }</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#aa22b5c028814c2e880c258caff567184">   59</a></span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html#a19208bde949dfeaef287d8cb4f247fea">TextStream</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#aa8aa59cb89317b809b04d292dc23b5cb">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="comment">    /** Sets or changes the std::ostream to write to.</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">     *  @note Any data already buffered will be flushed.</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a6c4167493d760a72984d1de542d12a9a">   65</a></span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d30/class_text_stream.html#a18a4ee87242fc2b8e31941a71e622fd2">setStream</a>(std::ostream *s)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">flush</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">m_s</a> = s;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">m_f</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#aca4cd037475e8c6f85c2665fe16b7dfb">   71</a></span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d30/class_text_stream.html#af285dfbd0040f7be9f3704738db024de">setFile</a>(FILE *f)</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">flush</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">m_s</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">m_f</a> = f;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a18a4ee87242fc2b8e31941a71e622fd2">   79</a></span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">    /** Returns the attached std::ostream object.</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">     *  @see setStream()</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    std::ostream *<a class="code" href="../../d3/d30/class_text_stream.html#a3348ed8ad4dd537dc658b8703ce53c3c">stream</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">m_s</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#af285dfbd0040f7be9f3704738db024de">   86</a></span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    FILE *<a class="code" href="../../d3/d30/class_text_stream.html#a052c794726fd6e1e87eb03601d0d5faf">file</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">m_f</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">    /** Adds a character to the stream */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a>( <span class="keywordtype">char</span> c)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    {</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a3348ed8ad4dd537dc658b8703ce53c3c">   96</a></span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>+=c;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">    /** Adds a C-style string to the stream */</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a052c794726fd6e1e87eb03601d0d5faf">  101</a></span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a>( <span class="keyword">const</span> <span class="keywordtype">char</span> *s)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keywordflow">if</span> (s) <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>+=s;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">  107</a></span>&#160;<span class="comment">    /** Adds a QCString to the stream */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a>( <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;s )</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>+=s.<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#adfe320a6bd8d0bde196b5ec63ec40e11">  114</a></span>&#160;<span class="comment">    /** Adds a std::string to the stream */</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a>( <span class="keyword">const</span> std::string &amp;s )</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>+=s;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#ad9aa7220bb544c20008067967dfb783f">  121</a></span>&#160;<span class="comment">    /** Adds a signed short integer to the stream */</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a>( <span class="keywordtype">signed</span> <span class="keywordtype">short</span> i)</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">output_int32</a>(i,i&lt;0);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a2860865e855cfedd7f94845e1092dee3">  128</a></span>&#160;<span class="comment">    /** Adds a unsigned short integer to the stream */</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> i)</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">output_int32</a>(i,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#ae7b84364cec6b3b891f4fce76223bef8">  135</a></span>&#160;<span class="comment">    /** Adds a signed integer to the stream */</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a>( <span class="keywordtype">signed</span> <span class="keywordtype">int</span> i)</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">output_int32</a>(i,i&lt;0);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    }</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#acd45ae874106de3a3efba1b9f4d6d648">  142</a></span>&#160;<span class="comment">    /** Adds a unsigned integer to the stream */</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a>( <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">output_int32</a>(i,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a0eba01572bebb32d57baa91622511e49">  149</a></span>&#160;<span class="comment">    /** Adds a float to the stream */</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a>( <span class="keywordtype">float</span> f)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a2626411e76cafb7b0cc97ad259f37615">output_double</a>((<span class="keywordtype">double</span>)f);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#ababfeaaea24fa084824fb72f486a23f0">  156</a></span>&#160;<span class="comment">    /** Adds a double to the stream */</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;<a class="code" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a>( <span class="keywordtype">double</span> d)</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a2626411e76cafb7b0cc97ad259f37615">output_double</a>(d);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#aa8affbd1b06c663030f9dacb0342a365">  163</a></span>&#160;<span class="comment">    /** Adds a array of character to the stream</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="comment">     *  @param buf the character buffer</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="comment">     *  @param len the number of characters in the buffer to write</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d30/class_text_stream.html#aaa78941b7f04d95ca3be7d11073828f0">write</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *buf,<span class="keywordtype">size_t</span> len)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.append(buf,len);</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a823a2bcc7931ab398b96ae2d8e4d67fc">  170</a></span>&#160;    }</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="comment">    /** Flushes the buffer. If a std::ostream is attached, the buffer&#39;s</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="comment">     *  contents will be written to the stream.</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">flush</a>()</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">m_s</a>)</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      {</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <a class="code" href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">m_s</a>-&gt;write(<a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.c_str(),<a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.length());</div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#aaa78941b7f04d95ca3be7d11073828f0">  180</a></span>&#160;      }</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">m_f</a>)</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        fwrite(<a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.c_str(),1,<a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.length(),<a class="code" href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">m_f</a>);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.clear();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">  188</a></span>&#160;<span class="comment">    /** Clears any buffered data */</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d30/class_text_stream.html#afc87f49c9d496ce6409dd4e49226e11d">clear</a>()</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.clear();</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">    /** Return the contents of the buffer as a std::string object */</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    std::string <a class="code" href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">str</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">    /** Sets the buffer&#39;s contents to string \a s.</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">     *  Any data already in the buffer will be flushed.</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#afc87f49c9d496ce6409dd4e49226e11d">  202</a></span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">str</a>(<span class="keyword">const</span> std::string &amp;s)</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">flush</a>();</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>=s;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    }</div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">  208</a></span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">    /** Sets the buffer&#39;s contents to string \a s</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">     *  Any data already in the buffer will be flushed.</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">str</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *s)</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    {</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">flush</a>();</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;      <span class="keywordflow">if</span> (s) <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>=s;</div>
+<div class="line"><a name="l00216"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a6c42948b189c9d16fe5eb9ae12112e74">  216</a></span>&#160;    }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">    /** Returns true iff the buffer is empty */</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d3/d30/class_text_stream.html#a0859a9bfd6a7b6bafc7050d9f3aef046">empty</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.empty();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keyword">private</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00225"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#ad31970b450c75ccca13f56940853010e">  225</a></span>&#160;<span class="comment">    /** Writes a string representation of an integer to the buffer</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">     *  @param n the absolute value of the integer</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">     *  @param neg indicates if the integer is negative</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">output_int32</a>( uint32_t n, <span class="keywordtype">bool</span> neg )</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;      <span class="keywordtype">char</span> buf[20];</div>
+<div class="line"><a name="l00232"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a0859a9bfd6a7b6bafc7050d9f3aef046">  232</a></span>&#160;      <span class="keywordtype">char</span> *p = &amp;buf[19];</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;      *p = <span class="charliteral">&#39;\0&#39;</span>;</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;      <span class="keywordflow">if</span> ( neg )</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      {</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        n = (uint32_t)(-(int32_t)n);</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;      }</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;      <span class="keywordflow">do</span> { *--p = ((char)(n%10)) + <span class="charliteral">&#39;0&#39;</span>; n /= 10; } <span class="keywordflow">while</span> ( n );</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;      <span class="keywordflow">if</span> ( neg ) *--p = <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>+=p;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    }</div>
+<div class="line"><a name="l00242"></a><span class="lineno"><a class="line" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">  242</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d3/d30/class_text_stream.html#a2626411e76cafb7b0cc97ad259f37615">output_double</a>( <span class="keywordtype">double</span> d)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <span class="keywordtype">char</span> buf[64];</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      snprintf(buf,64,<span class="stringliteral">&quot;%f&quot;</span>,d);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>+=buf;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    std::string <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    std::ostream *<a class="code" href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">m_s</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    FILE *<a class="code" href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">m_f</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;};</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_text_stream_html_a42463de0e3fa4777714f8e8fc4f9355c"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">TextStream::output_int32</a></div><div class="ttdeci">void output_int32(uint32_t n, bool neg)</div><div class="ttdoc">Writes a string representation of an integer to the buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00242">textstream.h:242</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a88c5744dd7d51305aa75034481a9baab"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">TextStream::m_f</a></div><div class="ttdeci">FILE * m_f</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00263">textstream.h:263</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a18a4ee87242fc2b8e31941a71e622fd2"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a18a4ee87242fc2b8e31941a71e622fd2">TextStream::setStream</a></div><div class="ttdeci">void setStream(std::ostream *s)</div><div class="ttdoc">Sets or changes the std::ostream to write to.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00079">textstream.h:79</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_afc87f49c9d496ce6409dd4e49226e11d"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#afc87f49c9d496ce6409dd4e49226e11d">TextStream::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clears any buffered data</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00202">textstream.h:202</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a588661b14e0e238906c63ee414a232ab"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">TextStream::m_buffer</a></div><div class="ttdeci">std::string m_buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00261">textstream.h:261</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_af285dfbd0040f7be9f3704738db024de"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#af285dfbd0040f7be9f3704738db024de">TextStream::setFile</a></div><div class="ttdeci">void setFile(FILE *f)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00086">textstream.h:86</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a3348ed8ad4dd537dc658b8703ce53c3c"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a3348ed8ad4dd537dc658b8703ce53c3c">TextStream::stream</a></div><div class="ttdeci">std::ostream * stream() const</div><div class="ttdoc">Returns the attached std::ostream object.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00096">textstream.h:96</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a9824b07232eea418ab3b3e7dc3178eec"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">QCString::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00442">qcstring.h:442</a></div></div>
+<div class="ttc" id="aclass_text_stream_html"><div class="ttname"><a href="../../d3/d30/class_text_stream.html">TextStream</a></div><div class="ttdoc">Text streaming class that buffers data.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00033">textstream.h:33</a></div></div>
+<div class="ttc" id="aqcstring_8h_html"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html">qcstring.h</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a0859a9bfd6a7b6bafc7050d9f3aef046"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a0859a9bfd6a7b6bafc7050d9f3aef046">TextStream::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Returns true iff the buffer is empty</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00232">textstream.h:232</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a907937b613a56aa4124608b3a092b820"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">TextStream::flush</a></div><div class="ttdeci">void flush()</div><div class="ttdoc">Flushes the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00188">textstream.h:188</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a19208bde949dfeaef287d8cb4f247fea"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a19208bde949dfeaef287d8cb4f247fea">TextStream::TextStream</a></div><div class="ttdeci">TextStream()</div><div class="ttdoc">Creates an empty stream object.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00052">textstream.h:52</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a052c794726fd6e1e87eb03601d0d5faf"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a052c794726fd6e1e87eb03601d0d5faf">TextStream::file</a></div><div class="ttdeci">FILE * file() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00101">textstream.h:101</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_aed326642b4edbab68d47dbd9c2f7901f"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aed326642b4edbab68d47dbd9c2f7901f">TextStream::INITIAL_CAPACITY</a></div><div class="ttdeci">static const int INITIAL_CAPACITY</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00048">textstream.h:48</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_aa2cc389f03492be4163601478f0d9118"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">TextStream::m_s</a></div><div class="ttdeci">std::ostream * m_s</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00262">textstream.h:262</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_aa8aa59cb89317b809b04d292dc23b5cb"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aa8aa59cb89317b809b04d292dc23b5cb">TextStream::operator=</a></div><div class="ttdeci">TextStream &amp; operator=(const TextStream &amp;)=delete</div></div>
+<div class="ttc" id="aclass_text_stream_html_aca8457da22d874f4eb30b35ffe87ebd0"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">TextStream::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdoc">Return the contents of the buffer as a std::string object</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00208">textstream.h:208</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_aca4cd037475e8c6f85c2665fe16b7dfb"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aca4cd037475e8c6f85c2665fe16b7dfb">TextStream::~TextStream</a></div><div class="ttdeci">~TextStream()</div><div class="ttdoc">Writes any data that is buffered to the attached std::ostream</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00071">textstream.h:71</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a2626411e76cafb7b0cc97ad259f37615"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a2626411e76cafb7b0cc97ad259f37615">TextStream::output_double</a></div><div class="ttdeci">void output_double(double d)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00255">textstream.h:255</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_ad026cb50031d31e1ad1548dc8624c5bc"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">TextStream::operator&lt;&lt;</a></div><div class="ttdeci">TextStream &amp; operator&lt;&lt;(char c)</div><div class="ttdoc">Adds a character to the stream</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00107">textstream.h:107</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_aaa78941b7f04d95ca3be7d11073828f0"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aaa78941b7f04d95ca3be7d11073828f0">TextStream::write</a></div><div class="ttdeci">void write(const char *buf, size_t len)</div><div class="ttdoc">Adds a array of character to the stream</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00180">textstream.h:180</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d4/d7d/textstream_8h.html">textstream.h</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:54 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

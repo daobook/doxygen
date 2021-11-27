@@ -1,0 +1,43 @@
+digraph "DefinitionMixin&lt; Base &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DefinitionMixin\< Base \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Base",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< PageDef \>" ,fontname="Helvetica"];
+  Node3 [label="DefinitionMixin\< PageDef \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d10/class_definition_mixin.html",tooltip=" "];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="PageDefImpl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/de8/class_page_def_impl.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< ConceptDefMutable \>" ,fontname="Helvetica"];
+  Node5 [label="DefinitionMixin\< Concept\lDefMutable \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d10/class_definition_mixin.html",tooltip=" "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="ConceptDefImpl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d72/class_concept_def_impl.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< GroupDef \>" ,fontname="Helvetica"];
+  Node7 [label="DefinitionMixin\< GroupDef \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d10/class_definition_mixin.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="GroupDefImpl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d22/class_group_def_impl.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< MemberDefMutable \>" ,fontname="Helvetica"];
+  Node9 [label="DefinitionMixin\< MemberDef\lMutable \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d10/class_definition_mixin.html",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="MemberDefImpl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/d7e/class_member_def_impl.html",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< ClassDefMutable \>" ,fontname="Helvetica"];
+  Node11 [label="DefinitionMixin\< ClassDef\lMutable \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d10/class_definition_mixin.html",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ClassDefImpl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d25/class_class_def_impl.html",tooltip="Implementation of the ClassDef interface"];
+  Node1 -> Node13 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< FileDef \>" ,fontname="Helvetica"];
+  Node13 [label="DefinitionMixin\< FileDef \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d10/class_definition_mixin.html",tooltip=" "];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="FileDefImpl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/d14/class_file_def_impl.html",tooltip=" "];
+  Node1 -> Node15 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< NamespaceDefMutable \>" ,fontname="Helvetica"];
+  Node15 [label="DefinitionMixin\< Namespace\lDefMutable \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d10/class_definition_mixin.html",tooltip=" "];
+  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="NamespaceDefImpl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dfa/class_namespace_def_impl.html",tooltip=" "];
+  Node1 -> Node17 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< DirDef \>" ,fontname="Helvetica"];
+  Node17 [label="DefinitionMixin\< DirDef \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d10/class_definition_mixin.html",tooltip=" "];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="DirDefImpl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/db7/class_dir_def_impl.html",tooltip=" "];
+}

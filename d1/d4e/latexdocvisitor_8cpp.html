@@ -1,0 +1,737 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/latexdocvisitor.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d1/d4e/latexdocvisitor_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">latexdocvisitor.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/d73/htmlattrib_8h_source.html">htmlattrib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d99/latexdocvisitor_8h_source.html">latexdocvisitor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d9c/latexgen_8h_source.html">latexgen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d9c/docparser_8h_source.html">docparser.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/dce/language_8h_source.html">language.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/da1/doxygen_8h_source.html">doxygen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d06/outputgen_8h_source.html">outputgen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d4a/dot_8h_source.html">dot.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d3c/util_8h_source.html">util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d0d/message_8h_source.html">message.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/d66/msc_8h_source.html">msc.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../da/d49/dia_8h_source.html">dia.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d69/cite_8h_source.html">cite.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d3a/filedef_8h_source.html">filedef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d16/config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/dc6/htmlentity_8h_source.html">htmlentity.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/dd3/emoji_8h_source.html">emoji.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/dde/plantuml_8h_source.html">plantuml.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d45/fileinfo_8h_source.html">fileinfo.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> latexdocvisitor.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+</div>
+</div>
+<p><a href="../../d1/d4e/latexdocvisitor_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:abd714c2c54091ab7b7b900bff10cd6ff"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#abd714c2c54091ab7b7b900bff10cd6ff">getSectionName</a> (int level)</td></tr>
+<tr class="separator:abd714c2c54091ab7b7b900bff10cd6ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f123603afcea6abded6e73da61055c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#ab7f123603afcea6abded6e73da61055c">visitPreStart</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t, bool hasCaption, <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> name, <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> width, <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> height, bool inlineImage=<a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>)</td></tr>
+<tr class="separator:ab7f123603afcea6abded6e73da61055c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4fe687f1edd1806dd591c0f165062cd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#af4fe687f1edd1806dd591c0f165062cd">visitPostEnd</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t, bool hasCaption, bool inlineImage=<a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>)</td></tr>
+<tr class="separator:af4fe687f1edd1806dd591c0f165062cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09711cd3d7c9b6cc031da204e1993286"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#a09711cd3d7c9b6cc031da204e1993286">visitCaption</a> (<a class="el" href="../../d3/df4/class_latex_doc_visitor.html">LatexDocVisitor</a> *parent, const <a class="el" href="../../de/d9c/docparser_8h.html#a4b0e563dcc4920bb7d0f33d8093f9e97">DocNodeList</a> &amp;children)</td></tr>
+<tr class="separator:a09711cd3d7c9b6cc031da204e1993286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a703255a8e464a4a8d67891e218d49e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#a2a703255a8e464a4a8d67891e218d49e">classEqualsReflist</a> (const <a class="el" href="../../d9/d0e/class_doc_node.html">DocNode</a> *n)</td></tr>
+<tr class="separator:a2a703255a8e464a4a8d67891e218d49e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8632a119990d083ff6a03b3617f3274"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#ae8632a119990d083ff6a03b3617f3274">listIsNested</a> (const <a class="el" href="../../d9/d0e/class_doc_node.html">DocNode</a> *n)</td></tr>
+<tr class="separator:ae8632a119990d083ff6a03b3617f3274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa310ec3fe464eeab134ed3b72abc5908"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#aa310ec3fe464eeab134ed3b72abc5908">tableIsNested</a> (const <a class="el" href="../../d9/d0e/class_doc_node.html">DocNode</a> *n)</td></tr>
+<tr class="separator:aa310ec3fe464eeab134ed3b72abc5908"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bbbad315cb363213d4cacb62a573aba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#a5bbbad315cb363213d4cacb62a573aba">writeStartTableCommand</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t, const <a class="el" href="../../d9/d0e/class_doc_node.html">DocNode</a> *n, int cols)</td></tr>
+<tr class="separator:a5bbbad315cb363213d4cacb62a573aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2f7332cce100ca29325781d2a0c8018"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#ac2f7332cce100ca29325781d2a0c8018">writeEndTableCommand</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t, const <a class="el" href="../../d9/d0e/class_doc_node.html">DocNode</a> *n)</td></tr>
+<tr class="separator:ac2f7332cce100ca29325781d2a0c8018"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:af1c06db51ef168324d954a4051bb1f83"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#af1c06db51ef168324d954a4051bb1f83">maxLevels</a> =5</td></tr>
+<tr class="separator:af1c06db51ef168324d954a4051bb1f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26981dc5985af76550ab2c2443b47bbc"><td class="memItemLeft" align="right" valign="top">static const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#a26981dc5985af76550ab2c2443b47bbc">secLabels</a> [<a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#af1c06db51ef168324d954a4051bb1f83">maxLevels</a>]</td></tr>
+<tr class="separator:a26981dc5985af76550ab2c2443b47bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a2a703255a8e464a4a8d67891e218d49e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a703255a8e464a4a8d67891e218d49e">&#9670;&nbsp;</a></span>classEqualsReflist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool classEqualsReflist </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d0e/class_doc_node.html">DocNode</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01055">1055</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;{</div>
+<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;  <span class="keywordflow">if</span> (n-&gt;<a class="code" href="../../d9/d0e/class_doc_node.html#a108ffd214a72ba6e93dac084a8f58049">kind</a>()==<a class="code" href="../../d9/d0e/class_doc_node.html#aebd16e89ca590d84cbd40543ea5faadbad53b68c158dba60a523d4fd261741c1a">DocNode::Kind_HtmlDescList</a>)</div>
+<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;  {</div>
+<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;    <a class="code" href="../../db/d4d/class_html_attrib_list.html">HtmlAttribList</a> attrs = ((<a class="code" href="../../df/d6f/class_doc_html_desc_list.html">DocHtmlDescList</a> *)n)-&gt;attribs();</div>
+<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;    <span class="keyword">auto</span> it = std::find_if(attrs.begin(),attrs.end(),</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;                        [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;att) { return att.name==<span class="stringliteral">&quot;class&quot;</span>; });</div>
+<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;    <span class="keywordflow">if</span> (it!=attrs.end() &amp;&amp; it-&gt;value == <span class="stringliteral">&quot;reflist&quot;</span>) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;  }</div>
+<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d9/d0e/class_doc_node.html#a108ffd214a72ba6e93dac084a8f58049">DocNode::kind()</a> , 以及 <a class="el" href="../../de/d9c/docparser_8h_source.html#l00118">DocNode::Kind_HtmlDescList</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01068">listIsNested()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01101">LatexDocVisitor::visitPost()</a> , 以及 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01087">LatexDocVisitor::visitPre()</a>.</p>
+
+</div>
+</div>
+<a id="abd714c2c54091ab7b7b900bff10cd6ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd714c2c54091ab7b7b900bff10cd6ff">&#9670;&nbsp;</a></span>getSectionName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const char* getSectionName </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00046">46</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">bool</span> compactLatex = <a class="code" href="../../db/d16/config_8h.html#a5373d0332a31f16ad7a42037733e8c79">Config_getBool</a>(COMPACT_LATEX);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keywordtype">int</span> l = level;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keywordflow">if</span> (compactLatex) l++;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="../../de/d6a/class_doxygen.html#a419b27a523ea0261e58103f998c68a12">Doxygen::insideMainPage</a>) l--;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d1/d4e/latexdocvisitor_8cpp.html#a26981dc5985af76550ab2c2443b47bbc">secLabels</a>[std::min(<a class="code" href="../../d1/d4e/latexdocvisitor_8cpp.html#af1c06db51ef168324d954a4051bb1f83">maxLevels</a>-1,l)];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d16/config_8h_source.html#l00033">Config_getBool</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00084">Doxygen::insideMainPage</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00042">maxLevels</a> , 以及 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00043">secLabels</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00930">LatexDocVisitor::visitPre()</a>.</p>
+
+</div>
+</div>
+<a id="ae8632a119990d083ff6a03b3617f3274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8632a119990d083ff6a03b3617f3274">&#9670;&nbsp;</a></span>listIsNested()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool listIsNested </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d0e/class_doc_node.html">DocNode</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01068">1068</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;{</div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;  <span class="keywordtype">bool</span> isNested=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;  <span class="keywordflow">if</span> (n)</div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;  {</div>
+<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d1/d4e/latexdocvisitor_8cpp.html#a2a703255a8e464a4a8d67891e218d49e">classEqualsReflist</a>(n)) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160;    n  = n-&gt;<a class="code" href="../../d9/d0e/class_doc_node.html#a73e8ad29a91cfceb0968eb00db71a23d">parent</a>();</div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;  }</div>
+<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;  <span class="keywordflow">while</span> (n &amp;&amp; !isNested)</div>
+<div class="line"><a name="l01077"></a><span class="lineno"> 1077</span>&#160;  {</div>
+<div class="line"><a name="l01078"></a><span class="lineno"> 1078</span>&#160;    <span class="keywordflow">if</span> (n-&gt;<a class="code" href="../../d9/d0e/class_doc_node.html#a108ffd214a72ba6e93dac084a8f58049">kind</a>()==<a class="code" href="../../d9/d0e/class_doc_node.html#aebd16e89ca590d84cbd40543ea5faadbad53b68c158dba60a523d4fd261741c1a">DocNode::Kind_HtmlDescList</a>)</div>
+<div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;    {</div>
+<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;      isNested = !<a class="code" href="../../d1/d4e/latexdocvisitor_8cpp.html#a2a703255a8e464a4a8d67891e218d49e">classEqualsReflist</a>(n);</div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;    }</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;    n  = n-&gt;<a class="code" href="../../d9/d0e/class_doc_node.html#a73e8ad29a91cfceb0968eb00db71a23d">parent</a>();</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;  }</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;  <span class="keywordflow">return</span> isNested;</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01055">classEqualsReflist()</a>, <a class="el" href="../../d9/d0e/class_doc_node.html#a108ffd214a72ba6e93dac084a8f58049">DocNode::kind()</a>, <a class="el" href="../../de/d9c/docparser_8h_source.html#l00118">DocNode::Kind_HtmlDescList</a> , 以及 <a class="el" href="../../de/d9c/docparser_8h_source.html#l00166">DocNode::parent()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01087">LatexDocVisitor::visitPre()</a>.</p>
+
+</div>
+</div>
+<a id="aa310ec3fe464eeab134ed3b72abc5908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa310ec3fe464eeab134ed3b72abc5908">&#9670;&nbsp;</a></span>tableIsNested()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool tableIsNested </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d0e/class_doc_node.html">DocNode</a> *&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01138">1138</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;{</div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;  <span class="keywordtype">bool</span> isNested=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;  <span class="keywordflow">while</span> (n &amp;&amp; !isNested)</div>
+<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;  {</div>
+<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;    isNested = n-&gt;<a class="code" href="../../d9/d0e/class_doc_node.html#a108ffd214a72ba6e93dac084a8f58049">kind</a>()==<a class="code" href="../../d9/d0e/class_doc_node.html#aebd16e89ca590d84cbd40543ea5faadbaaa0953fe727d5208d808d6200db9d8c4">DocNode::Kind_HtmlTable</a> || n-&gt;<a class="code" href="../../d9/d0e/class_doc_node.html#a108ffd214a72ba6e93dac084a8f58049">kind</a>()==<a class="code" href="../../d9/d0e/class_doc_node.html#aebd16e89ca590d84cbd40543ea5faadba98f09f518a149bbd2ca945d8be62b2eb">DocNode::Kind_ParamSect</a>;</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    n  = n-&gt;<a class="code" href="../../d9/d0e/class_doc_node.html#a73e8ad29a91cfceb0968eb00db71a23d">parent</a>();</div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;  }</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;  <span class="keywordflow">return</span> isNested;</div>
+<div class="line"><a name="l01147"></a><span class="lineno"> 1147</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00033">FALSE</a>, <a class="el" href="../../d9/d0e/class_doc_node.html#a108ffd214a72ba6e93dac084a8f58049">DocNode::kind()</a>, <a class="el" href="../../de/d9c/docparser_8h_source.html#l00121">DocNode::Kind_HtmlTable</a>, <a class="el" href="../../de/d9c/docparser_8h_source.html#l00143">DocNode::Kind_ParamSect</a> , 以及 <a class="el" href="../../de/d9c/docparser_8h_source.html#l00166">DocNode::parent()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01242">LatexDocVisitor::visitPost()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01175">LatexDocVisitor::visitPre()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01162">writeEndTableCommand()</a> , 以及 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01149">writeStartTableCommand()</a>.</p>
+
+</div>
+</div>
+<a id="a09711cd3d7c9b6cc031da204e1993286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09711cd3d7c9b6cc031da204e1993286">&#9670;&nbsp;</a></span>visitCaption()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void visitCaption </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/df4/class_latex_doc_visitor.html">LatexDocVisitor</a> *&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/d9c/docparser_8h.html#a4b0e563dcc4920bb7d0f33d8093f9e97">DocNodeList</a> &amp;&#160;</td>
+          <td class="paramname"><em>children</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00146">146</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;n : children) n-&gt;accept(parent);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00356">LatexDocVisitor::visit()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01175">LatexDocVisitor::visitPre()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02072">LatexDocVisitor::writeDiaFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02024">LatexDocVisitor::writeMscFile()</a> , 以及 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02087">LatexDocVisitor::writePlantUMLFile()</a>.</p>
+
+</div>
+</div>
+<a id="af4fe687f1edd1806dd591c0f165062cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4fe687f1edd1806dd591c0f165062cd">&#9670;&nbsp;</a></span>visitPostEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void visitPostEnd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>hasCaption</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inlineImage</em> = <code><a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00125">125</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">if</span> (inlineImage)</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;\n\\end{DoxyInlineImage}\n&quot;</span>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    {</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;}\n&quot;</span>; <span class="comment">// end mbox or caption</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      <span class="keywordflow">if</span> (hasCaption)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot;\\end{DoxyImage}\n&quot;</span>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      }</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot;\\end{DoxyImageNoCaption}\n&quot;</span>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02065">LatexDocVisitor::endDiaFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01986">LatexDocVisitor::endDotFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02017">LatexDocVisitor::endMscFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01503">LatexDocVisitor::visitPost()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02072">LatexDocVisitor::writeDiaFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02024">LatexDocVisitor::writeMscFile()</a> , 以及 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02087">LatexDocVisitor::writePlantUMLFile()</a>.</p>
+
+</div>
+</div>
+<a id="ab7f123603afcea6abded6e73da61055c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f123603afcea6abded6e73da61055c">&#9670;&nbsp;</a></span>visitPreStart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void visitPreStart </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>hasCaption</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td>
+          <td class="paramname"><em>height</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inlineImage</em> = <code><a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00055">55</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> (inlineImage)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;\n\\begin{DoxyInlineImage}\n&quot;</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">if</span> (hasCaption)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot;\n\\begin{DoxyImage}\n&quot;</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot;\n\\begin{DoxyImageNoCaption}\n&quot;</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;               <span class="stringliteral">&quot;  \\mbox{&quot;</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    t &lt;&lt; <span class="stringliteral">&quot;\\includegraphics&quot;</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span> (!width.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() || !height.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;[&quot;</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (!width.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;width=&quot;</span> &lt;&lt; width;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (!width.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; !height.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (!height.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;height=&quot;</span> &lt;&lt; height;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span> (width.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; height.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;      <span class="comment">/* default setting */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordflow">if</span> (inlineImage)</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;      {</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot;[height=\\baselineskip,keepaspectratio=true]&quot;</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;      }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;      {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot;[width=\\textwidth,height=\\textheight/2,keepaspectratio=true]&quot;</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;      }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    {</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;]&quot;</span>;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    t &lt;&lt; <span class="stringliteral">&quot;{&quot;</span> &lt;&lt; name &lt;&lt; <span class="stringliteral">&quot;}&quot;</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (hasCaption)</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    {</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <span class="keywordflow">if</span> (!inlineImage)</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot;\n\\doxyfigcaption{&quot;</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        t &lt;&lt; <span class="stringliteral">&quot;%&quot;</span>; <span class="comment">// to catch the caption</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      }</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02040">LatexDocVisitor::startDiaFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01961">LatexDocVisitor::startDotFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01992">LatexDocVisitor::startMscFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01483">LatexDocVisitor::visitPre()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02072">LatexDocVisitor::writeDiaFile()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02024">LatexDocVisitor::writeMscFile()</a> , 以及 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l02087">LatexDocVisitor::writePlantUMLFile()</a>.</p>
+
+</div>
+</div>
+<a id="ac2f7332cce100ca29325781d2a0c8018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2f7332cce100ca29325781d2a0c8018">&#9670;&nbsp;</a></span>writeEndTableCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void writeEndTableCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d0e/class_doc_node.html">DocNode</a> *&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01162">1162</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;{</div>
+<div class="line"><a name="l01164"></a><span class="lineno"> 1164</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="../../d1/d4e/latexdocvisitor_8cpp.html#aa310ec3fe464eeab134ed3b72abc5908">tableIsNested</a>(n))</div>
+<div class="line"><a name="l01165"></a><span class="lineno"> 1165</span>&#160;  {</div>
+<div class="line"><a name="l01166"></a><span class="lineno"> 1166</span>&#160;    t &lt;&lt; <span class="stringliteral">&quot;\\end{tabularx}}\n&quot;</span>;</div>
+<div class="line"><a name="l01167"></a><span class="lineno"> 1167</span>&#160;  }</div>
+<div class="line"><a name="l01168"></a><span class="lineno"> 1168</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01169"></a><span class="lineno"> 1169</span>&#160;  {</div>
+<div class="line"><a name="l01170"></a><span class="lineno"> 1170</span>&#160;    t &lt;&lt; <span class="stringliteral">&quot;\\end{longtabu}\n&quot;</span>;</div>
+<div class="line"><a name="l01171"></a><span class="lineno"> 1171</span>&#160;  }</div>
+<div class="line"><a name="l01172"></a><span class="lineno"> 1172</span>&#160;  <span class="comment">//return isNested ? &quot;TabularNC&quot; : &quot;TabularC&quot;;</span></div>
+<div class="line"><a name="l01173"></a><span class="lineno"> 1173</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01138">tableIsNested()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01219">LatexDocVisitor::visitPost()</a>.</p>
+
+</div>
+</div>
+<a id="a5bbbad315cb363213d4cacb62a573aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bbbad315cb363213d4cacb62a573aba">&#9670;&nbsp;</a></span>writeStartTableCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void writeStartTableCommand </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d0e/class_doc_node.html">DocNode</a> *&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cols</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01149">1149</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01150"></a><span class="lineno"> 1150</span>&#160;{</div>
+<div class="line"><a name="l01151"></a><span class="lineno"> 1151</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="../../d1/d4e/latexdocvisitor_8cpp.html#aa310ec3fe464eeab134ed3b72abc5908">tableIsNested</a>(n))</div>
+<div class="line"><a name="l01152"></a><span class="lineno"> 1152</span>&#160;  {</div>
+<div class="line"><a name="l01153"></a><span class="lineno"> 1153</span>&#160;    t &lt;&lt; <span class="stringliteral">&quot;{\\begin{tabularx}{\\linewidth}{|*{&quot;</span> &lt;&lt; cols &lt;&lt; <span class="stringliteral">&quot;}{&gt;{\\raggedright\\arraybackslash}X|}}&quot;</span>;</div>
+<div class="line"><a name="l01154"></a><span class="lineno"> 1154</span>&#160;  }</div>
+<div class="line"><a name="l01155"></a><span class="lineno"> 1155</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01156"></a><span class="lineno"> 1156</span>&#160;  {</div>
+<div class="line"><a name="l01157"></a><span class="lineno"> 1157</span>&#160;    t &lt;&lt; <span class="stringliteral">&quot;\\tabulinesep=1mm\n\\begin{longtabu}spread 0pt [c]{*{&quot;</span> &lt;&lt; cols &lt;&lt; <span class="stringliteral">&quot;}{|X[-1]}|}\n&quot;</span>;</div>
+<div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;  }</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;  <span class="comment">//return isNested ? &quot;TabularNC&quot; : &quot;TabularC&quot;;</span></div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01138">tableIsNested()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01175">LatexDocVisitor::visitPre()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="af1c06db51ef168324d954a4051bb1f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1c06db51ef168324d954a4051bb1f83">&#9670;&nbsp;</a></span>maxLevels</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int maxLevels =5</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00042">42</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00046">getSectionName()</a>.</p>
+
+</div>
+</div>
+<a id="a26981dc5985af76550ab2c2443b47bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26981dc5985af76550ab2c2443b47bbc">&#9670;&nbsp;</a></span>secLabels</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* secLabels[<a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html#af1c06db51ef168324d954a4051bb1f83">maxLevels</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>初始值:</b><div class="fragment"><div class="line">=</div>
+<div class="line">   { <span class="stringliteral">&quot;doxysection&quot;</span>,<span class="stringliteral">&quot;doxysubsection&quot;</span>,<span class="stringliteral">&quot;doxysubsubsection&quot;</span>,<span class="stringliteral">&quot;doxyparagraph&quot;</span>,<span class="stringliteral">&quot;doxysubparagraph&quot;</span> }</div>
+</div><!-- fragment -->
+<p class="definition">在文件 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html">latexdocvisitor.cpp</a> 第 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00043">43</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00046">getSectionName()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_html_attrib_list_html"><div class="ttname"><a href="../../db/d4d/class_html_attrib_list.html">HtmlAttribList</a></div><div class="ttdoc">Class representing a list of HTML attributes.</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d73/htmlattrib_8h_source.html#l00030">htmlattrib.h:30</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a621c4090d69ad7d05ef8e5234376c3d8"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">QCString::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Returns TRUE iff the string is empty</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00144">qcstring.h:144</a></div></div>
+<div class="ttc" id="aclass_doc_node_html_aebd16e89ca590d84cbd40543ea5faadbad53b68c158dba60a523d4fd261741c1a"><div class="ttname"><a href="../../d9/d0e/class_doc_node.html#aebd16e89ca590d84cbd40543ea5faadbad53b68c158dba60a523d4fd261741c1a">DocNode::Kind_HtmlDescList</a></div><div class="ttdeci">@ Kind_HtmlDescList</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d9c/docparser_8h_source.html#l00118">docparser.h:118</a></div></div>
+<div class="ttc" id="alatexdocvisitor_8cpp_html_a2a703255a8e464a4a8d67891e218d49e"><div class="ttname"><a href="../../d1/d4e/latexdocvisitor_8cpp.html#a2a703255a8e464a4a8d67891e218d49e">classEqualsReflist</a></div><div class="ttdeci">static bool classEqualsReflist(const DocNode *n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01055">latexdocvisitor.cpp:1055</a></div></div>
+<div class="ttc" id="aclass_doc_html_desc_list_html"><div class="ttname"><a href="../../df/d6f/class_doc_html_desc_list.html">DocHtmlDescList</a></div><div class="ttdoc">Node representing a Html description list</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d9c/docparser_8h_source.html#l00987">docparser.h:987</a></div></div>
+<div class="ttc" id="alatexdocvisitor_8cpp_html_a26981dc5985af76550ab2c2443b47bbc"><div class="ttname"><a href="../../d1/d4e/latexdocvisitor_8cpp.html#a26981dc5985af76550ab2c2443b47bbc">secLabels</a></div><div class="ttdeci">static const char * secLabels[maxLevels]</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00043">latexdocvisitor.cpp:43</a></div></div>
+<div class="ttc" id="aclass_doc_node_html_a108ffd214a72ba6e93dac084a8f58049"><div class="ttname"><a href="../../d9/d0e/class_doc_node.html#a108ffd214a72ba6e93dac084a8f58049">DocNode::kind</a></div><div class="ttdeci">virtual Kind kind() const =0</div></div>
+<div class="ttc" id="alatexdocvisitor_8cpp_html_af1c06db51ef168324d954a4051bb1f83"><div class="ttname"><a href="../../d1/d4e/latexdocvisitor_8cpp.html#af1c06db51ef168324d954a4051bb1f83">maxLevels</a></div><div class="ttdeci">const int maxLevels</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00042">latexdocvisitor.cpp:42</a></div></div>
+<div class="ttc" id="aclass_doc_node_html_aebd16e89ca590d84cbd40543ea5faadba98f09f518a149bbd2ca945d8be62b2eb"><div class="ttname"><a href="../../d9/d0e/class_doc_node.html#aebd16e89ca590d84cbd40543ea5faadba98f09f518a149bbd2ca945d8be62b2eb">DocNode::Kind_ParamSect</a></div><div class="ttdeci">@ Kind_ParamSect</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d9c/docparser_8h_source.html#l00143">docparser.h:143</a></div></div>
+<div class="ttc" id="alatexdocvisitor_8cpp_html_aa310ec3fe464eeab134ed3b72abc5908"><div class="ttname"><a href="../../d1/d4e/latexdocvisitor_8cpp.html#aa310ec3fe464eeab134ed3b72abc5908">tableIsNested</a></div><div class="ttdeci">static bool tableIsNested(const DocNode *n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l01138">latexdocvisitor.cpp:1138</a></div></div>
+<div class="ttc" id="aclass_doc_node_html_aebd16e89ca590d84cbd40543ea5faadbaaa0953fe727d5208d808d6200db9d8c4"><div class="ttname"><a href="../../d9/d0e/class_doc_node.html#aebd16e89ca590d84cbd40543ea5faadbaaa0953fe727d5208d808d6200db9d8c4">DocNode::Kind_HtmlTable</a></div><div class="ttdeci">@ Kind_HtmlTable</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d9c/docparser_8h_source.html#l00121">docparser.h:121</a></div></div>
+<div class="ttc" id="aconfig_8h_html_a5373d0332a31f16ad7a42037733e8c79"><div class="ttname"><a href="../../db/d16/config_8h.html#a5373d0332a31f16ad7a42037733e8c79">Config_getBool</a></div><div class="ttdeci">#define Config_getBool(name)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/config_8h_source.html#l00033">config.h:33</a></div></div>
+<div class="ttc" id="aclass_doxygen_html_a419b27a523ea0261e58103f998c68a12"><div class="ttname"><a href="../../de/d6a/class_doxygen.html#a419b27a523ea0261e58103f998c68a12">Doxygen::insideMainPage</a></div><div class="ttdeci">static bool insideMainPage</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da1/doxygen_8h_source.html#l00084">doxygen.h:84</a></div></div>
+<div class="ttc" id="aclass_doc_node_html_a73e8ad29a91cfceb0968eb00db71a23d"><div class="ttname"><a href="../../d9/d0e/class_doc_node.html#a73e8ad29a91cfceb0968eb00db71a23d">DocNode::parent</a></div><div class="ttdeci">DocNode * parent() const</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d9c/docparser_8h_source.html#l00166">docparser.h:166</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00033">qcstring.h:33</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d1/d4e/latexdocvisitor_8cpp.html">latexdocvisitor.cpp</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:57 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

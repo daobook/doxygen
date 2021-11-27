@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/dotfilepatcher.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d9/d92/dotfilepatcher_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">dotfilepatcher.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;sstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/d38/dotfilepatcher_8h_source.html">dotfilepatcher.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/dd1/dotrunner_8h_source.html">dotrunner.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d16/config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d0d/message_8h_source.html">message.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d9c/docparser_8h_source.html">docparser.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/da1/doxygen_8h_source.html">doxygen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d3c/util_8h_source.html">util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d4a/dot_8h_source.html">dot.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d9c/dir_8h_source.html">dir.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> dotfilepatcher.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+</div>
+</div>
+<p><a href="../../d9/d92/dotfilepatcher_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a79f47c101daa51c0e727788d0f134f7e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d92/dotfilepatcher_8cpp.html#a79f47c101daa51c0e727788d0f134f7e">replaceRef</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;buf, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;relPath, bool urlOnly, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;context, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;target=<a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>())</td></tr>
+<tr class="separator:a79f47c101daa51c0e727788d0f134f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ee465ed3ecc9e198028ac98d6536546"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d92/dotfilepatcher_8cpp.html#a1ee465ed3ecc9e198028ac98d6536546">readSVGSize</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;fileName, int *width, int *height)</td></tr>
+<tr class="separator:a1ee465ed3ecc9e198028ac98d6536546"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a244a836815fe16d7315c414105b8cfee"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d92/dotfilepatcher_8cpp.html#a244a836815fe16d7315c414105b8cfee">writeSVGNotSupported</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;out)</td></tr>
+<tr class="separator:a244a836815fe16d7315c414105b8cfee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:aae5cc1fd11ba7a2d8eb12954920ca9f2"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d92/dotfilepatcher_8cpp.html#aae5cc1fd11ba7a2d8eb12954920ca9f2">svgZoomHeader</a> []</td></tr>
+<tr class="separator:aae5cc1fd11ba7a2d8eb12954920ca9f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35bdfd96f69df806305bc5eb8d23422c"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d92/dotfilepatcher_8cpp.html#a35bdfd96f69df806305bc5eb8d23422c">svgZoomFooter</a> []</td></tr>
+<tr class="separator:a35bdfd96f69df806305bc5eb8d23422c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a1ee465ed3ecc9e198028ac98d6536546"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ee465ed3ecc9e198028ac98d6536546">&#9670;&nbsp;</a></span>readSVGSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool readSVGSize </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html">dotfilepatcher.cpp</a> 第 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00506">506</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;{</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;  <span class="keywordtype">bool</span> found=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;  std::ifstream f(fileName.<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>(),std::ifstream::in);</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;  <span class="keywordflow">if</span> (!f.is_open())</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;  {</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;  }</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;  std::string line;</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;  <span class="keywordflow">while</span> (getline(f,line) &amp;&amp; !found)</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;  {</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../d7/d5c/qcstring_8h.html#a19faae287d13ccea75b1d5a0eb110d97">qstrncmp</a>(line.c_str(),<span class="stringliteral">&quot;&lt;!--zoomable &quot;</span>,13)==0)</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    {</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;      *width=-1;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;      *height=-1;</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;      sscanf(line.c_str(),<span class="stringliteral">&quot;&lt;!--zoomable %d&quot;</span>,height);</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;      found=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    }</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (sscanf(line.c_str(),<span class="stringliteral">&quot;&lt;svg width=\&quot;%dpt\&quot; height=\&quot;%dpt\&quot;&quot;</span>,width,height)==2)</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;    {</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;      found=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    }</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;  }</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00033">FALSE</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00091">qstrncmp()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00442">QCString::str()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00539">DotFilePatcher::writeSVGFigureLink()</a>.</p>
+
+</div>
+</div>
+<a id="a79f47c101daa51c0e727788d0f134f7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79f47c101daa51c0e727788d0f134f7e">&#9670;&nbsp;</a></span>replaceRef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> replaceRef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>relPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>urlOnly</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>context</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em> = <code><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html">dotfilepatcher.cpp</a> 第 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00126">126</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <span class="comment">// search for href=&quot;...&quot;, store ... part in link</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> href = <span class="stringliteral">&quot;href&quot;</span>;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="comment">//bool isXLink=FALSE;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="keywordtype">int</span> len = 6;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <span class="keywordtype">int</span> indexS = buf.<a class="code" href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">find</a>(<span class="stringliteral">&quot;href=\&quot;&quot;</span>), indexE;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <span class="keywordtype">bool</span> targetAlreadySet = buf.<a class="code" href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">find</a>(<span class="stringliteral">&quot;target=&quot;</span>)!=-1;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <span class="keywordflow">if</span> (indexS&gt;5 &amp;&amp; buf.<a class="code" href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">find</a>(<span class="stringliteral">&quot;xlink:href=\&quot;&quot;</span>)!=-1) <span class="comment">// XLink href (for SVG)</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  {</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    indexS-=6;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    len+=6;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    href.<a class="code" href="../../d9/d45/class_q_c_string.html#abb958f7fcfea738e38de8979c8342dce">prepend</a>(<span class="stringliteral">&quot;xlink:&quot;</span>);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    <span class="comment">//isXLink=TRUE;</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  }</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="keywordflow">if</span> (indexS&gt;=0 &amp;&amp; (indexE=buf.<a class="code" href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">find</a>(<span class="charliteral">&#39;&quot;&#39;</span>,indexS+len))!=-1)</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> link = buf.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(indexS+len,indexE-indexS-len);</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> result;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordflow">if</span> (urlOnly) <span class="comment">// for user defined dot graphs</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    {</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      <span class="keywordflow">if</span> (link.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(5)==<span class="stringliteral">&quot;\\ref &quot;</span> || link.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(5)==<span class="stringliteral">&quot;@ref &quot;</span>) <span class="comment">// \ref url</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;      {</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        result=href+<span class="stringliteral">&quot;=\&quot;&quot;</span>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        <span class="comment">// fake ref node to resolve the url</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        std::unique_ptr&lt;IDocParser&gt; parser { <a class="code" href="../../da/d17/docparser_8cpp.html#aac0a8f6a9ae6d7e36b10a0faf9905430">createDocParser</a>() };</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        std::unique_ptr&lt;DocRef&gt;     df     { <a class="code" href="../../da/d17/docparser_8cpp.html#a17f76310d14ca8e512772e408cc6f70f">createRef</a>( *parser.get(), link.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(5), context ) };</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        result+=<a class="code" href="../../df/d2d/util_8cpp.html#a06ba0c2593b3fd5f103151bd342e206f">externalRef</a>(relPath,df-&gt;ref(),<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordflow">if</span> (!df-&gt;file().isEmpty())</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;          result += <a class="code" href="../../df/d2d/util_8cpp.html#a36c74291c5a9adc05d5cb6c0932f6b82">addHtmlExtensionIfMissing</a>(df-&gt;file());</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;        <span class="keywordflow">if</span> (!df-&gt;anchor().isEmpty())</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;          result += <span class="stringliteral">&quot;#&quot;</span> + df-&gt;anchor();</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        result += <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;      {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        result = href+<span class="stringliteral">&quot;=\&quot;&quot;</span> + link + <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      }</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    }</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">else</span> <span class="comment">// ref$url (external ref via tag file), or $url (local ref)</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    {</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;      <span class="keywordtype">int</span> marker = link.<a class="code" href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">find</a>(<span class="charliteral">&#39;$&#39;</span>);</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;      <span class="keywordflow">if</span> (marker!=-1)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;      {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> ref = link.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(marker);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> url = link.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(marker+1);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <span class="keywordflow">if</span> (!ref.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        {</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;          result = <a class="code" href="../../df/d2d/util_8cpp.html#ad3f3c94bc6e432d34fa1a51db3b7d5e2">externalLinkTarget</a>(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;          <span class="keywordflow">if</span> (!result.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>())targetAlreadySet=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        result+= href+<span class="stringliteral">&quot;=\&quot;&quot;</span>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        result+=<a class="code" href="../../df/d2d/util_8cpp.html#a06ba0c2593b3fd5f103151bd342e206f">externalRef</a>(relPath,ref,<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        result+= url + <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;      }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      <span class="keywordflow">else</span> <span class="comment">// should not happen, but handle properly anyway</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      {</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        result = href+<span class="stringliteral">&quot;=\&quot;&quot;</span> + link + <span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      }</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">if</span> (!target.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; !targetAlreadySet)</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;      result+=<span class="stringliteral">&quot; target=\&quot;&quot;</span>+target+<span class="stringliteral">&quot;\&quot;&quot;</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> leftPart = buf.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(indexS);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> rightPart = buf.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(indexE+1);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <span class="comment">//printf(&quot;replaceRef(\n&#39;%s&#39;\n)-&gt;\n&#39;%s+%s+%s&#39;\n&quot;,</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="comment">//    qPrint(buf),qPrint(leftPart),qPrint(result),qPrint(rightPart));</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> leftPart + result + rightPart;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  }</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordflow">return</span> buf;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  }</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../df/d2d/util_8cpp_source.html#l05275">addHtmlExtensionIfMissing()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l00179">createDocParser()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l07675">createRef()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l06323">externalLinkTarget()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l06334">externalRef()</a>, <a class="el" href="../../d5/d3e/qcstring_8cpp_source.html#l00038">QCString::find()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00212">QCString::left()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00224">QCString::mid()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00339">QCString::prepend()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00214">DotFilePatcher::convertMapFile()</a> , 以及 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00292">DotFilePatcher::run()</a>.</p>
+
+</div>
+</div>
+<a id="a244a836815fe16d7315c414105b8cfee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a244a836815fe16d7315c414105b8cfee">&#9670;&nbsp;</a></span>writeSVGNotSupported()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void writeSVGNotSupported </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>out</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html">dotfilepatcher.cpp</a> 第 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00532">532</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;{</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;  out &lt;&lt; <span class="stringliteral">&quot;&lt;p&gt;&lt;b&gt;This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.&lt;/b&gt;&lt;/p&gt;&quot;</span>;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00539">DotFilePatcher::writeSVGFigureLink()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a35bdfd96f69df806305bc5eb8d23422c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35bdfd96f69df806305bc5eb8d23422c">&#9670;&nbsp;</a></span>svgZoomFooter</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char svgZoomFooter[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html">dotfilepatcher.cpp</a> 第 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00072">72</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00292">DotFilePatcher::run()</a>.</p>
+
+</div>
+</div>
+<a id="aae5cc1fd11ba7a2d8eb12954920ca9f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae5cc1fd11ba7a2d8eb12954920ca9f2">&#9670;&nbsp;</a></span>svgZoomHeader</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char svgZoomHeader[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html">dotfilepatcher.cpp</a> 第 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00028">28</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00292">DotFilePatcher::run()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_q_c_string_html_a621c4090d69ad7d05ef8e5234376c3d8"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">QCString::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Returns TRUE iff the string is empty</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00144">qcstring.h:144</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a9824b07232eea418ab3b3e7dc3178eec"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">QCString::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00442">qcstring.h:442</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a0182ece6b76dad6475dafb53e2faaf10"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">QCString::find</a></div><div class="ttdeci">int find(char c, int index=0, bool cs=TRUE) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d3e/qcstring_8cpp_source.html#l00038">qcstring.cpp:38</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a19faae287d13ccea75b1d5a0eb110d97"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a19faae287d13ccea75b1d5a0eb110d97">qstrncmp</a></div><div class="ttdeci">int qstrncmp(const char *str1, const char *str2, size_t len)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00091">qcstring.h:91</a></div></div>
+<div class="ttc" id="autil_8cpp_html_a36c74291c5a9adc05d5cb6c0932f6b82"><div class="ttname"><a href="../../df/d2d/util_8cpp.html#a36c74291c5a9adc05d5cb6c0932f6b82">addHtmlExtensionIfMissing</a></div><div class="ttdeci">QCString addHtmlExtensionIfMissing(const QCString &amp;fName)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d2d/util_8cpp_source.html#l05275">util.cpp:5275</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_aecf8b66312c4e97333219cc344c11a4f"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">QCString::left</a></div><div class="ttdeci">QCString left(size_t len) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00212">qcstring.h:212</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00036">qcstring.h:36</a></div></div>
+<div class="ttc" id="autil_8cpp_html_ad3f3c94bc6e432d34fa1a51db3b7d5e2"><div class="ttname"><a href="../../df/d2d/util_8cpp.html#ad3f3c94bc6e432d34fa1a51db3b7d5e2">externalLinkTarget</a></div><div class="ttdeci">QCString externalLinkTarget(const bool parent)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d2d/util_8cpp_source.html#l06323">util.cpp:6323</a></div></div>
+<div class="ttc" id="adocparser_8cpp_html_a17f76310d14ca8e512772e408cc6f70f"><div class="ttname"><a href="../../da/d17/docparser_8cpp.html#a17f76310d14ca8e512772e408cc6f70f">createRef</a></div><div class="ttdeci">DocRef * createRef(IDocParser &amp;parserIntf, const QCString &amp;target, const QCString &amp;context)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d17/docparser_8cpp_source.html#l07675">docparser.cpp:7675</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a27136caf9c0bc4daca574cda6f113551"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">QCString::mid</a></div><div class="ttdeci">QCString mid(size_t index, size_t len=static_cast&lt; size_t &gt;(-1)) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00224">qcstring.h:224</a></div></div>
+<div class="ttc" id="autil_8cpp_html_a06ba0c2593b3fd5f103151bd342e206f"><div class="ttname"><a href="../../df/d2d/util_8cpp.html#a06ba0c2593b3fd5f103151bd342e206f">externalRef</a></div><div class="ttdeci">QCString externalRef(const QCString &amp;relPath, const QCString &amp;ref, bool href)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d2d/util_8cpp_source.html#l06334">util.cpp:6334</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_abb958f7fcfea738e38de8979c8342dce"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#abb958f7fcfea738e38de8979c8342dce">QCString::prepend</a></div><div class="ttdeci">QCString &amp; prepend(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00339">qcstring.h:339</a></div></div>
+<div class="ttc" id="adocparser_8cpp_html_aac0a8f6a9ae6d7e36b10a0faf9905430"><div class="ttname"><a href="../../da/d17/docparser_8cpp.html#aac0a8f6a9ae6d7e36b10a0faf9905430">createDocParser</a></div><div class="ttdeci">std::unique_ptr&lt; IDocParser &gt; createDocParser()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d17/docparser_8cpp_source.html#l00179">docparser.cpp:179</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00033">qcstring.h:33</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d9/d92/dotfilepatcher_8cpp.html">dotfilepatcher.cpp</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:56 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

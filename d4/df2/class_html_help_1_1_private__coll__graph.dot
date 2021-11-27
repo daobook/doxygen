@@ -1,0 +1,17 @@
+digraph "HtmlHelp::Private"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="HtmlHelp::Private",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" index" ,fontname="Helvetica"];
+  Node2 [label="HtmlHelpIndex",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d74/class_html_help_index.html",tooltip="A helper class for HtmlHelp that manages a two level index in alphabetical order."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_recoder" ,fontname="Helvetica"];
+  Node3 [label="HtmlHelpRecoder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d26/class_html_help_recoder.html",tooltip="Helper class to deal with recoding the UTF8 encoded text back to the native encoding specified by CHM..."];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_map" ,fontname="Helvetica"];
+  Node4 [label="LinkedMap\< IndexField \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d2c/class_linked_map.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< IndexField \>" ,fontname="Helvetica"];
+  Node5 [label="LinkedMap\< T, Hash,\l KeyEqual, Map \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d2c/class_linked_map.html",tooltip="Container class representing a vector of objects with keys."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" recoder" ,fontname="Helvetica"];
+}

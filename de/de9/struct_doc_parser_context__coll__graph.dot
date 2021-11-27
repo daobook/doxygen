@@ -1,0 +1,22 @@
+digraph "DocParserContext"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="DocParserContext",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Parser's context to store all global variables."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" token" ,fontname="Helvetica"];
+  Node2 [label="TokenInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/df4/struct_token_info.html",tooltip="Data associated with a token used by the comment block parser."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" verb\nsimpleSectName\nsectionId\nchars\nattribsStr\nsimpleSectText\nname\ntext" ,fontname="Helvetica"];
+  Node3 [label="QCString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d45/class_q_c_string.html",tooltip="This is an alternative implementation of QCString."];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" attribs" ,fontname="Helvetica"];
+  Node4 [label="HtmlAttribList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d4d/class_html_attrib_list.html",tooltip="Class representing a list of HTML attributes."];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="std::vector\< HtmlAttrib \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" includeFileText\ncontext\nincludeFileName\nrelPath\nsearchUrl\nexampleName\nfileName" ,fontname="Helvetica"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" scope" ,fontname="Helvetica"];
+  Node6 [label="Definition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dcc/class_definition.html",tooltip="The common base class of all entity definitions found in the sources."];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" memberDef" ,fontname="Helvetica"];
+  Node7 [label="MemberDef",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d09/class_member_def.html",tooltip="A model of a class/file/namespace member symbol."];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

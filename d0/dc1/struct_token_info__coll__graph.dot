@@ -1,0 +1,14 @@
+digraph "TokenInfo"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="TokenInfo",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Data associated with a token used by the comment block parser."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" verb\nsimpleSectName\nsectionId\nchars\nattribsStr\nsimpleSectText\nname\ntext" ,fontname="Helvetica"];
+  Node2 [label="QCString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d45/class_q_c_string.html",tooltip="This is an alternative implementation of QCString."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" attribs" ,fontname="Helvetica"];
+  Node3 [label="HtmlAttribList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d4d/class_html_attrib_list.html",tooltip="Class representing a list of HTML attributes."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="std::vector\< HtmlAttrib \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

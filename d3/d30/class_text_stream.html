@@ -1,0 +1,1338 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: TextStream类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d3/d30/class_text_stream.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="../../da/deb/class_text_stream-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">TextStream类 参考<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Text streaming class that buffers data.  
+ <a href="../../d3/d30/class_text_stream.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a19208bde949dfeaef287d8cb4f247fea"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a19208bde949dfeaef287d8cb4f247fea">TextStream</a> ()</td></tr>
+<tr class="memdesc:a19208bde949dfeaef287d8cb4f247fea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an empty stream object.  <a href="../../d3/d30/class_text_stream.html#a19208bde949dfeaef287d8cb4f247fea">更多...</a><br /></td></tr>
+<tr class="separator:a19208bde949dfeaef287d8cb4f247fea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa22b5c028814c2e880c258caff567184"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#aa22b5c028814c2e880c258caff567184">TextStream</a> (std::ostream *s)</td></tr>
+<tr class="memdesc:aa22b5c028814c2e880c258caff567184"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a text stream object for writing to a std::ostream.  <a href="../../d3/d30/class_text_stream.html#aa22b5c028814c2e880c258caff567184">更多...</a><br /></td></tr>
+<tr class="separator:aa22b5c028814c2e880c258caff567184"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c4167493d760a72984d1de542d12a9a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a6c4167493d760a72984d1de542d12a9a">TextStream</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a6c4167493d760a72984d1de542d12a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a text stream, initializing the buffer with string <em>s</em>  <a href="../../d3/d30/class_text_stream.html#a6c4167493d760a72984d1de542d12a9a">更多...</a><br /></td></tr>
+<tr class="separator:a6c4167493d760a72984d1de542d12a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca4cd037475e8c6f85c2665fe16b7dfb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#aca4cd037475e8c6f85c2665fe16b7dfb">~TextStream</a> ()</td></tr>
+<tr class="memdesc:aca4cd037475e8c6f85c2665fe16b7dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes any data that is buffered to the attached std::ostream  <a href="../../d3/d30/class_text_stream.html#aca4cd037475e8c6f85c2665fe16b7dfb">更多...</a><br /></td></tr>
+<tr class="separator:aca4cd037475e8c6f85c2665fe16b7dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a762f81997bfbae5d77b5e34f06b66941"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a762f81997bfbae5d77b5e34f06b66941">TextStream</a> (const <a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;)=delete</td></tr>
+<tr class="separator:a762f81997bfbae5d77b5e34f06b66941"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8aa59cb89317b809b04d292dc23b5cb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#aa8aa59cb89317b809b04d292dc23b5cb">operator=</a> (const <a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;)=delete</td></tr>
+<tr class="separator:aa8aa59cb89317b809b04d292dc23b5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18a4ee87242fc2b8e31941a71e622fd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a18a4ee87242fc2b8e31941a71e622fd2">setStream</a> (std::ostream *s)</td></tr>
+<tr class="memdesc:a18a4ee87242fc2b8e31941a71e622fd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets or changes the std::ostream to write to.  <a href="../../d3/d30/class_text_stream.html#a18a4ee87242fc2b8e31941a71e622fd2">更多...</a><br /></td></tr>
+<tr class="separator:a18a4ee87242fc2b8e31941a71e622fd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af285dfbd0040f7be9f3704738db024de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#af285dfbd0040f7be9f3704738db024de">setFile</a> (FILE *f)</td></tr>
+<tr class="separator:af285dfbd0040f7be9f3704738db024de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3348ed8ad4dd537dc658b8703ce53c3c"><td class="memItemLeft" align="right" valign="top">std::ostream *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a3348ed8ad4dd537dc658b8703ce53c3c">stream</a> () const</td></tr>
+<tr class="memdesc:a3348ed8ad4dd537dc658b8703ce53c3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the attached std::ostream object.  <a href="../../d3/d30/class_text_stream.html#a3348ed8ad4dd537dc658b8703ce53c3c">更多...</a><br /></td></tr>
+<tr class="separator:a3348ed8ad4dd537dc658b8703ce53c3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a052c794726fd6e1e87eb03601d0d5faf"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a052c794726fd6e1e87eb03601d0d5faf">file</a> () const</td></tr>
+<tr class="separator:a052c794726fd6e1e87eb03601d0d5faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad026cb50031d31e1ad1548dc8624c5bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">operator&lt;&lt;</a> (char c)</td></tr>
+<tr class="memdesc:ad026cb50031d31e1ad1548dc8624c5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a character to the stream  <a href="../../d3/d30/class_text_stream.html#ad026cb50031d31e1ad1548dc8624c5bc">更多...</a><br /></td></tr>
+<tr class="separator:ad026cb50031d31e1ad1548dc8624c5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfe320a6bd8d0bde196b5ec63ec40e11"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#adfe320a6bd8d0bde196b5ec63ec40e11">operator&lt;&lt;</a> (const char *s)</td></tr>
+<tr class="memdesc:adfe320a6bd8d0bde196b5ec63ec40e11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a C-style string to the stream  <a href="../../d3/d30/class_text_stream.html#adfe320a6bd8d0bde196b5ec63ec40e11">更多...</a><br /></td></tr>
+<tr class="separator:adfe320a6bd8d0bde196b5ec63ec40e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9aa7220bb544c20008067967dfb783f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#ad9aa7220bb544c20008067967dfb783f">operator&lt;&lt;</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;s)</td></tr>
+<tr class="memdesc:ad9aa7220bb544c20008067967dfb783f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a <a class="el" href="../../d9/d45/class_q_c_string.html" title="This is an alternative implementation of QCString.">QCString</a> to the stream  <a href="../../d3/d30/class_text_stream.html#ad9aa7220bb544c20008067967dfb783f">更多...</a><br /></td></tr>
+<tr class="separator:ad9aa7220bb544c20008067967dfb783f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2860865e855cfedd7f94845e1092dee3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a2860865e855cfedd7f94845e1092dee3">operator&lt;&lt;</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a2860865e855cfedd7f94845e1092dee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a std::string to the stream  <a href="../../d3/d30/class_text_stream.html#a2860865e855cfedd7f94845e1092dee3">更多...</a><br /></td></tr>
+<tr class="separator:a2860865e855cfedd7f94845e1092dee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7b84364cec6b3b891f4fce76223bef8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#ae7b84364cec6b3b891f4fce76223bef8">operator&lt;&lt;</a> (signed short i)</td></tr>
+<tr class="memdesc:ae7b84364cec6b3b891f4fce76223bef8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a signed short integer to the stream  <a href="../../d3/d30/class_text_stream.html#ae7b84364cec6b3b891f4fce76223bef8">更多...</a><br /></td></tr>
+<tr class="separator:ae7b84364cec6b3b891f4fce76223bef8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd45ae874106de3a3efba1b9f4d6d648"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#acd45ae874106de3a3efba1b9f4d6d648">operator&lt;&lt;</a> (unsigned short i)</td></tr>
+<tr class="memdesc:acd45ae874106de3a3efba1b9f4d6d648"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a unsigned short integer to the stream  <a href="../../d3/d30/class_text_stream.html#acd45ae874106de3a3efba1b9f4d6d648">更多...</a><br /></td></tr>
+<tr class="separator:acd45ae874106de3a3efba1b9f4d6d648"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0eba01572bebb32d57baa91622511e49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a0eba01572bebb32d57baa91622511e49">operator&lt;&lt;</a> (signed int i)</td></tr>
+<tr class="memdesc:a0eba01572bebb32d57baa91622511e49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a signed integer to the stream  <a href="../../d3/d30/class_text_stream.html#a0eba01572bebb32d57baa91622511e49">更多...</a><br /></td></tr>
+<tr class="separator:a0eba01572bebb32d57baa91622511e49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ababfeaaea24fa084824fb72f486a23f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#ababfeaaea24fa084824fb72f486a23f0">operator&lt;&lt;</a> (unsigned int i)</td></tr>
+<tr class="memdesc:ababfeaaea24fa084824fb72f486a23f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a unsigned integer to the stream  <a href="../../d3/d30/class_text_stream.html#ababfeaaea24fa084824fb72f486a23f0">更多...</a><br /></td></tr>
+<tr class="separator:ababfeaaea24fa084824fb72f486a23f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8affbd1b06c663030f9dacb0342a365"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#aa8affbd1b06c663030f9dacb0342a365">operator&lt;&lt;</a> (float f)</td></tr>
+<tr class="memdesc:aa8affbd1b06c663030f9dacb0342a365"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a float to the stream  <a href="../../d3/d30/class_text_stream.html#aa8affbd1b06c663030f9dacb0342a365">更多...</a><br /></td></tr>
+<tr class="separator:aa8affbd1b06c663030f9dacb0342a365"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a823a2bcc7931ab398b96ae2d8e4d67fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a823a2bcc7931ab398b96ae2d8e4d67fc">operator&lt;&lt;</a> (double d)</td></tr>
+<tr class="memdesc:a823a2bcc7931ab398b96ae2d8e4d67fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a double to the stream  <a href="../../d3/d30/class_text_stream.html#a823a2bcc7931ab398b96ae2d8e4d67fc">更多...</a><br /></td></tr>
+<tr class="separator:a823a2bcc7931ab398b96ae2d8e4d67fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa78941b7f04d95ca3be7d11073828f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#aaa78941b7f04d95ca3be7d11073828f0">write</a> (const char *buf, size_t len)</td></tr>
+<tr class="memdesc:aaa78941b7f04d95ca3be7d11073828f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a array of character to the stream  <a href="../../d3/d30/class_text_stream.html#aaa78941b7f04d95ca3be7d11073828f0">更多...</a><br /></td></tr>
+<tr class="separator:aaa78941b7f04d95ca3be7d11073828f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a907937b613a56aa4124608b3a092b820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">flush</a> ()</td></tr>
+<tr class="memdesc:a907937b613a56aa4124608b3a092b820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes the buffer.  <a href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">更多...</a><br /></td></tr>
+<tr class="separator:a907937b613a56aa4124608b3a092b820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc87f49c9d496ce6409dd4e49226e11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#afc87f49c9d496ce6409dd4e49226e11d">clear</a> ()</td></tr>
+<tr class="memdesc:afc87f49c9d496ce6409dd4e49226e11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears any buffered data  <a href="../../d3/d30/class_text_stream.html#afc87f49c9d496ce6409dd4e49226e11d">更多...</a><br /></td></tr>
+<tr class="separator:afc87f49c9d496ce6409dd4e49226e11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca8457da22d874f4eb30b35ffe87ebd0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">str</a> () const</td></tr>
+<tr class="memdesc:aca8457da22d874f4eb30b35ffe87ebd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the contents of the buffer as a std::string object  <a href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">更多...</a><br /></td></tr>
+<tr class="separator:aca8457da22d874f4eb30b35ffe87ebd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c42948b189c9d16fe5eb9ae12112e74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a6c42948b189c9d16fe5eb9ae12112e74">str</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a6c42948b189c9d16fe5eb9ae12112e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the buffer's contents to string <em>s</em>.  <a href="../../d3/d30/class_text_stream.html#a6c42948b189c9d16fe5eb9ae12112e74">更多...</a><br /></td></tr>
+<tr class="separator:a6c42948b189c9d16fe5eb9ae12112e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad31970b450c75ccca13f56940853010e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#ad31970b450c75ccca13f56940853010e">str</a> (const char *s)</td></tr>
+<tr class="memdesc:ad31970b450c75ccca13f56940853010e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the buffer's contents to string <em>s</em> Any data already in the buffer will be flushed.  <a href="../../d3/d30/class_text_stream.html#ad31970b450c75ccca13f56940853010e">更多...</a><br /></td></tr>
+<tr class="separator:ad31970b450c75ccca13f56940853010e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0859a9bfd6a7b6bafc7050d9f3aef046"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a0859a9bfd6a7b6bafc7050d9f3aef046">empty</a> () const</td></tr>
+<tr class="memdesc:a0859a9bfd6a7b6bafc7050d9f3aef046"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true iff the buffer is empty  <a href="../../d3/d30/class_text_stream.html#a0859a9bfd6a7b6bafc7050d9f3aef046">更多...</a><br /></td></tr>
+<tr class="separator:a0859a9bfd6a7b6bafc7050d9f3aef046"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a42463de0e3fa4777714f8e8fc4f9355c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">output_int32</a> (uint32_t n, bool neg)</td></tr>
+<tr class="memdesc:a42463de0e3fa4777714f8e8fc4f9355c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a string representation of an integer to the buffer  <a href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">更多...</a><br /></td></tr>
+<tr class="separator:a42463de0e3fa4777714f8e8fc4f9355c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2626411e76cafb7b0cc97ad259f37615"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a2626411e76cafb7b0cc97ad259f37615">output_double</a> (double d)</td></tr>
+<tr class="separator:a2626411e76cafb7b0cc97ad259f37615"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a588661b14e0e238906c63ee414a232ab"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a></td></tr>
+<tr class="separator:a588661b14e0e238906c63ee414a232ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2cc389f03492be4163601478f0d9118"><td class="memItemLeft" align="right" valign="top">std::ostream *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">m_s</a> = nullptr</td></tr>
+<tr class="separator:aa2cc389f03492be4163601478f0d9118"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88c5744dd7d51305aa75034481a9baab"><td class="memItemLeft" align="right" valign="top">FILE *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">m_f</a> = nullptr</td></tr>
+<tr class="separator:a88c5744dd7d51305aa75034481a9baab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:aed326642b4edbab68d47dbd9c2f7901f"><td class="memItemLeft" align="right" valign="top">static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d30/class_text_stream.html#aed326642b4edbab68d47dbd9c2f7901f">INITIAL_CAPACITY</a> = 4096</td></tr>
+<tr class="separator:aed326642b4edbab68d47dbd9c2f7901f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Text streaming class that buffers data. </p>
+<p>Simpler version of std::ostringstream that has much better performance. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00033">33</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a19208bde949dfeaef287d8cb4f247fea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19208bde949dfeaef287d8cb4f247fea">&#9670;&nbsp;</a></span>TextStream() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextStream::TextStream </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates an empty stream object. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00052">52</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                   : <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>(s)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.reserve(s.length()+<a class="code" href="../../d3/d30/class_text_stream.html#aed326642b4edbab68d47dbd9c2f7901f">INITIAL_CAPACITY</a>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00048">INITIAL_CAPACITY</a> , 以及 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00261">m_buffer</a>.</p>
+
+</div>
+</div>
+<a id="aa22b5c028814c2e880c258caff567184"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa22b5c028814c2e880c258caff567184">&#9670;&nbsp;</a></span>TextStream() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextStream::TextStream </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a text stream object for writing to a std::ostream. </p>
+<dl class="section note"><dt>注解</dt><dd>data is buffered until <a class="el" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820" title="Flushes the buffer.">flush()</a> is called or the object is destroyed. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00059">59</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6c4167493d760a72984d1de542d12a9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c4167493d760a72984d1de542d12a9a">&#9670;&nbsp;</a></span>TextStream() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextStream::TextStream </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a text stream, initializing the buffer with string <em>s</em> </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00065">65</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    {</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">flush</a>();</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00188">flush()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00263">m_f</a> , 以及 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00262">m_s</a>.</p>
+
+</div>
+</div>
+<a id="aca4cd037475e8c6f85c2665fe16b7dfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca4cd037475e8c6f85c2665fe16b7dfb">&#9670;&nbsp;</a></span>~TextStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextStream::~TextStream </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes any data that is buffered to the attached std::ostream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00071">71</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a762f81997bfbae5d77b5e34f06b66941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a762f81997bfbae5d77b5e34f06b66941">&#9670;&nbsp;</a></span>TextStream() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TextStream::TextStream </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="afc87f49c9d496ce6409dd4e49226e11d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc87f49c9d496ce6409dd4e49226e11d">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextStream::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clears any buffered data </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00202">202</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">flush</a>();</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00188">flush()</a> , 以及 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00261">m_buffer</a>.</p>
+
+</div>
+</div>
+<a id="a0859a9bfd6a7b6bafc7050d9f3aef046"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0859a9bfd6a7b6bafc7050d9f3aef046">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TextStream::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true iff the buffer is empty </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00232">232</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      {</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../d8/d6e/htmlgen_8cpp_source.html#l01625">HtmlGenerator::endClassDiagram()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l01810">ClassContext::Private::inheritanceDiagram()</a>, <a class="el" href="../../de/d45/dotgraph_8cpp_source.html#l00084">insertMapFile()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00292">DotFilePatcher::run()</a> , 以及 <a class="el" href="../../de/daa/dot_8cpp_source.html#l00325">writeDotImageMapFromFile()</a>.</p>
+
+</div>
+</div>
+<a id="a052c794726fd6e1e87eb03601d0d5faf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a052c794726fd6e1e87eb03601d0d5faf">&#9670;&nbsp;</a></span>file()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* TextStream::file </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00101">101</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;      <span class="keywordflow">if</span> (s) <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>+=s;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00261">m_buffer</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../df/d2d/util_8cpp_source.html#l00138">TextGeneratorOLImpl::writeLink()</a>.</p>
+
+</div>
+</div>
+<a id="a907937b613a56aa4124608b3a092b820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a907937b613a56aa4124608b3a092b820">&#9670;&nbsp;</a></span>flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextStream::flush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flushes the buffer. </p>
+<p>If a std::ostream is attached, the buffer's contents will be written to the stream. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00188">188</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    {</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.clear();</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    }</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">    /** Return the contents of the buffer as a std::string object */</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    std::string <a class="code" href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">str</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">    </span>{</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00261">m_buffer</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00202">clear()</a>, <a class="el" href="../../d0/d17/outputgen_8cpp_source.html#l00072">OutputGenerator::endPlainFile()</a>, <a class="el" href="../../d7/d5b/formula_8cpp_source.html#l00130">FormulaManager::generateImages()</a>, <a class="el" href="../../d0/d9c/rtfgen_8cpp_source.html#l02297">RTFGenerator::preProcessFileInplace()</a>, <a class="el" href="../../df/d54/template_8cpp_source.html#l03574">TemplateNodeMsg::render()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00292">DotFilePatcher::run()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00208">str()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00065">TextStream()</a>, <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l03420">FlowChart::writeFlowChart()</a> , 以及 <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l00176">VhdlDocGen::writeOverview()</a>.</p>
+
+</div>
+</div>
+<a id="ad026cb50031d31e1ad1548dc8624c5bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad026cb50031d31e1ad1548dc8624c5bc">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a character to the stream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00107">107</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>+=s.str();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00261">m_buffer</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00442">QCString::str()</a>.</p>
+
+</div>
+</div>
+<a id="adfe320a6bd8d0bde196b5ec63ec40e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfe320a6bd8d0bde196b5ec63ec40e11">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a C-style string to the stream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00114">114</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>+=s;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00261">m_buffer</a>.</p>
+
+</div>
+</div>
+<a id="ad9aa7220bb544c20008067967dfb783f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9aa7220bb544c20008067967dfb783f">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a <a class="el" href="../../d9/d45/class_q_c_string.html" title="This is an alternative implementation of QCString.">QCString</a> to the stream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00121">121</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">output_int32</a>(i,i&lt;0);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00242">output_int32()</a>.</p>
+
+</div>
+</div>
+<a id="a2860865e855cfedd7f94845e1092dee3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2860865e855cfedd7f94845e1092dee3">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[4/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a std::string to the stream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00128">128</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    {</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">output_int32</a>(i,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00242">output_int32()</a>.</p>
+
+</div>
+</div>
+<a id="a823a2bcc7931ab398b96ae2d8e4d67fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a823a2bcc7931ab398b96ae2d8e4d67fc">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[5/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a double to the stream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00170">170</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    {</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa8affbd1b06c663030f9dacb0342a365"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8affbd1b06c663030f9dacb0342a365">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[6/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a float to the stream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00163">163</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00261">m_buffer</a>.</p>
+
+</div>
+</div>
+<a id="a0eba01572bebb32d57baa91622511e49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eba01572bebb32d57baa91622511e49">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[7/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">signed int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a signed integer to the stream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00149">149</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a2626411e76cafb7b0cc97ad259f37615">output_double</a>((<span class="keywordtype">double</span>)f);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00255">output_double()</a>.</p>
+
+</div>
+</div>
+<a id="ae7b84364cec6b3b891f4fce76223bef8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7b84364cec6b3b891f4fce76223bef8">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[8/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">signed short&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a signed short integer to the stream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00135">135</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    {</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">output_int32</a>(i,i&lt;0);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00242">output_int32()</a>.</p>
+
+</div>
+</div>
+<a id="ababfeaaea24fa084824fb72f486a23f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ababfeaaea24fa084824fb72f486a23f0">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[9/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a unsigned integer to the stream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00156">156</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a2626411e76cafb7b0cc97ad259f37615">output_double</a>(d);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00255">output_double()</a>.</p>
+
+</div>
+</div>
+<a id="acd45ae874106de3a3efba1b9f4d6d648"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd45ae874106de3a3efba1b9f4d6d648">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[10/10]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">unsigned short&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a unsigned short integer to the stream </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00142">142</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">output_int32</a>(i,<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp;<span class="keyword">&gt;</span>(*this);</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00242">output_int32()</a>.</p>
+
+</div>
+</div>
+<a id="aa8aa59cb89317b809b04d292dc23b5cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8aa59cb89317b809b04d292dc23b5cb">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a>&amp; TextStream::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2626411e76cafb7b0cc97ad259f37615"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2626411e76cafb7b0cc97ad259f37615">&#9670;&nbsp;</a></span>output_double()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextStream::output_double </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00255">255</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00149">operator&lt;&lt;()</a>.</p>
+
+</div>
+</div>
+<a id="a42463de0e3fa4777714f8e8fc4f9355c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42463de0e3fa4777714f8e8fc4f9355c">&#9670;&nbsp;</a></span>output_int32()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextStream::output_int32 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>n</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>neg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes a string representation of an integer to the buffer </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>the absolute value of the integer </td></tr>
+    <tr><td class="paramname">neg</td><td>indicates if the integer is negative </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00242">242</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <span class="keywordtype">char</span> buf[64];</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      snprintf(buf,64,<span class="stringliteral">&quot;%f&quot;</span>,d);</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;      <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>+=buf;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    std::string <a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    std::ostream *<a class="code" href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">m_s</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    FILE *<a class="code" href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">m_f</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;};</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00261">m_buffer</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00121">operator&lt;&lt;()</a>.</p>
+
+</div>
+</div>
+<a id="af285dfbd0040f7be9f3704738db024de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af285dfbd0040f7be9f3704738db024de">&#9670;&nbsp;</a></span>setFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextStream::setFile </td>
+          <td>(</td>
+          <td class="paramtype">FILE *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00086">86</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">m_f</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../d0/d17/outputgen_8cpp_source.html#l00060">OutputGenerator::startPlainFile()</a>.</p>
+
+</div>
+</div>
+<a id="a18a4ee87242fc2b8e31941a71e622fd2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18a4ee87242fc2b8e31941a71e622fd2">&#9670;&nbsp;</a></span>setStream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextStream::setStream </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets or changes the std::ostream to write to. </p>
+<dl class="section note"><dt>注解</dt><dd>Any data already buffered will be flushed. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00079">79</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00262">m_s</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d0/d17/outputgen_8cpp_source.html#l00072">OutputGenerator::endPlainFile()</a> , 以及 <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00292">DotFilePatcher::run()</a>.</p>
+
+</div>
+</div>
+<a id="aca8457da22d874f4eb30b35ffe87ebd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca8457da22d874f4eb30b35ffe87ebd0">&#9670;&nbsp;</a></span>str() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string TextStream::str </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the contents of the buffer as a std::string object </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00208">208</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    {</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00188">flush()</a> , 以及 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00261">m_buffer</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01174">addConceptToContext()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07182">addEnumValuesToEnums()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l05108">addMemberDocs()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l02186">addVariableToClass()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l02351">addVariableToFile()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l03796">MemberContext::Private::callerGraph()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l03738">MemberContext::Private::callGraph()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l01904">ClassContext::Private::collaborationDiagram()</a>, <a class="el" href="../../de/d45/dotgraph_8cpp_source.html#l00305">DotGraph::computeGraph()</a>, <a class="el" href="../../d1/d86/dotgroupcollaboration_8cpp_source.html#l00209">DotGroupCollaboration::computeTheGraph()</a>, <a class="el" href="../../d4/d33/dotlegendgraph_8cpp_source.html#l00044">DotLegendGraph::computeTheGraph()</a>, <a class="el" href="../../d4/d09/dotgfxhierarchytable_8cpp_source.html#l00037">DotGfxHierarchyTable::computeTheGraph()</a>, <a class="el" href="../../da/d45/dotdirdeps_8cpp_source.html#l00411">DotDirDeps::computeTheGraph()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l04161">convertToLaTeX()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l07405">InheritanceGraphContext::Private::createGraph()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l03561">createLinkedText()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l03151">DirContext::Private::dirGraph()</a>, <a class="el" href="../../dd/d53/qhpxmlwriter_8cpp_source.html#l00045">QhpXmlWriter::dumpTo()</a>, <a class="el" href="../../d8/d6e/htmlgen_8cpp_source.html#l01625">HtmlGenerator::endClassDiagram()</a>, <a class="el" href="../../d2/dd2/entry_8cpp_source.html#l00048">Entry::Entry()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l05911">escapeCommas()</a>, <a class="el" href="../../db/d33/msc_8cpp_source.html#l00146">getMscImageMapFromFile()</a>, <a class="el" href="../../d8/d6e/htmlgen_8cpp_source.html#l00301">getSearchBox()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l04602">ModuleContext::Private::groupGraph()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l02832">FileContext::Private::includedByGraph()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l02790">FileContext::Private::includeGraph()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l01810">ClassContext::Private::inheritanceDiagram()</a>, <a class="el" href="../../dd/d53/qhpxmlwriter_8cpp_source.html#l00040">QhpXmlWriter::insert()</a>, <a class="el" href="../../de/d45/dotgraph_8cpp_source.html#l00084">insertMapFile()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l05129">latexEscapeIndexChars()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l05086">latexEscapeLabelName()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l05173">latexEscapePDFString()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l05197">latexFilterURL()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l01280">parseCode()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l05738">parseCommentAsText()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l01241">parseDoc()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l08871">LatexSpaceless::remove()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l08909">HtmlSpaceless::remove()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l00166">removeAnonymousScopes()</a>, <a class="el" href="../../df/d54/template_8cpp_source.html#l03618">TemplateNodeBlock::render()</a>, <a class="el" href="../../df/d54/template_8cpp_source.html#l03857">TemplateNodeCreate::render()</a>, <a class="el" href="../../df/d54/template_8cpp_source.html#l03961">TemplateNodeTree::renderChildren()</a>, <a class="el" href="../../d2/dd2/entry_8cpp_source.html#l00183">Entry::reset()</a>, <a class="el" href="../../d9/d92/dotfilepatcher_8cpp_source.html#l00292">DotFilePatcher::run()</a>, <a class="el" href="../../d7/d79/searchindex_8cpp_source.html#l00553">searchId()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l06597">stripIndentation()</a>, <a class="el" href="../../d4/d42/latexgen_8cpp_source.html#l00604">substituteLatexKeywords()</a>, <a class="el" href="../../d8/d0a/conceptdef_8cpp_source.html#l00361">templateSpec()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l02370">writeAnnotatedIndexGeneric()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l04159">writeConceptIndex()</a>, <a class="el" href="../../d8/d0a/conceptdef_8cpp_source.html#l00394">ConceptDefImpl::writeDefinition()</a>, <a class="el" href="../../de/daa/dot_8cpp_source.html#l00325">writeDotImageMapFromFile()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l01370">writeFileIndex()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l03991">writeGroupIndex()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l01159">writeHierarchicalExceptionIndex()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l00945">writeHierarchicalIndex()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l01053">writeHierarchicalInterfaceIndex()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l01812">writeNamespaceIndex()</a> , 以及 <a class="el" href="../../db/d14/index_8cpp_source.html#l03611">writePageIndex()</a>.</p>
+
+</div>
+</div>
+<a id="ad31970b450c75ccca13f56940853010e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad31970b450c75ccca13f56940853010e">&#9670;&nbsp;</a></span>str() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextStream::str </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the buffer's contents to string <em>s</em> Any data already in the buffer will be flushed. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00225">225</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    {</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a6c42948b189c9d16fe5eb9ae12112e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c42948b189c9d16fe5eb9ae12112e74">&#9670;&nbsp;</a></span>str() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextStream::str </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the buffer's contents to string <em>s</em>. </p>
+<p>Any data already in the buffer will be flushed. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00216">216</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    {</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a3348ed8ad4dd537dc658b8703ce53c3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3348ed8ad4dd537dc658b8703ce53c3c">&#9670;&nbsp;</a></span>stream()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream* TextStream::stream </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the attached std::ostream object. </p>
+<dl class="section see"><dt>参见</dt><dd><a class="el" href="../../d3/d30/class_text_stream.html#a18a4ee87242fc2b8e31941a71e622fd2" title="Sets or changes the std::ostream to write to.">setStream()</a> </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00096">96</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    {</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../d0/d17/outputgen_8cpp_source.html#l00048">OutputGenerator::operator=()</a> , 以及 <a class="el" href="../../d0/d17/outputgen_8cpp_source.html#l00037">OutputGenerator::OutputGenerator()</a>.</p>
+
+</div>
+</div>
+<a id="aaa78941b7f04d95ca3be7d11073828f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa78941b7f04d95ca3be7d11073828f0">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TextStream::write </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Adds a array of character to the stream </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>the character buffer </td></tr>
+    <tr><td class="paramname">len</td><td>the number of characters in the buffer to write </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00180">180</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      {</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        fwrite(<a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.c_str(),1,<a class="code" href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">m_buffer</a>.length(),<a class="code" href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">m_f</a>);</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../d4/d09/dotgfxhierarchytable_8cpp_source.html#l00037">DotGfxHierarchyTable::computeTheGraph()</a>, <a class="el" href="../../d0/dc3/xmlgen_8cpp_source.html#l01888">generateXML()</a> , 以及 <a class="el" href="../../d2/db5/utf8_8cpp_source.html#l00197">writeUTF8Char()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="aed326642b4edbab68d47dbd9c2f7901f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed326642b4edbab68d47dbd9c2f7901f">&#9670;&nbsp;</a></span>INITIAL_CAPACITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int TextStream::INITIAL_CAPACITY = 4096</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00048">48</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00052">TextStream()</a>.</p>
+
+</div>
+</div>
+<a id="a588661b14e0e238906c63ee414a232ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a588661b14e0e238906c63ee414a232ab">&#9670;&nbsp;</a></span>m_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string TextStream::m_buffer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00261">261</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00202">clear()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00101">file()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00188">flush()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00107">operator&lt;&lt;()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00242">output_int32()</a>, <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00208">str()</a> , 以及 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00052">TextStream()</a>.</p>
+
+</div>
+</div>
+<a id="a88c5744dd7d51305aa75034481a9baab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88c5744dd7d51305aa75034481a9baab">&#9670;&nbsp;</a></span>m_f</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">FILE* TextStream::m_f = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00263">263</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00065">TextStream()</a>.</p>
+
+</div>
+</div>
+<a id="aa2cc389f03492be4163601478f0d9118"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2cc389f03492be4163601478f0d9118">&#9670;&nbsp;</a></span>m_s</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream* TextStream::m_s = nullptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a> 第 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00262">262</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00079">setStream()</a> , 以及 <a class="el" href="../../d4/d7d/textstream_8h_source.html#l00065">TextStream()</a>.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/<a class="el" href="../../d4/d7d/textstream_8h_source.html">textstream.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_text_stream_html_a42463de0e3fa4777714f8e8fc4f9355c"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a42463de0e3fa4777714f8e8fc4f9355c">TextStream::output_int32</a></div><div class="ttdeci">void output_int32(uint32_t n, bool neg)</div><div class="ttdoc">Writes a string representation of an integer to the buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00242">textstream.h:242</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a88c5744dd7d51305aa75034481a9baab"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a88c5744dd7d51305aa75034481a9baab">TextStream::m_f</a></div><div class="ttdeci">FILE * m_f</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00263">textstream.h:263</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a588661b14e0e238906c63ee414a232ab"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a588661b14e0e238906c63ee414a232ab">TextStream::m_buffer</a></div><div class="ttdeci">std::string m_buffer</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00261">textstream.h:261</a></div></div>
+<div class="ttc" id="aclass_text_stream_html"><div class="ttname"><a href="../../d3/d30/class_text_stream.html">TextStream</a></div><div class="ttdoc">Text streaming class that buffers data.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00033">textstream.h:33</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a907937b613a56aa4124608b3a092b820"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a907937b613a56aa4124608b3a092b820">TextStream::flush</a></div><div class="ttdeci">void flush()</div><div class="ttdoc">Flushes the buffer.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00188">textstream.h:188</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_aed326642b4edbab68d47dbd9c2f7901f"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aed326642b4edbab68d47dbd9c2f7901f">TextStream::INITIAL_CAPACITY</a></div><div class="ttdeci">static const int INITIAL_CAPACITY</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00048">textstream.h:48</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_aa2cc389f03492be4163601478f0d9118"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aa2cc389f03492be4163601478f0d9118">TextStream::m_s</a></div><div class="ttdeci">std::ostream * m_s</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00262">textstream.h:262</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_aca8457da22d874f4eb30b35ffe87ebd0"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#aca8457da22d874f4eb30b35ffe87ebd0">TextStream::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdoc">Return the contents of the buffer as a std::string object</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00208">textstream.h:208</a></div></div>
+<div class="ttc" id="aclass_text_stream_html_a2626411e76cafb7b0cc97ad259f37615"><div class="ttname"><a href="../../d3/d30/class_text_stream.html#a2626411e76cafb7b0cc97ad259f37615">TextStream::output_double</a></div><div class="ttdeci">void output_double(double d)</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00255">textstream.h:255</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:41:04 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

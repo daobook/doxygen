@@ -1,0 +1,869 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/classdef.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d1/da6/classdef_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">classdef.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;set&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d5/d75/containers_8h_source.html">containers.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/da1/definition_8h_source.html">definition.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d9b/arguments_8h_source.html">arguments.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/d11/membergroup_8h_source.html">membergroup.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> classdef.h 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 1 -->
+</div>
+</div>
+</div>
+<p><a href="../../d1/da6/classdef_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d06/struct_base_class_def.html">BaseClassDef</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that contains information about an inheritance relation.  <a href="../../d1/d06/struct_base_class_def.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dba/struct_template_instance_def.html">TemplateInstanceDef</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that contains information about a template instance relation  <a href="../../d5/dba/struct_template_instance_def.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A abstract class representing of a compound symbol.  <a href="../../d1/dcf/class_class_def.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d59/struct_uses_class_def.html">UsesClassDef</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that contains information about a usage relation.  <a href="../../d1/d59/struct_uses_class_def.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d1c/class_uses_class_list.html">UsesClassList</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d2b/struct_constraint_class_def.html">ConstraintClassDef</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that contains information about a type constraint relations.  <a href="../../df/d2b/struct_constraint_class_def.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d69/class_constraint_class_list.html">ConstraintClassList</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a173eca34c5a9473651c05a4d92c355fe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a173eca34c5a9473651c05a4d92c355fe">BaseClassList</a> = std::vector&lt; <a class="el" href="../../d1/d06/struct_base_class_def.html">BaseClassDef</a> &gt;</td></tr>
+<tr class="separator:a173eca34c5a9473651c05a4d92c355fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6ced1c572e645da3d141b20bad3aeb4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#ac6ced1c572e645da3d141b20bad3aeb4">TemplateInstanceList</a> = std::vector&lt; <a class="el" href="../../d5/dba/struct_template_instance_def.html">TemplateInstanceDef</a> &gt;</td></tr>
+<tr class="separator:ac6ced1c572e645da3d141b20bad3aeb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52c06547a303385be1dc01559096a3d9"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a52c06547a303385be1dc01559096a3d9">TemplateNameMap</a> = std::map&lt; std::string, int &gt;</td></tr>
+<tr class="separator:a52c06547a303385be1dc01559096a3d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a57c19877e781003273aacd8c7b18fe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a6a57c19877e781003273aacd8c7b18fe">ClassDefSet</a> = std::set&lt; const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> * &gt;</td></tr>
+<tr class="separator:a6a57c19877e781003273aacd8c7b18fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a424ca0126e7259567dfca28091584074"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a424ca0126e7259567dfca28091584074">createClassDef</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;fileName, int startLine, int startColumn, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;name, <a class="el" href="../../d1/dcf/class_class_def.html#ae70cf86d35fe954a94c566fbcfc87939">ClassDef::CompoundType</a> ct, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;ref=<a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>(), const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;fName=<a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>(), bool isSymbol=<a class="el" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>, bool isJavaEnum=<a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>)</td></tr>
+<tr class="memdesc:a424ca0126e7259567dfca28091584074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory method to create a new <a class="el" href="../../d1/dcf/class_class_def.html" title="A abstract class representing of a compound symbol.">ClassDef</a> object  <a href="../../d1/da6/classdef_8h.html#a424ca0126e7259567dfca28091584074">更多...</a><br /></td></tr>
+<tr class="separator:a424ca0126e7259567dfca28091584074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe77e6516ec1e2349cc1508ac9469757"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#afe77e6516ec1e2349cc1508ac9469757">createClassDefAlias</a> (const <a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *newScope, const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *cd)</td></tr>
+<tr class="separator:afe77e6516ec1e2349cc1508ac9469757"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e79acbd0860c192c280c27f3609883"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a40e79acbd0860c192c280c27f3609883">toClassDef</a> (<a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *d)</td></tr>
+<tr class="separator:a40e79acbd0860c192c280c27f3609883"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a597e946286e395e92f8d8e8bbb4bca66"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a597e946286e395e92f8d8e8bbb4bca66">toClassDef</a> (<a class="el" href="../../d0/d46/class_definition_mutable.html">DefinitionMutable</a> *d)</td></tr>
+<tr class="separator:a597e946286e395e92f8d8e8bbb4bca66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48ad63b0620f1f6f409bec4ff4f455a0"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a48ad63b0620f1f6f409bec4ff4f455a0">toClassDef</a> (const <a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *d)</td></tr>
+<tr class="separator:a48ad63b0620f1f6f409bec4ff4f455a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae84551f3738567a53c115c84efede554"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#ae84551f3738567a53c115c84efede554">toClassDefMutable</a> (<a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *d)</td></tr>
+<tr class="separator:ae84551f3738567a53c115c84efede554"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab47c4f31c0d418e2f79a4e989d59b360"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#ab47c4f31c0d418e2f79a4e989d59b360">toClassDefMutable</a> (const <a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *d)</td></tr>
+<tr class="separator:ab47c4f31c0d418e2f79a4e989d59b360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23b573c0dc0083e7b89b4a67bc94b2bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a23b573c0dc0083e7b89b4a67bc94b2bb">getClass</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;key)</td></tr>
+<tr class="separator:a23b573c0dc0083e7b89b4a67bc94b2bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81b703e537a327ac20c286011cf4b7a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a81b703e537a327ac20c286011cf4b7a6">getClassMutable</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;key)</td></tr>
+<tr class="separator:a81b703e537a327ac20c286011cf4b7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0eadc7d7582ad6fd7727ce0f417e96a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#ac0eadc7d7582ad6fd7727ce0f417e96a">hasVisibleRoot</a> (const <a class="el" href="../../d1/da6/classdef_8h.html#a173eca34c5a9473651c05a4d92c355fe">BaseClassList</a> &amp;bcl)</td></tr>
+<tr class="separator:ac0eadc7d7582ad6fd7727ce0f417e96a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0c88e52d4d7424c0840a23a522dc330"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#af0c88e52d4d7424c0840a23a522dc330">classHasVisibleChildren</a> (const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *cd)</td></tr>
+<tr class="separator:af0c88e52d4d7424c0840a23a522dc330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf9fad8d7ee7f78e152b542bcd38061d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#abf9fad8d7ee7f78e152b542bcd38061d">classVisibleInIndex</a> (const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *cd)</td></tr>
+<tr class="separator:abf9fad8d7ee7f78e152b542bcd38061d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19ebee64db945b01ff5b36cd2b7ed0ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a19ebee64db945b01ff5b36cd2b7ed0ca">minClassDistance</a> (const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *cd, const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *bcd, int level=0)</td></tr>
+<tr class="separator:a19ebee64db945b01ff5b36cd2b7ed0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c8b5464000c08445cd8b953bf217fcd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4ded">Protection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da6/classdef_8h.html#a1c8b5464000c08445cd8b953bf217fcd">classInheritedProtectionLevel</a> (const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *cd, const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *bcd, <a class="el" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4ded">Protection</a> prot=<a class="el" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4deda2d47e20e63deb55d32228fde32f6b513">Public</a>, int level=0)</td></tr>
+<tr class="separator:a1c8b5464000c08445cd8b953bf217fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a173eca34c5a9473651c05a4d92c355fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a173eca34c5a9473651c05a4d92c355fe">&#9670;&nbsp;</a></span>BaseClassList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d1/da6/classdef_8h.html#a173eca34c5a9473651c05a4d92c355fe">BaseClassList</a> =  std::vector&lt;<a class="el" href="../../d1/d06/struct_base_class_def.html">BaseClassDef</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/da6/classdef_8h_source.html">classdef.h</a> 第 <a class="el" href="../../d1/da6/classdef_8h_source.html#l00081">81</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a6a57c19877e781003273aacd8c7b18fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a57c19877e781003273aacd8c7b18fe">&#9670;&nbsp;</a></span>ClassDefSet</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d1/da6/classdef_8h.html#a6a57c19877e781003273aacd8c7b18fe">ClassDefSet</a> =  std::set&lt;const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a>*&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/da6/classdef_8h_source.html">classdef.h</a> 第 <a class="el" href="../../d1/da6/classdef_8h_source.html#l00095">95</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ac6ced1c572e645da3d141b20bad3aeb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6ced1c572e645da3d141b20bad3aeb4">&#9670;&nbsp;</a></span>TemplateInstanceList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d1/da6/classdef_8h.html#ac6ced1c572e645da3d141b20bad3aeb4">TemplateInstanceList</a> =  std::vector&lt;<a class="el" href="../../d5/dba/struct_template_instance_def.html">TemplateInstanceDef</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/da6/classdef_8h_source.html">classdef.h</a> 第 <a class="el" href="../../d1/da6/classdef_8h_source.html#l00091">91</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a52c06547a303385be1dc01559096a3d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52c06547a303385be1dc01559096a3d9">&#9670;&nbsp;</a></span>TemplateNameMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d1/da6/classdef_8h.html#a52c06547a303385be1dc01559096a3d9">TemplateNameMap</a> =  std::map&lt;std::string,int&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/da6/classdef_8h_source.html">classdef.h</a> 第 <a class="el" href="../../d1/da6/classdef_8h_source.html#l00093">93</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="af0c88e52d4d7424c0840a23a522dc330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0c88e52d4d7424c0840a23a522dc330">&#9670;&nbsp;</a></span>classHasVisibleChildren()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool classHasVisibleChildren </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td>
+          <td class="paramname"><em>cd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04991">4991</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l04992"></a><span class="lineno"> 4992</span>&#160;{</div>
+<div class="line"><a name="l04993"></a><span class="lineno"> 4993</span>&#160;  <a class="code" href="../../d1/da6/classdef_8h.html#a173eca34c5a9473651c05a4d92c355fe">BaseClassList</a> bcl;</div>
+<div class="line"><a name="l04994"></a><span class="lineno"> 4994</span>&#160; </div>
+<div class="line"><a name="l04995"></a><span class="lineno"> 4995</span>&#160;  <span class="keywordflow">if</span> (cd-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a0dda9f50f2f9754e6341a10373eafec7">getLanguage</a>()==<a class="code" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2a04de850503d4e73333e3c8eec7f97da7">SrcLangExt_VHDL</a>) <span class="comment">// reverse baseClass/subClass relation</span></div>
+<div class="line"><a name="l04996"></a><span class="lineno"> 4996</span>&#160;  {</div>
+<div class="line"><a name="l04997"></a><span class="lineno"> 4997</span>&#160;    <span class="keywordflow">if</span> (cd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#ad95b403a98d68da283df79e80c4ce6c5">baseClasses</a>().empty()) <span class="keywordflow">return</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l04998"></a><span class="lineno"> 4998</span>&#160;    bcl=cd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#ad95b403a98d68da283df79e80c4ce6c5">baseClasses</a>();</div>
+<div class="line"><a name="l04999"></a><span class="lineno"> 4999</span>&#160;  }</div>
+<div class="line"><a name="l05000"></a><span class="lineno"> 5000</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l05001"></a><span class="lineno"> 5001</span>&#160;  {</div>
+<div class="line"><a name="l05002"></a><span class="lineno"> 5002</span>&#160;    <span class="keywordflow">if</span> (cd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#a2ae6c4c36f02dcb02b5e727009807cdc">subClasses</a>().empty()) <span class="keywordflow">return</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l05003"></a><span class="lineno"> 5003</span>&#160;    bcl=cd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#a2ae6c4c36f02dcb02b5e727009807cdc">subClasses</a>();</div>
+<div class="line"><a name="l05004"></a><span class="lineno"> 5004</span>&#160;  }</div>
+<div class="line"><a name="l05005"></a><span class="lineno"> 5005</span>&#160; </div>
+<div class="line"><a name="l05006"></a><span class="lineno"> 5006</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;bcd : bcl)</div>
+<div class="line"><a name="l05007"></a><span class="lineno"> 5007</span>&#160;  {</div>
+<div class="line"><a name="l05008"></a><span class="lineno"> 5008</span>&#160;    <span class="keywordflow">if</span> (bcd.classDef-&gt;isVisibleInHierarchy())</div>
+<div class="line"><a name="l05009"></a><span class="lineno"> 5009</span>&#160;    {</div>
+<div class="line"><a name="l05010"></a><span class="lineno"> 5010</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l05011"></a><span class="lineno"> 5011</span>&#160;    }</div>
+<div class="line"><a name="l05012"></a><span class="lineno"> 5012</span>&#160;  }</div>
+<div class="line"><a name="l05013"></a><span class="lineno"> 5013</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l05014"></a><span class="lineno"> 5014</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d1/dcf/class_class_def.html#ad95b403a98d68da283df79e80c4ce6c5">ClassDef::baseClasses()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00033">FALSE</a>, <a class="el" href="../../d5/dcc/class_definition.html#a0dda9f50f2f9754e6341a10373eafec7">Definition::getLanguage()</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00054">SrcLangExt_VHDL</a>, <a class="el" href="../../d1/dcf/class_class_def.html#a2ae6c4c36f02dcb02b5e727009807cdc">ClassDef::subClasses()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d12/context_8cpp_source.html#l05368">NestingNodeContext::Private::addClasses()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l00785">writeClassTreeForList()</a> , 以及 <a class="el" href="../../db/d14/index_8cpp_source.html#l00426">writeClassTreeToOutput()</a>.</p>
+
+</div>
+</div>
+<a id="a1c8b5464000c08445cd8b953bf217fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c8b5464000c08445cd8b953bf217fcd">&#9670;&nbsp;</a></span>classInheritedProtectionLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4ded">Protection</a> classInheritedProtectionLevel </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td>
+          <td class="paramname"><em>cd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td>
+          <td class="paramname"><em>bcd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4ded">Protection</a>&#160;</td>
+          <td class="paramname"><em>prot</em> = <code><a class="el" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4deda2d47e20e63deb55d32228fde32f6b513">Public</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l05051">5051</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l05052"></a><span class="lineno"> 5052</span>&#160;{</div>
+<div class="line"><a name="l05053"></a><span class="lineno"> 5053</span>&#160;  <span class="keywordflow">if</span> (bcd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#a18353df2c0337db2ef89e08a451edda2">categoryOf</a>()) <span class="comment">// use class that is being extended in case of</span></div>
+<div class="line"><a name="l05054"></a><span class="lineno"> 5054</span>&#160;    <span class="comment">// an Objective-C category</span></div>
+<div class="line"><a name="l05055"></a><span class="lineno"> 5055</span>&#160;  {</div>
+<div class="line"><a name="l05056"></a><span class="lineno"> 5056</span>&#160;    bcd=bcd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#a18353df2c0337db2ef89e08a451edda2">categoryOf</a>();</div>
+<div class="line"><a name="l05057"></a><span class="lineno"> 5057</span>&#160;  }</div>
+<div class="line"><a name="l05058"></a><span class="lineno"> 5058</span>&#160;  <span class="keywordflow">if</span> (cd==bcd)</div>
+<div class="line"><a name="l05059"></a><span class="lineno"> 5059</span>&#160;  {</div>
+<div class="line"><a name="l05060"></a><span class="lineno"> 5060</span>&#160;    <span class="keywordflow">goto</span> exit;</div>
+<div class="line"><a name="l05061"></a><span class="lineno"> 5061</span>&#160;  }</div>
+<div class="line"><a name="l05062"></a><span class="lineno"> 5062</span>&#160;  <span class="keywordflow">if</span> (level==256)</div>
+<div class="line"><a name="l05063"></a><span class="lineno"> 5063</span>&#160;  {</div>
+<div class="line"><a name="l05064"></a><span class="lineno"> 5064</span>&#160;    <a class="code" href="../../d8/d6a/message_8cpp.html#aede5746344fdce99647541101eaa7f06">err</a>(<span class="stringliteral">&quot;Internal inconsistency: found class %s seem to have a recursive &quot;</span></div>
+<div class="line"><a name="l05065"></a><span class="lineno"> 5065</span>&#160;        <span class="stringliteral">&quot;inheritance relation! Please send a bug report to doxygen@gmail.com\n&quot;</span>,<a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(cd-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>()));</div>
+<div class="line"><a name="l05066"></a><span class="lineno"> 5066</span>&#160;  }</div>
+<div class="line"><a name="l05067"></a><span class="lineno"> 5067</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (prot!=<a class="code" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4dedaaa82165706f5dd0859648a09f1f64166">Private</a>)</div>
+<div class="line"><a name="l05068"></a><span class="lineno"> 5068</span>&#160;  {</div>
+<div class="line"><a name="l05069"></a><span class="lineno"> 5069</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;bcdi : cd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#ad95b403a98d68da283df79e80c4ce6c5">baseClasses</a>())</div>
+<div class="line"><a name="l05070"></a><span class="lineno"> 5070</span>&#160;    {</div>
+<div class="line"><a name="l05071"></a><span class="lineno"> 5071</span>&#160;      <a class="code" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4ded">Protection</a> baseProt = <a class="code" href="../../de/d89/classdef_8cpp.html#ad1c7d957765b81dbe423423b2f5e5b48">classInheritedProtectionLevel</a>(bcdi.classDef,bcd,bcdi.prot,level+1);</div>
+<div class="line"><a name="l05072"></a><span class="lineno"> 5072</span>&#160;      <span class="keywordflow">if</span> (baseProt==<a class="code" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4dedaaa82165706f5dd0859648a09f1f64166">Private</a>)        prot=<a class="code" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4dedaaa82165706f5dd0859648a09f1f64166">Private</a>;</div>
+<div class="line"><a name="l05073"></a><span class="lineno"> 5073</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (baseProt==<a class="code" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4deda72414112a6a45ab0b4b73e8b83d0b0f5">Protected</a>) prot=<a class="code" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4deda72414112a6a45ab0b4b73e8b83d0b0f5">Protected</a>;</div>
+<div class="line"><a name="l05074"></a><span class="lineno"> 5074</span>&#160;    }</div>
+<div class="line"><a name="l05075"></a><span class="lineno"> 5075</span>&#160;  }</div>
+<div class="line"><a name="l05076"></a><span class="lineno"> 5076</span>&#160;exit:</div>
+<div class="line"><a name="l05077"></a><span class="lineno"> 5077</span>&#160;  <span class="comment">//printf(&quot;classInheritedProtectionLevel(%s,%s)=%d\n&quot;,qPrint(cd-&gt;name()),qPrint(bcd-&gt;name()),prot);</span></div>
+<div class="line"><a name="l05078"></a><span class="lineno"> 5078</span>&#160;  <span class="keywordflow">return</span> prot;</div>
+<div class="line"><a name="l05079"></a><span class="lineno"> 5079</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d1/dcf/class_class_def.html#ad95b403a98d68da283df79e80c4ce6c5">ClassDef::baseClasses()</a>, <a class="el" href="../../d1/dcf/class_class_def.html#a18353df2c0337db2ef89e08a451edda2">ClassDef::categoryOf()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l05051">classInheritedProtectionLevel()</a>, <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00203">err()</a>, <a class="el" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">Definition::name()</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00026">Private</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00026">Protected</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00589">qPrint()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l05051">classInheritedProtectionLevel()</a>.</p>
+
+</div>
+</div>
+<a id="abf9fad8d7ee7f78e152b542bcd38061d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf9fad8d7ee7f78e152b542bcd38061d">&#9670;&nbsp;</a></span>classVisibleInIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool classVisibleInIndex </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td>
+          <td class="paramname"><em>cd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l05016">5016</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l05017"></a><span class="lineno"> 5017</span>&#160;{</div>
+<div class="line"><a name="l05018"></a><span class="lineno"> 5018</span>&#160;  <span class="keywordtype">bool</span> allExternals = <a class="code" href="../../db/d16/config_8h.html#a5373d0332a31f16ad7a42037733e8c79">Config_getBool</a>(ALLEXTERNALS);</div>
+<div class="line"><a name="l05019"></a><span class="lineno"> 5019</span>&#160;  <span class="keywordflow">return</span> (allExternals &amp;&amp; cd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#a659ebf886a21ea56b51354c22b91b0dc">isLinkable</a>()) || cd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#ab44ea1cae6c5a0ff7ea797e355672e87">isLinkableInProject</a>();</div>
+<div class="line"><a name="l05020"></a><span class="lineno"> 5020</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d16/config_8h_source.html#l00033">Config_getBool</a>, <a class="el" href="../../d1/dcf/class_class_def.html#a659ebf886a21ea56b51354c22b91b0dc">ClassDef::isLinkable()</a> , 以及 <a class="el" href="../../d1/dcf/class_class_def.html#ab44ea1cae6c5a0ff7ea797e355672e87">ClassDef::isLinkableInProject()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d12/context_8cpp_source.html#l05728">NestingContext::Private::addClass()</a> , 以及 <a class="el" href="../../db/d14/index_8cpp_source.html#l01525">writeClassTree()</a>.</p>
+
+</div>
+</div>
+<a id="a424ca0126e7259567dfca28091584074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a424ca0126e7259567dfca28091584074">&#9670;&nbsp;</a></span>createClassDef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a>* createClassDef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startLine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>startColumn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/dcf/class_class_def.html#ae70cf86d35fe954a94c566fbcfc87939">ClassDef::CompoundType</a>&#160;</td>
+          <td class="paramname"><em>ct</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>ref</em> = <code><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>fName</em> = <code><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isSymbol</em> = <code><a class="el" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isJavaEnum</em> = <code><a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Factory method to create a new <a class="el" href="../../d1/dcf/class_class_def.html" title="A abstract class representing of a compound symbol.">ClassDef</a> object </p>
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l00367">367</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;{</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d1/d25/class_class_def_impl.html">ClassDefImpl</a>(fileName,startLine,startColumn,name,ct,ref,fName,isSymbol,isJavaEnum);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l00961">addClassToContext()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01461">createTagLessInstance()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04447">findClassRelation()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04050">findUsedClassesForClass()</a> , 以及 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01986">findUsingDeclarations()</a>.</p>
+
+</div>
+</div>
+<a id="afe77e6516ec1e2349cc1508ac9469757"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe77e6516ec1e2349cc1508ac9469757">&#9670;&nbsp;</a></span>createClassDefAlias()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a>* createClassDefAlias </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *&#160;</td>
+          <td class="paramname"><em>newScope</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td>
+          <td class="paramname"><em>cd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l00559">559</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;{</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;  <a class="code" href="../../d1/dcf/class_class_def.html">ClassDef</a> *acd = <span class="keyword">new</span> <a class="code" href="../../d0/d2b/class_class_def_alias_impl.html">ClassDefAliasImpl</a>(newScope,cd);</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;  <span class="comment">//printf(&quot;cd name=%s localName=%s qualifiedName=%s qualifiedNameWith=%s displayName()=%s\n&quot;,</span></div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;  <span class="comment">//    qPrint(acd-&gt;name()),qPrint(acd-&gt;localName()),qPrint(acd-&gt;qualifiedName()),</span></div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;  <span class="comment">//    qPrint(acd-&gt;qualifiedNameWithTemplateParameters()),qPrint(acd-&gt;displayName()));</span></div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;  <span class="keywordflow">return</span> acd;</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01312">resolveClassNestingRelations()</a>.</p>
+
+</div>
+</div>
+<a id="a23b573c0dc0083e7b89b4a67bc94b2bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23b573c0dc0083e7b89b4a67bc94b2bb">&#9670;&nbsp;</a></span>getClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a>* getClass </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get a class definition given its name. Returns 0 if the class is not found. </p>
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04974">4974</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l04975"></a><span class="lineno"> 4975</span>&#160;{</div>
+<div class="line"><a name="l04976"></a><span class="lineno"> 4976</span>&#160;  <span class="keywordflow">if</span> (n.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>()) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l04977"></a><span class="lineno"> 4977</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../de/d6a/class_doxygen.html#a5f4b7acdd27a42865b4832e4e7ffe82c">Doxygen::classLinkedMap</a>-&gt;<a class="code" href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">find</a>(n);</div>
+<div class="line"><a name="l04978"></a><span class="lineno"> 4978</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00078">Doxygen::classLinkedMap</a>, <a class="el" href="../../da/de1/linkedmap_8h_source.html#l00060">LinkedMap&lt; T, Hash, KeyEqual, Map &gt;::find()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l00723">buildScopeFromQualifiedName()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l03733">extractNamespaceName()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04015">findClassWithinClassContext()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07446">findEnumDocumentation()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07015">findEnums()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04854">findInheritedTemplateInstances()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l06165">findMember()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04875">findUsedTemplateInstances()</a>, <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l01827">MemberDefImpl::getClassDefOfAnonymousType()</a>, <a class="el" href="../../d1/da6/classdef_8h_source.html#l00485">getClassMutable()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l02693">getScopeDefs()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l00874">getTemplateArgumentsFromName()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l01015">DocParser::handleLinkedWord()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l03782">insertTemplateSpecifierInScope()</a>, <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l04048">MemberDefImpl::isDocumentedFriendClass()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l00886">linkifyText()</a>, <a class="el" href="../../d2/d99/symbolresolver_8cpp_source.html#l01033">SymbolResolver::resolveClass()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l03037">resolveLink()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l02757">resolveRef()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l04605">stripTemplateSpecifiersFromScope()</a> , 以及 <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l02063">MemberDefImpl::writeDeclaration()</a>.</p>
+
+</div>
+</div>
+<a id="a81b703e537a327ac20c286011cf4b7a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81b703e537a327ac20c286011cf4b7a6">&#9670;&nbsp;</a></span>getClassMutable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a>* getClassMutable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d1/da6/classdef_8h_source.html">classdef.h</a> 第 <a class="el" href="../../d1/da6/classdef_8h_source.html#l00485">485</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;{</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d1/da6/classdef_8h.html#ae84551f3738567a53c115c84efede554">toClassDefMutable</a>(<a class="code" href="../../d1/da6/classdef_8h.html#a23b573c0dc0083e7b89b4a67bc94b2bb">getClass</a>(key));</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04974">getClass()</a> , 以及 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04944">toClassDefMutable()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l00961">addClassToContext()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07182">addEnumValuesToEnums()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l05626">addLocalObjCMethod()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l02351">addVariableToFile()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04895">computeClassRelations()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04927">computeTemplateClassRelations()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04447">findClassRelation()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07015">findEnums()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l06165">findMember()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01986">findUsingDeclarations()</a> , 以及 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l02075">findUsingDeclImports()</a>.</p>
+
+</div>
+</div>
+<a id="ac0eadc7d7582ad6fd7727ce0f417e96a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0eadc7d7582ad6fd7727ce0f417e96a">&#9670;&nbsp;</a></span>hasVisibleRoot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hasVisibleRoot </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/da6/classdef_8h.html#a173eca34c5a9473651c05a4d92c355fe">BaseClassList</a> &amp;&#160;</td>
+          <td class="paramname"><em>bcl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04980">4980</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l04981"></a><span class="lineno"> 4981</span>&#160;{</div>
+<div class="line"><a name="l04982"></a><span class="lineno"> 4982</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;bcd : bcl)</div>
+<div class="line"><a name="l04983"></a><span class="lineno"> 4983</span>&#160;  {</div>
+<div class="line"><a name="l04984"></a><span class="lineno"> 4984</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d1/dcf/class_class_def.html">ClassDef</a> *cd=bcd.classDef;</div>
+<div class="line"><a name="l04985"></a><span class="lineno"> 4985</span>&#160;    <span class="keywordflow">if</span> (cd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#a3067e647412a923d7743258c89eabe75">isVisibleInHierarchy</a>()) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l04986"></a><span class="lineno"> 4986</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d89/classdef_8cpp.html#ac0eadc7d7582ad6fd7727ce0f417e96a">hasVisibleRoot</a>(cd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#ad95b403a98d68da283df79e80c4ce6c5">baseClasses</a>())) <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l04987"></a><span class="lineno"> 4987</span>&#160;  }</div>
+<div class="line"><a name="l04988"></a><span class="lineno"> 4988</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l04989"></a><span class="lineno"> 4989</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d1/dcf/class_class_def.html#ad95b403a98d68da283df79e80c4ce6c5">ClassDef::baseClasses()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04980">hasVisibleRoot()</a> , 以及 <a class="el" href="../../d1/dcf/class_class_def.html#a3067e647412a923d7743258c89eabe75">ClassDef::isVisibleInHierarchy()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d12/context_8cpp_source.html#l05917">NestingContext::Private::addClassHierarchy()</a>, <a class="el" href="../../d4/d09/dotgfxhierarchytable_8cpp_source.html#l00179">DotGfxHierarchyTable::addClassList()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l05889">NestingContext::Private::addDerivedClasses()</a>, <a class="el" href="../../d4/d09/dotgfxhierarchytable_8cpp_source.html#l00105">DotGfxHierarchyTable::addHierarchy()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l00911">countClassesInTreeList()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04980">hasVisibleRoot()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l00785">writeClassTreeForList()</a> , 以及 <a class="el" href="../../db/d14/index_8cpp_source.html#l00426">writeClassTreeToOutput()</a>.</p>
+
+</div>
+</div>
+<a id="a19ebee64db945b01ff5b36cd2b7ed0ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19ebee64db945b01ff5b36cd2b7ed0ca">&#9670;&nbsp;</a></span>minClassDistance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int minClassDistance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td>
+          <td class="paramname"><em>cd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td>
+          <td class="paramname"><em>bcd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>level</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l05026">5026</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l05027"></a><span class="lineno"> 5027</span>&#160;{</div>
+<div class="line"><a name="l05028"></a><span class="lineno"> 5028</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="../../df/d2d/util_8cpp.html#a225f155c4a7035d82bee0b83dec4ae50">maxInheritanceDepth</a> = 100000;</div>
+<div class="line"><a name="l05029"></a><span class="lineno"> 5029</span>&#160;  <span class="keywordflow">if</span> (bcd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#a18353df2c0337db2ef89e08a451edda2">categoryOf</a>()) <span class="comment">// use class that is being extended in case of</span></div>
+<div class="line"><a name="l05030"></a><span class="lineno"> 5030</span>&#160;    <span class="comment">// an Objective-C category</span></div>
+<div class="line"><a name="l05031"></a><span class="lineno"> 5031</span>&#160;  {</div>
+<div class="line"><a name="l05032"></a><span class="lineno"> 5032</span>&#160;    bcd=bcd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#a18353df2c0337db2ef89e08a451edda2">categoryOf</a>();</div>
+<div class="line"><a name="l05033"></a><span class="lineno"> 5033</span>&#160;  }</div>
+<div class="line"><a name="l05034"></a><span class="lineno"> 5034</span>&#160;  <span class="keywordflow">if</span> (cd==bcd) <span class="keywordflow">return</span> level;</div>
+<div class="line"><a name="l05035"></a><span class="lineno"> 5035</span>&#160;  <span class="keywordflow">if</span> (level==256)</div>
+<div class="line"><a name="l05036"></a><span class="lineno"> 5036</span>&#160;  {</div>
+<div class="line"><a name="l05037"></a><span class="lineno"> 5037</span>&#160;    <a class="code" href="../../d8/d6a/message_8cpp.html#a1fd98c6976d3826490804976e17eb83f">warn_uncond</a>(<span class="stringliteral">&quot;class %s seem to have a recursive &quot;</span></div>
+<div class="line"><a name="l05038"></a><span class="lineno"> 5038</span>&#160;        <span class="stringliteral">&quot;inheritance relation!\n&quot;</span>,<a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(cd-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>()));</div>
+<div class="line"><a name="l05039"></a><span class="lineno"> 5039</span>&#160;    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l05040"></a><span class="lineno"> 5040</span>&#160;  }</div>
+<div class="line"><a name="l05041"></a><span class="lineno"> 5041</span>&#160;  <span class="keywordtype">int</span> m=<a class="code" href="../../df/d2d/util_8cpp.html#a225f155c4a7035d82bee0b83dec4ae50">maxInheritanceDepth</a>;</div>
+<div class="line"><a name="l05042"></a><span class="lineno"> 5042</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;bcdi : cd-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#ad95b403a98d68da283df79e80c4ce6c5">baseClasses</a>())</div>
+<div class="line"><a name="l05043"></a><span class="lineno"> 5043</span>&#160;  {</div>
+<div class="line"><a name="l05044"></a><span class="lineno"> 5044</span>&#160;    <span class="keywordtype">int</span> mc=<a class="code" href="../../de/d89/classdef_8cpp.html#a649670159a00e0a1c323df1b40bf01e6">minClassDistance</a>(bcdi.classDef,bcd,level+1);</div>
+<div class="line"><a name="l05045"></a><span class="lineno"> 5045</span>&#160;    <span class="keywordflow">if</span> (mc&lt;m) m=mc;</div>
+<div class="line"><a name="l05046"></a><span class="lineno"> 5046</span>&#160;    <span class="keywordflow">if</span> (m&lt;0) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l05047"></a><span class="lineno"> 5047</span>&#160;  }</div>
+<div class="line"><a name="l05048"></a><span class="lineno"> 5048</span>&#160;  <span class="keywordflow">return</span> m;</div>
+<div class="line"><a name="l05049"></a><span class="lineno"> 5049</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d1/dcf/class_class_def.html#ad95b403a98d68da283df79e80c4ce6c5">ClassDef::baseClasses()</a>, <a class="el" href="../../d1/dcf/class_class_def.html#a18353df2c0337db2ef89e08a451edda2">ClassDef::categoryOf()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l00150">maxInheritanceDepth</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l05026">minClassDistance()</a>, <a class="el" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">Definition::name()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00589">qPrint()</a> , 以及 <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00194">warn_uncond()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07802">computeMemberRelations()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l02208">getDefs()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04121">ClassDefImpl::getMemberByName()</a> , 以及 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l05026">minClassDistance()</a>.</p>
+
+</div>
+</div>
+<a id="a48ad63b0620f1f6f409bec4ff4f455a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48ad63b0620f1f6f409bec4ff4f455a0">&#9670;&nbsp;</a></span>toClassDef() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a>* toClassDef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04932">4932</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l04933"></a><span class="lineno"> 4933</span>&#160;{</div>
+<div class="line"><a name="l04934"></a><span class="lineno"> 4934</span>&#160;  <span class="keywordflow">if</span> (d &amp;&amp; (<span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../d1/d25/class_class_def_impl.html">ClassDefImpl</a>) || <span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../d0/d2b/class_class_def_alias_impl.html">ClassDefAliasImpl</a>)))</div>
+<div class="line"><a name="l04935"></a><span class="lineno"> 4935</span>&#160;  {</div>
+<div class="line"><a name="l04936"></a><span class="lineno"> 4936</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code" href="../../d1/dcf/class_class_def.html">ClassDef</a>*<span class="keyword">&gt;</span>(d);</div>
+<div class="line"><a name="l04937"></a><span class="lineno"> 4937</span>&#160;  }</div>
+<div class="line"><a name="l04938"></a><span class="lineno"> 4938</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l04939"></a><span class="lineno"> 4939</span>&#160;  {</div>
+<div class="line"><a name="l04940"></a><span class="lineno"> 4940</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l04941"></a><span class="lineno"> 4941</span>&#160;  }</div>
+<div class="line"><a name="l04942"></a><span class="lineno"> 4942</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a40e79acbd0860c192c280c27f3609883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40e79acbd0860c192c280c27f3609883">&#9670;&nbsp;</a></span>toClassDef() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a>* toClassDef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04907">4907</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l04908"></a><span class="lineno"> 4908</span>&#160;{</div>
+<div class="line"><a name="l04909"></a><span class="lineno"> 4909</span>&#160;  <span class="keywordflow">if</span> (d &amp;&amp; (<span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../d1/d25/class_class_def_impl.html">ClassDefImpl</a>) || <span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../d0/d2b/class_class_def_alias_impl.html">ClassDefAliasImpl</a>)))</div>
+<div class="line"><a name="l04910"></a><span class="lineno"> 4910</span>&#160;  {</div>
+<div class="line"><a name="l04911"></a><span class="lineno"> 4911</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d1/dcf/class_class_def.html">ClassDef</a>*<span class="keyword">&gt;</span>(d);</div>
+<div class="line"><a name="l04912"></a><span class="lineno"> 4912</span>&#160;  }</div>
+<div class="line"><a name="l04913"></a><span class="lineno"> 4913</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l04914"></a><span class="lineno"> 4914</span>&#160;  {</div>
+<div class="line"><a name="l04915"></a><span class="lineno"> 4915</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l04916"></a><span class="lineno"> 4916</span>&#160;  }</div>
+<div class="line"><a name="l04917"></a><span class="lineno"> 4917</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d12/context_8cpp_source.html#l05368">NestingNodeContext::Private::addClasses()</a>, <a class="el" href="../../d7/d8f/docsets_8cpp_source.html#l00275">DocSets::addIndexItem()</a>, <a class="el" href="../../d7/d1c/namespacedef_8cpp_source.html#l00349">NamespaceDefImpl::addInnerCompound()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l03905">ClassDefImpl::addInnerCompound()</a>, <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l04237">MemberDefImpl::addListReference()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l05468">NestingNodeContext::Private::addMembers()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l02204">ClassContext::Private::addTemplateDecls()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l05547">NestingNodeContext::Private::createClass()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l07929">MemberListInfoContext::Private::createInherited()</a>, <a class="el" href="../../d7/d79/searchindex_8cpp_source.html#l00414">definitionToName()</a>, <a class="el" href="../../db/d41/ftvhelp_8cpp_source.html#l00386">FTVHelp::generateTree()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l00385">ClassDefAliasImpl::getCdAlias()</a>, <a class="el" href="../../d2/d99/symbolresolver_8cpp_source.html#l00331">SymbolResolver::Private::getResolvedSymbol()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04052">ClassDefImpl::getTemplateParameterLists()</a>, <a class="el" href="../../d2/d99/symbolresolver_8cpp_source.html#l00886">SymbolResolver::Private::isAccessibleFrom()</a>, <a class="el" href="../../d2/d99/symbolresolver_8cpp_source.html#l00628">SymbolResolver::Private::isAccessibleFromWithExpScope()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l00055">makeQualifiedNameWithTemplateParameters()</a>, <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l01423">MemberDefImpl::moveTo()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l05490">scopeIsTemplate()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l01267">searchTemplateSpecs()</a>, <a class="el" href="../../d7/d79/searchindex_8cpp_source.html#l00085">SearchIndex::setCurrentDoc()</a>, <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l00857">writeDefArgumentList()</a>, <a class="el" href="../../d7/d79/searchindex_8cpp_source.html#l00905">writeJavaScriptSearchIndex()</a>, <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l03725">MemberDefImpl::writeMemberDocSimple()</a>, <a class="el" href="../../d0/d14/memberlist_8cpp_source.html#l00725">MemberList::writeSimpleDocumentation()</a> , 以及 <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l01618">VhdlDocGen::writeVHDLTypeDocumentation()</a>.</p>
+
+</div>
+</div>
+<a id="a597e946286e395e92f8d8e8bbb4bca66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a597e946286e395e92f8d8e8bbb4bca66">&#9670;&nbsp;</a></span>toClassDef() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a>* toClassDef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d46/class_definition_mutable.html">DefinitionMutable</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04919">4919</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l04920"></a><span class="lineno"> 4920</span>&#160;{</div>
+<div class="line"><a name="l04921"></a><span class="lineno"> 4921</span>&#160;  <a class="code" href="../../d5/dcc/class_definition.html">Definition</a> *d = <a class="code" href="../../d3/dea/definition_8cpp.html#a8d3706b0004aaf6c9f88bb147dfe54e4">toDefinition</a>(md);</div>
+<div class="line"><a name="l04922"></a><span class="lineno"> 4922</span>&#160;  <span class="keywordflow">if</span> (d &amp;&amp; <span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../d1/d25/class_class_def_impl.html">ClassDefImpl</a>))</div>
+<div class="line"><a name="l04923"></a><span class="lineno"> 4923</span>&#160;  {</div>
+<div class="line"><a name="l04924"></a><span class="lineno"> 4924</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d1/dcf/class_class_def.html">ClassDef</a>*<span class="keyword">&gt;</span>(d);</div>
+<div class="line"><a name="l04925"></a><span class="lineno"> 4925</span>&#160;  }</div>
+<div class="line"><a name="l04926"></a><span class="lineno"> 4926</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l04927"></a><span class="lineno"> 4927</span>&#160;  {</div>
+<div class="line"><a name="l04928"></a><span class="lineno"> 4928</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l04929"></a><span class="lineno"> 4929</span>&#160;  }</div>
+<div class="line"><a name="l04930"></a><span class="lineno"> 4930</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d3/dea/definition_8cpp_source.html#l01950">toDefinition()</a>.</p>
+
+</div>
+</div>
+<a id="ab47c4f31c0d418e2f79a4e989d59b360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab47c4f31c0d418e2f79a4e989d59b360">&#9670;&nbsp;</a></span>toClassDefMutable() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a>* toClassDefMutable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04956">4956</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l04957"></a><span class="lineno"> 4957</span>&#160;{</div>
+<div class="line"><a name="l04958"></a><span class="lineno"> 4958</span>&#160;  <span class="keywordflow">if</span> (d &amp;&amp; <span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../d1/d25/class_class_def_impl.html">ClassDefImpl</a>))</div>
+<div class="line"><a name="l04959"></a><span class="lineno"> 4959</span>&#160;  {</div>
+<div class="line"><a name="l04960"></a><span class="lineno"> 4960</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">const_cast&lt;</span><a class="code" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a>*<span class="keyword">&gt;</span>(<span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a>*<span class="keyword">&gt;</span>(d));</div>
+<div class="line"><a name="l04961"></a><span class="lineno"> 4961</span>&#160;  }</div>
+<div class="line"><a name="l04962"></a><span class="lineno"> 4962</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l04963"></a><span class="lineno"> 4963</span>&#160;  {</div>
+<div class="line"><a name="l04964"></a><span class="lineno"> 4964</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l04965"></a><span class="lineno"> 4965</span>&#160;  }</div>
+<div class="line"><a name="l04966"></a><span class="lineno"> 4966</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae84551f3738567a53c115c84efede554"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae84551f3738567a53c115c84efede554">&#9670;&nbsp;</a></span>toClassDefMutable() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a>* toClassDefMutable </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../de/d89/classdef_8cpp_source.html">classdef.cpp</a> 第 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04944">4944</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l04945"></a><span class="lineno"> 4945</span>&#160;{</div>
+<div class="line"><a name="l04946"></a><span class="lineno"> 4946</span>&#160;  <span class="keywordflow">if</span> (d &amp;&amp; <span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../d1/d25/class_class_def_impl.html">ClassDefImpl</a>))</div>
+<div class="line"><a name="l04947"></a><span class="lineno"> 4947</span>&#160;  {</div>
+<div class="line"><a name="l04948"></a><span class="lineno"> 4948</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a>*<span class="keyword">&gt;</span>(d);</div>
+<div class="line"><a name="l04949"></a><span class="lineno"> 4949</span>&#160;  }</div>
+<div class="line"><a name="l04950"></a><span class="lineno"> 4950</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l04951"></a><span class="lineno"> 4951</span>&#160;  {</div>
+<div class="line"><a name="l04952"></a><span class="lineno"> 4952</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l04953"></a><span class="lineno"> 4953</span>&#160;  }</div>
+<div class="line"><a name="l04954"></a><span class="lineno"> 4954</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l00961">addClassToContext()</a>, <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01322">addClassToGroups()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l05029">addListReferences()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l08615">addMembersToMemberGroup()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l03988">ClassDefImpl::addMembersToTemplateInstance()</a>, <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01420">addMemberToGroups()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l03106">ClassDefImpl::addTypeConstraint()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07917">buildCompleteMemberLists()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04996">computeMemberReferences()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04927">computeTemplateClassRelations()</a>, <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l02501">VhdlDocGen::computeVhdlComponentRelations()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04273">ClassDefImpl::countInheritedDecMembers()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l08405">countMembers()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01461">createTagLessInstance()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07876">createTemplateInstanceMembers()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01428">distributeClassGroupRelations()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l08652">distributeMemberGroupDocumentation()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04447">findClassRelation()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04854">findInheritedTemplateInstances()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l08689">findSectionsInDocumentation()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01607">findTagLessClasses()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04265">findTemplateInstanceRelation()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04050">findUsedClassesForClass()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l04875">findUsedTemplateInstances()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01986">findUsingDeclarations()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l08443">generateClassList()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l09391">generateNamespaceClassDocs()</a>, <a class="el" href="../../d4/d46/memberdef_8h_source.html#l00432">MemberDef::getClassDefMutable()</a>, <a class="el" href="../../d1/da6/classdef_8h_source.html#l00485">getClassMutable()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l03920">ClassDefImpl::insertTemplateInstance()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l01188">ClassDefImpl::insertUsedFile()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07895">mergeCategories()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l03617">ClassDefImpl::mergeCategory()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l03387">ClassDefImpl::mergeMembers()</a>, <a class="el" href="../../d9/db2/symbolresolver_8h_source.html#l00055">SymbolResolver::resolveClassMutable()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01312">resolveClassNestingRelations()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l08391">setAnonymousEnumType()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l03885">ClassDefImpl::setGroupDefForAllMembers()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l08330">sortMemberLists()</a>, <a class="el" href="../../db/d14/index_8cpp_source.html#l01525">writeClassTree()</a>, <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l02063">MemberDefImpl::writeDeclaration()</a>, <a class="el" href="../../d0/d14/memberlist_8cpp_source.html#l00526">MemberList::writeDeclarations()</a>, <a class="el" href="../../d6/d10/classlist_8cpp_source.html#l00074">ClassLinkedRefMap::writeDocumentation()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l02785">ClassDefImpl::writeDocumentationForInnerClasses()</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04389">ClassDefImpl::writeInheritedMemberDeclarations()</a> , 以及 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l11244">writeTagFile()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="adefinition_8cpp_html_a8d3706b0004aaf6c9f88bb147dfe54e4"><div class="ttname"><a href="../../d3/dea/definition_8cpp.html#a8d3706b0004aaf6c9f88bb147dfe54e4">toDefinition</a></div><div class="ttdeci">Definition * toDefinition(DefinitionMutable *dm)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dea/definition_8cpp_source.html#l01950">definition.cpp:1950</a></div></div>
+<div class="ttc" id="aclassdef_8cpp_html_ac0eadc7d7582ad6fd7727ce0f417e96a"><div class="ttname"><a href="../../de/d89/classdef_8cpp.html#ac0eadc7d7582ad6fd7727ce0f417e96a">hasVisibleRoot</a></div><div class="ttdeci">bool hasVisibleRoot(const BaseClassList &amp;bcl)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d89/classdef_8cpp_source.html#l04980">classdef.cpp:4980</a></div></div>
+<div class="ttc" id="aclass_class_def_mutable_html"><div class="ttname"><a href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da6/classdef_8h_source.html#l00384">classdef.h:384</a></div></div>
+<div class="ttc" id="atypes_8h_html_a90e352184df58cd09455fe9996cd4ded"><div class="ttname"><a href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4ded">Protection</a></div><div class="ttdeci">Protection</div><div class="ttdoc">Protection level of members</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00026">types.h:26</a></div></div>
+<div class="ttc" id="aclass_definition_html"><div class="ttname"><a href="../../d5/dcc/class_definition.html">Definition</a></div><div class="ttdoc">The common base class of all entity definitions found in the sources.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/da1/definition_8h_source.html#l00076">definition.h:76</a></div></div>
+<div class="ttc" id="aclass_class_def_html_a18353df2c0337db2ef89e08a451edda2"><div class="ttname"><a href="../../d1/dcf/class_class_def.html#a18353df2c0337db2ef89e08a451edda2">ClassDef::categoryOf</a></div><div class="ttdeci">virtual ClassDef * categoryOf() const =0</div><div class="ttdoc">Returns the class of which this is a category (Objective-C only)</div></div>
+<div class="ttc" id="atypes_8h_html_a90e352184df58cd09455fe9996cd4dedaaa82165706f5dd0859648a09f1f64166"><div class="ttname"><a href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4dedaaa82165706f5dd0859648a09f1f64166">Private</a></div><div class="ttdeci">@ Private</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00026">types.h:26</a></div></div>
+<div class="ttc" id="aclassdef_8h_html_ae84551f3738567a53c115c84efede554"><div class="ttname"><a href="../../d1/da6/classdef_8h.html#ae84551f3738567a53c115c84efede554">toClassDefMutable</a></div><div class="ttdeci">ClassDefMutable * toClassDefMutable(Definition *d)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d89/classdef_8cpp_source.html#l04944">classdef.cpp:4944</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a621c4090d69ad7d05ef8e5234376c3d8"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">QCString::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Returns TRUE iff the string is empty</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00144">qcstring.h:144</a></div></div>
+<div class="ttc" id="aclass_class_def_html_ab44ea1cae6c5a0ff7ea797e355672e87"><div class="ttname"><a href="../../d1/dcf/class_class_def.html#ab44ea1cae6c5a0ff7ea797e355672e87">ClassDef::isLinkableInProject</a></div><div class="ttdeci">virtual bool isLinkableInProject() const =0</div><div class="ttdoc">returns TRUE iff a link is possible to this item within this project.</div></div>
+<div class="ttc" id="amessage_8cpp_html_aede5746344fdce99647541101eaa7f06"><div class="ttname"><a href="../../d8/d6a/message_8cpp.html#aede5746344fdce99647541101eaa7f06">err</a></div><div class="ttdeci">void err(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d6a/message_8cpp_source.html#l00203">message.cpp:203</a></div></div>
+<div class="ttc" id="aclass_class_def_html_a3067e647412a923d7743258c89eabe75"><div class="ttname"><a href="../../d1/dcf/class_class_def.html#a3067e647412a923d7743258c89eabe75">ClassDef::isVisibleInHierarchy</a></div><div class="ttdeci">virtual bool isVisibleInHierarchy() const =0</div><div class="ttdoc">the class is visible in a class diagram, or class hierarchy</div></div>
+<div class="ttc" id="aclass_definition_html_a0dda9f50f2f9754e6341a10373eafec7"><div class="ttname"><a href="../../d5/dcc/class_definition.html#a0dda9f50f2f9754e6341a10373eafec7">Definition::getLanguage</a></div><div class="ttdeci">virtual SrcLangExt getLanguage() const =0</div><div class="ttdoc">Returns the programming language this definition was written in.</div></div>
+<div class="ttc" id="amessage_8cpp_html_a1fd98c6976d3826490804976e17eb83f"><div class="ttname"><a href="../../d8/d6a/message_8cpp.html#a1fd98c6976d3826490804976e17eb83f">warn_uncond</a></div><div class="ttdeci">void warn_uncond(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d6a/message_8cpp_source.html#l00194">message.cpp:194</a></div></div>
+<div class="ttc" id="aclass_class_def_html"><div class="ttname"><a href="../../d1/dcf/class_class_def.html">ClassDef</a></div><div class="ttdoc">A abstract class representing of a compound symbol.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da6/classdef_8h_source.html#l00103">classdef.h:103</a></div></div>
+<div class="ttc" id="aclassdef_8cpp_html_ad1c7d957765b81dbe423423b2f5e5b48"><div class="ttname"><a href="../../de/d89/classdef_8cpp.html#ad1c7d957765b81dbe423423b2f5e5b48">classInheritedProtectionLevel</a></div><div class="ttdeci">Protection classInheritedProtectionLevel(const ClassDef *cd, const ClassDef *bcd, Protection prot, int level)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d89/classdef_8cpp_source.html#l05051">classdef.cpp:5051</a></div></div>
+<div class="ttc" id="aclass_class_def_html_ad95b403a98d68da283df79e80c4ce6c5"><div class="ttname"><a href="../../d1/dcf/class_class_def.html#ad95b403a98d68da283df79e80c4ce6c5">ClassDef::baseClasses</a></div><div class="ttdeci">virtual const BaseClassList &amp; baseClasses() const =0</div><div class="ttdoc">Returns the list of base classes from which this class directly inherits.</div></div>
+<div class="ttc" id="aclass_definition_html_a9374fedd7f64fea7e0e164302d1a9e61"><div class="ttname"><a href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">Definition::name</a></div><div class="ttdeci">virtual QCString name() const =0</div></div>
+<div class="ttc" id="aclass_class_def_alias_impl_html"><div class="ttname"><a href="../../d0/d2b/class_class_def_alias_impl.html">ClassDefAliasImpl</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d89/classdef_8cpp_source.html#l00377">classdef.cpp:377</a></div></div>
+<div class="ttc" id="aclassdef_8h_html_a23b573c0dc0083e7b89b4a67bc94b2bb"><div class="ttname"><a href="../../d1/da6/classdef_8h.html#a23b573c0dc0083e7b89b4a67bc94b2bb">getClass</a></div><div class="ttdeci">ClassDef * getClass(const QCString &amp;key)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d89/classdef_8cpp_source.html#l04974">classdef.cpp:4974</a></div></div>
+<div class="ttc" id="aclassdef_8cpp_html_a649670159a00e0a1c323df1b40bf01e6"><div class="ttname"><a href="../../de/d89/classdef_8cpp.html#a649670159a00e0a1c323df1b40bf01e6">minClassDistance</a></div><div class="ttdeci">int minClassDistance(const ClassDef *cd, const ClassDef *bcd, int level)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d89/classdef_8cpp_source.html#l05026">classdef.cpp:5026</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00036">qcstring.h:36</a></div></div>
+<div class="ttc" id="aclass_linked_map_html_adc1bfe9084c4b2a9aa97c184f439cc98"><div class="ttname"><a href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">LinkedMap::find</a></div><div class="ttdeci">const T * find(const std::string &amp;key) const</div><div class="ttdoc">Find an object given the key.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de1/linkedmap_8h_source.html#l00060">linkedmap.h:60</a></div></div>
+<div class="ttc" id="aclass_class_def_html_a2ae6c4c36f02dcb02b5e727009807cdc"><div class="ttname"><a href="../../d1/dcf/class_class_def.html#a2ae6c4c36f02dcb02b5e727009807cdc">ClassDef::subClasses</a></div><div class="ttdeci">virtual const BaseClassList &amp; subClasses() const =0</div><div class="ttdoc">Returns the list of sub classes that directly derive from this class</div></div>
+<div class="ttc" id="aclass_class_def_impl_html"><div class="ttname"><a href="../../d1/d25/class_class_def_impl.html">ClassDefImpl</a></div><div class="ttdoc">Implementation of the ClassDef interface</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d89/classdef_8cpp_source.html#l00154">classdef.cpp:154</a></div></div>
+<div class="ttc" id="atypes_8h_html_a90e352184df58cd09455fe9996cd4deda72414112a6a45ab0b4b73e8b83d0b0f5"><div class="ttname"><a href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4deda72414112a6a45ab0b4b73e8b83d0b0f5">Protected</a></div><div class="ttdeci">@ Protected</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00026">types.h:26</a></div></div>
+<div class="ttc" id="aconfig_8h_html_a5373d0332a31f16ad7a42037733e8c79"><div class="ttname"><a href="../../db/d16/config_8h.html#a5373d0332a31f16ad7a42037733e8c79">Config_getBool</a></div><div class="ttdeci">#define Config_getBool(name)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/config_8h_source.html#l00033">config.h:33</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a890ee170378f24ba7c44f92c35ec95ce"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a></div><div class="ttdeci">const char * qPrint(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00589">qcstring.h:589</a></div></div>
+<div class="ttc" id="atypes_8h_html_a9974623ce72fc23df5d64426b9178bf2a04de850503d4e73333e3c8eec7f97da7"><div class="ttname"><a href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2a04de850503d4e73333e3c8eec7f97da7">SrcLangExt_VHDL</a></div><div class="ttdeci">@ SrcLangExt_VHDL</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00054">types.h:54</a></div></div>
+<div class="ttc" id="autil_8cpp_html_a225f155c4a7035d82bee0b83dec4ae50"><div class="ttname"><a href="../../df/d2d/util_8cpp.html#a225f155c4a7035d82bee0b83dec4ae50">maxInheritanceDepth</a></div><div class="ttdeci">const int maxInheritanceDepth</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d2d/util_8cpp_source.html#l00150">util.cpp:150</a></div></div>
+<div class="ttc" id="aclass_doxygen_html_a5f4b7acdd27a42865b4832e4e7ffe82c"><div class="ttname"><a href="../../de/d6a/class_doxygen.html#a5f4b7acdd27a42865b4832e4e7ffe82c">Doxygen::classLinkedMap</a></div><div class="ttdeci">static ClassLinkedMap * classLinkedMap</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da1/doxygen_8h_source.html#l00078">doxygen.h:78</a></div></div>
+<div class="ttc" id="aclassdef_8h_html_a173eca34c5a9473651c05a4d92c355fe"><div class="ttname"><a href="../../d1/da6/classdef_8h.html#a173eca34c5a9473651c05a4d92c355fe">BaseClassList</a></div><div class="ttdeci">std::vector&lt; BaseClassDef &gt; BaseClassList</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da6/classdef_8h_source.html#l00081">classdef.h:81</a></div></div>
+<div class="ttc" id="aclass_class_def_html_a659ebf886a21ea56b51354c22b91b0dc"><div class="ttname"><a href="../../d1/dcf/class_class_def.html#a659ebf886a21ea56b51354c22b91b0dc">ClassDef::isLinkable</a></div><div class="ttdeci">virtual bool isLinkable() const =0</div><div class="ttdoc">return TRUE iff a link to this class is possible (either within this project, or as a cross-reference...</div></div>
+<div class="ttc" id="aqcstring_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00033">qcstring.h:33</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d1/da6/classdef_8h.html">classdef.h</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:56 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

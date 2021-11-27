@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/image.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d5/db2/image_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">image.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d5/db2/image_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Copyright (C) 1997-2015 by Dimitri van Heesch.</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * Permission to use, copy, modify, and distribute this software and its</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * documentation under the terms of the GNU General Public License is hereby</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * granted. No representations are made about the suitability of this software</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * for any purpose. It is provided &quot;as is&quot; without express or implied warranty.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * See the GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Documents produced by Doxygen are derivative works derived from the</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> * input used in their production; they are not affected by this license.</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef IMAGE_H</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define IMAGE_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/d49/types_8h.html">types.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d5c/qcstring_8h.html">qcstring.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="comment">/** Class representing a bitmap image generated by doxygen. */</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../de/d73/class_image.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d73/class_image.html">Image</a></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="../../de/d73/class_image.html#a786446ce26bd19dfa3577261b90ea582">Image</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> w,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> h);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;   <a class="code" href="../../de/d73/class_image.html#a0294f63700543e11c0f0da85601c7ae5">~Image</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d73/class_image.html#a2cf00201a01a7abead6f33b923afd1ca">setPixel</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> y,<a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> val);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> <a class="code" href="../../de/d73/class_image.html#aa0cdb2e4754ff12222618295f101afdf">getPixel</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> y) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d73/class_image.html#aa1f00be6fb129d898e3d1695c5480710">writeChar</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> y,<span class="keywordtype">char</span> c,<a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> fg);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d73/class_image.html#a53236e506ff36b370eff655b5d062c53">writeString</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> y,<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;s,<a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> fg);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d73/class_image.html#aa05e82338cdada0f1d12ca338e96ddfc">drawHorzLine</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> y,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> xs,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> xe,<a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> colIndex,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> mask);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d73/class_image.html#aed29f2abeb0ce6fea7bb553c5ca4e59b">drawHorzArrow</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> y,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> xs,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> xe,<a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> colIndex,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> mask);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d73/class_image.html#aafce8f135d4b02f0375c2b100dbbabd6">drawVertLine</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> ys,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> ye,<a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> colIndex,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> mask);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d73/class_image.html#a4a641afda1828967f9c3d463b6ae0817">drawVertArrow</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> ys,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> ye,<a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> colIndex,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> mask);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d73/class_image.html#a8c62666c18fd0df4b81c03a1251415be">drawRect</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> y,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../de/d73/class_image.html#ab3008d1d5f976e5e38384affdc6b54f7">width</a>,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">height</a>,<a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> colIndex,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> mask);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d73/class_image.html#aff3c649242084845e057e1f7270e726e">fillRect</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> y,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../de/d73/class_image.html#ab3008d1d5f976e5e38384affdc6b54f7">width</a>,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">height</a>,<a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> colIndex,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> mask);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d73/class_image.html#a3e56d8f69e48b601866891bb325ef02c">save</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;fileName,<span class="keywordtype">int</span> mode=0);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">friend</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../de/d73/class_image.html#af079f072be99784d939a2a0edf2d730e">stringLength</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;s);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../de/d73/class_image.html#ab3008d1d5f976e5e38384affdc6b54f7">width</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../de/d73/class_image.html#a3c9a86409b44ffcec233c1cfe2d4b88e">m_width</a>; }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">height</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../de/d73/class_image.html#afc53b5bc84996d6c07f70650a4c73546">m_height</a>; }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> *<a class="code" href="../../de/d73/class_image.html#a7e3f73315c48214e36746be2d1224520">data</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="../../de/d73/class_image.html#acfeb6dd40ad92cab24da70b7b14210e2">m_data</a>; }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../de/d73/class_image.html#af079f072be99784d939a2a0edf2d730e">stringLength</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;s);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../de/d73/class_image.html#a3c9a86409b44ffcec233c1cfe2d4b88e">m_width</a>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../de/d73/class_image.html#afc53b5bc84996d6c07f70650a4c73546">m_height</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> *<a class="code" href="../../de/d73/class_image.html#acfeb6dd40ad92cab24da70b7b14210e2">m_data</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">/** Class representing a bitmap image colored based on hue/sat/gamma settings. */</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../dc/da6/class_colored_image.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../dc/da6/class_colored_image.html">ColoredImage</a></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;{</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="../../dc/da6/class_colored_image.html#a830dbdf787e948f8803660f9a56ea17e">ColoredImage</a>(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> width,<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> height,</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../de/d73/class_image.html#ab3008d1d5f976e5e38384affdc6b54f7">   60</a></span>&#160;           <span class="keyword">const</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> *greyLevels,<span class="keyword">const</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> *alphaLevels,</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">   61</a></span>&#160;           <span class="keywordtype">int</span> saturation,<span class="keywordtype">int</span> hue,<span class="keywordtype">int</span> gamma);</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../de/d73/class_image.html#a7e3f73315c48214e36746be2d1224520">   62</a></span>&#160;   <a class="code" href="../../dc/da6/class_colored_image.html#a15d68911020c041ae76934d6e9bf4806">~ColoredImage</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/da6/class_colored_image.html#ae4a3366368b665b83c8b821fd9bdeae7">save</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;fileName);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="../../dc/da6/class_colored_image.html#aa28cffecb75cf52b6b457178851704c5">hsl2rgb</a>(<span class="keywordtype">double</span> h,<span class="keywordtype">double</span> s,<span class="keywordtype">double</span> l,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                        <span class="keywordtype">double</span> *pRed,<span class="keywordtype">double</span> *pGreen,<span class="keywordtype">double</span> *pBlue);</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../de/d73/class_image.html#a3c9a86409b44ffcec233c1cfe2d4b88e">   66</a></span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../dc/da6/class_colored_image.html#aaea81086dad1e3be0abc4a148202e83d">   67</a></span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../dc/da6/class_colored_image.html#aaea81086dad1e3be0abc4a148202e83d">m_width</a>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../dc/da6/class_colored_image.html#a4ade37c63573402ab35a5a8f6495e437">   68</a></span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="code" href="../../dc/da6/class_colored_image.html#a4ade37c63573402ab35a5a8f6495e437">m_height</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="../../dc/da6/class_colored_image.html#ab3ef0d3594c6f136903dffe6260e67d4">   69</a></span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> *<a class="code" href="../../dc/da6/class_colored_image.html#ab3ef0d3594c6f136903dffe6260e67d4">m_data</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="../../dc/da6/class_colored_image.html#ac189402eca42d2db867b8a858317bc7e">   70</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../dc/da6/class_colored_image.html#ac189402eca42d2db867b8a858317bc7e">m_hasAlpha</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;};</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_colored_image_html_a830dbdf787e948f8803660f9a56ea17e"><div class="ttname"><a href="../../dc/da6/class_colored_image.html#a830dbdf787e948f8803660f9a56ea17e">ColoredImage::ColoredImage</a></div><div class="ttdeci">ColoredImage(uint width, uint height, const uchar *greyLevels, const uchar *alphaLevels, int saturation, int hue, int gamma)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00476">image.cpp:476</a></div></div>
+<div class="ttc" id="aclass_colored_image_html_aa28cffecb75cf52b6b457178851704c5"><div class="ttname"><a href="../../dc/da6/class_colored_image.html#aa28cffecb75cf52b6b457178851704c5">ColoredImage::hsl2rgb</a></div><div class="ttdeci">static void hsl2rgb(double h, double s, double l, double *pRed, double *pGreen, double *pBlue)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00412">image.cpp:412</a></div></div>
+<div class="ttc" id="aclass_colored_image_html_aaea81086dad1e3be0abc4a148202e83d"><div class="ttname"><a href="../../dc/da6/class_colored_image.html#aaea81086dad1e3be0abc4a148202e83d">ColoredImage::m_width</a></div><div class="ttdeci">uint m_width</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00067">image.h:67</a></div></div>
+<div class="ttc" id="aclass_image_html_a53236e506ff36b370eff655b5d062c53"><div class="ttname"><a href="../../de/d73/class_image.html#a53236e506ff36b370eff655b5d062c53">Image::writeString</a></div><div class="ttdeci">void writeString(uint x, uint y, const QCString &amp;s, uchar fg)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00300">image.cpp:300</a></div></div>
+<div class="ttc" id="aclass_image_html_afc53b5bc84996d6c07f70650a4c73546"><div class="ttname"><a href="../../de/d73/class_image.html#afc53b5bc84996d6c07f70650a4c73546">Image::m_height</a></div><div class="ttdeci">uint m_height</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00067">image.h:67</a></div></div>
+<div class="ttc" id="aclass_colored_image_html_a4ade37c63573402ab35a5a8f6495e437"><div class="ttname"><a href="../../dc/da6/class_colored_image.html#a4ade37c63573402ab35a5a8f6495e437">ColoredImage::m_height</a></div><div class="ttdeci">uint m_height</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00068">image.h:68</a></div></div>
+<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="../../d9/d49/types_8h.html">types.h</a></div><div class="ttdoc">This file contains a number of basic enums and types.</div></div>
+<div class="ttc" id="aclass_colored_image_html_a15d68911020c041ae76934d6e9bf4806"><div class="ttname"><a href="../../dc/da6/class_colored_image.html#a15d68911020c041ae76934d6e9bf4806">ColoredImage::~ColoredImage</a></div><div class="ttdeci">~ColoredImage()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00504">image.cpp:504</a></div></div>
+<div class="ttc" id="aclass_image_html_a8c62666c18fd0df4b81c03a1251415be"><div class="ttname"><a href="../../de/d73/class_image.html#a8c62666c18fd0df4b81c03a1251415be">Image::drawRect</a></div><div class="ttdeci">void drawRect(uint x, uint y, uint width, uint height, uchar colIndex, uint mask)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00367">image.cpp:367</a></div></div>
+<div class="ttc" id="aclass_image_html_af079f072be99784d939a2a0edf2d730e"><div class="ttname"><a href="../../de/d73/class_image.html#af079f072be99784d939a2a0edf2d730e">Image::stringLength</a></div><div class="ttdeci">friend uint stringLength(const QCString &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00314">image.cpp:314</a></div></div>
+<div class="ttc" id="aclass_image_html_a3c9a86409b44ffcec233c1cfe2d4b88e"><div class="ttname"><a href="../../de/d73/class_image.html#a3c9a86409b44ffcec233c1cfe2d4b88e">Image::m_width</a></div><div class="ttdeci">uint m_width</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00066">image.h:66</a></div></div>
+<div class="ttc" id="aclass_image_html_aafce8f135d4b02f0375c2b100dbbabd6"><div class="ttname"><a href="../../de/d73/class_image.html#aafce8f135d4b02f0375c2b100dbbabd6">Image::drawVertLine</a></div><div class="ttdeci">void drawVertLine(uint x, uint ys, uint ye, uchar colIndex, uint mask)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00347">image.cpp:347</a></div></div>
+<div class="ttc" id="aclass_image_html_aff3c649242084845e057e1f7270e726e"><div class="ttname"><a href="../../de/d73/class_image.html#aff3c649242084845e057e1f7270e726e">Image::fillRect</a></div><div class="ttdeci">void fillRect(uint x, uint y, uint width, uint height, uchar colIndex, uint mask)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00375">image.cpp:375</a></div></div>
+<div class="ttc" id="aclass_colored_image_html_ac189402eca42d2db867b8a858317bc7e"><div class="ttname"><a href="../../dc/da6/class_colored_image.html#ac189402eca42d2db867b8a858317bc7e">ColoredImage::m_hasAlpha</a></div><div class="ttdeci">bool m_hasAlpha</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00070">image.h:70</a></div></div>
+<div class="ttc" id="aclass_image_html_acfeb6dd40ad92cab24da70b7b14210e2"><div class="ttname"><a href="../../de/d73/class_image.html#acfeb6dd40ad92cab24da70b7b14210e2">Image::m_data</a></div><div class="ttdeci">uchar * m_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00068">image.h:68</a></div></div>
+<div class="ttc" id="aclass_image_html_a0294f63700543e11c0f0da85601c7ae5"><div class="ttname"><a href="../../de/d73/class_image.html#a0294f63700543e11c0f0da85601c7ae5">Image::~Image</a></div><div class="ttdeci">~Image()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00244">image.cpp:244</a></div></div>
+<div class="ttc" id="aqcstring_8h_html"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html">qcstring.h</a></div></div>
+<div class="ttc" id="aclass_image_html_aa0cdb2e4754ff12222618295f101afdf"><div class="ttname"><a href="../../de/d73/class_image.html#aa0cdb2e4754ff12222618295f101afdf">Image::getPixel</a></div><div class="ttdeci">uchar getPixel(uint x, uint y) const</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00255">image.cpp:255</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a4d3943ddea65db7163a58e6c7e8df95a"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a></div><div class="ttdeci">unsigned uint</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00040">qcstring.h:40</a></div></div>
+<div class="ttc" id="aclass_image_html"><div class="ttname"><a href="../../de/d73/class_image.html">Image</a></div><div class="ttdoc">Class representing a bitmap image generated by doxygen.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00026">image.h:26</a></div></div>
+<div class="ttc" id="aclass_image_html_a8ca6088143ee3f68ca2e297669a5fea9"><div class="ttname"><a href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">Image::height</a></div><div class="ttdeci">uint height() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00061">image.h:61</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00038">qcstring.h:38</a></div></div>
+<div class="ttc" id="aclass_image_html_a7e3f73315c48214e36746be2d1224520"><div class="ttname"><a href="../../de/d73/class_image.html#a7e3f73315c48214e36746be2d1224520">Image::data</a></div><div class="ttdeci">uchar * data() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00062">image.h:62</a></div></div>
+<div class="ttc" id="aclass_image_html_a3e56d8f69e48b601866891bb325ef02c"><div class="ttname"><a href="../../de/d73/class_image.html#a3e56d8f69e48b601866891bb325ef02c">Image::save</a></div><div class="ttdeci">bool save(const QCString &amp;fileName, int mode=0)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00384">image.cpp:384</a></div></div>
+<div class="ttc" id="aclass_image_html_aa05e82338cdada0f1d12ca338e96ddfc"><div class="ttname"><a href="../../de/d73/class_image.html#aa05e82338cdada0f1d12ca338e96ddfc">Image::drawHorzLine</a></div><div class="ttdeci">void drawHorzLine(uint y, uint xs, uint xe, uchar colIndex, uint mask)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00326">image.cpp:326</a></div></div>
+<div class="ttc" id="aclass_image_html_a786446ce26bd19dfa3577261b90ea582"><div class="ttname"><a href="../../de/d73/class_image.html#a786446ce26bd19dfa3577261b90ea582">Image::Image</a></div><div class="ttdeci">Image(uint w, uint h)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00209">image.cpp:209</a></div></div>
+<div class="ttc" id="aclass_image_html_aa1f00be6fb129d898e3d1695c5480710"><div class="ttname"><a href="../../de/d73/class_image.html#aa1f00be6fb129d898e3d1695c5480710">Image::writeChar</a></div><div class="ttdeci">void writeChar(uint x, uint y, char c, uchar fg)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00263">image.cpp:263</a></div></div>
+<div class="ttc" id="aclass_colored_image_html_ab3ef0d3594c6f136903dffe6260e67d4"><div class="ttname"><a href="../../dc/da6/class_colored_image.html#ab3ef0d3594c6f136903dffe6260e67d4">ColoredImage::m_data</a></div><div class="ttdeci">uchar * m_data</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00069">image.h:69</a></div></div>
+<div class="ttc" id="aclass_image_html_a4a641afda1828967f9c3d463b6ae0817"><div class="ttname"><a href="../../de/d73/class_image.html#a4a641afda1828967f9c3d463b6ae0817">Image::drawVertArrow</a></div><div class="ttdeci">void drawVertArrow(uint x, uint ys, uint ye, uchar colIndex, uint mask)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00356">image.cpp:356</a></div></div>
+<div class="ttc" id="aclass_image_html_ab3008d1d5f976e5e38384affdc6b54f7"><div class="ttname"><a href="../../de/d73/class_image.html#ab3008d1d5f976e5e38384affdc6b54f7">Image::width</a></div><div class="ttdeci">uint width() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00060">image.h:60</a></div></div>
+<div class="ttc" id="aclass_colored_image_html"><div class="ttname"><a href="../../dc/da6/class_colored_image.html">ColoredImage</a></div><div class="ttdoc">Class representing a bitmap image colored based on hue/sat/gamma settings.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00056">image.h:56</a></div></div>
+<div class="ttc" id="aclass_colored_image_html_ae4a3366368b665b83c8b821fd9bdeae7"><div class="ttname"><a href="../../dc/da6/class_colored_image.html#ae4a3366368b665b83c8b821fd9bdeae7">ColoredImage::save</a></div><div class="ttdeci">bool save(const QCString &amp;fileName)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00509">image.cpp:509</a></div></div>
+<div class="ttc" id="aclass_image_html_aed29f2abeb0ce6fea7bb553c5ca4e59b"><div class="ttname"><a href="../../de/d73/class_image.html#aed29f2abeb0ce6fea7bb553c5ca4e59b">Image::drawHorzArrow</a></div><div class="ttdeci">void drawHorzArrow(uint y, uint xs, uint xe, uchar colIndex, uint mask)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00336">image.cpp:336</a></div></div>
+<div class="ttc" id="aclass_image_html_a2cf00201a01a7abead6f33b923afd1ca"><div class="ttname"><a href="../../de/d73/class_image.html#a2cf00201a01a7abead6f33b923afd1ca">Image::setPixel</a></div><div class="ttdeci">void setPixel(uint x, uint y, uchar val)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00249">image.cpp:249</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d5/db2/image_8h.html">image.h</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:53 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

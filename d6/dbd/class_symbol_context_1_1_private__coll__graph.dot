@@ -1,0 +1,25 @@
+digraph "SymbolContext::Private"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SymbolContext::Private",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_scope" ,fontname="Helvetica"];
+  Node2 [label="CachedItem\< TemplateVariant,\l SymbolContext::Private,\l&Private::createScope \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node3 [label="TemplateVariant",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/dba/class_template_variant.html",tooltip="Variant type which can hold one value of a fixed set of types."];
+  Node4 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_variant" ,fontname="Helvetica"];
+  Node4 [label="Variant\< bool, int,\l QCString, TemplateStructIntf\lPtr, TemplateListIntfPtr,\l FunctionDelegate, TemplateStructIntf\lWeakPtr \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d1e/struct_variant.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< bool, int, QCString,\l TemplateStructIntfPtr,\l TemplateListIntfPtr, Function\lDelegate, TemplateStructIntfWeakPtr \>" ,fontname="Helvetica"];
+  Node5 [label="Variant\< Ts \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d1e/struct_variant.html",tooltip="Implementation of a variant container (similar to C++17's std::variant)."];
+  Node6 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateVariant,\l SymbolContext::Private,\l&Private::createScope \>" ,fontname="Helvetica"];
+  Node6 [label="CachedItem\< T, TOwner,\l creator \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip="Wrapper for data that needs to be cached."];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_inst" ,fontname="Helvetica"];
+  Node7 [label="PropertyMap\< SymbolContext\l::Private \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip=" "];
+  Node8 -> Node7 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< SymbolContext::Private \>" ,fontname="Helvetica"];
+  Node8 [label="PropertyMap\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip="Class representing a mapping of properties and the corresponding getter function."];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_prevDef\nm_nextDef\nm_def" ,fontname="Helvetica"];
+  Node9 [label="Definition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dcc/class_definition.html",tooltip="The common base class of all entity definitions found in the sources."];
+}

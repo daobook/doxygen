@@ -1,0 +1,20 @@
+digraph "NamespaceTreeContext::Private"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="NamespaceTreeContext\l::Private",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_maxDepth" ,fontname="Helvetica"];
+  Node2 [label="CachedItem\< int, Namespace\lTreeContext::Private, &Private\l::createMaxDepth \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< int, NamespaceTreeContext\l::Private, &Private::createMaxDepth \>" ,fontname="Helvetica"];
+  Node3 [label="CachedItem\< T, TOwner,\l creator \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip="Wrapper for data that needs to be cached."];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_inst" ,fontname="Helvetica"];
+  Node4 [label="PropertyMap\< NamespaceTree\lContext::Private \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< NamespaceTreeContext\l::Private \>" ,fontname="Helvetica"];
+  Node5 [label="PropertyMap\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip="Class representing a mapping of properties and the corresponding getter function."];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_preferredDepth" ,fontname="Helvetica"];
+  Node6 [label="CachedItem\< int, Namespace\lTreeContext::Private, &Private\l::createPreferredDepth \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node3 -> Node6 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< int, NamespaceTreeContext\l::Private, &Private::createPreferred\lDepth \>" ,fontname="Helvetica"];
+}

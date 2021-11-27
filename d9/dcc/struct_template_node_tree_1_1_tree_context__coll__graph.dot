@@ -1,0 +1,27 @@
+digraph "TemplateNodeTree::TreeContext"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="TemplateNodeTree::TreeContext",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" templateCtx" ,fontname="Helvetica"];
+  Node2 [label="TemplateContext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d1b/class_template_context.html",tooltip="Abstract interface for a template context."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" object" ,fontname="Helvetica"];
+  Node3 [label="TemplateNodeTree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d31/class_template_node_tree.html",tooltip="Class representing an 'tree' tag in a template"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="TemplateNodeCreator\l\< TemplateNodeTree \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d78/class_template_node_creator.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="TemplateNode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/d53/class_template_node.html",tooltip="Base class of all nodes in a template's AST"];
+  Node5 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_parent" ,fontname="Helvetica"];
+  Node6 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_templateName" ,fontname="Helvetica"];
+  Node6 [label="QCString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d45/class_q_c_string.html",tooltip="This is an alternative implementation of QCString."];
+  Node7 -> Node4 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateNodeTree \>" ,fontname="Helvetica"];
+  Node7 [label="TemplateNodeCreator\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d78/class_template_node_creator.html",tooltip="Helper class for creating template AST tag nodes and returning the template for a given node."];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_templateName" ,fontname="Helvetica"];
+  Node8 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_treeNodes" ,fontname="Helvetica"];
+  Node8 [label="TemplateNodeList",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/daf/class_template_node_list.html",tooltip="Class representing a list of AST nodes in a template"];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="std::vector\< TemplateNode\lPtr \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

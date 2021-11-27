@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/language.cpp 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d2/d48/language_8cpp_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">language.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d2/d48/language_8cpp.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright (C) 1997-2015 by Dimitri van Heesch.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * Permission to use, copy, modify, and distribute this software and its</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * documentation under the terms of the GNU General Public License is hereby</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * granted. No representations are made about the suitability of this software</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * for any purpose. It is provided &quot;as is&quot; without express or implied warranty.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * See the GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * Documents produced by Doxygen are derivative works derived from the</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * input used in their production; they are not affected by this license.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d0d/message_8h.html">message.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d16/config_8h.html">config.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d3c/util_8h.html">util.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/dce/language_8h.html">language.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;lang_cfg.h&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/dec/vhdldocgen_8h.html">vhdldocgen.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/df1/translator_8h.html">translator.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d46/translator__en_8h.html">translator_en.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#if !defined(ENGLISH_ONLY)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/de6/translator__adapter_8h.html">translator_adapter.h</a>&quot;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#ifdef LANG_NL</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/db1/translator__nl_8h.html">translator_nl.h</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#ifdef LANG_AM</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d0a/translator__am_8h.html">translator_am.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifdef LANG_SV</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d54/translator__sv_8h.html">translator_sv.h</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#ifdef LANG_CZ</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/dfb/translator__cz_8h.html">translator_cz.h</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#ifdef LANG_FR</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/d48/translator__fr_8h.html">translator_fr.h</a>&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#ifdef LANG_ID</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/dce/translator__id_8h.html">translator_id.h</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#ifdef LANG_IT</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d36/translator__it_8h.html">translator_it.h</a>&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#ifdef LANG_DE</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d3/d9b/translator__de_8h.html">translator_de.h</a>&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#ifdef LANG_JP</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d4/d84/translator__jp_8h.html">translator_jp.h</a>&quot;</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#ifdef LANG_JE</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/dc5/translator__je_8h.html">translator_je.h</a>&quot;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#ifdef LANG_ES</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/dc2/translator__es_8h.html">translator_es.h</a>&quot;</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#ifdef LANG_EO</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/d89/translator__eo_8h.html">translator_eo.h</a>&quot;</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#ifdef LANG_FI</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d17/translator__fi_8h.html">translator_fi.h</a>&quot;</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#ifdef LANG_RU</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/de5/translator__ru_8h.html">translator_ru.h</a>&quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#ifdef LANG_HR</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/d17/translator__hr_8h.html">translator_hr.h</a>&quot;</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#ifdef LANG_PL</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../de/d6a/translator__pl_8h.html">translator_pl.h</a>&quot;</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#ifdef LANG_PT</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/dfd/translator__pt_8h.html">translator_pt.h</a>&quot;</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#ifdef LANG_HU</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d34/translator__hu_8h.html">translator_hu.h</a>&quot;</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#ifdef LANG_KE</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/d55/translator__ke_8h.html">translator_ke.h</a>&quot;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#ifdef LANG_KR</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/d67/translator__kr_8h.html">translator_kr.h</a>&quot;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#ifdef LANG_RO</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/d0f/translator__ro_8h.html">translator_ro.h</a>&quot;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#ifdef LANG_SI</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/dce/translator__si_8h.html">translator_si.h</a>&quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#ifdef LANG_CN</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d41/translator__cn_8h.html">translator_cn.h</a>&quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#ifdef LANG_TW</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/d77/translator__tw_8h.html">translator_tw.h</a>&quot;</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#ifdef LANG_NO</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d05/translator__no_8h.html">translator_no.h</a>&quot;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#ifdef LANG_BR</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d55/translator__br_8h.html">translator_br.h</a>&quot;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#ifdef LANG_DK</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/de0/translator__dk_8h.html">translator_dk.h</a>&quot;</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#ifdef LANG_SK</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d2/d4d/translator__sk_8h.html">translator_sk.h</a>&quot;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#ifdef LANG_UA</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d50/translator__ua_8h.html">translator_ua.h</a>&quot;</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#ifdef LANG_GR</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dd/dad/translator__gr_8h.html">translator_gr.h</a>&quot;</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#ifdef LANG_SR</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d4/da2/translator__sr_8h.html">translator_sr.h</a>&quot;</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#ifdef LANG_CA</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/dbe/translator__ca_8h.html">translator_ca.h</a>&quot;</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="comment">//#ifdef LANG_JS</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">//#include &quot;translator_js.h&quot;</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">//#endif</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#ifdef LANG_LT</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d0/d19/translator__lt_8h.html">translator_lt.h</a>&quot;</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#ifdef LANG_LV</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d9/ded/translator__lv_8h.html">translator_lv.h</a>&quot;</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="preprocessor">#ifdef LANG_ZA</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/d40/translator__za_8h.html">translator_za.h</a>&quot;</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#ifdef LANG_AR</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../db/d93/translator__ar_8h.html">translator_ar.h</a>&quot;</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#ifdef LANG_FA</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d13/translator__fa_8h.html">translator_fa.h</a>&quot;</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;<span class="preprocessor">#ifdef LANG_MK</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d33/translator__mk_8h.html">translator_mk.h</a>&quot;</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="preprocessor">#ifdef LANG_SC</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d6c/translator__sc_8h.html">translator_sc.h</a>&quot;</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">#ifdef LANG_VI</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/d17/translator__vi_8h.html">translator_vi.h</a>&quot;</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#ifdef LANG_TR</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../dc/d68/translator__tr_8h.html">translator_tr.h</a>&quot;</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif // !ENGLISH_ONLY</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="../../d8/dce/language_8h.html#a07b18e39f7c5156cd370829e7e6f8534">  156</a></span>&#160;<a class="code" href="../../d8/dfb/class_translator.html">Translator</a> *<a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a>=0;</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="../../d8/dce/language_8h.html#a88f9f075e6221311e6221d8e2d1e1d6c">  158</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="../../d2/d48/language_8cpp.html#a1035c7c56bdac87a032ba8a18a58eb38">setTranslator</a>(OUTPUT_LANGUAGE_t langName)</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keywordflow">switch</span> (langName)</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  {</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::English:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d6/d78/class_translator_english.html">TranslatorEnglish</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">#if !defined(ENGLISH_ONLY)</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">#ifdef LANG_ZA</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Afrikaans:           <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d3/d65/class_translator_afrikaans.html">TranslatorAfrikaans</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">#ifdef LANG_AR</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Arabic:              <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d3/de9/class_translator_arabic.html">TranslatorArabic</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;<span class="preprocessor">#ifdef LANG_AM</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Armenian:            <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../da/db8/class_translator_armenian.html">TranslatorArmenian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#ifdef LANG_BR</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Brazilian:           <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d2/d4c/class_translator_brazilian.html">TranslatorBrazilian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;<span class="preprocessor">#ifdef LANG_CA</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Catalan:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d9/dc1/class_translator_catalan.html">TranslatorCatalan</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#ifdef LANG_CN</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Chinese:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d6/db6/class_translator_chinese.html">TranslatorChinese</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#ifdef LANG_TW</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Chinese_Traditional: <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../dd/df6/class_translator_chinesetraditional.html">TranslatorChinesetraditional</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#ifdef LANG_HR</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Croatian:            <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d9/d82/class_translator_croatian.html">TranslatorCroatian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<span class="preprocessor">#ifdef LANG_CZ</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Czech:               <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../dd/d8a/class_translator_czech.html">TranslatorCzech</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#ifdef LANG_DK</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Danish:              <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d7/d21/class_translator_danish.html">TranslatorDanish</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#ifdef LANG_NL</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Dutch:               <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d9/d1b/class_translator_dutch.html">TranslatorDutch</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="preprocessor">#ifdef LANG_EO</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Esperanto:           <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d2/d07/class_translator_esperanto.html">TranslatorEsperanto</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">#ifdef LANG_FA</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Farsi:               <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d43/class_translator_persian.html">TranslatorPersian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="preprocessor">#ifdef LANG_FI</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Finnish:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../de/df7/class_translator_finnish.html">TranslatorFinnish</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="preprocessor">#ifdef LANG_FR</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::French:              <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../da/d1a/class_translator_french.html">TranslatorFrench</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="preprocessor">#ifdef LANG_DE</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::German:              <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d6/d07/class_translator_german.html">TranslatorGerman</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="preprocessor">#ifdef LANG_GR</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Greek:               <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../df/d75/class_translator_greek.html">TranslatorGreek</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="preprocessor">#ifdef LANG_HU</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Hungarian:           <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../db/d5f/class_translator_hungarian.html">TranslatorHungarian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="preprocessor">#ifdef LANG_ID</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Indonesian:          <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../df/dc8/class_translator_indonesian.html">TranslatorIndonesian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#ifdef LANG_IT</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Italian:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d2/df8/class_translator_italian.html">TranslatorItalian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="preprocessor">#ifdef LANG_JP</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Japanese:            <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d1/d6a/class_translator_japanese.html">TranslatorJapanese</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="preprocessor">#ifdef LANG_JE</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Japanese_en:         <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d0/d16/class_translator_japanese_en.html">TranslatorJapaneseEn</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="preprocessor">#ifdef LANG_KR</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Korean:              <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../db/dcc/class_translator_korean.html">TranslatorKorean</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="preprocessor">#ifdef LANG_KE</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Korean_en:           <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d0/d3a/class_translator_korean_en.html">TranslatorKoreanEn</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="preprocessor">#ifdef LANG_LV</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Latvian:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d8/d83/class_translator_latvian.html">TranslatorLatvian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="preprocessor">#ifdef LANG_LT</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Lithuanian:          <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../dc/d53/class_translator_lithuanian.html">TranslatorLithuanian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="preprocessor">#ifdef LANG_MK</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Macedonian:          <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d9/ddf/class_translator_macedonian.html">TranslatorMacedonian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="preprocessor">#ifdef LANG_NO</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Norwegian:           <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../dd/d38/class_translator_norwegian.html">TranslatorNorwegian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="preprocessor">#ifdef LANG_FA</span></div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Persian:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d43/class_translator_persian.html">TranslatorPersian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;<span class="preprocessor">#ifdef LANG_PL</span></div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Polish:              <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../de/d82/class_translator_polish.html">TranslatorPolish</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;<span class="preprocessor">#ifdef LANG_PT</span></div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Portuguese:          <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../dc/df2/class_translator_portuguese.html">TranslatorPortuguese</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">#ifdef LANG_RO</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Romanian:            <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../da/d32/class_translator_romanian.html">TranslatorRomanian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;<span class="preprocessor">#ifdef LANG_RU</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Russian:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d0/dab/class_translator_russian.html">TranslatorRussian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">#ifdef LANG_SR</span></div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Serbian:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d0a/class_translator_serbian.html">TranslatorSerbian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">#ifdef LANG_SC</span></div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Serbian_Cyrillic:    <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../dc/d03/class_translator_serbian_cyrillic.html">TranslatorSerbianCyrillic</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;<span class="preprocessor">#ifdef LANG_SK</span></div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Slovak:              <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d2/d53/class_translator_slovak.html">TranslatorSlovak</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;<span class="preprocessor">#ifdef LANG_SI</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Slovene:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../dd/d0b/class_translator_slovene.html">TranslatorSlovene</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#ifdef LANG_ES</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Spanish:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../dc/d44/class_translator_spanish.html">TranslatorSpanish</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="preprocessor">#ifdef LANG_SV</span></div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Swedish:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d5/d5c/class_translator_swedish.html">TranslatorSwedish</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="preprocessor">#ifdef LANG_TR</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Turkish:             <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../dd/d80/class_translator_turkish.html">TranslatorTurkish</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="preprocessor">#ifdef LANG_UA</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Ukrainian:           <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../d1/d56/class_translator_ukrainian.html">TranslatorUkrainian</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="preprocessor">#ifdef LANG_VI</span></div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">case</span> OUTPUT_LANGUAGE_t::Vietnamese:          <a class="code" href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a> = <span class="keyword">new</span> <a class="code" href="../../df/d20/class_translator_vietnamese.html">TranslatorVietnamese</a>; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_translator_finnish_html"><div class="ttname"><a href="../../de/df7/class_translator_finnish.html">TranslatorFinnish</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d17/translator__fi_8h_source.html#l00089">translator_fi.h:89</a></div></div>
+<div class="ttc" id="aclass_translator_romanian_html"><div class="ttname"><a href="../../da/d32/class_translator_romanian.html">TranslatorRomanian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/d0f/translator__ro_8h_source.html#l00045">translator_ro.h:45</a></div></div>
+<div class="ttc" id="alanguage_8cpp_html_a1035c7c56bdac87a032ba8a18a58eb38"><div class="ttname"><a href="../../d2/d48/language_8cpp.html#a1035c7c56bdac87a032ba8a18a58eb38">setTranslator</a></div><div class="ttdeci">void setTranslator(OUTPUT_LANGUAGE_t langName)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d48/language_8cpp_source.html#l00158">language.cpp:158</a></div></div>
+<div class="ttc" id="atranslator__cn_8h_html"><div class="ttname"><a href="../../d8/d41/translator__cn_8h.html">translator_cn.h</a></div></div>
+<div class="ttc" id="aclass_translator_macedonian_html"><div class="ttname"><a href="../../d9/ddf/class_translator_macedonian.html">TranslatorMacedonian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d33/translator__mk_8h_source.html#l00035">translator_mk.h:35</a></div></div>
+<div class="ttc" id="aclass_translator_slovak_html"><div class="ttname"><a href="../../d2/d53/class_translator_slovak.html">TranslatorSlovak</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d4d/translator__sk_8h_source.html#l00035">translator_sk.h:35</a></div></div>
+<div class="ttc" id="atranslator__ke_8h_html"><div class="ttname"><a href="../../d1/d55/translator__ke_8h.html">translator_ke.h</a></div></div>
+<div class="ttc" id="aclass_translator_brazilian_html"><div class="ttname"><a href="../../d2/d4c/class_translator_brazilian.html">TranslatorBrazilian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d55/translator__br_8h_source.html#l00057">translator_br.h:57</a></div></div>
+<div class="ttc" id="aclass_translator_persian_html"><div class="ttname"><a href="../../d5/d43/class_translator_persian.html">TranslatorPersian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d13/translator__fa_8h_source.html#l00042">translator_fa.h:42</a></div></div>
+<div class="ttc" id="aclass_translator_norwegian_html"><div class="ttname"><a href="../../dd/d38/class_translator_norwegian.html">TranslatorNorwegian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d05/translator__no_8h_source.html#l00046">translator_no.h:46</a></div></div>
+<div class="ttc" id="aclass_translator_czech_html"><div class="ttname"><a href="../../dd/d8a/class_translator_czech.html">TranslatorCzech</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dfb/translator__cz_8h_source.html#l00090">translator_cz.h:90</a></div></div>
+<div class="ttc" id="atranslator__pt_8h_html"><div class="ttname"><a href="../../df/dfd/translator__pt_8h.html">translator_pt.h</a></div></div>
+<div class="ttc" id="atranslator__sv_8h_html"><div class="ttname"><a href="../../d5/d54/translator__sv_8h.html">translator_sv.h</a></div></div>
+<div class="ttc" id="atranslator__ar_8h_html"><div class="ttname"><a href="../../db/d93/translator__ar_8h.html">translator_ar.h</a></div></div>
+<div class="ttc" id="atranslator__adapter_8h_html"><div class="ttname"><a href="../../da/de6/translator__adapter_8h.html">translator_adapter.h</a></div></div>
+<div class="ttc" id="atranslator__fi_8h_html"><div class="ttname"><a href="../../db/d17/translator__fi_8h.html">translator_fi.h</a></div></div>
+<div class="ttc" id="aclass_translator_dutch_html"><div class="ttname"><a href="../../d9/d1b/class_translator_dutch.html">TranslatorDutch</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/db1/translator__nl_8h_source.html#l00021">translator_nl.h:21</a></div></div>
+<div class="ttc" id="aclass_translator_korean_en_html"><div class="ttname"><a href="../../d0/d3a/class_translator_korean_en.html">TranslatorKoreanEn</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d55/translator__ke_8h_source.html#l00031">translator_ke.h:31</a></div></div>
+<div class="ttc" id="atranslator__za_8h_html"><div class="ttname"><a href="../../d1/d40/translator__za_8h.html">translator_za.h</a></div></div>
+<div class="ttc" id="atranslator__es_8h_html"><div class="ttname"><a href="../../dd/dc2/translator__es_8h.html">translator_es.h</a></div></div>
+<div class="ttc" id="atranslator__tw_8h_html"><div class="ttname"><a href="../../dd/d77/translator__tw_8h.html">translator_tw.h</a></div></div>
+<div class="ttc" id="aclass_translator_french_html"><div class="ttname"><a href="../../da/d1a/class_translator_french.html">TranslatorFrench</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d48/translator__fr_8h_source.html#l00106">translator_fr.h:106</a></div></div>
+<div class="ttc" id="aclass_translator_korean_html"><div class="ttname"><a href="../../db/dcc/class_translator_korean.html">TranslatorKorean</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d67/translator__kr_8h_source.html#l00051">translator_kr.h:51</a></div></div>
+<div class="ttc" id="atranslator__gr_8h_html"><div class="ttname"><a href="../../dd/dad/translator__gr_8h.html">translator_gr.h</a></div></div>
+<div class="ttc" id="atranslator__hu_8h_html"><div class="ttname"><a href="../../d8/d34/translator__hu_8h.html">translator_hu.h</a></div></div>
+<div class="ttc" id="aclass_translator_portuguese_html"><div class="ttname"><a href="../../dc/df2/class_translator_portuguese.html">TranslatorPortuguese</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/dfd/translator__pt_8h_source.html#l00068">translator_pt.h:68</a></div></div>
+<div class="ttc" id="aclass_translator_afrikaans_html"><div class="ttname"><a href="../../d3/d65/class_translator_afrikaans.html">TranslatorAfrikaans</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/d40/translator__za_8h_source.html#l00029">translator_za.h:29</a></div></div>
+<div class="ttc" id="atranslator__id_8h_html"><div class="ttname"><a href="../../d7/dce/translator__id_8h.html">translator_id.h</a></div></div>
+<div class="ttc" id="aclass_translator_catalan_html"><div class="ttname"><a href="../../d9/dc1/class_translator_catalan.html">TranslatorCatalan</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dbe/translator__ca_8h_source.html#l00043">translator_ca.h:43</a></div></div>
+<div class="ttc" id="atranslator__jp_8h_html"><div class="ttname"><a href="../../d4/d84/translator__jp_8h.html">translator_jp.h</a></div></div>
+<div class="ttc" id="amessage_8h_html"><div class="ttname"><a href="../../d2/d0d/message_8h.html">message.h</a></div></div>
+<div class="ttc" id="aclass_translator_html"><div class="ttname"><a href="../../d8/dfb/class_translator.html">Translator</a></div><div class="ttdoc">Abstract base class for all translatable text fragments.</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/df1/translator_8h_source.html#l00025">translator.h:25</a></div></div>
+<div class="ttc" id="atranslator__sr_8h_html"><div class="ttname"><a href="../../d4/da2/translator__sr_8h.html">translator_sr.h</a></div></div>
+<div class="ttc" id="atranslator__am_8h_html"><div class="ttname"><a href="../../d8/d0a/translator__am_8h.html">translator_am.h</a></div></div>
+<div class="ttc" id="atranslator__fa_8h_html"><div class="ttname"><a href="../../da/d13/translator__fa_8h.html">translator_fa.h</a></div></div>
+<div class="ttc" id="aclass_translator_greek_html"><div class="ttname"><a href="../../df/d75/class_translator_greek.html">TranslatorGreek</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dad/translator__gr_8h_source.html#l00051">translator_gr.h:51</a></div></div>
+<div class="ttc" id="aclass_translator_danish_html"><div class="ttname"><a href="../../d7/d21/class_translator_danish.html">TranslatorDanish</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de0/translator__dk_8h_source.html#l00090">translator_dk.h:90</a></div></div>
+<div class="ttc" id="alanguage_8cpp_html_a07b18e39f7c5156cd370829e7e6f8534"><div class="ttname"><a href="../../d2/d48/language_8cpp.html#a07b18e39f7c5156cd370829e7e6f8534">theTranslator</a></div><div class="ttdeci">Translator * theTranslator</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d48/language_8cpp_source.html#l00156">language.cpp:156</a></div></div>
+<div class="ttc" id="aclass_translator_armenian_html"><div class="ttname"><a href="../../da/db8/class_translator_armenian.html">TranslatorArmenian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0a/translator__am_8h_source.html#l00025">translator_am.h:25</a></div></div>
+<div class="ttc" id="atranslator__ca_8h_html"><div class="ttname"><a href="../../d6/dbe/translator__ca_8h.html">translator_ca.h</a></div></div>
+<div class="ttc" id="aclass_translator_swedish_html"><div class="ttname"><a href="../../d5/d5c/class_translator_swedish.html">TranslatorSwedish</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d54/translator__sv_8h_source.html#l00159">translator_sv.h:159</a></div></div>
+<div class="ttc" id="alanguage_8h_html"><div class="ttname"><a href="../../d8/dce/language_8h.html">language.h</a></div></div>
+<div class="ttc" id="atranslator__pl_8h_html"><div class="ttname"><a href="../../de/d6a/translator__pl_8h.html">translator_pl.h</a></div></div>
+<div class="ttc" id="aclass_translator_english_html"><div class="ttname"><a href="../../d6/d78/class_translator_english.html">TranslatorEnglish</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d46/translator__en_8h_source.html#l00043">translator_en.h:43</a></div></div>
+<div class="ttc" id="aclass_translator_chinese_html"><div class="ttname"><a href="../../d6/db6/class_translator_chinese.html">TranslatorChinese</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d41/translator__cn_8h_source.html#l00027">translator_cn.h:27</a></div></div>
+<div class="ttc" id="aclass_translator_croatian_html"><div class="ttname"><a href="../../d9/d82/class_translator_croatian.html">TranslatorCroatian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d17/translator__hr_8h_source.html#l00086">translator_hr.h:86</a></div></div>
+<div class="ttc" id="aclass_translator_esperanto_html"><div class="ttname"><a href="../../d2/d07/class_translator_esperanto.html">TranslatorEsperanto</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d89/translator__eo_8h_source.html#l00045">translator_eo.h:45</a></div></div>
+<div class="ttc" id="atranslator__dk_8h_html"><div class="ttname"><a href="../../d9/de0/translator__dk_8h.html">translator_dk.h</a></div><div class="ttdoc">Danish translation</div></div>
+<div class="ttc" id="atranslator__br_8h_html"><div class="ttname"><a href="../../d5/d55/translator__br_8h.html">translator_br.h</a></div></div>
+<div class="ttc" id="atranslator__sk_8h_html"><div class="ttname"><a href="../../d2/d4d/translator__sk_8h.html">translator_sk.h</a></div></div>
+<div class="ttc" id="atranslator__de_8h_html"><div class="ttname"><a href="../../d3/d9b/translator__de_8h.html">translator_de.h</a></div></div>
+<div class="ttc" id="atranslator__ru_8h_html"><div class="ttname"><a href="../../dd/de5/translator__ru_8h.html">translator_ru.h</a></div></div>
+<div class="ttc" id="aclass_translator_indonesian_html"><div class="ttname"><a href="../../df/dc8/class_translator_indonesian.html">TranslatorIndonesian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dce/translator__id_8h_source.html#l00027">translator_id.h:27</a></div></div>
+<div class="ttc" id="atranslator__eo_8h_html"><div class="ttname"><a href="../../d6/d89/translator__eo_8h.html">translator_eo.h</a></div></div>
+<div class="ttc" id="atranslator__je_8h_html"><div class="ttname"><a href="../../d1/dc5/translator__je_8h.html">translator_je.h</a></div></div>
+<div class="ttc" id="atranslator__no_8h_html"><div class="ttname"><a href="../../d7/d05/translator__no_8h.html">translator_no.h</a></div></div>
+<div class="ttc" id="aclass_translator_russian_html"><div class="ttname"><a href="../../d0/dab/class_translator_russian.html">TranslatorRussian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/de5/translator__ru_8h_source.html#l00029">translator_ru.h:29</a></div></div>
+<div class="ttc" id="atranslator__it_8h_html"><div class="ttname"><a href="../../da/d36/translator__it_8h.html">translator_it.h</a></div></div>
+<div class="ttc" id="atranslator__vi_8h_html"><div class="ttname"><a href="../../d6/d17/translator__vi_8h.html">translator_vi.h</a></div></div>
+<div class="ttc" id="aclass_translator_spanish_html"><div class="ttname"><a href="../../dc/d44/class_translator_spanish.html">TranslatorSpanish</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/dc2/translator__es_8h_source.html#l00037">translator_es.h:37</a></div></div>
+<div class="ttc" id="aclass_translator_serbian_cyrillic_html"><div class="ttname"><a href="../../dc/d03/class_translator_serbian_cyrillic.html">TranslatorSerbianCyrillic</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d6c/translator__sc_8h_source.html#l00043">translator_sc.h:43</a></div></div>
+<div class="ttc" id="aclass_translator_arabic_html"><div class="ttname"><a href="../../d3/de9/class_translator_arabic.html">TranslatorArabic</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d93/translator__ar_8h_source.html#l00033">translator_ar.h:33</a></div></div>
+<div class="ttc" id="atranslator__si_8h_html"><div class="ttname"><a href="../../d2/dce/translator__si_8h.html">translator_si.h</a></div></div>
+<div class="ttc" id="aclass_translator_slovene_html"><div class="ttname"><a href="../../dd/d0b/class_translator_slovene.html">TranslatorSlovene</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d2/dce/translator__si_8h_source.html#l00024">translator_si.h:24</a></div></div>
+<div class="ttc" id="aclass_translator_latvian_html"><div class="ttname"><a href="../../d8/d83/class_translator_latvian.html">TranslatorLatvian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d9/ded/translator__lv_8h_source.html#l00051">translator_lv.h:51</a></div></div>
+<div class="ttc" id="atranslator__hr_8h_html"><div class="ttname"><a href="../../d0/d17/translator__hr_8h.html">translator_hr.h</a></div></div>
+<div class="ttc" id="atranslator__ua_8h_html"><div class="ttname"><a href="../../d5/d50/translator__ua_8h.html">translator_ua.h</a></div></div>
+<div class="ttc" id="atranslator__cz_8h_html"><div class="ttname"><a href="../../d6/dfb/translator__cz_8h.html">translator_cz.h</a></div></div>
+<div class="ttc" id="aclass_translator_turkish_html"><div class="ttname"><a href="../../dd/d80/class_translator_turkish.html">TranslatorTurkish</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d68/translator__tr_8h_source.html#l00043">translator_tr.h:43</a></div></div>
+<div class="ttc" id="aconfig_8h_html"><div class="ttname"><a href="../../db/d16/config_8h.html">config.h</a></div></div>
+<div class="ttc" id="atranslator__sc_8h_html"><div class="ttname"><a href="../../da/d6c/translator__sc_8h.html">translator_sc.h</a></div></div>
+<div class="ttc" id="aclass_translator_chinesetraditional_html"><div class="ttname"><a href="../../dd/df6/class_translator_chinesetraditional.html">TranslatorChinesetraditional</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dd/d77/translator__tw_8h_source.html#l00044">translator_tw.h:44</a></div></div>
+<div class="ttc" id="aclass_translator_ukrainian_html"><div class="ttname"><a href="../../d1/d56/class_translator_ukrainian.html">TranslatorUkrainian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d50/translator__ua_8h_source.html#l00022">translator_ua.h:22</a></div></div>
+<div class="ttc" id="aclass_translator_serbian_html"><div class="ttname"><a href="../../d5/d0a/class_translator_serbian.html">TranslatorSerbian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/da2/translator__sr_8h_source.html#l00027">translator_sr.h:27</a></div></div>
+<div class="ttc" id="atranslator__mk_8h_html"><div class="ttname"><a href="../../da/d33/translator__mk_8h.html">translator_mk.h</a></div></div>
+<div class="ttc" id="atranslator__tr_8h_html"><div class="ttname"><a href="../../dc/d68/translator__tr_8h.html">translator_tr.h</a></div></div>
+<div class="ttc" id="atranslator__nl_8h_html"><div class="ttname"><a href="../../da/db1/translator__nl_8h.html">translator_nl.h</a></div></div>
+<div class="ttc" id="aclass_translator_hungarian_html"><div class="ttname"><a href="../../db/d5f/class_translator_hungarian.html">TranslatorHungarian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d34/translator__hu_8h_source.html#l00055">translator_hu.h:55</a></div></div>
+<div class="ttc" id="atranslator_8h_html"><div class="ttname"><a href="../../d9/df1/translator_8h.html">translator.h</a></div></div>
+<div class="ttc" id="aclass_translator_italian_html"><div class="ttname"><a href="../../d2/df8/class_translator_italian.html">TranslatorItalian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d36/translator__it_8h_source.html#l00092">translator_it.h:92</a></div></div>
+<div class="ttc" id="atranslator__kr_8h_html"><div class="ttname"><a href="../../d6/d67/translator__kr_8h.html">translator_kr.h</a></div></div>
+<div class="ttc" id="aclass_translator_lithuanian_html"><div class="ttname"><a href="../../dc/d53/class_translator_lithuanian.html">TranslatorLithuanian</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d19/translator__lt_8h_source.html#l00033">translator_lt.h:33</a></div></div>
+<div class="ttc" id="atranslator__ro_8h_html"><div class="ttname"><a href="../../df/d0f/translator__ro_8h.html">translator_ro.h</a></div></div>
+<div class="ttc" id="atranslator__en_8h_html"><div class="ttname"><a href="../../da/d46/translator__en_8h.html">translator_en.h</a></div></div>
+<div class="ttc" id="autil_8h_html"><div class="ttname"><a href="../../d8/d3c/util_8h.html">util.h</a></div><div class="ttdoc">A bunch of utility functions.</div></div>
+<div class="ttc" id="atranslator__lt_8h_html"><div class="ttname"><a href="../../d0/d19/translator__lt_8h.html">translator_lt.h</a></div></div>
+<div class="ttc" id="aclass_translator_japanese_en_html"><div class="ttname"><a href="../../d0/d16/class_translator_japanese_en.html">TranslatorJapaneseEn</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc5/translator__je_8h_source.html#l00032">translator_je.h:32</a></div></div>
+<div class="ttc" id="atranslator__fr_8h_html"><div class="ttname"><a href="../../dd/d48/translator__fr_8h.html">translator_fr.h</a></div></div>
+<div class="ttc" id="aclass_translator_vietnamese_html"><div class="ttname"><a href="../../df/d20/class_translator_vietnamese.html">TranslatorVietnamese</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d17/translator__vi_8h_source.html#l00050">translator_vi.h:50</a></div></div>
+<div class="ttc" id="aclass_translator_polish_html"><div class="ttname"><a href="../../de/d82/class_translator_polish.html">TranslatorPolish</a></div><div class="ttdef"><b>Definition:</b> <a href="../../de/d6a/translator__pl_8h_source.html#l00025">translator_pl.h:25</a></div></div>
+<div class="ttc" id="avhdldocgen_8h_html"><div class="ttname"><a href="../../dd/dec/vhdldocgen_8h.html">vhdldocgen.h</a></div></div>
+<div class="ttc" id="aclass_translator_german_html"><div class="ttname"><a href="../../d6/d07/class_translator_german.html">TranslatorGerman</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d9b/translator__de_8h_source.html#l00146">translator_de.h:146</a></div></div>
+<div class="ttc" id="aclass_translator_japanese_html"><div class="ttname"><a href="../../d1/d6a/class_translator_japanese.html">TranslatorJapanese</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d84/translator__jp_8h_source.html#l00072">translator_jp.h:72</a></div></div>
+<div class="ttc" id="atranslator__lv_8h_html"><div class="ttname"><a href="../../d9/ded/translator__lv_8h.html">translator_lv.h</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d2/d48/language_8cpp.html">language.cpp</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:53 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

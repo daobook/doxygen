@@ -1,0 +1,21 @@
+digraph "TagFileParser"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="TagFileParser",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Tag file parser."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_fileName\nm_tagName\nm_title\nm_curString" ,fontname="Helvetica"];
+  Node2 [label="QCString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d45/class_q_c_string.html",tooltip="This is an alternative implementation of QCString."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_curMember" ,fontname="Helvetica"];
+  Node3 [label="TagMemberInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/ddb/class_tag_member_info.html",tooltip="Container for member specific info that can be read from a tagfile"];
+  Node2 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" clangId\narglist\nanchor\nkind\nanchorFile\ntype\nname" ,fontname="Helvetica"];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_curIncludes" ,fontname="Helvetica"];
+  Node4 [label="TagIncludeInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/db6/class_tag_include_info.html",tooltip="Container for include info that can be read from a tagfile"];
+  Node2 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" id\nname\ntext" ,fontname="Helvetica"];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_locator" ,fontname="Helvetica"];
+  Node5 [label="XMLLocator",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d3/d7e/class_x_m_l_locator.html",tooltip=" "];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_curEnumValue" ,fontname="Helvetica"];
+  Node6 [label="TagEnumValueInfo",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/dd2/class_tag_enum_value_info.html",tooltip="Container for enum values that are scoped within an enum"];
+  Node2 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" clangid\nanchor\nfile\nname" ,fontname="Helvetica"];
+}

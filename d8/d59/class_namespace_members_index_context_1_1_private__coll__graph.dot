@@ -1,0 +1,43 @@
+digraph "NamespaceMembersIndexContext::Private"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="NamespaceMembersIndexContext\l::Private",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_inst" ,fontname="Helvetica"];
+  Node2 [label="PropertyMap\< NamespaceMembers\lIndexContext::Private \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< NamespaceMembersIndexContext\l::Private \>" ,fontname="Helvetica"];
+  Node3 [label="PropertyMap\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip="Class representing a mapping of properties and the corresponding getter function."];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_enums" ,fontname="Helvetica"];
+  Node4 [label="CachedItem\< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createEnums \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node5 [label="TemplateVariant",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/dba/class_template_variant.html",tooltip="Variant type which can hold one value of a fixed set of types."];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_variant" ,fontname="Helvetica"];
+  Node6 [label="Variant\< bool, int,\l QCString, TemplateStructIntf\lPtr, TemplateListIntfPtr,\l FunctionDelegate, TemplateStructIntf\lWeakPtr \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d1e/struct_variant.html",tooltip=" "];
+  Node7 -> Node6 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< bool, int, QCString,\l TemplateStructIntfPtr,\l TemplateListIntfPtr, Function\lDelegate, TemplateStructIntfWeakPtr \>" ,fontname="Helvetica"];
+  Node7 [label="Variant\< Ts \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d1e/struct_variant.html",tooltip="Implementation of a variant container (similar to C++17's std::variant)."];
+  Node8 -> Node4 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createEnums \>" ,fontname="Helvetica"];
+  Node8 [label="CachedItem\< T, TOwner,\l creator \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip="Wrapper for data that needs to be cached."];
+  Node9 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_variables" ,fontname="Helvetica"];
+  Node9 [label="CachedItem\< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createVariables \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node5 -> Node9 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node8 -> Node9 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createVariables \>" ,fontname="Helvetica"];
+  Node10 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_functions" ,fontname="Helvetica"];
+  Node10 [label="CachedItem\< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createFunctions \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node5 -> Node10 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node8 -> Node10 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createFunctions \>" ,fontname="Helvetica"];
+  Node11 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_all" ,fontname="Helvetica"];
+  Node11 [label="CachedItem\< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createAll \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node5 -> Node11 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node8 -> Node11 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createAll \>" ,fontname="Helvetica"];
+  Node12 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_enumValues" ,fontname="Helvetica"];
+  Node12 [label="CachedItem\< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createEnumValues \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node5 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node8 -> Node12 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createEnumValues \>" ,fontname="Helvetica"];
+  Node13 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_typedefs" ,fontname="Helvetica"];
+  Node13 [label="CachedItem\< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createTypedefs \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node5 -> Node13 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node8 -> Node13 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateVariant,\l NamespaceMembersIndexContext\l::Private, &Private::createTypedefs \>" ,fontname="Helvetica"];
+}

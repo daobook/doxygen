@@ -1,0 +1,786 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/dirdef.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d8/d52/dirdef_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">dirdef.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d15/dirdef_8h_source.html">dirdef.h</a>&quot;</code><br />
+<code>#include &quot;md5.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dc/dd6/filename_8h_source.html">filename.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/da1/doxygen_8h_source.html">doxygen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d3c/util_8h_source.html">util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/db9/outputlist_8h_source.html">outputlist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/dce/language_8h_source.html">language.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d0d/message_8h_source.html">message.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d4a/dot_8h_source.html">dot.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d3/dcf/dotdirdeps_8h_source.html">dotdirdeps.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d51/layout_8h_source.html">layout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d16/config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d9c/docparser_8h_source.html">docparser.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/dab/definitionimpl_8h_source.html">definitionimpl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d3a/filedef_8h_source.html">filedef.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> dirdef.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+</div>
+</div>
+<p><a href="../../d8/d52/dirdef_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db7/class_dir_def_impl.html">DirDefImpl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a7f13b08e51d0a352208bbd6e2746d3cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#a7f13b08e51d0a352208bbd6e2746d3cc">createDirDef</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;path)</td></tr>
+<tr class="separator:a7f13b08e51d0a352208bbd6e2746d3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d91af0a6807cf2a6b66896bfdef6732"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#a8d91af0a6807cf2a6b66896bfdef6732">encodeDirName</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;anchor)</td></tr>
+<tr class="separator:a8d91af0a6807cf2a6b66896bfdef6732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bb54d0765a6b45bf091337783b4680a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#a8bb54d0765a6b45bf091337783b4680a">writePartialDirPath</a> (<a class="el" href="../../df/dc8/class_output_list.html">OutputList</a> &amp;ol, const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *root, const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *target)</td></tr>
+<tr class="separator:a8bb54d0765a6b45bf091337783b4680a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50a5ca2a633e8e9e98f1fdb284b96186"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#a50a5ca2a633e8e9e98f1fdb284b96186">writePartialFilePath</a> (<a class="el" href="../../df/dc8/class_output_list.html">OutputList</a> &amp;ol, const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *root, const <a class="el" href="../../de/db0/class_file_def.html">FileDef</a> *fd)</td></tr>
+<tr class="separator:a50a5ca2a633e8e9e98f1fdb284b96186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad85444ffee4818fe7415a7158385f3d1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#ad85444ffee4818fe7415a7158385f3d1">computeCommonDirPrefix</a> ()</td></tr>
+<tr class="memdesc:ad85444ffee4818fe7415a7158385f3d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">In order to create stable, but unique directory names, we compute the common part of the path shared by all directories.  <a href="../../d8/d52/dirdef_8cpp.html#ad85444ffee4818fe7415a7158385f3d1">更多...</a><br /></td></tr>
+<tr class="separator:ad85444ffee4818fe7415a7158385f3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d5caa3df18ab19e549d3b603a716780"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#a9d5caa3df18ab19e549d3b603a716780">buildDirectories</a> ()</td></tr>
+<tr class="separator:a9d5caa3df18ab19e549d3b603a716780"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf61ee43dee8d980a631843cd26b71cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#abf61ee43dee8d980a631843cd26b71cb">computeDirDependencies</a> ()</td></tr>
+<tr class="separator:abf61ee43dee8d980a631843cd26b71cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb63b0db3ac92afc6ef8fd7a34129001"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#aeb63b0db3ac92afc6ef8fd7a34129001">generateDirDocs</a> (<a class="el" href="../../df/dc8/class_output_list.html">OutputList</a> &amp;ol)</td></tr>
+<tr class="separator:aeb63b0db3ac92afc6ef8fd7a34129001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a868969982c8fee16854bcc7735cd977e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#a868969982c8fee16854bcc7735cd977e">compareDirDefs</a> (const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *item1, const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *item2)</td></tr>
+<tr class="separator:a868969982c8fee16854bcc7735cd977e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72a1842d4f3a60b4126af3333dc6f8d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#a72a1842d4f3a60b4126af3333dc6f8d2">toDirDef</a> (<a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *d)</td></tr>
+<tr class="separator:a72a1842d4f3a60b4126af3333dc6f8d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92a4270b98f6cc67e54558ebb0f688a1"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d52/dirdef_8cpp.html#a92a4270b98f6cc67e54558ebb0f688a1">toDirDef</a> (const <a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *d)</td></tr>
+<tr class="separator:a92a4270b98f6cc67e54558ebb0f688a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a9d5caa3df18ab19e549d3b603a716780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d5caa3df18ab19e549d3b603a716780">&#9670;&nbsp;</a></span>buildDirectories()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void buildDirectories </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l01005">1005</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;{</div>
+<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;  <span class="comment">// for each input file</span></div>
+<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;fn : *<a class="code" href="../../de/d6a/class_doxygen.html#a31a5a5856417ba3f05eccaf1f85e9958">Doxygen::inputNameLinkedMap</a>)</div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;  {</div>
+<div class="line"><a name="l01010"></a><span class="lineno"> 1010</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;fd : *fn)</div>
+<div class="line"><a name="l01011"></a><span class="lineno"> 1011</span>&#160;    {</div>
+<div class="line"><a name="l01012"></a><span class="lineno"> 1012</span>&#160;      <span class="keywordflow">if</span> (fd-&gt;getReference().isEmpty())</div>
+<div class="line"><a name="l01013"></a><span class="lineno"> 1013</span>&#160;      {</div>
+<div class="line"><a name="l01014"></a><span class="lineno"> 1014</span>&#160;        <a class="code" href="../../d4/dd4/class_dir_def.html">DirDef</a> *dir;</div>
+<div class="line"><a name="l01015"></a><span class="lineno"> 1015</span>&#160;        <span class="keywordflow">if</span> ((dir=<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>-&gt;find(fd-&gt;getPath()))==0) <span class="comment">// new directory</span></div>
+<div class="line"><a name="l01016"></a><span class="lineno"> 1016</span>&#160;        {</div>
+<div class="line"><a name="l01017"></a><span class="lineno"> 1017</span>&#160;          dir = <a class="code" href="../../d8/db7/class_dir_def_impl.html#abc751e8cc79b9f7cc8040ba7ecce6e1f">DirDefImpl::mergeDirectoryInTree</a>(fd-&gt;getPath());</div>
+<div class="line"><a name="l01018"></a><span class="lineno"> 1018</span>&#160;        }</div>
+<div class="line"><a name="l01019"></a><span class="lineno"> 1019</span>&#160;        <span class="keywordflow">if</span> (dir &amp;&amp; !fd-&gt;isDocumentationFile()) dir-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a27bd05b3cd5090cc15bab855722a2304">addFile</a>(fd.get());</div>
+<div class="line"><a name="l01020"></a><span class="lineno"> 1020</span>&#160;      }</div>
+<div class="line"><a name="l01021"></a><span class="lineno"> 1021</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01022"></a><span class="lineno"> 1022</span>&#160;      {</div>
+<div class="line"><a name="l01023"></a><span class="lineno"> 1023</span>&#160;        <span class="comment">// do something for file imported via tag files.</span></div>
+<div class="line"><a name="l01024"></a><span class="lineno"> 1024</span>&#160;      }</div>
+<div class="line"><a name="l01025"></a><span class="lineno"> 1025</span>&#160;    }</div>
+<div class="line"><a name="l01026"></a><span class="lineno"> 1026</span>&#160;  }</div>
+<div class="line"><a name="l01027"></a><span class="lineno"> 1027</span>&#160; </div>
+<div class="line"><a name="l01028"></a><span class="lineno"> 1028</span>&#160;  <span class="comment">// compute relations between directories =&gt; introduce container dirs.</span></div>
+<div class="line"><a name="l01029"></a><span class="lineno"> 1029</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;dir : *<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>)</div>
+<div class="line"><a name="l01030"></a><span class="lineno"> 1030</span>&#160;  {</div>
+<div class="line"><a name="l01031"></a><span class="lineno"> 1031</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> name = dir-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>();</div>
+<div class="line"><a name="l01032"></a><span class="lineno"> 1032</span>&#160;    <span class="keywordtype">int</span> i=name.<a class="code" href="../../d9/d45/class_q_c_string.html#ab47a6435c16d61d04fb448f1080b4e26">findRev</a>(<span class="charliteral">&#39;/&#39;</span>,(<span class="keywordtype">int</span>)name.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>()-2);</div>
+<div class="line"><a name="l01033"></a><span class="lineno"> 1033</span>&#160;    <span class="keywordflow">if</span> (i&gt;0)</div>
+<div class="line"><a name="l01034"></a><span class="lineno"> 1034</span>&#160;    {</div>
+<div class="line"><a name="l01035"></a><span class="lineno"> 1035</span>&#160;      <a class="code" href="../../d4/dd4/class_dir_def.html">DirDef</a> *parent = <a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>-&gt;<a class="code" href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">find</a>(name.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(i+1));</div>
+<div class="line"><a name="l01036"></a><span class="lineno"> 1036</span>&#160;      <span class="comment">//if (parent==0) parent=root;</span></div>
+<div class="line"><a name="l01037"></a><span class="lineno"> 1037</span>&#160;      <span class="keywordflow">if</span> (parent)</div>
+<div class="line"><a name="l01038"></a><span class="lineno"> 1038</span>&#160;      {</div>
+<div class="line"><a name="l01039"></a><span class="lineno"> 1039</span>&#160;        parent-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a3fe601b4ae16a054ac736cca97548ed3">addSubDir</a>(dir.get());</div>
+<div class="line"><a name="l01040"></a><span class="lineno"> 1040</span>&#160;        <span class="comment">//printf(&quot;DirDefImpl::addSubdir(): Adding subdir\n%s to\n%s\n&quot;,</span></div>
+<div class="line"><a name="l01041"></a><span class="lineno"> 1041</span>&#160;        <span class="comment">//  qPrint(dir-&gt;displayName()), qPrint(parent-&gt;displayName()));</span></div>
+<div class="line"><a name="l01042"></a><span class="lineno"> 1042</span>&#160;      }</div>
+<div class="line"><a name="l01043"></a><span class="lineno"> 1043</span>&#160;    }</div>
+<div class="line"><a name="l01044"></a><span class="lineno"> 1044</span>&#160;  }</div>
+<div class="line"><a name="l01045"></a><span class="lineno"> 1045</span>&#160; </div>
+<div class="line"><a name="l01046"></a><span class="lineno"> 1046</span>&#160;  <span class="comment">// sort the directory contents</span></div>
+<div class="line"><a name="l01047"></a><span class="lineno"> 1047</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;dir : *<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>)</div>
+<div class="line"><a name="l01048"></a><span class="lineno"> 1048</span>&#160;  {</div>
+<div class="line"><a name="l01049"></a><span class="lineno"> 1049</span>&#160;    dir-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a04a8557aa86a9e48a43f8d323263ed77">sort</a>();</div>
+<div class="line"><a name="l01050"></a><span class="lineno"> 1050</span>&#160;  }</div>
+<div class="line"><a name="l01051"></a><span class="lineno"> 1051</span>&#160; </div>
+<div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;  <span class="comment">// short the directories themselves</span></div>
+<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;  std::sort(<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>-&gt;<a class="code" href="../../d3/d48/dir_8cpp.html#a6c544e0039887bf39e3c9e85f55d8ebc">begin</a>(),</div>
+<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;            <a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>-&gt;<a class="code" href="../../d3/d48/dir_8cpp.html#abb4720f72b574f81dc4f7aea0e653a64">end</a>(),</div>
+<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;            [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;d1,<span class="keyword">const</span> <span class="keyword">auto</span> &amp;d2)</div>
+<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;            {</div>
+<div class="line"><a name="l01057"></a><span class="lineno"> 1057</span>&#160;              <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> s1 = d1-&gt;shortName(), s2 = d2-&gt;shortName();</div>
+<div class="line"><a name="l01058"></a><span class="lineno"> 1058</span>&#160;              <span class="keywordtype">int</span> i = <a class="code" href="../../d5/d3e/qcstring_8cpp.html#a3fcf9e9f5dafe61787ad66adae5a1e85">qstricmp</a>(s1,s2);</div>
+<div class="line"><a name="l01059"></a><span class="lineno"> 1059</span>&#160;              <span class="keywordflow">if</span> (i==0) <span class="comment">// if sort name are equal, sort on full path</span></div>
+<div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;              {</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;                <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> n1 = d1-&gt;name(), n2 = d2-&gt;name();</div>
+<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;                <span class="keywordtype">int</span> n = <a class="code" href="../../d5/d3e/qcstring_8cpp.html#a3fcf9e9f5dafe61787ad66adae5a1e85">qstricmp</a>(n1,n2);</div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;                <span class="keywordflow">return</span> n &lt; 0;</div>
+<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;              }</div>
+<div class="line"><a name="l01065"></a><span class="lineno"> 1065</span>&#160;              <span class="keywordflow">return</span> i &lt; 0;</div>
+<div class="line"><a name="l01066"></a><span class="lineno"> 1066</span>&#160;            });</div>
+<div class="line"><a name="l01067"></a><span class="lineno"> 1067</span>&#160; </div>
+<div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;  <span class="comment">// set the directory count identifier</span></div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;  <span class="keywordtype">int</span> dirCount=0;</div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;dir : *<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>)</div>
+<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;  {</div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    dir-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#abb0f2798cf135ad4439b8b5bb3c8a3d8">setDirCount</a>(dirCount++);</div>
+<div class="line"><a name="l01073"></a><span class="lineno"> 1073</span>&#160;  }</div>
+<div class="line"><a name="l01074"></a><span class="lineno"> 1074</span>&#160; </div>
+<div class="line"><a name="l01075"></a><span class="lineno"> 1075</span>&#160;  <a class="code" href="../../d8/d52/dirdef_8cpp.html#ad85444ffee4818fe7415a7158385f3d1">computeCommonDirPrefix</a>();</div>
+<div class="line"><a name="l01076"></a><span class="lineno"> 1076</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/dd4/class_dir_def.html#a27bd05b3cd5090cc15bab855722a2304">DirDef::addFile()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#a3fe601b4ae16a054ac736cca97548ed3">DirDef::addSubDir()</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00123">begin()</a>, <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00930">computeCommonDirPrefix()</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00109">Doxygen::dirLinkedMap</a>, <a class="el" href="../../d3/d48/dir_8cpp_source.html#l00128">end()</a>, <a class="el" href="../../da/de1/linkedmap_8h_source.html#l00060">LinkedMap&lt; T, Hash, KeyEqual, Map &gt;::find()</a>, <a class="el" href="../../d5/d3e/qcstring_8cpp_source.html#l00086">QCString::findRev()</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00088">Doxygen::inputNameLinkedMap</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00212">QCString::left()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00147">QCString::length()</a>, <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00817">DirDefImpl::mergeDirectoryInTree()</a> , 以及 <a class="el" href="../../d5/d3e/qcstring_8cpp_source.html#l00433">qstricmp()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l11558">parseInput()</a>.</p>
+
+</div>
+</div>
+<a id="a868969982c8fee16854bcc7735cd977e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a868969982c8fee16854bcc7735cd977e">&#9670;&nbsp;</a></span>compareDirDefs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool compareDirDefs </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&#160;</td>
+          <td class="paramname"><em>item1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&#160;</td>
+          <td class="paramname"><em>item2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l01115">1115</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;{</div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d5/d3e/qcstring_8cpp.html#a3fcf9e9f5dafe61787ad66adae5a1e85">qstricmp</a>(item1-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">shortName</a>(),item2-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">shortName</a>()) &lt; 0;</div>
+<div class="line"><a name="l01118"></a><span class="lineno"> 1118</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d5/d3e/qcstring_8cpp_source.html#l00433">qstricmp()</a> , 以及 <a class="el" href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">DirDef::shortName()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00175">DirDefImpl::sort()</a> , 以及 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01655">GroupDefImpl::sortMemberLists()</a>.</p>
+
+</div>
+</div>
+<a id="ad85444ffee4818fe7415a7158385f3d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad85444ffee4818fe7415a7158385f3d1">&#9670;&nbsp;</a></span>computeCommonDirPrefix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void computeCommonDirPrefix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>In order to create stable, but unique directory names, we compute the common part of the path shared by all directories. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00930">930</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;{</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> path;</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;  <span class="keyword">auto</span> it = <a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>-&gt;<a class="code" href="../../d0/d2c/class_linked_map.html#a4f9f85656f6481dc10277057d168d74e">begin</a>();</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;  <span class="keywordflow">if</span> (!<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>-&gt;empty()) <span class="comment">// we have at least one dir</span></div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;  {</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;    <span class="comment">// start will full path of first dir</span></div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;    path=(*it)-&gt;name();</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;    <span class="keywordtype">int</span> i=path.<a class="code" href="../../d9/d45/class_q_c_string.html#ab47a6435c16d61d04fb448f1080b4e26">findRev</a>(<span class="charliteral">&#39;/&#39;</span>,(<span class="keywordtype">int</span>)path.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>()-2);</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;    path=path.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(i+1);</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;    <span class="keywordtype">bool</span> done=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;    <span class="keywordflow">if</span> (i==-1)</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;    {</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;      path=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;    }</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;    {</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;      <span class="keywordflow">while</span> (!done)</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;      {</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;        <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> l = path.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>();</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;        <span class="keywordtype">size_t</span> count=0;</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;dir : *<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>)</div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;        {</div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;          <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> dirName = dir-&gt;name();</div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;          <span class="keywordflow">if</span> (dirName.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>()&gt;path.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>())</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;          {</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;            <span class="keywordflow">if</span> (dirName.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(l)!=path) <span class="comment">// dirName does not start with path</span></div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;            {</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;              i=path.<a class="code" href="../../d9/d45/class_q_c_string.html#ab47a6435c16d61d04fb448f1080b4e26">findRev</a>(<span class="charliteral">&#39;/&#39;</span>,(<span class="keywordtype">int</span>)l-2);</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;              <span class="keywordflow">if</span> (i==-1) <span class="comment">// no unique prefix -&gt; stop</span></div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;              {</div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;                path=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;                done=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;              }</div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;              <span class="keywordflow">else</span> <span class="comment">// restart with shorter path</span></div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;              {</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;                path=path.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(i+1);</div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;              }</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;            }</div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;          }</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;          <span class="keywordflow">else</span> <span class="comment">// dir is shorter than path -&gt; take path of dir as new start</span></div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;          {</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;            path=dir-&gt;name();</div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;            l=path.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>();</div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;            i=path.<a class="code" href="../../d9/d45/class_q_c_string.html#ab47a6435c16d61d04fb448f1080b4e26">findRev</a>(<span class="charliteral">&#39;/&#39;</span>,(<span class="keywordtype">int</span>)l-2);</div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;            <span class="keywordflow">if</span> (i==-1) <span class="comment">// no unique prefix -&gt; stop</span></div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;            {</div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;              path=<span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;              done=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;            }</div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;            <span class="keywordflow">else</span> <span class="comment">// restart with shorter path</span></div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;            {</div>
+<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;              path=path.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(i+1);</div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;            }</div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;          }</div>
+<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;          count++;</div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;        }</div>
+<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;        <span class="keywordflow">if</span> (count==<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>-&gt;size())</div>
+<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;          <span class="comment">// path matches for all directories -&gt; found the common prefix</span></div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;        {</div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;          done=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;        }</div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;      }</div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;    }</div>
+<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;  }</div>
+<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;dir : *<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>)</div>
+<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;  {</div>
+<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> diskName = dir-&gt;name().<a class="code" href="../../d9/d45/class_q_c_string.html#a8f4aa5417f6a834f28c7148a1fe262d5">right</a>(dir-&gt;name().length()-path.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>());</div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;    dir-&gt;setDiskName(diskName);</div>
+<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;    <span class="comment">//printf(&quot;set disk name: %s -&gt; %s\n&quot;,qPrint(dir-&gt;name()),qPrint(diskName));</span></div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;  }</div>
+<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/de1/linkedmap_8h_source.html#l00214">LinkedMap&lt; T, Hash, KeyEqual, Map &gt;::begin()</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00109">Doxygen::dirLinkedMap</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00033">FALSE</a>, <a class="el" href="../../d5/d3e/qcstring_8cpp_source.html#l00086">QCString::findRev()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00212">QCString::left()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00147">QCString::length()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00217">QCString::right()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l01005">buildDirectories()</a>.</p>
+
+</div>
+</div>
+<a id="abf61ee43dee8d980a631843cd26b71cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf61ee43dee8d980a631843cd26b71cb">&#9670;&nbsp;</a></span>computeDirDependencies()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void computeDirDependencies </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l01078">1078</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01079"></a><span class="lineno"> 1079</span>&#160;{</div>
+<div class="line"><a name="l01080"></a><span class="lineno"> 1080</span>&#160;  <span class="comment">// compute nesting level for each directory</span></div>
+<div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;dir : *<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>)</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;  {</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;    dir-&gt;setLevel();</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;  }</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160; </div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;  <span class="comment">// compute uses dependencies between directories</span></div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;dir : *<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>)</div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;  {</div>
+<div class="line"><a name="l01089"></a><span class="lineno"> 1089</span>&#160;    <span class="comment">//printf(&quot;computeDependencies for %s: #dirs=%d\n&quot;,qPrint(dir-&gt;name()),Doxygen::directories.count());</span></div>
+<div class="line"><a name="l01090"></a><span class="lineno"> 1090</span>&#160;    dir-&gt;computeDependencies();</div>
+<div class="line"><a name="l01091"></a><span class="lineno"> 1091</span>&#160;  }</div>
+<div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00109">Doxygen::dirLinkedMap</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l11558">parseInput()</a>.</p>
+
+</div>
+</div>
+<a id="a7f13b08e51d0a352208bbd6e2746d3cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f13b08e51d0a352208bbd6e2746d3cc">&#9670;&nbsp;</a></span>createDirDef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a>* createDirDef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00102">102</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../d8/db7/class_dir_def_impl.html">DirDefImpl</a>(path);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00786">DirDefImpl::createNewDir()</a>.</p>
+
+</div>
+</div>
+<a id="a8d91af0a6807cf2a6b66896bfdef6732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d91af0a6807cf2a6b66896bfdef6732">&#9670;&nbsp;</a></span>encodeDirName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> encodeDirName </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>anchor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00181">181</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;{</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  <span class="comment">// convert to md5 hash</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> md5_sig[16];</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="keywordtype">char</span> sigStr[33];</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  MD5Buffer((<span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *)anchor.<a class="code" href="../../d9/d45/class_q_c_string.html#a84a5aa4da9147a687fa291c844fb5fc1">data</a>(),anchor.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>(),md5_sig);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  MD5SigToString(md5_sig,sigStr);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="keywordflow">return</span> sigStr;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="comment">// old algorithm</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="comment">//  QCString result;</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">//  int l = anchor.length(),i;</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">//  for (i=0;i&lt;l;i++)</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">//  {</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">//    char c = anchor.at(i);</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">//    if ((c&gt;=&#39;a&#39; &amp;&amp; c&lt;=&#39;z&#39;) || (c&gt;=&#39;A&#39; &amp;&amp; c&lt;=&#39;Z&#39;) || (c&gt;=&#39;0&#39; &amp;&amp; c&lt;=&#39;9&#39;))</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">//      result+=c;</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">//    else</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">//    {</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">//      static char hexStr[]=&quot;0123456789ABCDEF&quot;;</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">//      char escChar[]={ &#39;_&#39;, 0, 0, 0 };</span></div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;<span class="comment">//      escChar[1]=hexStr[c&gt;&gt;4];</span></div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;<span class="comment">//      escChar[2]=hexStr[c&amp;0xf];</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">//      result+=escChar;</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">//    }</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">//  }</span></div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;<span class="comment">//  return result;</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00153">QCString::data()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00147">QCString::length()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00213">DirDefImpl::getOutputFileBase()</a>.</p>
+
+</div>
+</div>
+<a id="aeb63b0db3ac92afc6ef8fd7a34129001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb63b0db3ac92afc6ef8fd7a34129001">&#9670;&nbsp;</a></span>generateDirDocs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generateDirDocs </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/dc8/class_output_list.html">OutputList</a> &amp;&#160;</td>
+          <td class="paramname"><em>ol</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l01094">1094</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01095"></a><span class="lineno"> 1095</span>&#160;{</div>
+<div class="line"><a name="l01096"></a><span class="lineno"> 1096</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;dir : *<a class="code" href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a>)</div>
+<div class="line"><a name="l01097"></a><span class="lineno"> 1097</span>&#160;  {</div>
+<div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;    ol.<a class="code" href="../../df/dc8/class_output_list.html#a885957a64f7d87aefb663c4ec903188f">pushGeneratorState</a>();</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;    <span class="keywordflow">if</span> (!dir-&gt;hasDocumentation())</div>
+<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;    {</div>
+<div class="line"><a name="l01101"></a><span class="lineno"> 1101</span>&#160;      ol.<a class="code" href="../../df/dc8/class_output_list.html#a73f9be626eea01f1ccd1b446dcf2c003">disableAllBut</a>(<a class="code" href="../../d3/d8e/class_output_generator.html#ab79b5d3c19d95c8a5929c07f5b2918cfa60460668b0f6b570f3ec84e48b53f4cf">OutputGenerator::Html</a>);</div>
+<div class="line"><a name="l01102"></a><span class="lineno"> 1102</span>&#160;    }</div>
+<div class="line"><a name="l01103"></a><span class="lineno"> 1103</span>&#160;    dir-&gt;writeDocumentation(ol);</div>
+<div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;    ol.<a class="code" href="../../df/dc8/class_output_list.html#a94eb1af2ea07425ef1faa539d24adcf8">popGeneratorState</a>();</div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;  }</div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="../../db/d16/config_8h.html#a5373d0332a31f16ad7a42037733e8c79">Config_getBool</a>(DIRECTORY_GRAPH))</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;  {</div>
+<div class="line"><a name="l01108"></a><span class="lineno"> 1108</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;dr : <a class="code" href="../../de/d6a/class_doxygen.html#aeb009dfd4eca1e806843a68765b975db">Doxygen::dirRelations</a>)</div>
+<div class="line"><a name="l01109"></a><span class="lineno"> 1109</span>&#160;    {</div>
+<div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;      dr-&gt;writeDocumentation(ol);</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;    }</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;  }</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d16/config_8h_source.html#l00033">Config_getBool</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00109">Doxygen::dirLinkedMap</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00110">Doxygen::dirRelations</a>, <a class="el" href="../../db/dd8/outputlist_8cpp_source.html#l00076">OutputList::disableAllBut()</a>, <a class="el" href="../../df/d06/outputgen_8h_source.html#l00333">OutputGenerator::Html</a>, <a class="el" href="../../db/dd8/outputlist_8cpp_source.html#l00134">OutputList::popGeneratorState()</a> , 以及 <a class="el" href="../../db/dd8/outputlist_8cpp_source.html#l00126">OutputList::pushGeneratorState()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l12168">generateOutput()</a>.</p>
+
+</div>
+</div>
+<a id="a92a4270b98f6cc67e54558ebb0f688a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92a4270b98f6cc67e54558ebb0f688a1">&#9670;&nbsp;</a></span>toDirDef() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a>* toDirDef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l01135">1135</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;{</div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;  <span class="keywordflow">if</span> (d==0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;  <span class="keywordflow">if</span> (d &amp;&amp; <span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../d8/db7/class_dir_def_impl.html">DirDefImpl</a>))</div>
+<div class="line"><a name="l01139"></a><span class="lineno"> 1139</span>&#160;  {</div>
+<div class="line"><a name="l01140"></a><span class="lineno"> 1140</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code" href="../../d4/dd4/class_dir_def.html">DirDef</a>*<span class="keyword">&gt;</span>(d);</div>
+<div class="line"><a name="l01141"></a><span class="lineno"> 1141</span>&#160;  }</div>
+<div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;  {</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;  }</div>
+<div class="line"><a name="l01146"></a><span class="lineno"> 1146</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a72a1842d4f3a60b4126af3333dc6f8d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72a1842d4f3a60b4126af3333dc6f8d2">&#9670;&nbsp;</a></span>toDirDef() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a>* toDirDef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l01122">1122</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01123"></a><span class="lineno"> 1123</span>&#160;{</div>
+<div class="line"><a name="l01124"></a><span class="lineno"> 1124</span>&#160;  <span class="keywordflow">if</span> (d==0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;  <span class="keywordflow">if</span> (d &amp;&amp; <span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../d8/db7/class_dir_def_impl.html">DirDefImpl</a>))</div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;  {</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d4/dd4/class_dir_def.html">DirDef</a>*<span class="keyword">&gt;</span>(d);</div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;  }</div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;  {</div>
+<div class="line"><a name="l01131"></a><span class="lineno"> 1131</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01132"></a><span class="lineno"> 1132</span>&#160;  }</div>
+<div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d12/context_8cpp_source.html#l05433">NestingNodeContext::Private::addDirFiles()</a> , 以及 <a class="el" href="../../db/d12/context_8cpp_source.html#l05559">NestingNodeContext::Private::createDir()</a>.</p>
+
+</div>
+</div>
+<a id="a8bb54d0765a6b45bf091337783b4680a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bb54d0765a6b45bf091337783b4680a">&#9670;&nbsp;</a></span>writePartialDirPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void writePartialDirPath </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/dc8/class_output_list.html">OutputList</a> &amp;&#160;</td>
+          <td class="paramname"><em>ol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00843">843</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;{</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;  <span class="keywordflow">if</span> (target-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#af7f7dfe879363192967b8b8ad11149b7">parent</a>()!=root)</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;  {</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;    <a class="code" href="../../d8/d52/dirdef_8cpp.html#a8bb54d0765a6b45bf091337783b4680a">writePartialDirPath</a>(ol,root,target-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#af7f7dfe879363192967b8b8ad11149b7">parent</a>());</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;    ol.<a class="code" href="../../df/dc8/class_output_list.html#a07cac8a8981da35314f77d8f3edb7f76">writeString</a>(<span class="stringliteral">&quot;&amp;#160;/&amp;#160;&quot;</span>);</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;  }</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;  ol.<a class="code" href="../../df/dc8/class_output_list.html#a411807a84d5f9e2fb716a0f66bde56b6">writeObjectLink</a>(target-&gt;<a class="code" href="../../d5/dcc/class_definition.html#aab5f8631606d43a73f371833eb6425ee">getReference</a>(),target-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">getOutputFileBase</a>(),<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>(),target-&gt;<a class="code" href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">shortName</a>());</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">DirDef::getOutputFileBase()</a>, <a class="el" href="../../d5/dcc/class_definition.html#aab5f8631606d43a73f371833eb6425ee">Definition::getReference()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#af7f7dfe879363192967b8b8ad11149b7">DirDef::parent()</a>, <a class="el" href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">DirDef::shortName()</a>, <a class="el" href="../../d2/db9/outputlist_8h_source.html#l00141">OutputList::writeObjectLink()</a> , 以及 <a class="el" href="../../d2/db9/outputlist_8h_source.html#l00111">OutputList::writeString()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00853">writePartialFilePath()</a>.</p>
+
+</div>
+</div>
+<a id="a50a5ca2a633e8e9e98f1fdb284b96186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50a5ca2a633e8e9e98f1fdb284b96186">&#9670;&nbsp;</a></span>writePartialFilePath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void writePartialFilePath </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../df/dc8/class_output_list.html">OutputList</a> &amp;&#160;</td>
+          <td class="paramname"><em>ol</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../de/db0/class_file_def.html">FileDef</a> *&#160;</td>
+          <td class="paramname"><em>fd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html">dirdef.cpp</a> 第 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00853">853</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;{</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;  <span class="keywordflow">if</span> (fd-&gt;<a class="code" href="../../de/db0/class_file_def.html#a73a793c96050551d8529255823cea316">getDirDef</a>() &amp;&amp; fd-&gt;<a class="code" href="../../de/db0/class_file_def.html#a73a793c96050551d8529255823cea316">getDirDef</a>()!=root)</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;  {</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;    <a class="code" href="../../d8/d52/dirdef_8cpp.html#a8bb54d0765a6b45bf091337783b4680a">writePartialDirPath</a>(ol,root,fd-&gt;<a class="code" href="../../de/db0/class_file_def.html#a73a793c96050551d8529255823cea316">getDirDef</a>());</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;    ol.<a class="code" href="../../df/dc8/class_output_list.html#a07cac8a8981da35314f77d8f3edb7f76">writeString</a>(<span class="stringliteral">&quot;&amp;#160;/&amp;#160;&quot;</span>);</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;  }</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;  <span class="keywordflow">if</span> (fd-&gt;<a class="code" href="../../de/db0/class_file_def.html#a18cecb4e062e28d65f18313b9357601e">isLinkable</a>())</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;  {</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;    ol.<a class="code" href="../../df/dc8/class_output_list.html#a411807a84d5f9e2fb716a0f66bde56b6">writeObjectLink</a>(fd-&gt;<a class="code" href="../../d5/dcc/class_definition.html#aab5f8631606d43a73f371833eb6425ee">getReference</a>(),fd-&gt;<a class="code" href="../../de/db0/class_file_def.html#a9179d91d067ba32f0e51aaffb2ea2f3b">getOutputFileBase</a>(),<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>(),fd-&gt;<a class="code" href="../../de/db0/class_file_def.html#ad305f1328487bfce411ebfd9d4966b02">name</a>());</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;  }</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;  {</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;    ol.<a class="code" href="../../df/dc8/class_output_list.html#a796018ee85949771252f36fea9a288d0">startBold</a>();</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;    ol.<a class="code" href="../../df/dc8/class_output_list.html#a5647a62e8819abb6e6b2378a7c115bbd">docify</a>(fd-&gt;<a class="code" href="../../de/db0/class_file_def.html#ad305f1328487bfce411ebfd9d4966b02">name</a>());</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    ol.<a class="code" href="../../df/dc8/class_output_list.html#aa3f855a4e60d2a7c6769b66d43c69b23">endBold</a>();</div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;  }</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db9/outputlist_8h_source.html#l00137">OutputList::docify()</a>, <a class="el" href="../../d2/db9/outputlist_8h_source.html#l00304">OutputList::endBold()</a>, <a class="el" href="../../de/db0/class_file_def.html#a73a793c96050551d8529255823cea316">FileDef::getDirDef()</a>, <a class="el" href="../../de/db0/class_file_def.html#a9179d91d067ba32f0e51aaffb2ea2f3b">FileDef::getOutputFileBase()</a>, <a class="el" href="../../d5/dcc/class_definition.html#aab5f8631606d43a73f371833eb6425ee">Definition::getReference()</a>, <a class="el" href="../../de/db0/class_file_def.html#a18cecb4e062e28d65f18313b9357601e">FileDef::isLinkable()</a>, <a class="el" href="../../de/db0/class_file_def.html#ad305f1328487bfce411ebfd9d4966b02">FileDef::name()</a>, <a class="el" href="../../d2/db9/outputlist_8h_source.html#l00302">OutputList::startBold()</a>, <a class="el" href="../../d2/db9/outputlist_8h_source.html#l00141">OutputList::writeObjectLink()</a>, <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00843">writePartialDirPath()</a> , 以及 <a class="el" href="../../d2/db9/outputlist_8h_source.html#l00111">OutputList::writeString()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d8/d52/dirdef_8cpp_source.html#l00872">DirRelation::writeDocumentation()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_output_list_html_a73f9be626eea01f1ccd1b446dcf2c003"><div class="ttname"><a href="../../df/dc8/class_output_list.html#a73f9be626eea01f1ccd1b446dcf2c003">OutputList::disableAllBut</a></div><div class="ttdeci">void disableAllBut(OutputGenerator::OutputType o)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dd8/outputlist_8cpp_source.html#l00076">outputlist.cpp:76</a></div></div>
+<div class="ttc" id="adirdef_8cpp_html_a8bb54d0765a6b45bf091337783b4680a"><div class="ttname"><a href="../../d8/d52/dirdef_8cpp.html#a8bb54d0765a6b45bf091337783b4680a">writePartialDirPath</a></div><div class="ttdeci">static void writePartialDirPath(OutputList &amp;ol, const DirDef *root, const DirDef *target)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d52/dirdef_8cpp_source.html#l00843">dirdef.cpp:843</a></div></div>
+<div class="ttc" id="aclass_output_list_html_a5647a62e8819abb6e6b2378a7c115bbd"><div class="ttname"><a href="../../df/dc8/class_output_list.html#a5647a62e8819abb6e6b2378a7c115bbd">OutputList::docify</a></div><div class="ttdeci">void docify(const QCString &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db9/outputlist_8h_source.html#l00137">outputlist.h:137</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_ac52596733e9110b778019946d73fb268"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">QCString::length</a></div><div class="ttdeci">uint length() const</div><div class="ttdoc">Returns the length of the string, not counting the 0-terminator.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00147">qcstring.h:147</a></div></div>
+<div class="ttc" id="aclass_dir_def_html_a27bd05b3cd5090cc15bab855722a2304"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#a27bd05b3cd5090cc15bab855722a2304">DirDef::addFile</a></div><div class="ttdeci">virtual void addFile(const FileDef *fd)=0</div></div>
+<div class="ttc" id="aclass_q_c_string_html_ab47a6435c16d61d04fb448f1080b4e26"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#ab47a6435c16d61d04fb448f1080b4e26">QCString::findRev</a></div><div class="ttdeci">int findRev(char c, int index=-1, bool cs=TRUE) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d3e/qcstring_8cpp_source.html#l00086">qcstring.cpp:86</a></div></div>
+<div class="ttc" id="aclass_dir_def_html"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html">DirDef</a></div><div class="ttdoc">A model of a directory symbol.</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d15/dirdef_8h_source.html#l00110">dirdef.h:110</a></div></div>
+<div class="ttc" id="aclass_output_list_html_a796018ee85949771252f36fea9a288d0"><div class="ttname"><a href="../../df/dc8/class_output_list.html#a796018ee85949771252f36fea9a288d0">OutputList::startBold</a></div><div class="ttdeci">void startBold()</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db9/outputlist_8h_source.html#l00302">outputlist.h:302</a></div></div>
+<div class="ttc" id="aclass_dir_def_html_a04a8557aa86a9e48a43f8d323263ed77"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#a04a8557aa86a9e48a43f8d323263ed77">DirDef::sort</a></div><div class="ttdeci">virtual void sort()=0</div></div>
+<div class="ttc" id="aclass_output_list_html_a07cac8a8981da35314f77d8f3edb7f76"><div class="ttname"><a href="../../df/dc8/class_output_list.html#a07cac8a8981da35314f77d8f3edb7f76">OutputList::writeString</a></div><div class="ttdeci">void writeString(const QCString &amp;text)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db9/outputlist_8h_source.html#l00111">outputlist.h:111</a></div></div>
+<div class="ttc" id="aclass_file_def_html_a18cecb4e062e28d65f18313b9357601e"><div class="ttname"><a href="../../de/db0/class_file_def.html#a18cecb4e062e28d65f18313b9357601e">FileDef::isLinkable</a></div><div class="ttdeci">virtual bool isLinkable() const =0</div></div>
+<div class="ttc" id="aclass_doxygen_html_ad179803c33ab064adfd6adf681a0a805"><div class="ttname"><a href="../../de/d6a/class_doxygen.html#ad179803c33ab064adfd6adf681a0a805">Doxygen::dirLinkedMap</a></div><div class="ttdeci">static DirLinkedMap * dirLinkedMap</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da1/doxygen_8h_source.html#l00109">doxygen.h:109</a></div></div>
+<div class="ttc" id="aclass_linked_map_html_a4f9f85656f6481dc10277057d168d74e"><div class="ttname"><a href="../../d0/d2c/class_linked_map.html#a4f9f85656f6481dc10277057d168d74e">LinkedMap::begin</a></div><div class="ttdeci">iterator begin()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de1/linkedmap_8h_source.html#l00214">linkedmap.h:214</a></div></div>
+<div class="ttc" id="adir_8cpp_html_a6c544e0039887bf39e3c9e85f55d8ebc"><div class="ttname"><a href="../../d3/d48/dir_8cpp.html#a6c544e0039887bf39e3c9e85f55d8ebc">begin</a></div><div class="ttdeci">DirIterator begin(DirIterator it) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00123">dir.cpp:123</a></div></div>
+<div class="ttc" id="adir_8cpp_html_abb4720f72b574f81dc4f7aea0e653a64"><div class="ttname"><a href="../../d3/d48/dir_8cpp.html#abb4720f72b574f81dc4f7aea0e653a64">end</a></div><div class="ttdeci">DirIterator end(const DirIterator &amp;) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00128">dir.cpp:128</a></div></div>
+<div class="ttc" id="aclass_doxygen_html_a31a5a5856417ba3f05eccaf1f85e9958"><div class="ttname"><a href="../../de/d6a/class_doxygen.html#a31a5a5856417ba3f05eccaf1f85e9958">Doxygen::inputNameLinkedMap</a></div><div class="ttdeci">static FileNameLinkedMap * inputNameLinkedMap</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da1/doxygen_8h_source.html#l00088">doxygen.h:88</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a4d3943ddea65db7163a58e6c7e8df95a"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a></div><div class="ttdeci">unsigned uint</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00040">qcstring.h:40</a></div></div>
+<div class="ttc" id="aclass_dir_def_html_a1fdadd32de095dd846b619f8d220f03c"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#a1fdadd32de095dd846b619f8d220f03c">DirDef::getOutputFileBase</a></div><div class="ttdeci">virtual QCString getOutputFileBase() const =0</div></div>
+<div class="ttc" id="aclass_dir_def_html_aa198c67f6d58fdae57c8502913ed35d7"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#aa198c67f6d58fdae57c8502913ed35d7">DirDef::shortName</a></div><div class="ttdeci">virtual const QCString shortName() const =0</div></div>
+<div class="ttc" id="aqcstring_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00038">qcstring.h:38</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_aecf8b66312c4e97333219cc344c11a4f"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">QCString::left</a></div><div class="ttdeci">QCString left(size_t len) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00212">qcstring.h:212</a></div></div>
+<div class="ttc" id="aclass_file_def_html_ad305f1328487bfce411ebfd9d4966b02"><div class="ttname"><a href="../../de/db0/class_file_def.html#ad305f1328487bfce411ebfd9d4966b02">FileDef::name</a></div><div class="ttdeci">virtual QCString name() const =0</div></div>
+<div class="ttc" id="aqcstring_8cpp_html_a3fcf9e9f5dafe61787ad66adae5a1e85"><div class="ttname"><a href="../../d5/d3e/qcstring_8cpp.html#a3fcf9e9f5dafe61787ad66adae5a1e85">qstricmp</a></div><div class="ttdeci">int qstricmp(const char *str1, const char *str2)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d3e/qcstring_8cpp_source.html#l00433">qcstring.cpp:433</a></div></div>
+<div class="ttc" id="aclass_dir_def_impl_html"><div class="ttname"><a href="../../d8/db7/class_dir_def_impl.html">DirDefImpl</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d52/dirdef_8cpp_source.html#l00037">dirdef.cpp:37</a></div></div>
+<div class="ttc" id="aclass_definition_html_a9374fedd7f64fea7e0e164302d1a9e61"><div class="ttname"><a href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">Definition::name</a></div><div class="ttdeci">virtual QCString name() const =0</div></div>
+<div class="ttc" id="aqcstring_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00036">qcstring.h:36</a></div></div>
+<div class="ttc" id="aclass_output_generator_html_ab79b5d3c19d95c8a5929c07f5b2918cfa60460668b0f6b570f3ec84e48b53f4cf"><div class="ttname"><a href="../../d3/d8e/class_output_generator.html#ab79b5d3c19d95c8a5929c07f5b2918cfa60460668b0f6b570f3ec84e48b53f4cf">OutputGenerator::Html</a></div><div class="ttdeci">@ Html</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d06/outputgen_8h_source.html#l00333">outputgen.h:333</a></div></div>
+<div class="ttc" id="aclass_linked_map_html_adc1bfe9084c4b2a9aa97c184f439cc98"><div class="ttname"><a href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">LinkedMap::find</a></div><div class="ttdeci">const T * find(const std::string &amp;key) const</div><div class="ttdoc">Find an object given the key.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de1/linkedmap_8h_source.html#l00060">linkedmap.h:60</a></div></div>
+<div class="ttc" id="aclass_doxygen_html_aeb009dfd4eca1e806843a68765b975db"><div class="ttname"><a href="../../de/d6a/class_doxygen.html#aeb009dfd4eca1e806843a68765b975db">Doxygen::dirRelations</a></div><div class="ttdeci">static DirRelationLinkedMap dirRelations</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da1/doxygen_8h_source.html#l00110">doxygen.h:110</a></div></div>
+<div class="ttc" id="aclass_dir_def_html_a3fe601b4ae16a054ac736cca97548ed3"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#a3fe601b4ae16a054ac736cca97548ed3">DirDef::addSubDir</a></div><div class="ttdeci">virtual void addSubDir(DirDef *subdir)=0</div></div>
+<div class="ttc" id="aclass_dir_def_impl_html_abc751e8cc79b9f7cc8040ba7ecce6e1f"><div class="ttname"><a href="../../d8/db7/class_dir_def_impl.html#abc751e8cc79b9f7cc8040ba7ecce6e1f">DirDefImpl::mergeDirectoryInTree</a></div><div class="ttdeci">static DirDef * mergeDirectoryInTree(const QCString &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d52/dirdef_8cpp_source.html#l00817">dirdef.cpp:817</a></div></div>
+<div class="ttc" id="aclass_output_list_html_a94eb1af2ea07425ef1faa539d24adcf8"><div class="ttname"><a href="../../df/dc8/class_output_list.html#a94eb1af2ea07425ef1faa539d24adcf8">OutputList::popGeneratorState</a></div><div class="ttdeci">void popGeneratorState()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dd8/outputlist_8cpp_source.html#l00134">outputlist.cpp:134</a></div></div>
+<div class="ttc" id="aclass_dir_def_html_abb0f2798cf135ad4439b8b5bb3c8a3d8"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#abb0f2798cf135ad4439b8b5bb3c8a3d8">DirDef::setDirCount</a></div><div class="ttdeci">virtual void setDirCount(int count)=0</div></div>
+<div class="ttc" id="aclass_definition_html_aab5f8631606d43a73f371833eb6425ee"><div class="ttname"><a href="../../d5/dcc/class_definition.html#aab5f8631606d43a73f371833eb6425ee">Definition::getReference</a></div><div class="ttdeci">virtual QCString getReference() const =0</div></div>
+<div class="ttc" id="aconfig_8h_html_a5373d0332a31f16ad7a42037733e8c79"><div class="ttname"><a href="../../db/d16/config_8h.html#a5373d0332a31f16ad7a42037733e8c79">Config_getBool</a></div><div class="ttdeci">#define Config_getBool(name)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/config_8h_source.html#l00033">config.h:33</a></div></div>
+<div class="ttc" id="aclass_output_list_html_a885957a64f7d87aefb663c4ec903188f"><div class="ttname"><a href="../../df/dc8/class_output_list.html#a885957a64f7d87aefb663c4ec903188f">OutputList::pushGeneratorState</a></div><div class="ttdeci">void pushGeneratorState()</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dd8/outputlist_8cpp_source.html#l00126">outputlist.cpp:126</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a84a5aa4da9147a687fa291c844fb5fc1"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a84a5aa4da9147a687fa291c844fb5fc1">QCString::data</a></div><div class="ttdeci">const char * data() const</div><div class="ttdoc">Returns a pointer to the contents of the string in the form of a 0-terminated C string</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00153">qcstring.h:153</a></div></div>
+<div class="ttc" id="adirdef_8cpp_html_ad85444ffee4818fe7415a7158385f3d1"><div class="ttname"><a href="../../d8/d52/dirdef_8cpp.html#ad85444ffee4818fe7415a7158385f3d1">computeCommonDirPrefix</a></div><div class="ttdeci">static void computeCommonDirPrefix()</div><div class="ttdoc">In order to create stable, but unique directory names, we compute the common part of the path shared ...</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d52/dirdef_8cpp_source.html#l00930">dirdef.cpp:930</a></div></div>
+<div class="ttc" id="aclass_output_list_html_a411807a84d5f9e2fb716a0f66bde56b6"><div class="ttname"><a href="../../df/dc8/class_output_list.html#a411807a84d5f9e2fb716a0f66bde56b6">OutputList::writeObjectLink</a></div><div class="ttdeci">void writeObjectLink(const QCString &amp;ref, const QCString &amp;file, const QCString &amp;anchor, const QCString &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db9/outputlist_8h_source.html#l00141">outputlist.h:141</a></div></div>
+<div class="ttc" id="aclass_file_def_html_a73a793c96050551d8529255823cea316"><div class="ttname"><a href="../../de/db0/class_file_def.html#a73a793c96050551d8529255823cea316">FileDef::getDirDef</a></div><div class="ttdeci">virtual DirDef * getDirDef() const =0</div></div>
+<div class="ttc" id="aclass_dir_def_html_af7f7dfe879363192967b8b8ad11149b7"><div class="ttname"><a href="../../d4/dd4/class_dir_def.html#af7f7dfe879363192967b8b8ad11149b7">DirDef::parent</a></div><div class="ttdeci">virtual DirDef * parent() const =0</div></div>
+<div class="ttc" id="aclass_file_def_html_a9179d91d067ba32f0e51aaffb2ea2f3b"><div class="ttname"><a href="../../de/db0/class_file_def.html#a9179d91d067ba32f0e51aaffb2ea2f3b">FileDef::getOutputFileBase</a></div><div class="ttdeci">virtual QCString getOutputFileBase() const =0</div></div>
+<div class="ttc" id="aclass_q_c_string_html_a8f4aa5417f6a834f28c7148a1fe262d5"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a8f4aa5417f6a834f28c7148a1fe262d5">QCString::right</a></div><div class="ttdeci">QCString right(size_t len) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00217">qcstring.h:217</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00033">qcstring.h:33</a></div></div>
+<div class="ttc" id="aclass_output_list_html_aa3f855a4e60d2a7c6769b66d43c69b23"><div class="ttname"><a href="../../df/dc8/class_output_list.html#aa3f855a4e60d2a7c6769b66d43c69b23">OutputList::endBold</a></div><div class="ttdeci">void endBold()</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db9/outputlist_8h_source.html#l00304">outputlist.h:304</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d8/d52/dirdef_8cpp.html">dirdef.cpp</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:56 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

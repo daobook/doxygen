@@ -1,0 +1,9 @@
+digraph "类继承关系图"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="VariantType\< 0, F,\l Ts... \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/dd8/struct_variant_type_3_010_00_01_f_00_01_ts_8_8_8_01_4.html",tooltip="specialization to stop the recursion when arrived at index 0 and type F"];
+}

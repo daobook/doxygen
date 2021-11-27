@@ -1,0 +1,14 @@
+digraph "NavPathElemContext::Private"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="NavPathElemContext\l::Private",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_inst" ,fontname="Helvetica"];
+  Node2 [label="PropertyMap\< NavPathElem\lContext::Private \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< NavPathElemContext\l::Private \>" ,fontname="Helvetica"];
+  Node3 [label="PropertyMap\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip="Class representing a mapping of properties and the corresponding getter function."];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_def" ,fontname="Helvetica"];
+  Node4 [label="Definition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dcc/class_definition.html",tooltip="The common base class of all entity definitions found in the sources."];
+}

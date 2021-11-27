@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/doctokenizer.h 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d0/d0c/doctokenizer_8h.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#enum-members">枚举</a>  </div>
+  <div class="headertitle">
+<div class="title">doctokenizer.h 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/d73/htmlattrib_8h_source.html">htmlattrib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d5c/qcstring_8h_source.html">qcstring.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> doctokenizer.h 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="../../closed.png" alt="+"/> 此图展示该文件直接或间接的被哪些文件引用了:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 1 -->
+</div>
+</div>
+</div>
+<p><a href="../../d0/d0c/doctokenizer_8h_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df4/struct_token_info.html">TokenInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Data associated with a token used by the comment block parser.  <a href="../../d6/df4/struct_token_info.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7f/class_doc_tokenizer.html">DocTokenizer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+枚举</h2></td></tr>
+<tr class="memitem:a7722396ed46bc111e7b794948986f8af"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8af">Tokens</a> { <br />
+&#160;&#160;<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2b4a4468ca8c7242bf98227d336bf4ad">TK_WORD</a> = 1, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa4640e6cdcb728ffd6a26282022978866">TK_LNKWORD</a> = 2, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa0ca8cd834b4402e55673fad9935c808a">TK_WHITESPACE</a> = 3, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2c626d0e5270e4da6896efa78533cbb1">TK_LISTITEM</a> = 4, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afab4ae7909ee0da54e774a68ab5df0872b">TK_ENDLIST</a> = 5, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa801f0729813c70a463eea12b8b179eb1">TK_COMMAND_AT</a> = 6, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2a09cfd5ad8d861688a05908a8dea5ff">TK_HTMLTAG</a> = 7, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afab4c974f1d50d9e9c292ce36562c164f2">TK_SYMBOL</a> = 8, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afabe804eb9c4660e29223e9e455126b469">TK_NEWPARA</a> = 9, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa545d7bdc48929abd3a8b20ff8a06c185">TK_RCSTAG</a> = 10, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa08a22cf20f93c345c37d82be66f2535a">TK_URL</a> = 11, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa5496d14215d41bfaf6ae12b33eb7130d">TK_COMMAND_BS</a> = 12, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa90bdd145323993d8702a222ff269a8d2">RetVal_OK</a> = 0x10000, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa3f194b10629a8efd8f05cb1445bc28f5">RetVal_SimpleSec</a> = 0x10001, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa9f55929ba63b40e6b351a39997b422c7">RetVal_ListItem</a> = 0x10002, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa3a5eda8e9ed14211b34dccb72bd98b30">RetVal_Section</a> = 0x10003, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa1e655faf9d7e324cebfc87048f8f1313">RetVal_Subsection</a> = 0x10004, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afafcafa68135487d432c5de976edb2c40a">RetVal_Subsubsection</a> = 0x10005, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa550b490f9f95e11dfd0d563f829e67e8">RetVal_Paragraph</a> = 0x10006, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa982e3db35310c82d174c4d0ad3000ae4">RetVal_SubParagraph</a> = 0x10007, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa6a96924a54bab4c6b2f2131cdbecd5ae">RetVal_EndList</a> = 0x10008, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa76a2ae19a79e778838beec17e953e948">RetVal_EndPre</a> = 0x10009, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa66a9d49e9ad178ffbad3bb441d61ae84">RetVal_DescData</a> = 0x1000A, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2a1c2cb4c1dcc409a7e19d1323bfff5f">RetVal_DescTitle</a> = 0x1000B, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afab45653a874f3187d8f8298a67b7dd5f3">RetVal_EndDesc</a> = 0x1000C, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa3adac0a3a4ad484efaf3136a1d8bedcd">RetVal_TableRow</a> = 0x1000D, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa9333aaf67852e216d5bf577250e21b6c">RetVal_TableCell</a> = 0x1000E, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa6cf266883f9fb0016af739d96c47b123">RetVal_TableHCell</a> = 0x1000F, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa46c7b0a1b5f4db15b4a59625af221f44">RetVal_EndTable</a> = 0x10010, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afad2436c7d2d4d16b50d4c79d774d23bf9">RetVal_Internal</a> = 0x10011, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa46f53faf8a9f761cb52e0696e512cd42">RetVal_SwitchLang</a> = 0x10012, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afafc139569c8206cd797096ea9c8265c37">RetVal_CloseXml</a> = 0x10013, 
+<br />
+&#160;&#160;<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa32877befdd25357697513acd0fc4ad27">RetVal_EndBlockQuote</a> = 0x10014, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afad8137258d399638b061b1922338a9d90">RetVal_CopyDoc</a> = 0x10015, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa57f51851af64020dba97516f5f0c4eca">RetVal_EndInternal</a> = 0x10016, 
+<a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa4d3db3f070705885cb30e195fe963af1">RetVal_EndParBlock</a> = 0x10017
+<br />
+ }</td></tr>
+<tr class="separator:a7722396ed46bc111e7b794948986f8af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">枚举类型说明</h2>
+<a id="a7722396ed46bc111e7b794948986f8af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7722396ed46bc111e7b794948986f8af">&#9670;&nbsp;</a></span>Tokens</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8af">Tokens</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">枚举值</th></tr><tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa2b4a4468ca8c7242bf98227d336bf4ad"></a>TK_WORD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa4640e6cdcb728ffd6a26282022978866"></a>TK_LNKWORD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa0ca8cd834b4402e55673fad9935c808a"></a>TK_WHITESPACE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa2c626d0e5270e4da6896efa78533cbb1"></a>TK_LISTITEM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afab4ae7909ee0da54e774a68ab5df0872b"></a>TK_ENDLIST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa801f0729813c70a463eea12b8b179eb1"></a>TK_COMMAND_AT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa2a09cfd5ad8d861688a05908a8dea5ff"></a>TK_HTMLTAG&#160;</td><td class="fielddoc"><p>Command starting with <code>@</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afab4c974f1d50d9e9c292ce36562c164f2"></a>TK_SYMBOL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afabe804eb9c4660e29223e9e455126b469"></a>TK_NEWPARA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa545d7bdc48929abd3a8b20ff8a06c185"></a>TK_RCSTAG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa08a22cf20f93c345c37d82be66f2535a"></a>TK_URL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa5496d14215d41bfaf6ae12b33eb7130d"></a>TK_COMMAND_BS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa90bdd145323993d8702a222ff269a8d2"></a>RetVal_OK&#160;</td><td class="fielddoc"><p>Command starting with <code>\</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa3f194b10629a8efd8f05cb1445bc28f5"></a>RetVal_SimpleSec&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa9f55929ba63b40e6b351a39997b422c7"></a>RetVal_ListItem&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa3a5eda8e9ed14211b34dccb72bd98b30"></a>RetVal_Section&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa1e655faf9d7e324cebfc87048f8f1313"></a>RetVal_Subsection&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afafcafa68135487d432c5de976edb2c40a"></a>RetVal_Subsubsection&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa550b490f9f95e11dfd0d563f829e67e8"></a>RetVal_Paragraph&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa982e3db35310c82d174c4d0ad3000ae4"></a>RetVal_SubParagraph&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa6a96924a54bab4c6b2f2131cdbecd5ae"></a>RetVal_EndList&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa76a2ae19a79e778838beec17e953e948"></a>RetVal_EndPre&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa66a9d49e9ad178ffbad3bb441d61ae84"></a>RetVal_DescData&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa2a1c2cb4c1dcc409a7e19d1323bfff5f"></a>RetVal_DescTitle&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afab45653a874f3187d8f8298a67b7dd5f3"></a>RetVal_EndDesc&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa3adac0a3a4ad484efaf3136a1d8bedcd"></a>RetVal_TableRow&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa9333aaf67852e216d5bf577250e21b6c"></a>RetVal_TableCell&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa6cf266883f9fb0016af739d96c47b123"></a>RetVal_TableHCell&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa46c7b0a1b5f4db15b4a59625af221f44"></a>RetVal_EndTable&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afad2436c7d2d4d16b50d4c79d774d23bf9"></a>RetVal_Internal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa46f53faf8a9f761cb52e0696e512cd42"></a>RetVal_SwitchLang&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afafc139569c8206cd797096ea9c8265c37"></a>RetVal_CloseXml&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa32877befdd25357697513acd0fc4ad27"></a>RetVal_EndBlockQuote&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afad8137258d399638b061b1922338a9d90"></a>RetVal_CopyDoc&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa57f51851af64020dba97516f5f0c4eca"></a>RetVal_EndInternal&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a7722396ed46bc111e7b794948986f8afa4d3db3f070705885cb30e195fe963af1"></a>RetVal_EndParBlock&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">在文件 <a class="el" href="../../d0/d0c/doctokenizer_8h_source.html">doctokenizer.h</a> 第 <a class="el" href="../../d0/d0c/doctokenizer_8h_source.html#l00028">28</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2b4a4468ca8c7242bf98227d336bf4ad">TK_WORD</a>          = 1,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa4640e6cdcb728ffd6a26282022978866">TK_LNKWORD</a>       = 2,</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa0ca8cd834b4402e55673fad9935c808a">TK_WHITESPACE</a>    = 3,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2c626d0e5270e4da6896efa78533cbb1">TK_LISTITEM</a>      = 4,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afab4ae7909ee0da54e774a68ab5df0872b">TK_ENDLIST</a>       = 5,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa801f0729813c70a463eea12b8b179eb1">TK_COMMAND_AT</a>    = 6, <span class="comment">//! Command starting with `@`</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"></span>  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2a09cfd5ad8d861688a05908a8dea5ff">TK_HTMLTAG</a>       = 7,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afab4c974f1d50d9e9c292ce36562c164f2">TK_SYMBOL</a>        = 8,</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afabe804eb9c4660e29223e9e455126b469">TK_NEWPARA</a>       = 9,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa545d7bdc48929abd3a8b20ff8a06c185">TK_RCSTAG</a>        = 10,</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa08a22cf20f93c345c37d82be66f2535a">TK_URL</a>           = 11,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa5496d14215d41bfaf6ae12b33eb7130d">TK_COMMAND_BS</a>    = 12, <span class="comment">//! Command starting with `\`</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa90bdd145323993d8702a222ff269a8d2">RetVal_OK</a>             = 0x10000,</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa3f194b10629a8efd8f05cb1445bc28f5">RetVal_SimpleSec</a>      = 0x10001,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa9f55929ba63b40e6b351a39997b422c7">RetVal_ListItem</a>       = 0x10002,</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa3a5eda8e9ed14211b34dccb72bd98b30">RetVal_Section</a>        = 0x10003,</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa1e655faf9d7e324cebfc87048f8f1313">RetVal_Subsection</a>     = 0x10004,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afafcafa68135487d432c5de976edb2c40a">RetVal_Subsubsection</a>  = 0x10005,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa550b490f9f95e11dfd0d563f829e67e8">RetVal_Paragraph</a>      = 0x10006,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa982e3db35310c82d174c4d0ad3000ae4">RetVal_SubParagraph</a>   = 0x10007,</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa6a96924a54bab4c6b2f2131cdbecd5ae">RetVal_EndList</a>        = 0x10008,</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa76a2ae19a79e778838beec17e953e948">RetVal_EndPre</a>         = 0x10009,</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa66a9d49e9ad178ffbad3bb441d61ae84">RetVal_DescData</a>       = 0x1000A,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2a1c2cb4c1dcc409a7e19d1323bfff5f">RetVal_DescTitle</a>      = 0x1000B,</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afab45653a874f3187d8f8298a67b7dd5f3">RetVal_EndDesc</a>        = 0x1000C,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa3adac0a3a4ad484efaf3136a1d8bedcd">RetVal_TableRow</a>       = 0x1000D,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa9333aaf67852e216d5bf577250e21b6c">RetVal_TableCell</a>      = 0x1000E,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa6cf266883f9fb0016af739d96c47b123">RetVal_TableHCell</a>     = 0x1000F,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa46c7b0a1b5f4db15b4a59625af221f44">RetVal_EndTable</a>       = 0x10010,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afad2436c7d2d4d16b50d4c79d774d23bf9">RetVal_Internal</a>       = 0x10011,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa46f53faf8a9f761cb52e0696e512cd42">RetVal_SwitchLang</a>     = 0x10012,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afafc139569c8206cd797096ea9c8265c37">RetVal_CloseXml</a>       = 0x10013,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa32877befdd25357697513acd0fc4ad27">RetVal_EndBlockQuote</a>  = 0x10014,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afad8137258d399638b061b1922338a9d90">RetVal_CopyDoc</a>        = 0x10015,</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa57f51851af64020dba97516f5f0c4eca">RetVal_EndInternal</a>    = 0x10016,</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa4d3db3f070705885cb30e195fe963af1">RetVal_EndParBlock</a>    = 0x10017</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afafcafa68135487d432c5de976edb2c40a"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afafcafa68135487d432c5de976edb2c40a">RetVal_Subsubsection</a></div><div class="ttdeci">@ RetVal_Subsubsection</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00064">doctokenizer.h:64</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa9333aaf67852e216d5bf577250e21b6c"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa9333aaf67852e216d5bf577250e21b6c">RetVal_TableCell</a></div><div class="ttdeci">@ RetVal_TableCell</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00073">doctokenizer.h:73</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa2b4a4468ca8c7242bf98227d336bf4ad"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2b4a4468ca8c7242bf98227d336bf4ad">TK_WORD</a></div><div class="ttdeci">@ TK_WORD</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00046">doctokenizer.h:46</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afab45653a874f3187d8f8298a67b7dd5f3"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afab45653a874f3187d8f8298a67b7dd5f3">RetVal_EndDesc</a></div><div class="ttdeci">@ RetVal_EndDesc</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00071">doctokenizer.h:71</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa982e3db35310c82d174c4d0ad3000ae4"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa982e3db35310c82d174c4d0ad3000ae4">RetVal_SubParagraph</a></div><div class="ttdeci">@ RetVal_SubParagraph</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00066">doctokenizer.h:66</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa90bdd145323993d8702a222ff269a8d2"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa90bdd145323993d8702a222ff269a8d2">RetVal_OK</a></div><div class="ttdeci">@ RetVal_OK</div><div class="ttdoc">Command starting with \</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00059">doctokenizer.h:59</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afafc139569c8206cd797096ea9c8265c37"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afafc139569c8206cd797096ea9c8265c37">RetVal_CloseXml</a></div><div class="ttdeci">@ RetVal_CloseXml</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00078">doctokenizer.h:78</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa46c7b0a1b5f4db15b4a59625af221f44"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa46c7b0a1b5f4db15b4a59625af221f44">RetVal_EndTable</a></div><div class="ttdeci">@ RetVal_EndTable</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00075">doctokenizer.h:75</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa1e655faf9d7e324cebfc87048f8f1313"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa1e655faf9d7e324cebfc87048f8f1313">RetVal_Subsection</a></div><div class="ttdeci">@ RetVal_Subsection</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00063">doctokenizer.h:63</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa3adac0a3a4ad484efaf3136a1d8bedcd"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa3adac0a3a4ad484efaf3136a1d8bedcd">RetVal_TableRow</a></div><div class="ttdeci">@ RetVal_TableRow</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00072">doctokenizer.h:72</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa545d7bdc48929abd3a8b20ff8a06c185"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa545d7bdc48929abd3a8b20ff8a06c185">TK_RCSTAG</a></div><div class="ttdeci">@ TK_RCSTAG</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00055">doctokenizer.h:55</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa0ca8cd834b4402e55673fad9935c808a"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa0ca8cd834b4402e55673fad9935c808a">TK_WHITESPACE</a></div><div class="ttdeci">@ TK_WHITESPACE</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00048">doctokenizer.h:48</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afab4c974f1d50d9e9c292ce36562c164f2"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afab4c974f1d50d9e9c292ce36562c164f2">TK_SYMBOL</a></div><div class="ttdeci">@ TK_SYMBOL</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00053">doctokenizer.h:53</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa2c626d0e5270e4da6896efa78533cbb1"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2c626d0e5270e4da6896efa78533cbb1">TK_LISTITEM</a></div><div class="ttdeci">@ TK_LISTITEM</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00049">doctokenizer.h:49</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa801f0729813c70a463eea12b8b179eb1"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa801f0729813c70a463eea12b8b179eb1">TK_COMMAND_AT</a></div><div class="ttdeci">@ TK_COMMAND_AT</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00051">doctokenizer.h:51</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afad8137258d399638b061b1922338a9d90"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afad8137258d399638b061b1922338a9d90">RetVal_CopyDoc</a></div><div class="ttdeci">@ RetVal_CopyDoc</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00080">doctokenizer.h:80</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa6a96924a54bab4c6b2f2131cdbecd5ae"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa6a96924a54bab4c6b2f2131cdbecd5ae">RetVal_EndList</a></div><div class="ttdeci">@ RetVal_EndList</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00067">doctokenizer.h:67</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa66a9d49e9ad178ffbad3bb441d61ae84"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa66a9d49e9ad178ffbad3bb441d61ae84">RetVal_DescData</a></div><div class="ttdeci">@ RetVal_DescData</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00069">doctokenizer.h:69</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afad2436c7d2d4d16b50d4c79d774d23bf9"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afad2436c7d2d4d16b50d4c79d774d23bf9">RetVal_Internal</a></div><div class="ttdeci">@ RetVal_Internal</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00076">doctokenizer.h:76</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa9f55929ba63b40e6b351a39997b422c7"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa9f55929ba63b40e6b351a39997b422c7">RetVal_ListItem</a></div><div class="ttdeci">@ RetVal_ListItem</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00061">doctokenizer.h:61</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa4640e6cdcb728ffd6a26282022978866"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa4640e6cdcb728ffd6a26282022978866">TK_LNKWORD</a></div><div class="ttdeci">@ TK_LNKWORD</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00047">doctokenizer.h:47</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa57f51851af64020dba97516f5f0c4eca"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa57f51851af64020dba97516f5f0c4eca">RetVal_EndInternal</a></div><div class="ttdeci">@ RetVal_EndInternal</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00081">doctokenizer.h:81</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa32877befdd25357697513acd0fc4ad27"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa32877befdd25357697513acd0fc4ad27">RetVal_EndBlockQuote</a></div><div class="ttdeci">@ RetVal_EndBlockQuote</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00079">doctokenizer.h:79</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa4d3db3f070705885cb30e195fe963af1"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa4d3db3f070705885cb30e195fe963af1">RetVal_EndParBlock</a></div><div class="ttdeci">@ RetVal_EndParBlock</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00082">doctokenizer.h:82</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa46f53faf8a9f761cb52e0696e512cd42"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa46f53faf8a9f761cb52e0696e512cd42">RetVal_SwitchLang</a></div><div class="ttdeci">@ RetVal_SwitchLang</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00077">doctokenizer.h:77</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa3f194b10629a8efd8f05cb1445bc28f5"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa3f194b10629a8efd8f05cb1445bc28f5">RetVal_SimpleSec</a></div><div class="ttdeci">@ RetVal_SimpleSec</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00060">doctokenizer.h:60</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afab4ae7909ee0da54e774a68ab5df0872b"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afab4ae7909ee0da54e774a68ab5df0872b">TK_ENDLIST</a></div><div class="ttdeci">@ TK_ENDLIST</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00050">doctokenizer.h:50</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa2a09cfd5ad8d861688a05908a8dea5ff"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2a09cfd5ad8d861688a05908a8dea5ff">TK_HTMLTAG</a></div><div class="ttdeci">@ TK_HTMLTAG</div><div class="ttdoc">Command starting with @</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00052">doctokenizer.h:52</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa3a5eda8e9ed14211b34dccb72bd98b30"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa3a5eda8e9ed14211b34dccb72bd98b30">RetVal_Section</a></div><div class="ttdeci">@ RetVal_Section</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00062">doctokenizer.h:62</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa2a1c2cb4c1dcc409a7e19d1323bfff5f"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa2a1c2cb4c1dcc409a7e19d1323bfff5f">RetVal_DescTitle</a></div><div class="ttdeci">@ RetVal_DescTitle</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00070">doctokenizer.h:70</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa550b490f9f95e11dfd0d563f829e67e8"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa550b490f9f95e11dfd0d563f829e67e8">RetVal_Paragraph</a></div><div class="ttdeci">@ RetVal_Paragraph</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00065">doctokenizer.h:65</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afabe804eb9c4660e29223e9e455126b469"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afabe804eb9c4660e29223e9e455126b469">TK_NEWPARA</a></div><div class="ttdeci">@ TK_NEWPARA</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00054">doctokenizer.h:54</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa76a2ae19a79e778838beec17e953e948"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa76a2ae19a79e778838beec17e953e948">RetVal_EndPre</a></div><div class="ttdeci">@ RetVal_EndPre</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00068">doctokenizer.h:68</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa5496d14215d41bfaf6ae12b33eb7130d"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa5496d14215d41bfaf6ae12b33eb7130d">TK_COMMAND_BS</a></div><div class="ttdeci">@ TK_COMMAND_BS</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00057">doctokenizer.h:57</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa6cf266883f9fb0016af739d96c47b123"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa6cf266883f9fb0016af739d96c47b123">RetVal_TableHCell</a></div><div class="ttdeci">@ RetVal_TableHCell</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00074">doctokenizer.h:74</a></div></div>
+<div class="ttc" id="adoctokenizer_8h_html_a7722396ed46bc111e7b794948986f8afa08a22cf20f93c345c37d82be66f2535a"><div class="ttname"><a href="../../d0/d0c/doctokenizer_8h.html#a7722396ed46bc111e7b794948986f8afa08a22cf20f93c345c37d82be66f2535a">TK_URL</a></div><div class="ttdeci">@ TK_URL</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d0c/doctokenizer_8h_source.html#l00056">doctokenizer.h:56</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d0/d0c/doctokenizer_8h.html">doctokenizer.h</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:56 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+digraph "DefinitionContext&lt; T &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DefinitionContext\< T \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_def" ,fontname="Helvetica"];
+  Node2 [label="Definition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dcc/class_definition.html",tooltip="The common base class of all entity definitions found in the sources."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_baseProperties" ,fontname="Helvetica"];
+  Node3 [label="PropertyMap\< DefinitionContext\l\< T \> \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< DefinitionContext\l\< T \> \>" ,fontname="Helvetica"];
+  Node4 [label="PropertyMap\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip="Class representing a mapping of properties and the corresponding getter function."];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_cachable" ,fontname="Helvetica"];
+  Node5 [label="DefinitionContext\<\l T \>::Cachable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d7b/struct_definition_context_1_1_cachable.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Definition::Cookie",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/d2f/struct_definition_1_1_cookie.html",tooltip=" "];
+  Node7 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" details" ,fontname="Helvetica"];
+  Node7 [label="CachedItem\< TemplateVariant,\l DefinitionContext, &DC\l::createDetails \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node8 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node8 [label="TemplateVariant",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/dba/class_template_variant.html",tooltip="Variant type which can hold one value of a fixed set of types."];
+  Node9 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_variant" ,fontname="Helvetica"];
+  Node9 [label="Variant\< bool, int,\l QCString, TemplateStructIntf\lPtr, TemplateListIntfPtr,\l FunctionDelegate, TemplateStructIntf\lWeakPtr \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d1e/struct_variant.html",tooltip=" "];
+  Node10 -> Node9 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< bool, int, QCString,\l TemplateStructIntfPtr,\l TemplateListIntfPtr, Function\lDelegate, TemplateStructIntfWeakPtr \>" ,fontname="Helvetica"];
+  Node10 [label="Variant\< Ts \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$de/d1e/struct_variant.html",tooltip="Implementation of a variant container (similar to C++17's std::variant)."];
+  Node11 -> Node7 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateVariant,\l DefinitionContext,\l &DC::createDetails \>" ,fontname="Helvetica"];
+  Node11 [label="CachedItem\< T, TOwner,\l creator \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip="Wrapper for data that needs to be cached."];
+  Node12 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" brief" ,fontname="Helvetica"];
+  Node12 [label="CachedItem\< TemplateVariant,\l DefinitionContext, &DC\l::createBrief \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node8 -> Node12 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node11 -> Node12 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateVariant,\l DefinitionContext,\l &DC::createBrief \>" ,fontname="Helvetica"];
+  Node13 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" navPath" ,fontname="Helvetica"];
+  Node13 [label="CachedItem\< TemplateList\lIntfPtr, DefinitionContext,\l &DC::createNavigationPath \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node11 -> Node13 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateListIntfPtr,\l DefinitionContext, &DC\l::createNavigationPath \>" ,fontname="Helvetica"];
+  Node14 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" partOfGroups" ,fontname="Helvetica"];
+  Node14 [label="CachedItem\< TemplateList\lIntfPtr, DefinitionContext,\l &DC::createPartOfGroups \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node11 -> Node14 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateListIntfPtr,\l DefinitionContext, &DC\l::createPartOfGroups \>" ,fontname="Helvetica"];
+  Node15 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" inbodyDocs" ,fontname="Helvetica"];
+  Node15 [label="CachedItem\< TemplateVariant,\l DefinitionContext, &DC\l::createInbodyDocs \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node8 -> Node15 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node11 -> Node15 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< TemplateVariant,\l DefinitionContext,\l &DC::createInbodyDocs \>" ,fontname="Helvetica"];
+}

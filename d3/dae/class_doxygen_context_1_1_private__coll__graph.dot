@@ -1,0 +1,23 @@
+digraph "DoxygenContext::Private"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="DoxygenContext::Private",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" s_inst" ,fontname="Helvetica"];
+  Node2 [label="PropertyMap\< DoxygenContext\l::Private \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< DoxygenContext::Private \>" ,fontname="Helvetica"];
+  Node3 [label="PropertyMap\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dbf/class_property_map.html",tooltip="Class representing a mapping of properties and the corresponding getter function."];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_mathJaxMacros" ,fontname="Helvetica"];
+  Node4 [label="CachedItem\< QCString,\l DoxygenContext::Private,\l &Private::createMathJaxMacros \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node5 [label="QCString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d45/class_q_c_string.html",tooltip="This is an alternative implementation of QCString."];
+  Node6 -> Node4 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< QCString, DoxygenContext\l::Private, &Private::createMath\lJaxMacros \>" ,fontname="Helvetica"];
+  Node6 [label="CachedItem\< T, TOwner,\l creator \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip="Wrapper for data that needs to be cached."];
+  Node7 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_mathJaxCodeFile" ,fontname="Helvetica"];
+  Node7 [label="CachedItem\< QCString,\l DoxygenContext::Private,\l &Private::createMathJaxCodeFile \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d7/dc1/class_cached_item.html",tooltip=" "];
+  Node5 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_item" ,fontname="Helvetica"];
+  Node6 -> Node7 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< QCString, DoxygenContext\l::Private, &Private::createMath\lJaxCodeFile \>" ,fontname="Helvetica"];
+}

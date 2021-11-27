@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/qhp.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('dc/d20/qhp_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">qhp.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../dc/d20/qhp_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright (C) 2008 by Sebastian Pipping.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright (C) 2008 Dimitri van Heesch.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Permission to use, copy, modify, and distribute this software and its</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * documentation under the terms of the GNU General Public License is hereby</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * granted. No representations are made about the suitability of this software</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * for any purpose. It is provided &quot;as is&quot; without express or implied warranty.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * See the GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Documents produced by Doxygen are derivative works derived from the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * input used in their production; they are not affected by this license.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * Sebastian Pipping &lt;sebastian@pipping.org&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef DOXYGEN_QHP_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define DOXYGEN_QHP_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d1/db5/index_8h.html">index.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/df8/qhpxmlwriter_8h.html">qhpxmlwriter.h</a>&quot;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/d4f/class_qhp.html">Qhp</a> : <span class="keyword">public</span> <a class="code" href="../../d9/dd5/class_index_intf.html">IndexIntf</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="../../de/d4f/class_qhp.html#a1cc5cff0816b9170282a397cf3ab1db4">Qhp</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   <a class="code" href="../../de/d4f/class_qhp.html#ab10e4a689479c8fd8a51a5563db674d4">~Qhp</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">// BEGIN IndexIntf</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#a7ee6480507e32d9142ec04d4e499ae7e">initialize</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#a89942e1d21257702167ab30834b991cd">finalize</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#a50a0c14cf46a57a63afb304df260da59">incContentsDepth</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#a7c18564920e18fc9bbdcd8ca6c9b21f0">decContentsDepth</a>();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#a97250a0c6a30c1007fe57e472900fd97">addContentsItem</a>(<span class="keywordtype">bool</span> isDir, <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; name, <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; ref,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                         <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; file, <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; anchor,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                         <span class="keywordtype">bool</span> separateIndex,<span class="keywordtype">bool</span> addToNavIndex,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                         <span class="keyword">const</span> <a class="code" href="../../d5/dcc/class_definition.html">Definition</a> *def);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#afdd0e586dc670e184d23bf80c880f0cf">addIndexItem</a>(<span class="keyword">const</span> <a class="code" href="../../d5/dcc/class_definition.html">Definition</a> *context, <span class="keyword">const</span> <a class="code" href="../../da/d09/class_member_def.html">MemberDef</a> *md,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                      <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;sectionAnchor, <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;title);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#a5836fdafba298b3315ab260651fb028f">addIndexFile</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; name);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#a1b4da55a40a9f690fe7646926bf68991">addImageFile</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; name);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#a65fc5353890c13cda4f5c59379ddc174">addStyleSheetFile</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; name);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="comment">// END IndexIntf</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../de/d4f/class_qhp.html#af83942532051a2b155f6ae29b2f727dc">getQhpFileName</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#a7231f5776e08f2ea8eb480bc98d6e675">handlePrevSection</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#afa10ab59f7b0858af24364bd3600f801">clearPrevSection</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#a664dbcae69ee2edcb7bbe1cf0222dba5">setPrevSection</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; title, <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; basename, <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; anchor, <span class="keywordtype">int</span> level);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/d4f/class_qhp.html#af0552a696e6b73a50334818e7e61cc99">addFile</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp; fileName);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../de/d4f/class_qhp.html#ad0808504a9a49eae5a17621b5285d1a4">getFullProjectName</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#a2325cfbf907d46175c0df40cdb524f42">   55</a></span>&#160;    <a class="code" href="../../db/d40/class_qhp_xml_writer.html">QhpXmlWriter</a> <a class="code" href="../../de/d4f/class_qhp.html#a2325cfbf907d46175c0df40cdb524f42">m_doc</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#a7ae75eaebcb628b4bbfca9a78459c59c">   56</a></span>&#160;    <a class="code" href="../../db/d40/class_qhp_xml_writer.html">QhpXmlWriter</a> <a class="code" href="../../de/d4f/class_qhp.html#a7ae75eaebcb628b4bbfca9a78459c59c">m_toc</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#a7ee6bf6f5ef00a64936df35fc2bf88bf">   57</a></span>&#160;    <a class="code" href="../../db/d40/class_qhp_xml_writer.html">QhpXmlWriter</a> <a class="code" href="../../de/d4f/class_qhp.html#a7ee6bf6f5ef00a64936df35fc2bf88bf">m_index</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#aaf277656add75f1d81ff152d992f0fec">   58</a></span>&#160;    <a class="code" href="../../db/d40/class_qhp_xml_writer.html">QhpXmlWriter</a> <a class="code" href="../../de/d4f/class_qhp.html#aaf277656add75f1d81ff152d992f0fec">m_files</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#ad67896b0801b83fd8d84baee317dac93">   60</a></span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../de/d4f/class_qhp.html#ad67896b0801b83fd8d84baee317dac93">m_prevSectionTitle</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#a941191e23765ac8424976d92f8d5205a">   61</a></span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../de/d4f/class_qhp.html#a941191e23765ac8424976d92f8d5205a">m_prevSectionBaseName</a>;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#ab6dc7c25ec238ef9a3e30a3d838adff5">   62</a></span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../de/d4f/class_qhp.html#ab6dc7c25ec238ef9a3e30a3d838adff5">m_prevSectionAnchor</a>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#a34ee23044494f9c8f5c7bb45719303fb">   64</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/d4f/class_qhp.html#a34ee23044494f9c8f5c7bb45719303fb">m_prevSectionLevel</a> = 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#ad8073c58fe9bb88efb1f8645b4d4087d">   65</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/d4f/class_qhp.html#ad8073c58fe9bb88efb1f8645b4d4087d">m_sectionLevel</a> = 0;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#a104cc91197e958dee34fc283ea49f939">   66</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="../../de/d4f/class_qhp.html#a104cc91197e958dee34fc283ea49f939">m_openCount</a> = 0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../de/d4f/class_qhp.html#aa3555e4fd33737aab276da75a82c6c8a">   67</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/d4f/class_qhp.html#aa3555e4fd33737aab276da75a82c6c8a">m_skipMainPageSection</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif // DOXYGEN_QHP_H</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_qhp_html_afdd0e586dc670e184d23bf80c880f0cf"><div class="ttname"><a href="../../de/d4f/class_qhp.html#afdd0e586dc670e184d23bf80c880f0cf">Qhp::addIndexItem</a></div><div class="ttdeci">void addIndexItem(const Definition *context, const MemberDef *md, const QCString &amp;sectionAnchor, const QCString &amp;title)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00223">qhp.cpp:223</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a50a0c14cf46a57a63afb304df260da59"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a50a0c14cf46a57a63afb304df260da59">Qhp::incContentsDepth</a></div><div class="ttdeci">void incContentsDepth()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00181">qhp.cpp:181</a></div></div>
+<div class="ttc" id="aclass_definition_html"><div class="ttname"><a href="../../d5/dcc/class_definition.html">Definition</a></div><div class="ttdoc">The common base class of all entity definitions found in the sources.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/da1/definition_8h_source.html#l00076">definition.h:76</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a7ae75eaebcb628b4bbfca9a78459c59c"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a7ae75eaebcb628b4bbfca9a78459c59c">Qhp::m_toc</a></div><div class="ttdeci">QhpXmlWriter m_toc</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00056">qhp.h:56</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a89942e1d21257702167ab30834b991cd"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a89942e1d21257702167ab30834b991cd">Qhp::finalize</a></div><div class="ttdeci">void finalize()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00148">qhp.cpp:148</a></div></div>
+<div class="ttc" id="aindex_8h_html"><div class="ttname"><a href="../../d1/db5/index_8h.html">index.h</a></div></div>
+<div class="ttc" id="aqhpxmlwriter_8h_html"><div class="ttname"><a href="../../d8/df8/qhpxmlwriter_8h.html">qhpxmlwriter.h</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a7ee6bf6f5ef00a64936df35fc2bf88bf"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a7ee6bf6f5ef00a64936df35fc2bf88bf">Qhp::m_index</a></div><div class="ttdeci">QhpXmlWriter m_index</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00057">qhp.h:57</a></div></div>
+<div class="ttc" id="aclass_qhp_html_ab6dc7c25ec238ef9a3e30a3d838adff5"><div class="ttname"><a href="../../de/d4f/class_qhp.html#ab6dc7c25ec238ef9a3e30a3d838adff5">Qhp::m_prevSectionAnchor</a></div><div class="ttdeci">QCString m_prevSectionAnchor</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00062">qhp.h:62</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a664dbcae69ee2edcb7bbe1cf0222dba5"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a664dbcae69ee2edcb7bbe1cf0222dba5">Qhp::setPrevSection</a></div><div class="ttdeci">void setPrevSection(const QCString &amp;title, const QCString &amp;basename, const QCString &amp;anchor, int level)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00349">qhp.cpp:349</a></div></div>
+<div class="ttc" id="aclass_qhp_html_ad67896b0801b83fd8d84baee317dac93"><div class="ttname"><a href="../../de/d4f/class_qhp.html#ad67896b0801b83fd8d84baee317dac93">Qhp::m_prevSectionTitle</a></div><div class="ttdeci">QCString m_prevSectionTitle</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00060">qhp.h:60</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a1cc5cff0816b9170282a397cf3ab1db4"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a1cc5cff0816b9170282a397cf3ab1db4">Qhp::Qhp</a></div><div class="ttdeci">Qhp()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00056">qhp.cpp:56</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a34ee23044494f9c8f5c7bb45719303fb"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a34ee23044494f9c8f5c7bb45719303fb">Qhp::m_prevSectionLevel</a></div><div class="ttdeci">int m_prevSectionLevel</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00064">qhp.h:64</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a7ee6480507e32d9142ec04d4e499ae7e"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a7ee6480507e32d9142ec04d4e499ae7e">Qhp::initialize</a></div><div class="ttdeci">void initialize()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00069">qhp.cpp:69</a></div></div>
+<div class="ttc" id="aclass_member_def_html"><div class="ttname"><a href="../../da/d09/class_member_def.html">MemberDef</a></div><div class="ttdoc">A model of a class/file/namespace member symbol.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d46/memberdef_8h_source.html#l00045">memberdef.h:45</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a7c18564920e18fc9bbdcd8ca6c9b21f0"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a7c18564920e18fc9bbdcd8ca6c9b21f0">Qhp::decContentsDepth</a></div><div class="ttdeci">void decContentsDepth()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00186">qhp.cpp:186</a></div></div>
+<div class="ttc" id="aclass_qhp_html_afa10ab59f7b0858af24364bd3600f801"><div class="ttname"><a href="../../de/d4f/class_qhp.html#afa10ab59f7b0858af24364bd3600f801">Qhp::clearPrevSection</a></div><div class="ttdeci">void clearPrevSection()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00357">qhp.cpp:357</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a104cc91197e958dee34fc283ea49f939"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a104cc91197e958dee34fc283ea49f939">Qhp::m_openCount</a></div><div class="ttdeci">int m_openCount</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00066">qhp.h:66</a></div></div>
+<div class="ttc" id="aclass_qhp_html_ab10e4a689479c8fd8a51a5563db674d4"><div class="ttname"><a href="../../de/d4f/class_qhp.html#ab10e4a689479c8fd8a51a5563db674d4">Qhp::~Qhp</a></div><div class="ttdeci">~Qhp()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00064">qhp.cpp:64</a></div></div>
+<div class="ttc" id="aclass_qhp_html_ad0808504a9a49eae5a17621b5285d1a4"><div class="ttname"><a href="../../de/d4f/class_qhp.html#ad0808504a9a49eae5a17621b5285d1a4">Qhp::getFullProjectName</a></div><div class="ttdeci">static QCString getFullProjectName()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00291">qhp.cpp:291</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a5836fdafba298b3315ab260651fb028f"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a5836fdafba298b3315ab260651fb028f">Qhp::addIndexFile</a></div><div class="ttdeci">void addIndexFile(const QCString &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00281">qhp.cpp:281</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a65fc5353890c13cda4f5c59379ddc174"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a65fc5353890c13cda4f5c59379ddc174">Qhp::addStyleSheetFile</a></div><div class="ttdeci">void addStyleSheetFile(const QCString &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00374">qhp.cpp:374</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a7231f5776e08f2ea8eb480bc98d6e675"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a7231f5776e08f2ea8eb480bc98d6e675">Qhp::handlePrevSection</a></div><div class="ttdeci">void handlePrevSection()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00301">qhp.cpp:301</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a2325cfbf907d46175c0df40cdb524f42"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a2325cfbf907d46175c0df40cdb524f42">Qhp::m_doc</a></div><div class="ttdeci">QhpXmlWriter m_doc</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00055">qhp.h:55</a></div></div>
+<div class="ttc" id="aclass_qhp_html"><div class="ttname"><a href="../../de/d4f/class_qhp.html">Qhp</a></div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00023">qhp.h:23</a></div></div>
+<div class="ttc" id="aclass_qhp_html_ad8073c58fe9bb88efb1f8645b4d4087d"><div class="ttname"><a href="../../de/d4f/class_qhp.html#ad8073c58fe9bb88efb1f8645b4d4087d">Qhp::m_sectionLevel</a></div><div class="ttdeci">int m_sectionLevel</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00065">qhp.h:65</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a97250a0c6a30c1007fe57e472900fd97"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a97250a0c6a30c1007fe57e472900fd97">Qhp::addContentsItem</a></div><div class="ttdeci">void addContentsItem(bool isDir, const QCString &amp;name, const QCString &amp;ref, const QCString &amp;file, const QCString &amp;anchor, bool separateIndex, bool addToNavIndex, const Definition *def)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00196">qhp.cpp:196</a></div></div>
+<div class="ttc" id="aclass_qhp_html_af0552a696e6b73a50334818e7e61cc99"><div class="ttname"><a href="../../de/d4f/class_qhp.html#af0552a696e6b73a50334818e7e61cc99">Qhp::addFile</a></div><div class="ttdeci">void addFile(const QCString &amp;fileName)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00364">qhp.cpp:364</a></div></div>
+<div class="ttc" id="aclass_qhp_html_af83942532051a2b155f6ae29b2f727dc"><div class="ttname"><a href="../../de/d4f/class_qhp.html#af83942532051a2b155f6ae29b2f727dc">Qhp::getQhpFileName</a></div><div class="ttdeci">static QCString getQhpFileName()</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00286">qhp.cpp:286</a></div></div>
+<div class="ttc" id="aclass_qhp_xml_writer_html"><div class="ttname"><a href="../../db/d40/class_qhp_xml_writer.html">QhpXmlWriter</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d8/df8/qhpxmlwriter_8h_source.html#l00023">qhpxmlwriter.h:23</a></div></div>
+<div class="ttc" id="aclass_qhp_html_aa3555e4fd33737aab276da75a82c6c8a"><div class="ttname"><a href="../../de/d4f/class_qhp.html#aa3555e4fd33737aab276da75a82c6c8a">Qhp::m_skipMainPageSection</a></div><div class="ttdeci">bool m_skipMainPageSection</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00067">qhp.h:67</a></div></div>
+<div class="ttc" id="aclass_qhp_html_aaf277656add75f1d81ff152d992f0fec"><div class="ttname"><a href="../../de/d4f/class_qhp.html#aaf277656add75f1d81ff152d992f0fec">Qhp::m_files</a></div><div class="ttdeci">QhpXmlWriter m_files</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00058">qhp.h:58</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a941191e23765ac8424976d92f8d5205a"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a941191e23765ac8424976d92f8d5205a">Qhp::m_prevSectionBaseName</a></div><div class="ttdeci">QCString m_prevSectionBaseName</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d20/qhp_8h_source.html#l00061">qhp.h:61</a></div></div>
+<div class="ttc" id="aclass_qhp_html_a1b4da55a40a9f690fe7646926bf68991"><div class="ttname"><a href="../../de/d4f/class_qhp.html#a1b4da55a40a9f690fe7646926bf68991">Qhp::addImageFile</a></div><div class="ttdeci">void addImageFile(const QCString &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d45/qhp_8cpp_source.html#l00369">qhp.cpp:369</a></div></div>
+<div class="ttc" id="aclass_index_intf_html"><div class="ttname"><a href="../../d9/dd5/class_index_intf.html">IndexIntf</a></div><div class="ttdoc">Abstract interface for index generators.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/db5/index_8h_source.html#l00032">index.h:32</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../dc/d20/qhp_8h.html">qhp.h</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:54 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

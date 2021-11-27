@@ -1,0 +1,31 @@
+digraph "LinkedRefMap&lt; T, Hash, KeyEqual, Map &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="LinkedRefMap\< T, Hash,\l KeyEqual, Map \>",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Container class representing a vector of objects with keys."];
+  Node1 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< const PageDef \>" ,fontname="Helvetica"];
+  Node2 [label="LinkedRefMap\< const\l PageDef \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/db7/class_linked_ref_map.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PageLinkedRefMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/de6/class_page_linked_ref_map.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< const NamespaceDef \>" ,fontname="Helvetica"];
+  Node4 [label="LinkedRefMap\< const\l NamespaceDef \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/db7/class_linked_ref_map.html",tooltip=" "];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="NamespaceLinkedRefMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/df0/class_namespace_linked_ref_map.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< const Definition \>" ,fontname="Helvetica"];
+  Node6 [label="LinkedRefMap\< const\l Definition \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/db7/class_linked_ref_map.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< const MemberDef \>" ,fontname="Helvetica"];
+  Node7 [label="LinkedRefMap\< const\l MemberDef \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/db7/class_linked_ref_map.html",tooltip=" "];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="MemberLinkedRefMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d77/class_member_linked_ref_map.html",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< const ClassDef \>" ,fontname="Helvetica"];
+  Node9 [label="LinkedRefMap\< const\l ClassDef \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/db7/class_linked_ref_map.html",tooltip=" "];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="ClassLinkedRefMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d08/class_class_linked_ref_map.html",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< const ConceptDef \>" ,fontname="Helvetica"];
+  Node11 [label="LinkedRefMap\< const\l ConceptDef \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/db7/class_linked_ref_map.html",tooltip=" "];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="ConceptLinkedRefMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/daa/class_concept_linked_ref_map.html",tooltip=" "];
+}

@@ -1,0 +1,2065 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/template.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('df/d54/template_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#define-members">宏定义</a> &#124;
+<a href="#typedef-members">类型定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">template.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="../../de/db8/template_8h_source.html">template.h</a>&quot;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;deque&gt;</code><br />
+<code>#include &lt;cstdio&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d0d/message_8h_source.html">message.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d3c/util_8h_source.html">util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d07/resourcemgr_8h_source.html">resourcemgr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/de2/portable_8h_source.html">portable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d21/regex_8h_source.html">regex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d45/fileinfo_8h_source.html">fileinfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d9c/dir_8h_source.html">dir.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d7c/utf8_8h_source.html">utf8.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> template.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+</div>
+</div>
+<p><a href="../../df/d54/template_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d4b/class_template_struct.html">TemplateStruct</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default implementation of a context value of type struct.  <a href="../../d8/d4b/class_template_struct.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d7c/class_template_list_generic_const_iterator.html">TemplateListGenericConstIterator&lt; List &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dab/class_template_list.html">TemplateList</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default implementation of a context value of type list.  <a href="../../de/dab/class_template_list.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d98/class_template_immutable_struct_1_1_private.html">TemplateImmutableStruct::Private</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d9/d98/class_template_immutable_struct_1_1_private.html" title="Private data of a template struct object">Private</a> data of a template struct object  <a href="../../d9/d98/class_template_immutable_struct_1_1_private.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/df9/class_template_immutable_list_1_1_private.html">TemplateImmutableList::Private</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../dc/df9/class_template_immutable_list_1_1_private.html" title="Private data of a template immutable list object">Private</a> data of a template immutable list object  <a href="../../dc/df9/class_template_immutable_list_1_1_private.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d99/class_operator.html">Operator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing operators that can appear in template expressions  <a href="../../d0/d99/class_operator.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d7f/class_template_block_context.html">TemplateBlockContext</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class holding stacks of blocks available in the context  <a href="../../dc/d7f/class_template_block_context.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/de0/struct_template_key_value.html">TemplateKeyValue</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A container to store a key-value pair  <a href="../../d2/de0/struct_template_key_value.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/dbf/class_template_context_impl.html">TemplateContextImpl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal class representing the implementation of a template context  <a href="../../da/dbf/class_template_context_impl.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d5e/class_filter_add.html">FilterAdd</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "add" filter  <a href="../../df/d5e/class_filter_add.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d53/class_filter_get.html">FilterGet</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "get" filter  <a href="../../db/d53/class_filter_get.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/ddb/class_filter_raw.html">FilterRaw</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "raw" filter  <a href="../../df/ddb/class_filter_raw.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd6/class_filter_keep.html">FilterKeep</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "keep" filter  <a href="../../d8/dd6/class_filter_keep.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/de3/class_filter_list.html">FilterList</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "list" filter  <a href="../../d5/de3/class_filter_list.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dd6/class_filter_tex_label.html">FilterTexLabel</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "texlabel" filter  <a href="../../d6/dd6/class_filter_tex_label.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/ddb/class_filter_tex_index.html">FilterTexIndex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "texindex" filter  <a href="../../d3/ddb/class_filter_tex_index.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/dfb/class_filter_append.html">FilterAppend</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "append" filter  <a href="../../d9/dfb/class_filter_append.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d51/class_filter_prepend.html">FilterPrepend</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "prepend" filter  <a href="../../db/d51/class_filter_prepend.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dd4/class_filter_length.html">FilterLength</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "length" filter  <a href="../../d8/dd4/class_filter_length.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dfe/class_filter_default.html">FilterDefault</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "default" filter  <a href="../../de/dfe/class_filter_default.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d7a/class_filter_flatten.html">FilterFlatten</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "flatten" filter  <a href="../../df/d7a/class_filter_flatten.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d6d/class_filter_list_sort.html">FilterListSort</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "listsort" filter  <a href="../../de/d6d/class_filter_list_sort.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d82/struct_filter_list_sort_1_1_list_elem.html">FilterListSort::ListElem</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d38/class_filter_group_by.html">FilterGroupBy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "groupBy" filter  <a href="../../df/d38/class_filter_group_by.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d96/struct_filter_group_by_1_1_list_elem.html">FilterGroupBy::ListElem</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d9b/class_filter_relative.html">FilterRelative</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "relative" filter  <a href="../../d6/d9b/class_filter_relative.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d28/class_filter_paginate.html">FilterPaginate</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "paginate" filter  <a href="../../d4/d28/class_filter_paginate.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de8/class_filter_alpha_index.html">FilterAlphaIndex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "alphaIndex" filter  <a href="../../df/de8/class_filter_alpha_index.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d6c/struct_filter_alpha_index_1_1_list_elem.html">FilterAlphaIndex::ListElem</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dc6/class_filter_strip_path.html">FilterStripPath</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "default" filter  <a href="../../d5/dc6/class_filter_strip_path.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d84/class_filter_no_wrap.html">FilterNoWrap</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "default" filter  <a href="../../d0/d84/class_filter_no_wrap.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d70/class_filter_divisible_by.html">FilterDivisibleBy</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "divisibleby" filter  <a href="../../db/d70/class_filter_divisible_by.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d3d/class_filter_is_relative_u_r_l.html">FilterIsRelativeURL</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "isRelativeURL" filter  <a href="../../d7/d3d/class_filter_is_relative_u_r_l.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d3f/class_filter_is_absolute_u_r_l.html">FilterIsAbsoluteURL</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "isRelativeURL" filter  <a href="../../dd/d3f/class_filter_is_absolute_u_r_l.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d3e/class_filter_lower.html">FilterLower</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "lower" filter  <a href="../../d3/d3e/class_filter_lower.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dcd/class_filter_upper.html">FilterUpper</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "upper" filter  <a href="../../dd/dcd/class_filter_upper.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d80/class_filter_hex.html">FilterHex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "upper" filter  <a href="../../d9/d80/class_filter_hex.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d38/class_filter_escape.html">FilterEscape</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "e" filter  <a href="../../d3/d38/class_filter_escape.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d70/class_filter_decode_u_r_l.html">FilterDecodeURL</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The implementation of the "decodeURL" filter The leading character is removed from the value in case it is a ^ or !.  <a href="../../d1/d70/class_filter_decode_u_r_l.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db6/class_template_filter_factory.html">TemplateFilterFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory singleton for registering and creating filters  <a href="../../d9/db6/class_template_filter_factory.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class for registering a filter function  <a href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/dfa/class_expr_ast.html">ExprAst</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class for all nodes in the abstract syntax tree of an expression.  <a href="../../dc/dfa/class_expr_ast.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d0a/class_expr_ast_number.html">ExprAstNumber</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a number in the AST  <a href="../../de/d0a/class_expr_ast_number.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/dc0/class_expr_ast_variable.html">ExprAstVariable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a variable in the AST  <a href="../../de/dc0/class_expr_ast_variable.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/da7/class_expr_ast_function_variable.html">ExprAstFunctionVariable</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d32/class_expr_ast_filter.html">ExprAstFilter</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a filter in the AST  <a href="../../d4/d32/class_expr_ast_filter.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/dce/class_expr_ast_filter_appl.html">ExprAstFilterAppl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a filter applied to an expression in the AST  <a href="../../d3/dce/class_expr_ast_filter_appl.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d31/class_expr_ast_literal.html">ExprAstLiteral</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a string literal in the AST  <a href="../../d0/d31/class_expr_ast_literal.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d4c/class_expr_ast_negate.html">ExprAstNegate</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a negation (not) operator in the AST  <a href="../../d5/d4c/class_expr_ast_negate.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db5/class_expr_ast_unary.html">ExprAstUnary</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d11/class_expr_ast_binary.html">ExprAstBinary</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a binary operator in the AST  <a href="../../dc/d11/class_expr_ast_binary.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d53/class_template_node.html">TemplateNode</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class of all nodes in a template's AST  <a href="../../d6/d53/class_template_node.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/ddd/class_template_token.html">TemplateToken</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a lexical token in a template  <a href="../../d1/ddd/class_template_token.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/daf/class_template_node_list.html">TemplateNodeList</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a list of AST nodes in a template  <a href="../../df/daf/class_template_node_list.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d25/class_template_parser.html">TemplateParser</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parser for templates  <a href="../../da/d25/class_template_parser.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d46/class_expression_parser.html">ExpressionParser</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recursive decent parser for Django style template expressions.  <a href="../../da/d46/class_expression_parser.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d2a/class_expression_parser_1_1_expr_token.html">ExpressionParser::ExprToken</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a token within an expression.  <a href="../../d3/d2a/class_expression_parser_1_1_expr_token.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d07/class_template_impl.html">TemplateImpl</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Internal class representing the implementation of a template  <a href="../../d6/d07/class_template_impl.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/daf/class_template_node_text.html">TemplateNodeText</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a piece of plain text in a template  <a href="../../d9/daf/class_template_node_text.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d06/class_template_node_variable.html">TemplateNodeVariable</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a variable in a template  <a href="../../d9/d06/class_template_node_variable.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d78/class_template_node_creator.html">TemplateNodeCreator&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class for creating template AST tag nodes and returning the template for a given node.  <a href="../../d8/d78/class_template_node_creator.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d38/class_template_node_if.html">TemplateNodeIf</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'if' tag in a template  <a href="../../d8/d38/class_template_node_if.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/db1/struct_template_node_if_1_1_guarded_nodes.html">TemplateNodeIf::GuardedNodes</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d54/class_template_node_repeat.html">TemplateNodeRepeat</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a 'for' tag in a template  <a href="../../db/d54/class_template_node_repeat.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d83/class_template_node_range.html">TemplateNodeRange</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a 'range' tag in a template  <a href="../../d6/d83/class_template_node_range.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/da1/class_template_node_for.html">TemplateNodeFor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a 'for' tag in a template  <a href="../../d5/da1/class_template_node_for.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d50/class_template_node_msg.html">TemplateNodeMsg</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'markers' tag in a template  <a href="../../d4/d50/class_template_node_msg.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/de0/class_template_node_block.html">TemplateNodeBlock</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a 'block' tag in a template  <a href="../../d2/de0/class_template_node_block.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d21/class_template_node_extend.html">TemplateNodeExtend</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing a 'extend' tag in a template  <a href="../../d0/d21/class_template_node_extend.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d4b/class_template_node_include.html">TemplateNodeInclude</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'include' tag in a template  <a href="../../da/d4b/class_template_node_include.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dcd/class_template_node_create.html">TemplateNodeCreate</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'create' tag in a template  <a href="../../d5/dcd/class_template_node_create.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d31/class_template_node_tree.html">TemplateNodeTree</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'tree' tag in a template  <a href="../../d8/d31/class_template_node_tree.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d99/struct_template_node_tree_1_1_tree_context.html">TemplateNodeTree::TreeContext</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/ddd/class_template_node_index_entry.html">TemplateNodeIndexEntry</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'indexentry' tag in a template  <a href="../../da/ddd/class_template_node_index_entry.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dfa/struct_template_node_index_entry_1_1_mapping.html">TemplateNodeIndexEntry::Mapping</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d20/class_template_node_open_sub_index.html">TemplateNodeOpenSubIndex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'opensubindex' tag in a template  <a href="../../d6/d20/class_template_node_open_sub_index.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/dff/class_template_node_close_sub_index.html">TemplateNodeCloseSubIndex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'closesubindex' tag in a template  <a href="../../dd/dff/class_template_node_close_sub_index.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/df7/class_template_node_with.html">TemplateNodeWith</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'with' tag in a template  <a href="../../d6/df7/class_template_node_with.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d05/struct_template_node_with_1_1_mapping.html">TemplateNodeWith::Mapping</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d37/class_template_node_cycle.html">TemplateNodeCycle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'cycle' tag in a template  <a href="../../d3/d37/class_template_node_cycle.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d86/class_template_node_set.html">TemplateNodeSet</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'set' tag in a template  <a href="../../d3/d86/class_template_node_set.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d36/struct_template_node_set_1_1_mapping.html">TemplateNodeSet::Mapping</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dc6/class_template_node_spaceless.html">TemplateNodeSpaceless</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'spaceless' tag in a template  <a href="../../df/dc6/class_template_node_spaceless.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d9/d8f/class_template_node_markers.html">TemplateNodeMarkers</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'markers' tag in a template  <a href="../../d9/d8f/class_template_node_markers.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da1/class_template_node_tabbing.html">TemplateNodeTabbing</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'tabbing' tag in a template  <a href="../../da/da1/class_template_node_tabbing.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d57/class_template_node_resource.html">TemplateNodeResource</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing an 'markers' tag in a template  <a href="../../d8/d57/class_template_node_resource.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d38/class_template_node_encoding.html">TemplateNodeEncoding</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class representing the 'encoding' tag in a template  <a href="../../d3/d38/class_template_node_encoding.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d22/class_template_node_factory.html">TemplateNodeFactory</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Factory class for creating tag AST nodes found in a template  <a href="../../dc/d22/class_template_node_factory.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister&lt; T &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper class for registering a template AST node  <a href="../../dd/d26/class_template_node_factory_1_1_auto_register.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d1f/class_template_lexer.html">TemplateLexer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lexer class for turning a template into a list of tokens  <a href="../../d6/d1f/class_template_lexer.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d56/class_template_engine_1_1_private.html">TemplateEngine::Private</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d5/d56/class_template_engine_1_1_private.html" title="Private data of the template engine">Private</a> data of the template engine  <a href="../../d5/d56/class_template_engine_1_1_private.html#details">更多...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d8d/class_template_engine_1_1_private_1_1_include_entry.html">TemplateEngine::Private::IncludeEntry</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ab1b100016578b875cd432e6b519ffc0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ab1b100016578b875cd432e6b519ffc0b">ENABLE_TRACING</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ab1b100016578b875cd432e6b519ffc0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a494d31903e7b0333dfa03b0778679113"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a494d31903e7b0333dfa03b0778679113">TRACE</a>(x)</td></tr>
+<tr class="separator:a494d31903e7b0333dfa03b0778679113"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+类型定义</h2></td></tr>
+<tr class="memitem:a9dacbf829f3ee810cab9b4c9fa42aa42"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a9dacbf829f3ee810cab9b4c9fa42aa42">TemplateStructPtr</a> = std::shared_ptr&lt; <a class="el" href="../../d8/d4b/class_template_struct.html">TemplateStruct</a> &gt;</td></tr>
+<tr class="separator:a9dacbf829f3ee810cab9b4c9fa42aa42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f99c5c02d86d4db5ac1e465da9de54"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a73f99c5c02d86d4db5ac1e465da9de54">TemplateListPtr</a> = std::shared_ptr&lt; <a class="el" href="../../de/dab/class_template_list.html">TemplateList</a> &gt;</td></tr>
+<tr class="separator:a73f99c5c02d86d4db5ac1e465da9de54"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1669783f8130ce10bceeaf5c7db6c26a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a1669783f8130ce10bceeaf5c7db6c26a">ExprAstPtr</a> = std::unique_ptr&lt; <a class="el" href="../../dc/dfa/class_expr_ast.html">ExprAst</a> &gt;</td></tr>
+<tr class="separator:a1669783f8130ce10bceeaf5c7db6c26a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae263aa0dbe7bba97d089da5c96915d86"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ae263aa0dbe7bba97d089da5c96915d86">ExprAstList</a> = std::vector&lt; <a class="el" href="../../df/d54/template_8cpp.html#a1669783f8130ce10bceeaf5c7db6c26a">ExprAstPtr</a> &gt;</td></tr>
+<tr class="separator:ae263aa0dbe7bba97d089da5c96915d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2214bd11f3e3f4889db270420d0365a7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a2214bd11f3e3f4889db270420d0365a7">ExprAstFilterPtr</a> = std::unique_ptr&lt; <a class="el" href="../../d4/d32/class_expr_ast_filter.html">ExprAstFilter</a> &gt;</td></tr>
+<tr class="separator:a2214bd11f3e3f4889db270420d0365a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d56cc4dda53b50c03b0a20b67be469"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ad5d56cc4dda53b50c03b0a20b67be469">TemplateNodePtr</a> = std::unique_ptr&lt; <a class="el" href="../../d6/d53/class_template_node.html">TemplateNode</a> &gt;</td></tr>
+<tr class="separator:ad5d56cc4dda53b50c03b0a20b67be469"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a215d827df329cace362367d29c028e04"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a215d827df329cace362367d29c028e04">TemplateTokenPtr</a> = std::unique_ptr&lt; <a class="el" href="../../d1/ddd/class_template_token.html">TemplateToken</a> &gt;</td></tr>
+<tr class="separator:a215d827df329cace362367d29c028e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c233adb0784d2ab5020eaab2614c572"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a2c233adb0784d2ab5020eaab2614c572">TemplateTokenStream</a> = std::deque&lt; <a class="el" href="../../df/d54/template_8cpp.html#a215d827df329cace362367d29c028e04">TemplateTokenPtr</a> &gt;</td></tr>
+<tr class="separator:a2c233adb0784d2ab5020eaab2614c572"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a7e30da3cd4959f1770a47b984a7d29ed"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a7e30da3cd4959f1770a47b984a7d29ed">split</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;str, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;sep, bool allowEmptyEntries=<a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>, bool cleanup=<a class="el" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)</td></tr>
+<tr class="separator:a7e30da3cd4959f1770a47b984a7d29ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5dce1de8ba4e8373bc4500803668276"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#af5dce1de8ba4e8373bc4500803668276">removeSpacesAroundEquals</a> (<a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;s)</td></tr>
+<tr class="memdesc:af5dce1de8ba4e8373bc4500803668276"><td class="mdescLeft">&#160;</td><td class="mdescRight">Strips spaces surrounding <code>=</code> from string <em>in</em>, so &lsquo;foo = 10 bar=5 baz= 'hello&rsquo;<code>will become</code>foo=10 bar=5 baz='hello'`  <a href="../../df/d54/template_8cpp.html#af5dce1de8ba4e8373bc4500803668276">更多...</a><br /></td></tr>
+<tr class="separator:af5dce1de8ba4e8373bc4500803668276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab83357707d9b7c0463ef22e9f345e445"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ab83357707d9b7c0463ef22e9f345e445">getPathListFunc</a> (const <a class="el" href="../../de/db8/template_8h.html#affdade7103de096c55af606a9522ae2a">TemplateStructIntfPtr</a> entry, <a class="el" href="../../df/d54/template_8cpp.html#a73f99c5c02d86d4db5ac1e465da9de54">TemplateListPtr</a> list)</td></tr>
+<tr class="separator:ab83357707d9b7c0463ef22e9f345e445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6399b89bb2175123227811f079f7935f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/dba/class_template_variant.html">TemplateVariant</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a6399b89bb2175123227811f079f7935f">getPathFunc</a> (const <a class="el" href="../../de/db8/template_8h.html#a2ad685f88d387eec8d96ab2b532a07e7">TemplateStructIntfWeakPtr</a> entryWeakRef)</td></tr>
+<tr class="separator:a6399b89bb2175123227811f079f7935f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb7e084ccfa28f0ddb6672221abb92f5"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#abb7e084ccfa28f0ddb6672221abb92f5">stripLeadingWhiteSpace</a> (<a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;s)</td></tr>
+<tr class="separator:abb7e084ccfa28f0ddb6672221abb92f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a41edad7ed168aab56c11db639b50b774"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../df/d5e/class_filter_add.html">FilterAdd</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a41edad7ed168aab56c11db639b50b774">fAdd</a> (&quot;add&quot;)</td></tr>
+<tr class="separator:a41edad7ed168aab56c11db639b50b774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5323d11128fcf39c477e8f344f4dd056"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../db/d53/class_filter_get.html">FilterGet</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a5323d11128fcf39c477e8f344f4dd056">fGet</a> (&quot;get&quot;)</td></tr>
+<tr class="separator:a5323d11128fcf39c477e8f344f4dd056"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accb0ef0ff147478d39963f14b03f2436"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d9/d80/class_filter_hex.html">FilterHex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#accb0ef0ff147478d39963f14b03f2436">fHex</a> (&quot;hex&quot;)</td></tr>
+<tr class="separator:accb0ef0ff147478d39963f14b03f2436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbfd2cacea9ef60aadf5b3c4b5508560"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../df/ddb/class_filter_raw.html">FilterRaw</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#abbfd2cacea9ef60aadf5b3c4b5508560">fRaw</a> (&quot;raw&quot;)</td></tr>
+<tr class="separator:abbfd2cacea9ef60aadf5b3c4b5508560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd12fc9f52e25beec6cac0ca3179666"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d8/dd6/class_filter_keep.html">FilterKeep</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a8bd12fc9f52e25beec6cac0ca3179666">fKeep</a> (&quot;keep&quot;)</td></tr>
+<tr class="separator:a8bd12fc9f52e25beec6cac0ca3179666"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac683db093047f18a95a0fef8726b5291"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d5/de3/class_filter_list.html">FilterList</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ac683db093047f18a95a0fef8726b5291">fList</a> (&quot;list&quot;)</td></tr>
+<tr class="separator:ac683db093047f18a95a0fef8726b5291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42dc756c2bde8f9ac963ea55c8704403"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d3/d3e/class_filter_lower.html">FilterLower</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a42dc756c2bde8f9ac963ea55c8704403">fLower</a> (&quot;lower&quot;)</td></tr>
+<tr class="separator:a42dc756c2bde8f9ac963ea55c8704403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c9157f2fe11406896d1e50ea66bace2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../dd/dcd/class_filter_upper.html">FilterUpper</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a4c9157f2fe11406896d1e50ea66bace2">fUpper</a> (&quot;upper&quot;)</td></tr>
+<tr class="separator:a4c9157f2fe11406896d1e50ea66bace2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35820de5127f64b68a295d13eaf1d77f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d9/dfb/class_filter_append.html">FilterAppend</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a35820de5127f64b68a295d13eaf1d77f">fAppend</a> (&quot;append&quot;)</td></tr>
+<tr class="separator:a35820de5127f64b68a295d13eaf1d77f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a351607878c72d02e44c96c80ffe350b6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d3/d38/class_filter_escape.html">FilterEscape</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a351607878c72d02e44c96c80ffe350b6">fEscape</a> (&quot;escape&quot;)</td></tr>
+<tr class="separator:a351607878c72d02e44c96c80ffe350b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1a18c3e72dc78714a79df5f37755e62"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d8/dd4/class_filter_length.html">FilterLength</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ad1a18c3e72dc78714a79df5f37755e62">fLength</a> (&quot;length&quot;)</td></tr>
+<tr class="separator:ad1a18c3e72dc78714a79df5f37755e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df989ef152291d17c70ec60de4b5e4d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d0/d84/class_filter_no_wrap.html">FilterNoWrap</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a2df989ef152291d17c70ec60de4b5e4d">fNoWrap</a> (&quot;nowrap&quot;)</td></tr>
+<tr class="separator:a2df989ef152291d17c70ec60de4b5e4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08db01c1a8954c1446e5c2799ce67e4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../df/d7a/class_filter_flatten.html">FilterFlatten</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ae08db01c1a8954c1446e5c2799ce67e4">fFlatten</a> (&quot;flatten&quot;)</td></tr>
+<tr class="separator:ae08db01c1a8954c1446e5c2799ce67e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e9c96e7d1a1eff6f1154d7b5d6457dd"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../de/dfe/class_filter_default.html">FilterDefault</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a9e9c96e7d1a1eff6f1154d7b5d6457dd">fDefault</a> (&quot;default&quot;)</td></tr>
+<tr class="separator:a9e9c96e7d1a1eff6f1154d7b5d6457dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3f3286cb2ada3b1f71e4b23cf6cba27"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../db/d51/class_filter_prepend.html">FilterPrepend</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ae3f3286cb2ada3b1f71e4b23cf6cba27">fPrepend</a> (&quot;prepend&quot;)</td></tr>
+<tr class="separator:ae3f3286cb2ada3b1f71e4b23cf6cba27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9fe15debc0401a8ef07c4865b58bdf2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../df/d38/class_filter_group_by.html">FilterGroupBy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ad9fe15debc0401a8ef07c4865b58bdf2">fGroupBy</a> (&quot;groupBy&quot;)</td></tr>
+<tr class="separator:ad9fe15debc0401a8ef07c4865b58bdf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0258ef28e58f846f9211a8b9ce322040"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d6/d9b/class_filter_relative.html">FilterRelative</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a0258ef28e58f846f9211a8b9ce322040">fRelative</a> (&quot;relative&quot;)</td></tr>
+<tr class="separator:a0258ef28e58f846f9211a8b9ce322040"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7621625bb80af697d651b4e29eabf834"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../de/d6d/class_filter_list_sort.html">FilterListSort</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a7621625bb80af697d651b4e29eabf834">fListSort</a> (&quot;listsort&quot;)</td></tr>
+<tr class="separator:a7621625bb80af697d651b4e29eabf834"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f574dc4549ae878cadc7febfa23a29"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d6/dd6/class_filter_tex_label.html">FilterTexLabel</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ab5f574dc4549ae878cadc7febfa23a29">fTexLabel</a> (&quot;texLabel&quot;)</td></tr>
+<tr class="separator:ab5f574dc4549ae878cadc7febfa23a29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf4b1133898191bd5996417a1d6cca69"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d3/ddb/class_filter_tex_index.html">FilterTexIndex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#aaf4b1133898191bd5996417a1d6cca69">fTexIndex</a> (&quot;texIndex&quot;)</td></tr>
+<tr class="separator:aaf4b1133898191bd5996417a1d6cca69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addc51470f73c5a5ab5b841b2d73f4ff2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d4/d28/class_filter_paginate.html">FilterPaginate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#addc51470f73c5a5ab5b841b2d73f4ff2">fPaginate</a> (&quot;paginate&quot;)</td></tr>
+<tr class="separator:addc51470f73c5a5ab5b841b2d73f4ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85742fa46eb9ce36b1772b775ddfd120"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d5/dc6/class_filter_strip_path.html">FilterStripPath</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a85742fa46eb9ce36b1772b775ddfd120">fStripPath</a> (&quot;stripPath&quot;)</td></tr>
+<tr class="separator:a85742fa46eb9ce36b1772b775ddfd120"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86766427e3f969aa2db46b4a442fee25"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d1/d70/class_filter_decode_u_r_l.html">FilterDecodeURL</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a86766427e3f969aa2db46b4a442fee25">fDecodeURL</a> (&quot;decodeURL&quot;)</td></tr>
+<tr class="separator:a86766427e3f969aa2db46b4a442fee25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93dc23ed1c692636ac48cf02d1ea6f56"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../df/de8/class_filter_alpha_index.html">FilterAlphaIndex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a93dc23ed1c692636ac48cf02d1ea6f56">fAlphaIndex</a> (&quot;alphaIndex&quot;)</td></tr>
+<tr class="separator:a93dc23ed1c692636ac48cf02d1ea6f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bdea384327dd081c520489f2c3963a5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../db/d70/class_filter_divisible_by.html">FilterDivisibleBy</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a2bdea384327dd081c520489f2c3963a5">fDivisibleBy</a> (&quot;divisibleby&quot;)</td></tr>
+<tr class="separator:a2bdea384327dd081c520489f2c3963a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a724243b5d8553f4f8fa8ef0f4c92a702"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../d7/d3d/class_filter_is_relative_u_r_l.html">FilterIsRelativeURL</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a724243b5d8553f4f8fa8ef0f4c92a702">fIsRelativeURL</a> (&quot;isRelativeURL&quot;)</td></tr>
+<tr class="separator:a724243b5d8553f4f8fa8ef0f4c92a702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a624e1e89b6f72bbb7ca3d5b4409f43"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt; <a class="el" href="../../dd/d3f/class_filter_is_absolute_u_r_l.html">FilterIsAbsoluteURL</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a9a624e1e89b6f72bbb7ca3d5b4409f43">fIsAbsoluteURL</a> (&quot;isAbsoluteURL&quot;)</td></tr>
+<tr class="separator:a9a624e1e89b6f72bbb7ca3d5b4409f43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ca24aa67a2502525ab0fa24edea855a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d8/d38/class_template_node_if.html">TemplateNodeIf</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a2ca24aa67a2502525ab0fa24edea855a">autoRefIf</a> (&quot;if&quot;)</td></tr>
+<tr class="separator:a2ca24aa67a2502525ab0fa24edea855a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2450875642504e9cd2910e011dcc03d8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d5/da1/class_template_node_for.html">TemplateNodeFor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a2450875642504e9cd2910e011dcc03d8">autoRefFor</a> (&quot;for&quot;)</td></tr>
+<tr class="separator:a2450875642504e9cd2910e011dcc03d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8c9a408ef47270847cc73a8e171a48c"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d4/d50/class_template_node_msg.html">TemplateNodeMsg</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ad8c9a408ef47270847cc73a8e171a48c">autoRefMsg</a> (&quot;msg&quot;)</td></tr>
+<tr class="separator:ad8c9a408ef47270847cc73a8e171a48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4b6b7706ec14d53be23ad87e2f9a077"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d3/d86/class_template_node_set.html">TemplateNodeSet</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ac4b6b7706ec14d53be23ad87e2f9a077">autoRefSet</a> (&quot;set&quot;)</td></tr>
+<tr class="separator:ac4b6b7706ec14d53be23ad87e2f9a077"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af15db07555d6f95588c74db1c926f4f2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d8/d31/class_template_node_tree.html">TemplateNodeTree</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#af15db07555d6f95588c74db1c926f4f2">autoRefTree</a> (&quot;recursetree&quot;)</td></tr>
+<tr class="separator:af15db07555d6f95588c74db1c926f4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1fff7885dd72bd1407af93c08fa708b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d6/df7/class_template_node_with.html">TemplateNodeWith</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#ad1fff7885dd72bd1407af93c08fa708b">autoRefWith</a> (&quot;with&quot;)</td></tr>
+<tr class="separator:ad1fff7885dd72bd1407af93c08fa708b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27e72da9a725bd279ff725707d1c6644"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d2/de0/class_template_node_block.html">TemplateNodeBlock</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a27e72da9a725bd279ff725707d1c6644">autoRefBlock</a> (&quot;block&quot;)</td></tr>
+<tr class="separator:a27e72da9a725bd279ff725707d1c6644"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a005fd4bdc31b5d86843394c8efa6c0c9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d3/d37/class_template_node_cycle.html">TemplateNodeCycle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a005fd4bdc31b5d86843394c8efa6c0c9">autoRefCycle</a> (&quot;cycle&quot;)</td></tr>
+<tr class="separator:a005fd4bdc31b5d86843394c8efa6c0c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af30378f4bf02fab0d3105b488626831d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d6/d83/class_template_node_range.html">TemplateNodeRange</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#af30378f4bf02fab0d3105b488626831d">autoRefRange</a> (&quot;range&quot;)</td></tr>
+<tr class="separator:af30378f4bf02fab0d3105b488626831d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213efc5aa41a82f3db45607e703d0eee"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d0/d21/class_template_node_extend.html">TemplateNodeExtend</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a213efc5aa41a82f3db45607e703d0eee">autoRefExtend</a> (&quot;extend&quot;)</td></tr>
+<tr class="separator:a213efc5aa41a82f3db45607e703d0eee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41ee55071035503a6bbaa325241ab9c3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d5/dcd/class_template_node_create.html">TemplateNodeCreate</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a41ee55071035503a6bbaa325241ab9c3">autoRefCreate</a> (&quot;create&quot;)</td></tr>
+<tr class="separator:a41ee55071035503a6bbaa325241ab9c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4108151bec53d6eb5bedc9ff1192620"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../db/d54/class_template_node_repeat.html">TemplateNodeRepeat</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#af4108151bec53d6eb5bedc9ff1192620">autoRefRepeat</a> (&quot;repeat&quot;)</td></tr>
+<tr class="separator:af4108151bec53d6eb5bedc9ff1192620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42de6b9dd3824f645d615bd7af41fef3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../da/d4b/class_template_node_include.html">TemplateNodeInclude</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a42de6b9dd3824f645d615bd7af41fef3">autoRefInclude</a> (&quot;include&quot;)</td></tr>
+<tr class="separator:a42de6b9dd3824f645d615bd7af41fef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1823e7225edac908470361de4a9b8a4a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d9/d8f/class_template_node_markers.html">TemplateNodeMarkers</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a1823e7225edac908470361de4a9b8a4a">autoRefMarkers</a> (&quot;markers&quot;)</td></tr>
+<tr class="separator:a1823e7225edac908470361de4a9b8a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb92479373b49e21ed8fb21788d44089"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../da/da1/class_template_node_tabbing.html">TemplateNodeTabbing</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#adb92479373b49e21ed8fb21788d44089">autoRefTabbing</a> (&quot;tabbing&quot;)</td></tr>
+<tr class="separator:adb92479373b49e21ed8fb21788d44089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13823ee0dc48a5d306724e79cf4be3b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d8/d57/class_template_node_resource.html">TemplateNodeResource</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a13823ee0dc48a5d306724e79cf4be3b5">autoRefResource</a> (&quot;resource&quot;)</td></tr>
+<tr class="separator:a13823ee0dc48a5d306724e79cf4be3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa24c8c3e480ab0416446fa2c09dce29d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d3/d38/class_template_node_encoding.html">TemplateNodeEncoding</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#aa24c8c3e480ab0416446fa2c09dce29d">autoRefEncoding</a> (&quot;encoding&quot;)</td></tr>
+<tr class="separator:aa24c8c3e480ab0416446fa2c09dce29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc9e8904994bddd6c3cf510636d11a3a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../df/dc6/class_template_node_spaceless.html">TemplateNodeSpaceless</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#abc9e8904994bddd6c3cf510636d11a3a">autoRefSpaceless</a> (&quot;spaceless&quot;)</td></tr>
+<tr class="separator:abc9e8904994bddd6c3cf510636d11a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed1192331cd97085c03d5b4efb5073c8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../da/ddd/class_template_node_index_entry.html">TemplateNodeIndexEntry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#aed1192331cd97085c03d5b4efb5073c8">autoRefIndexEntry</a> (&quot;indexentry&quot;)</td></tr>
+<tr class="separator:aed1192331cd97085c03d5b4efb5073c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadff10fd767fcaa1e68d9d8f4c7338df"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../d6/d20/class_template_node_open_sub_index.html">TemplateNodeOpenSubIndex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#aadff10fd767fcaa1e68d9d8f4c7338df">autoRefOpenSubIndex</a> (&quot;opensubindex&quot;)</td></tr>
+<tr class="separator:aadff10fd767fcaa1e68d9d8f4c7338df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aac550d1d1fab680f53350c9e63afe9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt; <a class="el" href="../../dd/dff/class_template_node_close_sub_index.html">TemplateNodeCloseSubIndex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d54/template_8cpp.html#a8aac550d1d1fab680f53350c9e63afe9">autoRefCloseSubIndex</a> (&quot;closesubindex&quot;)</td></tr>
+<tr class="separator:a8aac550d1d1fab680f53350c9e63afe9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ab1b100016578b875cd432e6b519ffc0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b100016578b875cd432e6b519ffc0b">&#9670;&nbsp;</a></span>ENABLE_TRACING</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ENABLE_TRACING&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l00035">35</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a494d31903e7b0333dfa03b0778679113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a494d31903e7b0333dfa03b0778679113">&#9670;&nbsp;</a></span>TRACE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRACE</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">x</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l00040">40</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类型定义说明</h2>
+<a id="a2214bd11f3e3f4889db270420d0365a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2214bd11f3e3f4889db270420d0365a7">&#9670;&nbsp;</a></span>ExprAstFilterPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../df/d54/template_8cpp.html#a2214bd11f3e3f4889db270420d0365a7">ExprAstFilterPtr</a> =  std::unique_ptr&lt;<a class="el" href="../../d4/d32/class_expr_ast_filter.html">ExprAstFilter</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l01760">1760</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ae263aa0dbe7bba97d089da5c96915d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae263aa0dbe7bba97d089da5c96915d86">&#9670;&nbsp;</a></span>ExprAstList</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../df/d54/template_8cpp.html#ae263aa0dbe7bba97d089da5c96915d86">ExprAstList</a> =  std::vector&lt; <a class="el" href="../../df/d54/template_8cpp.html#a1669783f8130ce10bceeaf5c7db6c26a">ExprAstPtr</a> &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l01671">1671</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a1669783f8130ce10bceeaf5c7db6c26a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1669783f8130ce10bceeaf5c7db6c26a">&#9670;&nbsp;</a></span>ExprAstPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../df/d54/template_8cpp.html#a1669783f8130ce10bceeaf5c7db6c26a">ExprAstPtr</a> =  std::unique_ptr&lt;<a class="el" href="../../dc/dfa/class_expr_ast.html">ExprAst</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l01670">1670</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a73f99c5c02d86d4db5ac1e465da9de54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73f99c5c02d86d4db5ac1e465da9de54">&#9670;&nbsp;</a></span>TemplateListPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../df/d54/template_8cpp.html#a73f99c5c02d86d4db5ac1e465da9de54">TemplateListPtr</a> =  std::shared_ptr&lt;<a class="el" href="../../de/dab/class_template_list.html">TemplateList</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l00224">224</a> 行定义.</p>
+
+</div>
+</div>
+<a id="ad5d56cc4dda53b50c03b0a20b67be469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d56cc4dda53b50c03b0a20b67be469">&#9670;&nbsp;</a></span>TemplateNodePtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../df/d54/template_8cpp.html#ad5d56cc4dda53b50c03b0a20b67be469">TemplateNodePtr</a> =  std::unique_ptr&lt;<a class="el" href="../../d6/d53/class_template_node.html">TemplateNode</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l01947">1947</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a9dacbf829f3ee810cab9b4c9fa42aa42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9dacbf829f3ee810cab9b4c9fa42aa42">&#9670;&nbsp;</a></span>TemplateStructPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../df/d54/template_8cpp.html#a9dacbf829f3ee810cab9b4c9fa42aa42">TemplateStructPtr</a> =  std::shared_ptr&lt;<a class="el" href="../../d8/d4b/class_template_struct.html">TemplateStruct</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l00147">147</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a215d827df329cace362367d29c028e04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a215d827df329cace362367d29c028e04">&#9670;&nbsp;</a></span>TemplateTokenPtr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../df/d54/template_8cpp.html#a215d827df329cace362367d29c028e04">TemplateTokenPtr</a> =  std::unique_ptr&lt;<a class="el" href="../../d1/ddd/class_template_token.html">TemplateToken</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l01962">1962</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a2c233adb0784d2ab5020eaab2614c572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c233adb0784d2ab5020eaab2614c572">&#9670;&nbsp;</a></span>TemplateTokenStream</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../df/d54/template_8cpp.html#a2c233adb0784d2ab5020eaab2614c572">TemplateTokenStream</a> =  std::deque&lt; <a class="el" href="../../df/d54/template_8cpp.html#a215d827df329cace362367d29c028e04">TemplateTokenPtr</a> &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l01963">1963</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="a6399b89bb2175123227811f079f7935f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6399b89bb2175123227811f079f7935f">&#9670;&nbsp;</a></span>getPathFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d1/dba/class_template_variant.html">TemplateVariant</a> getPathFunc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/db8/template_8h.html#a2ad685f88d387eec8d96ab2b532a07e7">TemplateStructIntfWeakPtr</a>&#160;</td>
+          <td class="paramname"><em>entryWeakRef</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l02846">2846</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l02847"></a><span class="lineno"> 2847</span>&#160;{</div>
+<div class="line"><a name="l02848"></a><span class="lineno"> 2848</span>&#160;  <a class="code" href="../../df/d54/template_8cpp.html#a73f99c5c02d86d4db5ac1e465da9de54">TemplateListPtr</a> result = <a class="code" href="../../de/dab/class_template_list.html#a6840730b8664bc08ef26924fa1cd76b9">TemplateList::alloc</a>();</div>
+<div class="line"><a name="l02849"></a><span class="lineno"> 2849</span>&#160;  <a class="code" href="../../df/d54/template_8cpp.html#ab83357707d9b7c0463ef22e9f345e445">getPathListFunc</a>(entryWeakRef.lock(),result);</div>
+<div class="line"><a name="l02850"></a><span class="lineno"> 2850</span>&#160;  <span class="keywordflow">return</span> std::static_pointer_cast&lt;TemplateListIntf&gt;(result);</div>
+<div class="line"><a name="l02851"></a><span class="lineno"> 2851</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../df/d54/template_8cpp_source.html#l00291">TemplateList::alloc()</a> , 以及 <a class="el" href="../../df/d54/template_8cpp_source.html#l02833">getPathListFunc()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../df/d54/template_8cpp_source.html#l02853">TemplateContextImpl::addIndexEntry()</a>.</p>
+
+</div>
+</div>
+<a id="ab83357707d9b7c0463ef22e9f345e445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab83357707d9b7c0463ef22e9f345e445">&#9670;&nbsp;</a></span>getPathListFunc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void getPathListFunc </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../de/db8/template_8h.html#affdade7103de096c55af606a9522ae2a">TemplateStructIntfPtr</a>&#160;</td>
+          <td class="paramname"><em>entry</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../df/d54/template_8cpp.html#a73f99c5c02d86d4db5ac1e465da9de54">TemplateListPtr</a>&#160;</td>
+          <td class="paramname"><em>list</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l02833">2833</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l02834"></a><span class="lineno"> 2834</span>&#160;{</div>
+<div class="line"><a name="l02835"></a><span class="lineno"> 2835</span>&#160;  <span class="keywordflow">if</span> (entry)</div>
+<div class="line"><a name="l02836"></a><span class="lineno"> 2836</span>&#160;  {</div>
+<div class="line"><a name="l02837"></a><span class="lineno"> 2837</span>&#160;    <a class="code" href="../../d1/dba/class_template_variant.html">TemplateVariant</a> parent = entry-&gt;get(<span class="stringliteral">&quot;parent&quot;</span>);</div>
+<div class="line"><a name="l02838"></a><span class="lineno"> 2838</span>&#160;    <span class="keywordflow">if</span> (parent.<a class="code" href="../../d1/dba/class_template_variant.html#ab4ab896cf40ecfda655b5e38ca8bbf59">isStruct</a>() || parent.<a class="code" href="../../d1/dba/class_template_variant.html#a42b71b208c3b33b545b9245e5f8859ad">isWeakStruct</a>())</div>
+<div class="line"><a name="l02839"></a><span class="lineno"> 2839</span>&#160;    {</div>
+<div class="line"><a name="l02840"></a><span class="lineno"> 2840</span>&#160;      <a class="code" href="../../df/d54/template_8cpp.html#ab83357707d9b7c0463ef22e9f345e445">getPathListFunc</a>(parent.<a class="code" href="../../d1/dba/class_template_variant.html#a575a46140d854957a628e6aaa4394a4b">toStruct</a>(),list);</div>
+<div class="line"><a name="l02841"></a><span class="lineno"> 2841</span>&#160;    }</div>
+<div class="line"><a name="l02842"></a><span class="lineno"> 2842</span>&#160;    list-&gt;append(entry);</div>
+<div class="line"><a name="l02843"></a><span class="lineno"> 2843</span>&#160;  }</div>
+<div class="line"><a name="l02844"></a><span class="lineno"> 2844</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../de/db8/template_8h_source.html#l00211">TemplateVariant::isStruct()</a>, <a class="el" href="../../de/db8/template_8h_source.html#l00217">TemplateVariant::isWeakStruct()</a> , 以及 <a class="el" href="../../df/d54/template_8cpp_source.html#l00441">TemplateVariant::toStruct()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../df/d54/template_8cpp_source.html#l02846">getPathFunc()</a>.</p>
+
+</div>
+</div>
+<a id="af5dce1de8ba4e8373bc4500803668276"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5dce1de8ba4e8373bc4500803668276">&#9670;&nbsp;</a></span>removeSpacesAroundEquals()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void removeSpacesAroundEquals </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Strips spaces surrounding <code>=</code> from string <em>in</em>, so &lsquo;foo = 10 bar=5 baz= 'hello&rsquo;<code>will become</code>foo=10 bar=5 baz='hello'` </p>
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l00101">101</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;{</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="comment">//printf(&quot;&gt;removeSpacesAroundEquals(%s)\n&quot;,qPrint(s));</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> i=0, dstIdx=0, l=s.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keywordflow">while</span> (i&lt;l)</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">char</span> c = s[i++];</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span> (c==<span class="charliteral">&#39; &#39;</span>)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;      <span class="keywordtype">bool</span> found=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="comment">// look ahead for space or &#39;=&#39;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;      <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> j=i;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keywordflow">while</span> (j&lt;l &amp;&amp; (s[j]==<span class="charliteral">&#39; &#39;</span>|| s[j]==<span class="charliteral">&#39;=&#39;</span>))</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;      {</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        <span class="keywordflow">if</span> (s[j]==<span class="charliteral">&#39;=&#39;</span>) found=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        j++;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      }</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keywordflow">if</span> (found) <span class="comment">// found a &#39;=&#39;, write it without spaces</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        c = <span class="charliteral">&#39;=&#39;</span>;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        i=j;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    }</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    s[dstIdx++]=c;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;  }</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  s.<a class="code" href="../../d9/d45/class_q_c_string.html#a993474e2da59141336e6105b8e154f2b">resize</a>(dstIdx+1);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="comment">//printf(&quot;&lt;removeSpacesAroundEquals(%s)\n&quot;,qPrint(s));</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00147">QCString::length()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00164">QCString::resize()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../df/d54/template_8cpp_source.html#l04191">TemplateNodeWith::TemplateNodeWith()</a>.</p>
+
+</div>
+</div>
+<a id="a7e30da3cd4959f1770a47b984a7d29ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e30da3cd4959f1770a47b984a7d29ed">&#9670;&nbsp;</a></span>split()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;<a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&gt; split </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>sep</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allowEmptyEntries</em> = <code><a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>cleanup</em> = <code><a class="el" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l00047">47</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;{</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  std::vector&lt;QCString&gt; lst;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keywordtype">int</span> j = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordtype">int</span> i = str.<a class="code" href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">find</a>( sep, j );</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  <span class="keywordflow">while</span> (i!=-1)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">if</span> ( str.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(j,i-j).<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>() &gt; 0 )</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keywordflow">if</span> (cleanup)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        lst.push_back(str.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(j,i-j).<a class="code" href="../../d9/d45/class_q_c_string.html#a66269a694d9e6961bfd145bb4ca72f42">stripWhiteSpace</a>());</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;      {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        lst.push_back(str.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(j,i-j));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (allowEmptyEntries)</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    {</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      lst.push_back(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    j = i + sep.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    i = str.<a class="code" href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">find</a>(sep,j);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">int</span> l = str.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>() - 1;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordflow">if</span> (str.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(j,l-j+1).<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>()&gt;0)</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  {</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">if</span> (cleanup)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      lst.push_back(str.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(j,l-j+1).<a class="code" href="../../d9/d45/class_q_c_string.html#a66269a694d9e6961bfd145bb4ca72f42">stripWhiteSpace</a>());</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;      lst.push_back(str.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(j,l-j+1));</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (allowEmptyEntries)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    lst.push_back(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keywordflow">return</span> lst;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d5/d3e/qcstring_8cpp_source.html#l00038">QCString::find()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00147">QCString::length()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00224">QCString::mid()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00243">QCString::stripWhiteSpace()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d1/d86/vhdljjparser_8cpp_source.html#l00628">VHDLOutlineParser::addProto()</a>, <a class="el" href="../../d1/d86/vhdljjparser_8cpp_source.html#l00513">VHDLOutlineParser::addVhdlType()</a>, <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l03060">FlowChart::alignCommentNode()</a>, <a class="el" href="../../d1/d86/vhdljjparser_8cpp_source.html#l00273">VHDLOutlineParser::checkInlineCode()</a>, <a class="el" href="../../d1/d86/vhdljjparser_8cpp_source.html#l00551">VHDLOutlineParser::createFunction()</a>, <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l00923">VhdlDocGen::findArchitecture()</a>, <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l00274">formatBriefNote()</a>, <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l01041">VhdlDocGen::getIndexWord()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l05354">DocPara::handleCommand()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l04915">DocPara::handleImage()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l05118">DocPara::handleInclude()</a>, <a class="el" href="../../d9/d45/qhp_8cpp_source.html#l00069">Qhp::initialize()</a>, <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l02441">VhdlDocGen::parseForBinding()</a>, <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l02408">VhdlDocGen::parseForConfig()</a>, <a class="el" href="../../df/d54/template_8cpp_source.html#l04251">TemplateNodeCycle::TemplateNodeCycle()</a>, <a class="el" href="../../df/d54/template_8cpp_source.html#l03412">TemplateNodeFor::TemplateNodeFor()</a>, <a class="el" href="../../df/d54/template_8cpp_source.html#l04050">TemplateNodeIndexEntry::TemplateNodeIndexEntry()</a>, <a class="el" href="../../df/d54/template_8cpp_source.html#l04191">TemplateNodeWith::TemplateNodeWith()</a>, <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l00829">VhdlDocGen::writeInlineClassLink()</a> , 以及 <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l02631">VhdlDocGen::writeRecUnitDocu()</a>.</p>
+
+</div>
+</div>
+<a id="abb7e084ccfa28f0ddb6672221abb92f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb7e084ccfa28f0ddb6672221abb92f5">&#9670;&nbsp;</a></span>stripLeadingWhiteSpace()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void stripLeadingWhiteSpace </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../df/d54/template_8cpp_source.html">template.cpp</a> 第 <a class="el" href="../../df/d54/template_8cpp_source.html#l03807">3807</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l03808"></a><span class="lineno"> 3808</span>&#160;{</div>
+<div class="line"><a name="l03809"></a><span class="lineno"> 3809</span>&#160;  <span class="keywordtype">bool</span> skipSpaces=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l03810"></a><span class="lineno"> 3810</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span> *src = s.<a class="code" href="../../d9/d45/class_q_c_string.html#a84a5aa4da9147a687fa291c844fb5fc1">data</a>();</div>
+<div class="line"><a name="l03811"></a><span class="lineno"> 3811</span>&#160;  <span class="keywordtype">char</span> *dst = s.<a class="code" href="../../d9/d45/class_q_c_string.html#a3d328fee5f837b10f36c473953e7492c">rawData</a>();</div>
+<div class="line"><a name="l03812"></a><span class="lineno"> 3812</span>&#160;  <span class="keywordtype">char</span> c;</div>
+<div class="line"><a name="l03813"></a><span class="lineno"> 3813</span>&#160;  <span class="keywordflow">while</span> ((c=*src++))</div>
+<div class="line"><a name="l03814"></a><span class="lineno"> 3814</span>&#160;  {</div>
+<div class="line"><a name="l03815"></a><span class="lineno"> 3815</span>&#160;    <span class="keywordflow">if</span> (c==<span class="charliteral">&#39;\n&#39;</span>) { *dst++=c; skipSpaces=<span class="keyword">true</span>; }</div>
+<div class="line"><a name="l03816"></a><span class="lineno"> 3816</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c==<span class="charliteral">&#39; &#39;</span> &amp;&amp; skipSpaces) {}</div>
+<div class="line"><a name="l03817"></a><span class="lineno"> 3817</span>&#160;    <span class="keywordflow">else</span> { *dst++ = c; skipSpaces=<span class="keyword">false</span>; }</div>
+<div class="line"><a name="l03818"></a><span class="lineno"> 3818</span>&#160;  }</div>
+<div class="line"><a name="l03819"></a><span class="lineno"> 3819</span>&#160;  s.<a class="code" href="../../d9/d45/class_q_c_string.html#a993474e2da59141336e6105b8e154f2b">resize</a>(dst-s.<a class="code" href="../../d9/d45/class_q_c_string.html#a84a5aa4da9147a687fa291c844fb5fc1">data</a>()+1);</div>
+<div class="line"><a name="l03820"></a><span class="lineno"> 3820</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00153">QCString::data()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00157">QCString::rawData()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00164">QCString::resize()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../df/d54/template_8cpp_source.html#l03857">TemplateNodeCreate::render()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a27e72da9a725bd279ff725707d1c6644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27e72da9a725bd279ff725707d1c6644">&#9670;&nbsp;</a></span>autoRefBlock</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d2/de0/class_template_node_block.html">TemplateNodeBlock</a>&gt; autoRefBlock(&quot;block&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8aac550d1d1fab680f53350c9e63afe9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8aac550d1d1fab680f53350c9e63afe9">&#9670;&nbsp;</a></span>autoRefCloseSubIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../dd/dff/class_template_node_close_sub_index.html">TemplateNodeCloseSubIndex</a>&gt; autoRefCloseSubIndex(&quot;closesubindex&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41ee55071035503a6bbaa325241ab9c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ee55071035503a6bbaa325241ab9c3">&#9670;&nbsp;</a></span>autoRefCreate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d5/dcd/class_template_node_create.html">TemplateNodeCreate</a>&gt; autoRefCreate(&quot;create&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a005fd4bdc31b5d86843394c8efa6c0c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a005fd4bdc31b5d86843394c8efa6c0c9">&#9670;&nbsp;</a></span>autoRefCycle</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d3/d37/class_template_node_cycle.html">TemplateNodeCycle</a>&gt; autoRefCycle(&quot;cycle&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa24c8c3e480ab0416446fa2c09dce29d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa24c8c3e480ab0416446fa2c09dce29d">&#9670;&nbsp;</a></span>autoRefEncoding</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d3/d38/class_template_node_encoding.html">TemplateNodeEncoding</a>&gt; autoRefEncoding(&quot;encoding&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a213efc5aa41a82f3db45607e703d0eee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a213efc5aa41a82f3db45607e703d0eee">&#9670;&nbsp;</a></span>autoRefExtend</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d0/d21/class_template_node_extend.html">TemplateNodeExtend</a>&gt; autoRefExtend(&quot;extend&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2450875642504e9cd2910e011dcc03d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2450875642504e9cd2910e011dcc03d8">&#9670;&nbsp;</a></span>autoRefFor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d5/da1/class_template_node_for.html">TemplateNodeFor</a>&gt; autoRefFor(&quot;for&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2ca24aa67a2502525ab0fa24edea855a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ca24aa67a2502525ab0fa24edea855a">&#9670;&nbsp;</a></span>autoRefIf</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d8/d38/class_template_node_if.html">TemplateNodeIf</a>&gt; autoRefIf(&quot;if&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42de6b9dd3824f645d615bd7af41fef3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42de6b9dd3824f645d615bd7af41fef3">&#9670;&nbsp;</a></span>autoRefInclude</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../da/d4b/class_template_node_include.html">TemplateNodeInclude</a>&gt; autoRefInclude(&quot;include&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aed1192331cd97085c03d5b4efb5073c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed1192331cd97085c03d5b4efb5073c8">&#9670;&nbsp;</a></span>autoRefIndexEntry</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../da/ddd/class_template_node_index_entry.html">TemplateNodeIndexEntry</a>&gt; autoRefIndexEntry(&quot;indexentry&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1823e7225edac908470361de4a9b8a4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1823e7225edac908470361de4a9b8a4a">&#9670;&nbsp;</a></span>autoRefMarkers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d9/d8f/class_template_node_markers.html">TemplateNodeMarkers</a>&gt; autoRefMarkers(&quot;markers&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad8c9a408ef47270847cc73a8e171a48c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c9a408ef47270847cc73a8e171a48c">&#9670;&nbsp;</a></span>autoRefMsg</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d4/d50/class_template_node_msg.html">TemplateNodeMsg</a>&gt; autoRefMsg(&quot;msg&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aadff10fd767fcaa1e68d9d8f4c7338df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadff10fd767fcaa1e68d9d8f4c7338df">&#9670;&nbsp;</a></span>autoRefOpenSubIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d6/d20/class_template_node_open_sub_index.html">TemplateNodeOpenSubIndex</a>&gt; autoRefOpenSubIndex(&quot;opensubindex&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af30378f4bf02fab0d3105b488626831d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af30378f4bf02fab0d3105b488626831d">&#9670;&nbsp;</a></span>autoRefRange</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d6/d83/class_template_node_range.html">TemplateNodeRange</a>&gt; autoRefRange(&quot;range&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af4108151bec53d6eb5bedc9ff1192620"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4108151bec53d6eb5bedc9ff1192620">&#9670;&nbsp;</a></span>autoRefRepeat</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../db/d54/class_template_node_repeat.html">TemplateNodeRepeat</a>&gt; autoRefRepeat(&quot;repeat&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a13823ee0dc48a5d306724e79cf4be3b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13823ee0dc48a5d306724e79cf4be3b5">&#9670;&nbsp;</a></span>autoRefResource</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d8/d57/class_template_node_resource.html">TemplateNodeResource</a>&gt; autoRefResource(&quot;resource&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac4b6b7706ec14d53be23ad87e2f9a077"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4b6b7706ec14d53be23ad87e2f9a077">&#9670;&nbsp;</a></span>autoRefSet</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d3/d86/class_template_node_set.html">TemplateNodeSet</a>&gt; autoRefSet(&quot;set&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abc9e8904994bddd6c3cf510636d11a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc9e8904994bddd6c3cf510636d11a3a">&#9670;&nbsp;</a></span>autoRefSpaceless</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../df/dc6/class_template_node_spaceless.html">TemplateNodeSpaceless</a>&gt; autoRefSpaceless(&quot;spaceless&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb92479373b49e21ed8fb21788d44089"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb92479373b49e21ed8fb21788d44089">&#9670;&nbsp;</a></span>autoRefTabbing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../da/da1/class_template_node_tabbing.html">TemplateNodeTabbing</a>&gt; autoRefTabbing(&quot;tabbing&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af15db07555d6f95588c74db1c926f4f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af15db07555d6f95588c74db1c926f4f2">&#9670;&nbsp;</a></span>autoRefTree</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d8/d31/class_template_node_tree.html">TemplateNodeTree</a>&gt; autoRefTree(&quot;recursetree&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1fff7885dd72bd1407af93c08fa708b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1fff7885dd72bd1407af93c08fa708b">&#9670;&nbsp;</a></span>autoRefWith</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../dd/d26/class_template_node_factory_1_1_auto_register.html">TemplateNodeFactory::AutoRegister</a>&lt;<a class="el" href="../../d6/df7/class_template_node_with.html">TemplateNodeWith</a>&gt; autoRefWith(&quot;with&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41edad7ed168aab56c11db639b50b774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41edad7ed168aab56c11db639b50b774">&#9670;&nbsp;</a></span>fAdd</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../df/d5e/class_filter_add.html">FilterAdd</a>&gt; fAdd(&quot;add&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93dc23ed1c692636ac48cf02d1ea6f56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93dc23ed1c692636ac48cf02d1ea6f56">&#9670;&nbsp;</a></span>fAlphaIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../df/de8/class_filter_alpha_index.html">FilterAlphaIndex</a>&gt; fAlphaIndex(&quot;alphaIndex&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35820de5127f64b68a295d13eaf1d77f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35820de5127f64b68a295d13eaf1d77f">&#9670;&nbsp;</a></span>fAppend</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d9/dfb/class_filter_append.html">FilterAppend</a>&gt; fAppend(&quot;append&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86766427e3f969aa2db46b4a442fee25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86766427e3f969aa2db46b4a442fee25">&#9670;&nbsp;</a></span>fDecodeURL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d1/d70/class_filter_decode_u_r_l.html">FilterDecodeURL</a>&gt; fDecodeURL(&quot;decodeURL&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9e9c96e7d1a1eff6f1154d7b5d6457dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e9c96e7d1a1eff6f1154d7b5d6457dd">&#9670;&nbsp;</a></span>fDefault</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../de/dfe/class_filter_default.html">FilterDefault</a>&gt; fDefault(&quot;default&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2bdea384327dd081c520489f2c3963a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bdea384327dd081c520489f2c3963a5">&#9670;&nbsp;</a></span>fDivisibleBy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../db/d70/class_filter_divisible_by.html">FilterDivisibleBy</a>&gt; fDivisibleBy(&quot;divisibleby&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a351607878c72d02e44c96c80ffe350b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a351607878c72d02e44c96c80ffe350b6">&#9670;&nbsp;</a></span>fEscape</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d3/d38/class_filter_escape.html">FilterEscape</a>&gt; fEscape(&quot;escape&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae08db01c1a8954c1446e5c2799ce67e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae08db01c1a8954c1446e5c2799ce67e4">&#9670;&nbsp;</a></span>fFlatten</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../df/d7a/class_filter_flatten.html">FilterFlatten</a>&gt; fFlatten(&quot;flatten&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5323d11128fcf39c477e8f344f4dd056"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5323d11128fcf39c477e8f344f4dd056">&#9670;&nbsp;</a></span>fGet</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../db/d53/class_filter_get.html">FilterGet</a>&gt; fGet(&quot;get&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9fe15debc0401a8ef07c4865b58bdf2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9fe15debc0401a8ef07c4865b58bdf2">&#9670;&nbsp;</a></span>fGroupBy</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../df/d38/class_filter_group_by.html">FilterGroupBy</a>&gt; fGroupBy(&quot;groupBy&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="accb0ef0ff147478d39963f14b03f2436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accb0ef0ff147478d39963f14b03f2436">&#9670;&nbsp;</a></span>fHex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d9/d80/class_filter_hex.html">FilterHex</a>&gt; fHex(&quot;hex&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9a624e1e89b6f72bbb7ca3d5b4409f43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a624e1e89b6f72bbb7ca3d5b4409f43">&#9670;&nbsp;</a></span>fIsAbsoluteURL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../dd/d3f/class_filter_is_absolute_u_r_l.html">FilterIsAbsoluteURL</a>&gt; fIsAbsoluteURL(&quot;isAbsoluteURL&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a724243b5d8553f4f8fa8ef0f4c92a702"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a724243b5d8553f4f8fa8ef0f4c92a702">&#9670;&nbsp;</a></span>fIsRelativeURL</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d7/d3d/class_filter_is_relative_u_r_l.html">FilterIsRelativeURL</a>&gt; fIsRelativeURL(&quot;isRelativeURL&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8bd12fc9f52e25beec6cac0ca3179666"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd12fc9f52e25beec6cac0ca3179666">&#9670;&nbsp;</a></span>fKeep</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d8/dd6/class_filter_keep.html">FilterKeep</a>&gt; fKeep(&quot;keep&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad1a18c3e72dc78714a79df5f37755e62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1a18c3e72dc78714a79df5f37755e62">&#9670;&nbsp;</a></span>fLength</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d8/dd4/class_filter_length.html">FilterLength</a>&gt; fLength(&quot;length&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac683db093047f18a95a0fef8726b5291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac683db093047f18a95a0fef8726b5291">&#9670;&nbsp;</a></span>fList</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d5/de3/class_filter_list.html">FilterList</a>&gt; fList(&quot;list&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d12/context_8cpp_source.html#l05828">NestingContext::Private::addFiles()</a>.</p>
+
+</div>
+</div>
+<a id="a7621625bb80af697d651b4e29eabf834"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7621625bb80af697d651b4e29eabf834">&#9670;&nbsp;</a></span>fListSort</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../de/d6d/class_filter_list_sort.html">FilterListSort</a>&gt; fListSort(&quot;listsort&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a42dc756c2bde8f9ac963ea55c8704403"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42dc756c2bde8f9ac963ea55c8704403">&#9670;&nbsp;</a></span>fLower</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d3/d3e/class_filter_lower.html">FilterLower</a>&gt; fLower(&quot;lower&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2df989ef152291d17c70ec60de4b5e4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2df989ef152291d17c70ec60de4b5e4d">&#9670;&nbsp;</a></span>fNoWrap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d0/d84/class_filter_no_wrap.html">FilterNoWrap</a>&gt; fNoWrap(&quot;nowrap&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="addc51470f73c5a5ab5b841b2d73f4ff2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addc51470f73c5a5ab5b841b2d73f4ff2">&#9670;&nbsp;</a></span>fPaginate</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d4/d28/class_filter_paginate.html">FilterPaginate</a>&gt; fPaginate(&quot;paginate&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae3f3286cb2ada3b1f71e4b23cf6cba27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3f3286cb2ada3b1f71e4b23cf6cba27">&#9670;&nbsp;</a></span>fPrepend</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../db/d51/class_filter_prepend.html">FilterPrepend</a>&gt; fPrepend(&quot;prepend&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abbfd2cacea9ef60aadf5b3c4b5508560"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abbfd2cacea9ef60aadf5b3c4b5508560">&#9670;&nbsp;</a></span>fRaw</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../df/ddb/class_filter_raw.html">FilterRaw</a>&gt; fRaw(&quot;raw&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0258ef28e58f846f9211a8b9ce322040"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0258ef28e58f846f9211a8b9ce322040">&#9670;&nbsp;</a></span>fRelative</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d6/d9b/class_filter_relative.html">FilterRelative</a>&gt; fRelative(&quot;relative&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85742fa46eb9ce36b1772b775ddfd120"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85742fa46eb9ce36b1772b775ddfd120">&#9670;&nbsp;</a></span>fStripPath</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d5/dc6/class_filter_strip_path.html">FilterStripPath</a>&gt; fStripPath(&quot;stripPath&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaf4b1133898191bd5996417a1d6cca69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf4b1133898191bd5996417a1d6cca69">&#9670;&nbsp;</a></span>fTexIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d3/ddb/class_filter_tex_index.html">FilterTexIndex</a>&gt; fTexIndex(&quot;texIndex&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5f574dc4549ae878cadc7febfa23a29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5f574dc4549ae878cadc7febfa23a29">&#9670;&nbsp;</a></span>fTexLabel</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../d6/dd6/class_filter_tex_label.html">FilterTexLabel</a>&gt; fTexLabel(&quot;texLabel&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c9157f2fe11406896d1e50ea66bace2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c9157f2fe11406896d1e50ea66bace2">&#9670;&nbsp;</a></span>fUpper</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d67/class_template_filter_factory_1_1_auto_register.html">TemplateFilterFactory::AutoRegister</a>&lt;<a class="el" href="../../dd/dcd/class_filter_upper.html">FilterUpper</a>&gt; fUpper(&quot;upper&quot;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_template_variant_html_a575a46140d854957a628e6aaa4394a4b"><div class="ttname"><a href="../../d1/dba/class_template_variant.html#a575a46140d854957a628e6aaa4394a4b">TemplateVariant::toStruct</a></div><div class="ttdeci">TemplateStructIntfPtr toStruct()</div><div class="ttdoc">Returns the pointer to struct referenced by this variant or 0 if this variant does not have struct ty...</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d54/template_8cpp_source.html#l00441">template.cpp:441</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a3d328fee5f837b10f36c473953e7492c"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a3d328fee5f837b10f36c473953e7492c">QCString::rawData</a></div><div class="ttdeci">char * rawData()</div><div class="ttdoc">Returns a writable pointer to the data.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00157">qcstring.h:157</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_ac52596733e9110b778019946d73fb268"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">QCString::length</a></div><div class="ttdeci">uint length() const</div><div class="ttdoc">Returns the length of the string, not counting the 0-terminator.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00147">qcstring.h:147</a></div></div>
+<div class="ttc" id="atemplate_8cpp_html_a73f99c5c02d86d4db5ac1e465da9de54"><div class="ttname"><a href="../../df/d54/template_8cpp.html#a73f99c5c02d86d4db5ac1e465da9de54">TemplateListPtr</a></div><div class="ttdeci">std::shared_ptr&lt; TemplateList &gt; TemplateListPtr</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d54/template_8cpp_source.html#l00224">template.cpp:224</a></div></div>
+<div class="ttc" id="aclass_template_variant_html_a42b71b208c3b33b545b9245e5f8859ad"><div class="ttname"><a href="../../d1/dba/class_template_variant.html#a42b71b208c3b33b545b9245e5f8859ad">TemplateVariant::isWeakStruct</a></div><div class="ttdeci">constexpr bool isWeakStruct() const</div><div class="ttdoc">Returns TRUE if the variant holds a struct value</div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/template_8h_source.html#l00217">template.h:217</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a0182ece6b76dad6475dafb53e2faaf10"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">QCString::find</a></div><div class="ttdeci">int find(char c, int index=0, bool cs=TRUE) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d3e/qcstring_8cpp_source.html#l00038">qcstring.cpp:38</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a4d3943ddea65db7163a58e6c7e8df95a"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a></div><div class="ttdeci">unsigned uint</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00040">qcstring.h:40</a></div></div>
+<div class="ttc" id="aclass_template_variant_html"><div class="ttname"><a href="../../d1/dba/class_template_variant.html">TemplateVariant</a></div><div class="ttdoc">Variant type which can hold one value of a fixed set of types.</div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/template_8h_source.html#l00098">template.h:98</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a66269a694d9e6961bfd145bb4ca72f42"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a66269a694d9e6961bfd145bb4ca72f42">QCString::stripWhiteSpace</a></div><div class="ttdeci">QCString stripWhiteSpace() const</div><div class="ttdoc">returns a copy of this string with leading and trailing whitespace removed</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00243">qcstring.h:243</a></div></div>
+<div class="ttc" id="aclass_template_variant_html_ab4ab896cf40ecfda655b5e38ca8bbf59"><div class="ttname"><a href="../../d1/dba/class_template_variant.html#ab4ab896cf40ecfda655b5e38ca8bbf59">TemplateVariant::isStruct</a></div><div class="ttdeci">constexpr bool isStruct() const</div><div class="ttdoc">Returns TRUE if the variant holds a struct value</div><div class="ttdef"><b>Definition:</b> <a href="../../de/db8/template_8h_source.html#l00211">template.h:211</a></div></div>
+<div class="ttc" id="atemplate_8cpp_html_ab83357707d9b7c0463ef22e9f345e445"><div class="ttname"><a href="../../df/d54/template_8cpp.html#ab83357707d9b7c0463ef22e9f345e445">getPathListFunc</a></div><div class="ttdeci">static void getPathListFunc(const TemplateStructIntfPtr entry, TemplateListPtr list)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d54/template_8cpp_source.html#l02833">template.cpp:2833</a></div></div>
+<div class="ttc" id="aclass_template_list_html_a6840730b8664bc08ef26924fa1cd76b9"><div class="ttname"><a href="../../de/dab/class_template_list.html#a6840730b8664bc08ef26924fa1cd76b9">TemplateList::alloc</a></div><div class="ttdeci">static TemplateListPtr alloc()</div><div class="ttdoc">Creates an instance and returns a shared pointer to it</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d54/template_8cpp_source.html#l00291">template.cpp:291</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a27136caf9c0bc4daca574cda6f113551"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">QCString::mid</a></div><div class="ttdeci">QCString mid(size_t index, size_t len=static_cast&lt; size_t &gt;(-1)) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00224">qcstring.h:224</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a84a5aa4da9147a687fa291c844fb5fc1"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a84a5aa4da9147a687fa291c844fb5fc1">QCString::data</a></div><div class="ttdeci">const char * data() const</div><div class="ttdoc">Returns a pointer to the contents of the string in the form of a 0-terminated C string</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00153">qcstring.h:153</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a993474e2da59141336e6105b8e154f2b"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a993474e2da59141336e6105b8e154f2b">QCString::resize</a></div><div class="ttdeci">bool resize(size_t newlen)</div><div class="ttdoc">Resizes the string to hold newlen characters (this value should also count the 0-terminator).</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00164">qcstring.h:164</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../df/d54/template_8cpp.html">template.cpp</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:57 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

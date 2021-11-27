@@ -1,0 +1,22 @@
+digraph "MemberDefImpl"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="MemberDefImpl",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DefinitionMixin\< MemberDef\lMutable \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d10/class_definition_mixin.html",tooltip=" "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MemberDefMutable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d4b/class_member_def_mutable.html",tooltip=" "];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="DefinitionMutable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d46/class_definition_mutable.html",tooltip=" "];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="MemberDef",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$da/d09/class_member_def.html",tooltip="A model of a class/file/namespace member symbol."];
+  Node6 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Definition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dcc/class_definition.html",tooltip="The common base class of all entity definitions found in the sources."];
+  Node7 -> Node2 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< MemberDefMutable \>" ,fontname="Helvetica"];
+  Node7 [label="DefinitionMixin\< Base \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d10/class_definition_mixin.html",tooltip=" "];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Base",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

@@ -1,0 +1,871 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/groupdef.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d6/d42/groupdef_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#func-members">函数</a>  </div>
+  <div class="headertitle">
+<div class="title">groupdef.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;ctype.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/de6/groupdef_8h_source.html">groupdef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/da6/classdef_8h_source.html">classdef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d4/d3a/filedef_8h_source.html">filedef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/df8/classlist_8h_source.html">classlist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/db9/outputlist_8h_source.html">outputlist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d97/namespacedef_8h_source.html">namespacedef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/dce/language_8h_source.html">language.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d3c/util_8h_source.html">util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d78/memberlist_8h_source.html">memberlist.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d0d/message_8h_source.html">message.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d9/d11/membergroup_8h_source.html">membergroup.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/da1/doxygen_8h_source.html">doxygen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/d66/pagedef_8h_source.html">pagedef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d9c/docparser_8h_source.html">docparser.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../de/d07/searchindex_8h_source.html">searchindex.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d4a/dot_8h_source.html">dot.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/d99/dotgroupcollaboration_8h_source.html">dotgroupcollaboration.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/dec/vhdldocgen_8h_source.html">vhdldocgen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d51/layout_8h_source.html">layout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../df/d9b/arguments_8h_source.html">arguments.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/dc6/entry_8h_source.html">entry.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d7/dfc/membername_8h_source.html">membername.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d15/dirdef_8h_source.html">dirdef.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d16/config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/dab/definitionimpl_8h_source.html">definitionimpl.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/d21/regex_8h_source.html">regex.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> groupdef.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+</div>
+</div>
+<p><a href="../../d6/d42/groupdef_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d22/class_group_def_impl.html">GroupDefImpl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:a44ef897c17c5f42088f5530e5127c10e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d09/class_group_def.html">GroupDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#a44ef897c17c5f42088f5530e5127c10e">createGroupDef</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;fileName, int line, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;name, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;title, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;refFileName)</td></tr>
+<tr class="separator:a44ef897c17c5f42088f5530e5127c10e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a133ed5d7ef56cd0de5d89dcfead564e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#a133ed5d7ef56cd0de5d89dcfead564e7">addClassToGroups</a> (const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *root, <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *cd)</td></tr>
+<tr class="separator:a133ed5d7ef56cd0de5d89dcfead564e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ed7b5fc926a79337a09aa8ecef0e41d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#a9ed7b5fc926a79337a09aa8ecef0e41d">addConceptToGroups</a> (const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *root, <a class="el" href="../../d6/d8d/class_concept_def.html">ConceptDef</a> *cd)</td></tr>
+<tr class="separator:a9ed7b5fc926a79337a09aa8ecef0e41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a035458fc750e2a32abad901b719f8392"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#a035458fc750e2a32abad901b719f8392">addNamespaceToGroups</a> (const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *root, <a class="el" href="../../d0/d07/class_namespace_def.html">NamespaceDef</a> *nd)</td></tr>
+<tr class="separator:a035458fc750e2a32abad901b719f8392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378ec2ef3e841a44602739461386c1f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#a378ec2ef3e841a44602739461386c1f9">addDirToGroups</a> (const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *root, <a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *dd)</td></tr>
+<tr class="separator:a378ec2ef3e841a44602739461386c1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b501f4e23a2e8465946abfdfe294c4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#a0b501f4e23a2e8465946abfdfe294c4c">addGroupToGroups</a> (const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *root, <a class="el" href="../../d8/d09/class_group_def.html">GroupDef</a> *subGroup)</td></tr>
+<tr class="separator:a0b501f4e23a2e8465946abfdfe294c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affd271e102af38c14812ccc21a86401c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#affd271e102af38c14812ccc21a86401c">addMemberToGroups</a> (const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *root, <a class="el" href="../../da/d09/class_member_def.html">MemberDef</a> *md)</td></tr>
+<tr class="separator:affd271e102af38c14812ccc21a86401c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af777f735af0317cec08f59bd101c0825"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#af777f735af0317cec08f59bd101c0825">addExampleToGroups</a> (const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *root, <a class="el" href="../../dd/d41/class_page_def.html">PageDef</a> *eg)</td></tr>
+<tr class="separator:af777f735af0317cec08f59bd101c0825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a553cf15878cf6e6bdcecf5f8698f4349"><td class="memTemplParams" colspan="2">template&lt;class Vec &gt; </td></tr>
+<tr class="memitem:a553cf15878cf6e6bdcecf5f8698f4349"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#a553cf15878cf6e6bdcecf5f8698f4349">groupClassesWithSameScope</a> (Vec &amp;vec)</td></tr>
+<tr class="separator:a553cf15878cf6e6bdcecf5f8698f4349"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35a881571d26412b9c9d8017ba1e542"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d8/d09/class_group_def.html">GroupDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#ae35a881571d26412b9c9d8017ba1e542">toGroupDef</a> (<a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *d)</td></tr>
+<tr class="separator:ae35a881571d26412b9c9d8017ba1e542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95f6cd5f66745e3e1fa832af1df1a805"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d8/d09/class_group_def.html">GroupDef</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d42/groupdef_8cpp.html#a95f6cd5f66745e3e1fa832af1df1a805">toGroupDef</a> (const <a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *d)</td></tr>
+<tr class="separator:a95f6cd5f66745e3e1fa832af1df1a805"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="a133ed5d7ef56cd0de5d89dcfead564e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a133ed5d7ef56cd0de5d89dcfead564e7">&#9670;&nbsp;</a></span>addClassToGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addClassToGroups </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td>
+          <td class="paramname"><em>cd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01322">1322</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01323"></a><span class="lineno"> 1323</span>&#160;{</div>
+<div class="line"><a name="l01324"></a><span class="lineno"> 1324</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="../../d7/d59/struct_grouping.html">Grouping</a> &amp;g : root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a7a7b0a48faf21641b21124fb8381aa1e">groups</a>)</div>
+<div class="line"><a name="l01325"></a><span class="lineno"> 1325</span>&#160;  {</div>
+<div class="line"><a name="l01326"></a><span class="lineno"> 1326</span>&#160;    <a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a> *gd = <a class="code" href="../../de/d6a/class_doxygen.html#afd89d49084b42d085e9d40fc2636da9c">Doxygen::groupLinkedMap</a>-&gt;<a class="code" href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">find</a>(g.<a class="code" href="../../d7/d59/struct_grouping.html#a05e6a053a86cc2f588d065f3880801dc">groupname</a>);</div>
+<div class="line"><a name="l01327"></a><span class="lineno"> 1327</span>&#160;    <span class="keywordflow">if</span> (gd &amp;&amp; gd-&gt;<a class="code" href="../../d8/d09/class_group_def.html#ae45ddb8cd0794f2b9763d660ef01cf03">addClass</a>(cd))</div>
+<div class="line"><a name="l01328"></a><span class="lineno"> 1328</span>&#160;    {</div>
+<div class="line"><a name="l01329"></a><span class="lineno"> 1329</span>&#160;      <a class="code" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a> *cdm = <a class="code" href="../../de/d89/classdef_8cpp.html#ae84551f3738567a53c115c84efede554">toClassDefMutable</a>(cd);</div>
+<div class="line"><a name="l01330"></a><span class="lineno"> 1330</span>&#160;      <span class="keywordflow">if</span> (cdm)</div>
+<div class="line"><a name="l01331"></a><span class="lineno"> 1331</span>&#160;      {</div>
+<div class="line"><a name="l01332"></a><span class="lineno"> 1332</span>&#160;        cdm-&gt;<a class="code" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">makePartOfGroup</a>(gd);</div>
+<div class="line"><a name="l01333"></a><span class="lineno"> 1333</span>&#160;      }</div>
+<div class="line"><a name="l01334"></a><span class="lineno"> 1334</span>&#160;      <span class="comment">//printf(&quot;Compound %s: in group %s\n&quot;,qPrint(cd-&gt;name()),gd-&gt;groupTitle());</span></div>
+<div class="line"><a name="l01335"></a><span class="lineno"> 1335</span>&#160;    }</div>
+<div class="line"><a name="l01336"></a><span class="lineno"> 1336</span>&#160;  }</div>
+<div class="line"><a name="l01337"></a><span class="lineno"> 1337</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d8/d09/class_group_def.html#ae45ddb8cd0794f2b9763d660ef01cf03">GroupDef::addClass()</a>, <a class="el" href="../../da/de1/linkedmap_8h_source.html#l00060">LinkedMap&lt; T, Hash, KeyEqual, Map &gt;::find()</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00096">Doxygen::groupLinkedMap</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00095">Grouping::groupname</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00288">Entry::groups</a>, <a class="el" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">DefinitionMutable::makePartOfGroup()</a> , 以及 <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04944">toClassDefMutable()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l00961">addClassToContext()</a>.</p>
+
+</div>
+</div>
+<a id="a9ed7b5fc926a79337a09aa8ecef0e41d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ed7b5fc926a79337a09aa8ecef0e41d">&#9670;&nbsp;</a></span>addConceptToGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addConceptToGroups </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d6/d8d/class_concept_def.html">ConceptDef</a> *&#160;</td>
+          <td class="paramname"><em>cd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01339">1339</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;{</div>
+<div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="../../d7/d59/struct_grouping.html">Grouping</a> &amp;g : root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a7a7b0a48faf21641b21124fb8381aa1e">groups</a>)</div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;  {</div>
+<div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;    <a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a> *gd = <a class="code" href="../../de/d6a/class_doxygen.html#afd89d49084b42d085e9d40fc2636da9c">Doxygen::groupLinkedMap</a>-&gt;<a class="code" href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">find</a>(g.<a class="code" href="../../d7/d59/struct_grouping.html#a05e6a053a86cc2f588d065f3880801dc">groupname</a>);</div>
+<div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;    <span class="keywordflow">if</span> (gd &amp;&amp; gd-&gt;<a class="code" href="../../d8/d09/class_group_def.html#ab3aafb766c4b074061d755cf39652040">addConcept</a>(cd))</div>
+<div class="line"><a name="l01345"></a><span class="lineno"> 1345</span>&#160;    {</div>
+<div class="line"><a name="l01346"></a><span class="lineno"> 1346</span>&#160;      <a class="code" href="../../d4/deb/class_concept_def_mutable.html">ConceptDefMutable</a> *cdm = <a class="code" href="../../d8/d0a/conceptdef_8cpp.html#a4469a1fd260b107eafdc4d31e158ba41">toConceptDefMutable</a>(cd);</div>
+<div class="line"><a name="l01347"></a><span class="lineno"> 1347</span>&#160;      <span class="keywordflow">if</span> (cdm)</div>
+<div class="line"><a name="l01348"></a><span class="lineno"> 1348</span>&#160;      {</div>
+<div class="line"><a name="l01349"></a><span class="lineno"> 1349</span>&#160;        cdm-&gt;<a class="code" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">makePartOfGroup</a>(gd);</div>
+<div class="line"><a name="l01350"></a><span class="lineno"> 1350</span>&#160;      }</div>
+<div class="line"><a name="l01351"></a><span class="lineno"> 1351</span>&#160;      <span class="comment">//printf(&quot;Compound %s: in group %s\n&quot;,qPrint(cd-&gt;name()),gd-&gt;groupTitle());</span></div>
+<div class="line"><a name="l01352"></a><span class="lineno"> 1352</span>&#160;    }</div>
+<div class="line"><a name="l01353"></a><span class="lineno"> 1353</span>&#160;  }</div>
+<div class="line"><a name="l01354"></a><span class="lineno"> 1354</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d8/d09/class_group_def.html#ab3aafb766c4b074061d755cf39652040">GroupDef::addConcept()</a>, <a class="el" href="../../da/de1/linkedmap_8h_source.html#l00060">LinkedMap&lt; T, Hash, KeyEqual, Map &gt;::find()</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00096">Doxygen::groupLinkedMap</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00095">Grouping::groupname</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00288">Entry::groups</a>, <a class="el" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">DefinitionMutable::makePartOfGroup()</a> , 以及 <a class="el" href="../../d8/d0a/conceptdef_8cpp_source.html#l00713">toConceptDefMutable()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01174">addConceptToContext()</a>.</p>
+
+</div>
+</div>
+<a id="a378ec2ef3e841a44602739461386c1f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a378ec2ef3e841a44602739461386c1f9">&#9670;&nbsp;</a></span>addDirToGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addDirToGroups </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d4/dd4/class_dir_def.html">DirDef</a> *&#160;</td>
+          <td class="paramname"><em>dd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01376">1376</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01377"></a><span class="lineno"> 1377</span>&#160;{</div>
+<div class="line"><a name="l01378"></a><span class="lineno"> 1378</span>&#160;  <span class="comment">//printf(&quot;*** root-&gt;groups.size()=%d\n&quot;,root-&gt;groups.size());</span></div>
+<div class="line"><a name="l01379"></a><span class="lineno"> 1379</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="../../d7/d59/struct_grouping.html">Grouping</a> &amp;g : root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a7a7b0a48faf21641b21124fb8381aa1e">groups</a>)</div>
+<div class="line"><a name="l01380"></a><span class="lineno"> 1380</span>&#160;  {</div>
+<div class="line"><a name="l01381"></a><span class="lineno"> 1381</span>&#160;    <a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a> *gd = <a class="code" href="../../de/d6a/class_doxygen.html#afd89d49084b42d085e9d40fc2636da9c">Doxygen::groupLinkedMap</a>-&gt;<a class="code" href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">find</a>(g.<a class="code" href="../../d7/d59/struct_grouping.html#a05e6a053a86cc2f588d065f3880801dc">groupname</a>);</div>
+<div class="line"><a name="l01382"></a><span class="lineno"> 1382</span>&#160;    <span class="comment">//printf(&quot;group &#39;%s&#39;\n&quot;,qPrint(g-&gt;groupname));</span></div>
+<div class="line"><a name="l01383"></a><span class="lineno"> 1383</span>&#160;    <span class="keywordflow">if</span> (gd)</div>
+<div class="line"><a name="l01384"></a><span class="lineno"> 1384</span>&#160;    {</div>
+<div class="line"><a name="l01385"></a><span class="lineno"> 1385</span>&#160;      gd-&gt;<a class="code" href="../../d8/d09/class_group_def.html#a1cefe14a8b4f2004a76bbcca39e5aada">addDir</a>(dd);</div>
+<div class="line"><a name="l01386"></a><span class="lineno"> 1386</span>&#160;      dd-&gt;<a class="code" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">makePartOfGroup</a>(gd);</div>
+<div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;      <span class="comment">//printf(&quot;Dir %s: in group %s\n&quot;,qPrint(dd-&gt;name()),qPrint(g-&gt;groupname));</span></div>
+<div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;    }</div>
+<div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;  }</div>
+<div class="line"><a name="l01390"></a><span class="lineno"> 1390</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d8/d09/class_group_def.html#a1cefe14a8b4f2004a76bbcca39e5aada">GroupDef::addDir()</a>, <a class="el" href="../../da/de1/linkedmap_8h_source.html#l00060">LinkedMap&lt; T, Hash, KeyEqual, Map &gt;::find()</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00096">Doxygen::groupLinkedMap</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00095">Grouping::groupname</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00288">Entry::groups</a> , 以及 <a class="el" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">DefinitionMutable::makePartOfGroup()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l08974">findDirDocumentation()</a>.</p>
+
+</div>
+</div>
+<a id="af777f735af0317cec08f59bd101c0825"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af777f735af0317cec08f59bd101c0825">&#9670;&nbsp;</a></span>addExampleToGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addExampleToGroups </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d41/class_page_def.html">PageDef</a> *&#160;</td>
+          <td class="paramname"><em>eg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01540">1540</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01541"></a><span class="lineno"> 1541</span>&#160;{</div>
+<div class="line"><a name="l01542"></a><span class="lineno"> 1542</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="../../d7/d59/struct_grouping.html">Grouping</a> &amp;g : root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a7a7b0a48faf21641b21124fb8381aa1e">groups</a>)</div>
+<div class="line"><a name="l01543"></a><span class="lineno"> 1543</span>&#160;  {</div>
+<div class="line"><a name="l01544"></a><span class="lineno"> 1544</span>&#160;    <a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a> *gd = <a class="code" href="../../de/d6a/class_doxygen.html#afd89d49084b42d085e9d40fc2636da9c">Doxygen::groupLinkedMap</a>-&gt;<a class="code" href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">find</a>(g.<a class="code" href="../../d7/d59/struct_grouping.html#a05e6a053a86cc2f588d065f3880801dc">groupname</a>);</div>
+<div class="line"><a name="l01545"></a><span class="lineno"> 1545</span>&#160;    <span class="keywordflow">if</span> (gd)</div>
+<div class="line"><a name="l01546"></a><span class="lineno"> 1546</span>&#160;    {</div>
+<div class="line"><a name="l01547"></a><span class="lineno"> 1547</span>&#160;      gd-&gt;<a class="code" href="../../d8/d09/class_group_def.html#abbfc95b7ea35546a40a4335fd84f7d1c">addExample</a>(eg);</div>
+<div class="line"><a name="l01548"></a><span class="lineno"> 1548</span>&#160;      eg-&gt;<a class="code" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">makePartOfGroup</a>(gd);</div>
+<div class="line"><a name="l01549"></a><span class="lineno"> 1549</span>&#160;      <span class="comment">//printf(&quot;Example %s: in group %s\n&quot;,qPrint(eg-&gt;name()),s-&gt;data());</span></div>
+<div class="line"><a name="l01550"></a><span class="lineno"> 1550</span>&#160;    }</div>
+<div class="line"><a name="l01551"></a><span class="lineno"> 1551</span>&#160;  }</div>
+<div class="line"><a name="l01552"></a><span class="lineno"> 1552</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d8/d09/class_group_def.html#abbfc95b7ea35546a40a4335fd84f7d1c">GroupDef::addExample()</a>, <a class="el" href="../../da/de1/linkedmap_8h_source.html#l00060">LinkedMap&lt; T, Hash, KeyEqual, Map &gt;::find()</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00096">Doxygen::groupLinkedMap</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00095">Grouping::groupname</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00288">Entry::groups</a> , 以及 <a class="el" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">DefinitionMutable::makePartOfGroup()</a>.</p>
+
+</div>
+</div>
+<a id="a0b501f4e23a2e8465946abfdfe294c4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b501f4e23a2e8465946abfdfe294c4c">&#9670;&nbsp;</a></span>addGroupToGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addGroupToGroups </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d8/d09/class_group_def.html">GroupDef</a> *&#160;</td>
+          <td class="paramname"><em>subGroup</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01392">1392</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01393"></a><span class="lineno"> 1393</span>&#160;{</div>
+<div class="line"><a name="l01394"></a><span class="lineno"> 1394</span>&#160;  <span class="comment">//printf(&quot;addGroupToGroups for %s groups=%d\n&quot;,qPrint(root-&gt;name),root-&gt;groups.size());</span></div>
+<div class="line"><a name="l01395"></a><span class="lineno"> 1395</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="../../d7/d59/struct_grouping.html">Grouping</a> &amp;g : root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a7a7b0a48faf21641b21124fb8381aa1e">groups</a>)</div>
+<div class="line"><a name="l01396"></a><span class="lineno"> 1396</span>&#160;  {</div>
+<div class="line"><a name="l01397"></a><span class="lineno"> 1397</span>&#160;    <a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a> *gd = <a class="code" href="../../de/d6a/class_doxygen.html#afd89d49084b42d085e9d40fc2636da9c">Doxygen::groupLinkedMap</a>-&gt;<a class="code" href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">find</a>(g.<a class="code" href="../../d7/d59/struct_grouping.html#a05e6a053a86cc2f588d065f3880801dc">groupname</a>);</div>
+<div class="line"><a name="l01398"></a><span class="lineno"> 1398</span>&#160;    <span class="keywordflow">if</span> (gd)</div>
+<div class="line"><a name="l01399"></a><span class="lineno"> 1399</span>&#160;    {</div>
+<div class="line"><a name="l01400"></a><span class="lineno"> 1400</span>&#160;      <span class="keywordflow">if</span> (gd==subGroup)</div>
+<div class="line"><a name="l01401"></a><span class="lineno"> 1401</span>&#160;      {</div>
+<div class="line"><a name="l01402"></a><span class="lineno"> 1402</span>&#160;        <a class="code" href="../../d8/d6a/message_8cpp.html#ab9900b0a7af62acd881e57901b0418a1">warn</a>(root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a736f1dfadfe0c0fabb022c533aa27fdc">fileName</a>,root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a81bf40c0a6646dc1e33097d7e2552c96">startLine</a>,<span class="stringliteral">&quot;Refusing to add group %s to itself&quot;</span>,</div>
+<div class="line"><a name="l01403"></a><span class="lineno"> 1403</span>&#160;            <a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(gd-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>()));</div>
+<div class="line"><a name="l01404"></a><span class="lineno"> 1404</span>&#160;      }</div>
+<div class="line"><a name="l01405"></a><span class="lineno"> 1405</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (subGroup-&gt;<a class="code" href="../../d8/d09/class_group_def.html#abbcaaf2e683208c173158a73d512edd0">findGroup</a>(gd))</div>
+<div class="line"><a name="l01406"></a><span class="lineno"> 1406</span>&#160;      {</div>
+<div class="line"><a name="l01407"></a><span class="lineno"> 1407</span>&#160;        <a class="code" href="../../d8/d6a/message_8cpp.html#ab9900b0a7af62acd881e57901b0418a1">warn</a>(root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a736f1dfadfe0c0fabb022c533aa27fdc">fileName</a>,root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a81bf40c0a6646dc1e33097d7e2552c96">startLine</a>,<span class="stringliteral">&quot;Refusing to add group %s to group %s, since the latter is already a &quot;</span></div>
+<div class="line"><a name="l01408"></a><span class="lineno"> 1408</span>&#160;                                            <span class="stringliteral">&quot;subgroup of the former\n&quot;</span>, <a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(subGroup-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>()),<a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(gd-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>()));</div>
+<div class="line"><a name="l01409"></a><span class="lineno"> 1409</span>&#160;      }</div>
+<div class="line"><a name="l01410"></a><span class="lineno"> 1410</span>&#160;      <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!gd-&gt;<a class="code" href="../../d8/d09/class_group_def.html#abbcaaf2e683208c173158a73d512edd0">findGroup</a>(subGroup))</div>
+<div class="line"><a name="l01411"></a><span class="lineno"> 1411</span>&#160;      {</div>
+<div class="line"><a name="l01412"></a><span class="lineno"> 1412</span>&#160;        gd-&gt;<a class="code" href="../../d8/d09/class_group_def.html#aaed7ecf363f35a6c75f973aa6467e3d6">addGroup</a>(subGroup);</div>
+<div class="line"><a name="l01413"></a><span class="lineno"> 1413</span>&#160;        subGroup-&gt;<a class="code" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">makePartOfGroup</a>(gd);</div>
+<div class="line"><a name="l01414"></a><span class="lineno"> 1414</span>&#160;      }</div>
+<div class="line"><a name="l01415"></a><span class="lineno"> 1415</span>&#160;    }</div>
+<div class="line"><a name="l01416"></a><span class="lineno"> 1416</span>&#160;  }</div>
+<div class="line"><a name="l01417"></a><span class="lineno"> 1417</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d8/d09/class_group_def.html#aaed7ecf363f35a6c75f973aa6467e3d6">GroupDef::addGroup()</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00290">Entry::fileName</a>, <a class="el" href="../../da/de1/linkedmap_8h_source.html#l00060">LinkedMap&lt; T, Hash, KeyEqual, Map &gt;::find()</a>, <a class="el" href="../../d8/d09/class_group_def.html#abbcaaf2e683208c173158a73d512edd0">GroupDef::findGroup()</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00096">Doxygen::groupLinkedMap</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00095">Grouping::groupname</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00288">Entry::groups</a>, <a class="el" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">DefinitionMutable::makePartOfGroup()</a>, <a class="el" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">Definition::name()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00589">qPrint()</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00291">Entry::startLine</a> , 以及 <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00151">warn()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l00440">organizeSubGroupsFiltered()</a>.</p>
+
+</div>
+</div>
+<a id="affd271e102af38c14812ccc21a86401c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affd271e102af38c14812ccc21a86401c">&#9670;&nbsp;</a></span>addMemberToGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addMemberToGroups </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d09/class_member_def.html">MemberDef</a> *&#160;</td>
+          <td class="paramname"><em>md</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Add a member to the group with the highest priority </p>
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01420">1420</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01421"></a><span class="lineno"> 1421</span>&#160;{</div>
+<div class="line"><a name="l01422"></a><span class="lineno"> 1422</span>&#160;  <span class="comment">//printf(&quot;addMemberToGroups:  Root %p = %s, md %p=%s groups=%zu\n&quot;,</span></div>
+<div class="line"><a name="l01423"></a><span class="lineno"> 1423</span>&#160;  <span class="comment">//    root, qPrint(root-&gt;name), md, qPrint(md-&gt;name()), root-&gt;groups.size() );</span></div>
+<div class="line"><a name="l01424"></a><span class="lineno"> 1424</span>&#160; </div>
+<div class="line"><a name="l01425"></a><span class="lineno"> 1425</span>&#160;  <span class="comment">// Search entry&#39;s group list for group with highest pri.</span></div>
+<div class="line"><a name="l01426"></a><span class="lineno"> 1426</span>&#160;  <a class="code" href="../../d7/d59/struct_grouping.html#a9f0ec5ab376b083ebe3274ea79fd2d70">Grouping::GroupPri_t</a> pri = <a class="code" href="../../d7/d59/struct_grouping.html#a9f0ec5ab376b083ebe3274ea79fd2d70a251075fcb0324e4f5f3d7bc8767ca06b">Grouping::GROUPING_LOWEST</a>;</div>
+<div class="line"><a name="l01427"></a><span class="lineno"> 1427</span>&#160;  <a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a> *fgd=0;</div>
+<div class="line"><a name="l01428"></a><span class="lineno"> 1428</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="../../d7/d59/struct_grouping.html">Grouping</a> &amp;g : root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a7a7b0a48faf21641b21124fb8381aa1e">groups</a>)</div>
+<div class="line"><a name="l01429"></a><span class="lineno"> 1429</span>&#160;  {</div>
+<div class="line"><a name="l01430"></a><span class="lineno"> 1430</span>&#160;    <a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a> *gd=0;</div>
+<div class="line"><a name="l01431"></a><span class="lineno"> 1431</span>&#160;    <span class="keywordflow">if</span> (!g.<a class="code" href="../../d7/d59/struct_grouping.html#a05e6a053a86cc2f588d065f3880801dc">groupname</a>.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp;</div>
+<div class="line"><a name="l01432"></a><span class="lineno"> 1432</span>&#160;        (gd=<a class="code" href="../../de/d6a/class_doxygen.html#afd89d49084b42d085e9d40fc2636da9c">Doxygen::groupLinkedMap</a>-&gt;<a class="code" href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">find</a>(g.<a class="code" href="../../d7/d59/struct_grouping.html#a05e6a053a86cc2f588d065f3880801dc">groupname</a>)) &amp;&amp;</div>
+<div class="line"><a name="l01433"></a><span class="lineno"> 1433</span>&#160;        g.<a class="code" href="../../d7/d59/struct_grouping.html#aead55d7198ceffe16cb82d2c114e4254">pri</a> &gt;= pri)</div>
+<div class="line"><a name="l01434"></a><span class="lineno"> 1434</span>&#160;    {</div>
+<div class="line"><a name="l01435"></a><span class="lineno"> 1435</span>&#160;      <span class="keywordflow">if</span> (fgd &amp;&amp; gd!=fgd &amp;&amp; g.<a class="code" href="../../d7/d59/struct_grouping.html#aead55d7198ceffe16cb82d2c114e4254">pri</a>==pri)</div>
+<div class="line"><a name="l01436"></a><span class="lineno"> 1436</span>&#160;      {</div>
+<div class="line"><a name="l01437"></a><span class="lineno"> 1437</span>&#160;        <a class="code" href="../../d8/d6a/message_8cpp.html#ab9900b0a7af62acd881e57901b0418a1">warn</a>(root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a736f1dfadfe0c0fabb022c533aa27fdc">fileName</a>, root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a81bf40c0a6646dc1e33097d7e2552c96">startLine</a>,</div>
+<div class="line"><a name="l01438"></a><span class="lineno"> 1438</span>&#160;            <span class="stringliteral">&quot;Member %s found in multiple %s groups! &quot;</span></div>
+<div class="line"><a name="l01439"></a><span class="lineno"> 1439</span>&#160;            <span class="stringliteral">&quot;The member will be put in group %s, and not in group %s&quot;</span>,</div>
+<div class="line"><a name="l01440"></a><span class="lineno"> 1440</span>&#160;            <a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(md-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>()), <a class="code" href="../../d7/d59/struct_grouping.html#ae38a9f0b7428a2539810e4e782a740af">Grouping::getGroupPriName</a>( pri ),</div>
+<div class="line"><a name="l01441"></a><span class="lineno"> 1441</span>&#160;            <a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(gd-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>()), <a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(fgd-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>())</div>
+<div class="line"><a name="l01442"></a><span class="lineno"> 1442</span>&#160;            );</div>
+<div class="line"><a name="l01443"></a><span class="lineno"> 1443</span>&#160;      }</div>
+<div class="line"><a name="l01444"></a><span class="lineno"> 1444</span>&#160; </div>
+<div class="line"><a name="l01445"></a><span class="lineno"> 1445</span>&#160;      fgd = gd;</div>
+<div class="line"><a name="l01446"></a><span class="lineno"> 1446</span>&#160;      pri = g.<a class="code" href="../../d7/d59/struct_grouping.html#aead55d7198ceffe16cb82d2c114e4254">pri</a>;</div>
+<div class="line"><a name="l01447"></a><span class="lineno"> 1447</span>&#160;    }</div>
+<div class="line"><a name="l01448"></a><span class="lineno"> 1448</span>&#160;  }</div>
+<div class="line"><a name="l01449"></a><span class="lineno"> 1449</span>&#160;  <span class="comment">//printf(&quot;fgd=%p\n&quot;,fgd);</span></div>
+<div class="line"><a name="l01450"></a><span class="lineno"> 1450</span>&#160; </div>
+<div class="line"><a name="l01451"></a><span class="lineno"> 1451</span>&#160;  <span class="comment">// put member into group defined by this entry?</span></div>
+<div class="line"><a name="l01452"></a><span class="lineno"> 1452</span>&#160;  <span class="keywordflow">if</span> (fgd)</div>
+<div class="line"><a name="l01453"></a><span class="lineno"> 1453</span>&#160;  {</div>
+<div class="line"><a name="l01454"></a><span class="lineno"> 1454</span>&#160;    <a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a> *mgd = <span class="keyword">const_cast&lt;</span><a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a>*<span class="keyword">&gt;</span>(md-&gt;<a class="code" href="../../da/d09/class_member_def.html#a4c0aeff2ad85fd63cf65635b6d1b28cc">getGroupDef</a>());</div>
+<div class="line"><a name="l01455"></a><span class="lineno"> 1455</span>&#160;    <span class="comment">//printf(&quot;mgd=%p\n&quot;,mgd);</span></div>
+<div class="line"><a name="l01456"></a><span class="lineno"> 1456</span>&#160;    <span class="keywordtype">bool</span> insertit = <a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l01457"></a><span class="lineno"> 1457</span>&#160;    <span class="keywordflow">if</span> (mgd==0)</div>
+<div class="line"><a name="l01458"></a><span class="lineno"> 1458</span>&#160;    {</div>
+<div class="line"><a name="l01459"></a><span class="lineno"> 1459</span>&#160;      insertit = <a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l01460"></a><span class="lineno"> 1460</span>&#160;    }</div>
+<div class="line"><a name="l01461"></a><span class="lineno"> 1461</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (mgd!=fgd)</div>
+<div class="line"><a name="l01462"></a><span class="lineno"> 1462</span>&#160;    {</div>
+<div class="line"><a name="l01463"></a><span class="lineno"> 1463</span>&#160;      <span class="keywordtype">bool</span> moveit = <a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l01464"></a><span class="lineno"> 1464</span>&#160; </div>
+<div class="line"><a name="l01465"></a><span class="lineno"> 1465</span>&#160;      <span class="comment">// move member from one group to another if</span></div>
+<div class="line"><a name="l01466"></a><span class="lineno"> 1466</span>&#160;      <span class="comment">// - the new one has a higher priority</span></div>
+<div class="line"><a name="l01467"></a><span class="lineno"> 1467</span>&#160;      <span class="comment">// - the new entry has the same priority, but with docs where the old one had no docs</span></div>
+<div class="line"><a name="l01468"></a><span class="lineno"> 1468</span>&#160;      <span class="keywordflow">if</span> (md-&gt;<a class="code" href="../../da/d09/class_member_def.html#a9ed95e7cef3948c6a978540c0d48bca7">getGroupPri</a>()&lt;pri)</div>
+<div class="line"><a name="l01469"></a><span class="lineno"> 1469</span>&#160;      {</div>
+<div class="line"><a name="l01470"></a><span class="lineno"> 1470</span>&#160;        moveit = <a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l01471"></a><span class="lineno"> 1471</span>&#160;      }</div>
+<div class="line"><a name="l01472"></a><span class="lineno"> 1472</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01473"></a><span class="lineno"> 1473</span>&#160;      {</div>
+<div class="line"><a name="l01474"></a><span class="lineno"> 1474</span>&#160;        <span class="keywordflow">if</span> (md-&gt;<a class="code" href="../../da/d09/class_member_def.html#a9ed95e7cef3948c6a978540c0d48bca7">getGroupPri</a>()==pri)</div>
+<div class="line"><a name="l01475"></a><span class="lineno"> 1475</span>&#160;        {</div>
+<div class="line"><a name="l01476"></a><span class="lineno"> 1476</span>&#160;          <span class="keywordflow">if</span> (!root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#ac02a6c1dd922221351f6de0286d48d77">doc</a>.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; !md-&gt;<a class="code" href="../../da/d09/class_member_def.html#a01cb4b118d46ca86b9475e1d243560b1">getGroupHasDocs</a>())</div>
+<div class="line"><a name="l01477"></a><span class="lineno"> 1477</span>&#160;          {</div>
+<div class="line"><a name="l01478"></a><span class="lineno"> 1478</span>&#160;            moveit = <a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l01479"></a><span class="lineno"> 1479</span>&#160;          }</div>
+<div class="line"><a name="l01480"></a><span class="lineno"> 1480</span>&#160;          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#ac02a6c1dd922221351f6de0286d48d77">doc</a>.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; md-&gt;<a class="code" href="../../da/d09/class_member_def.html#a01cb4b118d46ca86b9475e1d243560b1">getGroupHasDocs</a>())</div>
+<div class="line"><a name="l01481"></a><span class="lineno"> 1481</span>&#160;          {</div>
+<div class="line"><a name="l01482"></a><span class="lineno"> 1482</span>&#160;            <a class="code" href="../../d8/d6a/message_8cpp.html#ab9900b0a7af62acd881e57901b0418a1">warn</a>(md-&gt;<a class="code" href="../../da/d09/class_member_def.html#acb9da3d6b3e2f3e8102ee9a3380c0746">getGroupFileName</a>(),md-&gt;<a class="code" href="../../da/d09/class_member_def.html#a5d3b273949bc92e2b88e981aebc789bd">getGroupStartLine</a>(),</div>
+<div class="line"><a name="l01483"></a><span class="lineno"> 1483</span>&#160;                <span class="stringliteral">&quot;Member documentation for %s found several times in %s groups!\n&quot;</span></div>
+<div class="line"><a name="l01484"></a><span class="lineno"> 1484</span>&#160;                <span class="stringliteral">&quot;%s:%d: The member will remain in group %s, and won&#39;t be put into group %s&quot;</span>,</div>
+<div class="line"><a name="l01485"></a><span class="lineno"> 1485</span>&#160;                <a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(md-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>()), <a class="code" href="../../d7/d59/struct_grouping.html#ae38a9f0b7428a2539810e4e782a740af">Grouping::getGroupPriName</a>( pri ),</div>
+<div class="line"><a name="l01486"></a><span class="lineno"> 1486</span>&#160;                <a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a736f1dfadfe0c0fabb022c533aa27fdc">fileName</a>), root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a81bf40c0a6646dc1e33097d7e2552c96">startLine</a>,</div>
+<div class="line"><a name="l01487"></a><span class="lineno"> 1487</span>&#160;                <a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(mgd-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>()),</div>
+<div class="line"><a name="l01488"></a><span class="lineno"> 1488</span>&#160;                <a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(fgd-&gt;<a class="code" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">name</a>())</div>
+<div class="line"><a name="l01489"></a><span class="lineno"> 1489</span>&#160;                );</div>
+<div class="line"><a name="l01490"></a><span class="lineno"> 1490</span>&#160;          }</div>
+<div class="line"><a name="l01491"></a><span class="lineno"> 1491</span>&#160;        }</div>
+<div class="line"><a name="l01492"></a><span class="lineno"> 1492</span>&#160;      }</div>
+<div class="line"><a name="l01493"></a><span class="lineno"> 1493</span>&#160; </div>
+<div class="line"><a name="l01494"></a><span class="lineno"> 1494</span>&#160;      <span class="keywordflow">if</span> (moveit)</div>
+<div class="line"><a name="l01495"></a><span class="lineno"> 1495</span>&#160;      {</div>
+<div class="line"><a name="l01496"></a><span class="lineno"> 1496</span>&#160;        <span class="comment">//printf(&quot;removeMember\n&quot;);</span></div>
+<div class="line"><a name="l01497"></a><span class="lineno"> 1497</span>&#160;        mgd-&gt;<a class="code" href="../../d8/d09/class_group_def.html#a62090524551868d7e7016245b3800d1b">removeMember</a>(md);</div>
+<div class="line"><a name="l01498"></a><span class="lineno"> 1498</span>&#160;        insertit = <a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l01499"></a><span class="lineno"> 1499</span>&#160;      }</div>
+<div class="line"><a name="l01500"></a><span class="lineno"> 1500</span>&#160;    }</div>
+<div class="line"><a name="l01501"></a><span class="lineno"> 1501</span>&#160; </div>
+<div class="line"><a name="l01502"></a><span class="lineno"> 1502</span>&#160;    <span class="keywordflow">if</span> (insertit)</div>
+<div class="line"><a name="l01503"></a><span class="lineno"> 1503</span>&#160;    {</div>
+<div class="line"><a name="l01504"></a><span class="lineno"> 1504</span>&#160;      <span class="comment">//printf(&quot;insertMember found at %s line %d: %s: related %s\n&quot;,</span></div>
+<div class="line"><a name="l01505"></a><span class="lineno"> 1505</span>&#160;      <span class="comment">//    qPrint(md-&gt;getDefFileName()),md-&gt;getDefLine(),</span></div>
+<div class="line"><a name="l01506"></a><span class="lineno"> 1506</span>&#160;      <span class="comment">//    qPrint(md-&gt;name()),qPrint(root-&gt;relates));</span></div>
+<div class="line"><a name="l01507"></a><span class="lineno"> 1507</span>&#160;      <span class="keywordtype">bool</span> success = fgd-&gt;<a class="code" href="../../d8/d09/class_group_def.html#a0bfa26b9f4fa02aa369796b4881ff1af">insertMember</a>(md);</div>
+<div class="line"><a name="l01508"></a><span class="lineno"> 1508</span>&#160;      <span class="keywordflow">if</span> (success)</div>
+<div class="line"><a name="l01509"></a><span class="lineno"> 1509</span>&#160;      {</div>
+<div class="line"><a name="l01510"></a><span class="lineno"> 1510</span>&#160;        <a class="code" href="../../dd/d4b/class_member_def_mutable.html">MemberDefMutable</a> *mdm = <a class="code" href="../../d0/d72/memberdef_8cpp.html#ab7df246eb40992f54d60d8a31f0ad038">toMemberDefMutable</a>(md);</div>
+<div class="line"><a name="l01511"></a><span class="lineno"> 1511</span>&#160;        <span class="keywordflow">if</span> (mdm)</div>
+<div class="line"><a name="l01512"></a><span class="lineno"> 1512</span>&#160;        {</div>
+<div class="line"><a name="l01513"></a><span class="lineno"> 1513</span>&#160;          <span class="comment">//printf(&quot;insertMember successful\n&quot;);</span></div>
+<div class="line"><a name="l01514"></a><span class="lineno"> 1514</span>&#160;          mdm-&gt;<a class="code" href="../../dd/d4b/class_member_def_mutable.html#a6b4b95698619165c9c6ce99a1ca4ef58">setGroupDef</a>(fgd,pri,root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a736f1dfadfe0c0fabb022c533aa27fdc">fileName</a>,root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a81bf40c0a6646dc1e33097d7e2552c96">startLine</a>,!root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#ac02a6c1dd922221351f6de0286d48d77">doc</a>.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>());</div>
+<div class="line"><a name="l01515"></a><span class="lineno"> 1515</span>&#160;          <a class="code" href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a> *cdm = <a class="code" href="../../de/d89/classdef_8cpp.html#ae84551f3738567a53c115c84efede554">toClassDefMutable</a>(mdm-&gt;<a class="code" href="../../da/d09/class_member_def.html#a1106df55d1622462e441df5e09b42cd3">getClassDefOfAnonymousType</a>());</div>
+<div class="line"><a name="l01516"></a><span class="lineno"> 1516</span>&#160;          <span class="keywordflow">if</span> (cdm)</div>
+<div class="line"><a name="l01517"></a><span class="lineno"> 1517</span>&#160;          {</div>
+<div class="line"><a name="l01518"></a><span class="lineno"> 1518</span>&#160;            cdm-&gt;<a class="code" href="../../d0/dc2/class_class_def_mutable.html#a587dbea5e2811999a97fcedbb5619eff">setGroupDefForAllMembers</a>(fgd,pri,root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a736f1dfadfe0c0fabb022c533aa27fdc">fileName</a>,root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a81bf40c0a6646dc1e33097d7e2552c96">startLine</a>,root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#ac02a6c1dd922221351f6de0286d48d77">doc</a>.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>() != 0);</div>
+<div class="line"><a name="l01519"></a><span class="lineno"> 1519</span>&#160;          }</div>
+<div class="line"><a name="l01520"></a><span class="lineno"> 1520</span>&#160;          <span class="keywordflow">if</span> (mdm-&gt;<a class="code" href="../../da/d09/class_member_def.html#ab99e728441f3ce7d5784ad6fb6df18f2">isEnumerate</a>() &amp;&amp; mdm-&gt;<a class="code" href="../../da/d09/class_member_def.html#a4c0aeff2ad85fd63cf65635b6d1b28cc">getGroupDef</a>() &amp;&amp; md-&gt;<a class="code" href="../../da/d09/class_member_def.html#adbdbd0e3d3630af579a02e97e162a328">isStrong</a>())</div>
+<div class="line"><a name="l01521"></a><span class="lineno"> 1521</span>&#160;          {</div>
+<div class="line"><a name="l01522"></a><span class="lineno"> 1522</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;emd : mdm-&gt;<a class="code" href="../../da/d09/class_member_def.html#ac177650dbe186ef098f69f349f7f8cca">enumFieldList</a>())</div>
+<div class="line"><a name="l01523"></a><span class="lineno"> 1523</span>&#160;            {</div>
+<div class="line"><a name="l01524"></a><span class="lineno"> 1524</span>&#160;              <a class="code" href="../../dd/d4b/class_member_def_mutable.html">MemberDefMutable</a> *emdm = <a class="code" href="../../d0/d72/memberdef_8cpp.html#ab7df246eb40992f54d60d8a31f0ad038">toMemberDefMutable</a>(emd);</div>
+<div class="line"><a name="l01525"></a><span class="lineno"> 1525</span>&#160;              <span class="keywordflow">if</span> (emdm &amp;&amp; emdm-&gt;<a class="code" href="../../da/d09/class_member_def.html#a4c0aeff2ad85fd63cf65635b6d1b28cc">getGroupDef</a>()==0)</div>
+<div class="line"><a name="l01526"></a><span class="lineno"> 1526</span>&#160;              {</div>
+<div class="line"><a name="l01527"></a><span class="lineno"> 1527</span>&#160;                emdm-&gt;<a class="code" href="../../dd/d4b/class_member_def_mutable.html#a6b4b95698619165c9c6ce99a1ca4ef58">setGroupDef</a>(mdm-&gt;<a class="code" href="../../da/d09/class_member_def.html#a4c0aeff2ad85fd63cf65635b6d1b28cc">getGroupDef</a>(),mdm-&gt;<a class="code" href="../../da/d09/class_member_def.html#a9ed95e7cef3948c6a978540c0d48bca7">getGroupPri</a>(),</div>
+<div class="line"><a name="l01528"></a><span class="lineno"> 1528</span>&#160;                                 mdm-&gt;<a class="code" href="../../da/d09/class_member_def.html#acb9da3d6b3e2f3e8102ee9a3380c0746">getGroupFileName</a>(),mdm-&gt;<a class="code" href="../../da/d09/class_member_def.html#a5d3b273949bc92e2b88e981aebc789bd">getGroupStartLine</a>(),</div>
+<div class="line"><a name="l01529"></a><span class="lineno"> 1529</span>&#160;                                 mdm-&gt;<a class="code" href="../../da/d09/class_member_def.html#a01cb4b118d46ca86b9475e1d243560b1">getGroupHasDocs</a>());</div>
+<div class="line"><a name="l01530"></a><span class="lineno"> 1530</span>&#160;              }</div>
+<div class="line"><a name="l01531"></a><span class="lineno"> 1531</span>&#160;            }</div>
+<div class="line"><a name="l01532"></a><span class="lineno"> 1532</span>&#160;          }</div>
+<div class="line"><a name="l01533"></a><span class="lineno"> 1533</span>&#160;        }</div>
+<div class="line"><a name="l01534"></a><span class="lineno"> 1534</span>&#160;      }</div>
+<div class="line"><a name="l01535"></a><span class="lineno"> 1535</span>&#160;    }</div>
+<div class="line"><a name="l01536"></a><span class="lineno"> 1536</span>&#160;  }</div>
+<div class="line"><a name="l01537"></a><span class="lineno"> 1537</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d1/dc6/entry_8h_source.html#l00267">Entry::doc</a>, <a class="el" href="../../da/d09/class_member_def.html#ac177650dbe186ef098f69f349f7f8cca">MemberDef::enumFieldList()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00033">FALSE</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00290">Entry::fileName</a>, <a class="el" href="../../da/de1/linkedmap_8h_source.html#l00060">LinkedMap&lt; T, Hash, KeyEqual, Map &gt;::find()</a>, <a class="el" href="../../da/d09/class_member_def.html#a1106df55d1622462e441df5e09b42cd3">MemberDef::getClassDefOfAnonymousType()</a>, <a class="el" href="../../da/d09/class_member_def.html#a4c0aeff2ad85fd63cf65635b6d1b28cc">MemberDef::getGroupDef()</a>, <a class="el" href="../../da/d09/class_member_def.html#acb9da3d6b3e2f3e8102ee9a3380c0746">MemberDef::getGroupFileName()</a>, <a class="el" href="../../da/d09/class_member_def.html#a01cb4b118d46ca86b9475e1d243560b1">MemberDef::getGroupHasDocs()</a>, <a class="el" href="../../da/d09/class_member_def.html#a9ed95e7cef3948c6a978540c0d48bca7">MemberDef::getGroupPri()</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00078">Grouping::getGroupPriName()</a>, <a class="el" href="../../da/d09/class_member_def.html#a5d3b273949bc92e2b88e981aebc789bd">MemberDef::getGroupStartLine()</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00069">Grouping::GROUPING_LOWEST</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00096">Doxygen::groupLinkedMap</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00095">Grouping::groupname</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00288">Entry::groups</a>, <a class="el" href="../../d8/d09/class_group_def.html#a0bfa26b9f4fa02aa369796b4881ff1af">GroupDef::insertMember()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../da/d09/class_member_def.html#ab99e728441f3ce7d5784ad6fb6df18f2">MemberDef::isEnumerate()</a>, <a class="el" href="../../da/d09/class_member_def.html#adbdbd0e3d3630af579a02e97e162a328">MemberDef::isStrong()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00147">QCString::length()</a>, <a class="el" href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">Definition::name()</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00096">Grouping::pri</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00589">qPrint()</a>, <a class="el" href="../../d8/d09/class_group_def.html#a62090524551868d7e7016245b3800d1b">GroupDef::removeMember()</a>, <a class="el" href="../../dd/d4b/class_member_def_mutable.html#a6b4b95698619165c9c6ce99a1ca4ef58">MemberDefMutable::setGroupDef()</a>, <a class="el" href="../../d0/dc2/class_class_def_mutable.html#a587dbea5e2811999a97fcedbb5619eff">ClassDefMutable::setGroupDefForAllMembers()</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00291">Entry::startLine</a>, <a class="el" href="../../de/d89/classdef_8cpp_source.html#l04944">toClassDefMutable()</a>, <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l06125">toMemberDefMutable()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a> , 以及 <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00151">warn()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07408">addEnumDocs()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l05108">addMemberDocs()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l02186">addVariableToClass()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l02351">addVariableToFile()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l08853">findDefineDocumentation()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l07015">findEnums()</a> , 以及 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l06165">findMember()</a>.</p>
+
+</div>
+</div>
+<a id="a035458fc750e2a32abad901b719f8392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a035458fc750e2a32abad901b719f8392">&#9670;&nbsp;</a></span>addNamespaceToGroups()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void addNamespaceToGroups </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dd7/class_entry.html">Entry</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d0/d07/class_namespace_def.html">NamespaceDef</a> *&#160;</td>
+          <td class="paramname"><em>nd</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01357">1357</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01358"></a><span class="lineno"> 1358</span>&#160;{</div>
+<div class="line"><a name="l01359"></a><span class="lineno"> 1359</span>&#160;  <span class="comment">//printf(&quot;root-&gt;groups.size()=%zu\n&quot;,root-&gt;groups.size());</span></div>
+<div class="line"><a name="l01360"></a><span class="lineno"> 1360</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="../../d7/d59/struct_grouping.html">Grouping</a> &amp;g : root-&gt;<a class="code" href="../../d4/dd7/class_entry.html#a7a7b0a48faf21641b21124fb8381aa1e">groups</a>)</div>
+<div class="line"><a name="l01361"></a><span class="lineno"> 1361</span>&#160;  {</div>
+<div class="line"><a name="l01362"></a><span class="lineno"> 1362</span>&#160;    <a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a> *gd = <a class="code" href="../../de/d6a/class_doxygen.html#afd89d49084b42d085e9d40fc2636da9c">Doxygen::groupLinkedMap</a>-&gt;<a class="code" href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">find</a>(g.<a class="code" href="../../d7/d59/struct_grouping.html#a05e6a053a86cc2f588d065f3880801dc">groupname</a>);</div>
+<div class="line"><a name="l01363"></a><span class="lineno"> 1363</span>&#160;    <span class="comment">//printf(&quot;group &#39;%s&#39; gd=%p\n&quot;,qPrint(g.groupname),(void*)gd);</span></div>
+<div class="line"><a name="l01364"></a><span class="lineno"> 1364</span>&#160;    <span class="keywordflow">if</span> (gd &amp;&amp; gd-&gt;<a class="code" href="../../d8/d09/class_group_def.html#ab5143aa261c4a8fb11e11d8fc83a74a4">addNamespace</a>(nd))</div>
+<div class="line"><a name="l01365"></a><span class="lineno"> 1365</span>&#160;    {</div>
+<div class="line"><a name="l01366"></a><span class="lineno"> 1366</span>&#160;      <a class="code" href="../../dd/dd5/class_namespace_def_mutable.html">NamespaceDefMutable</a> *ndm = <a class="code" href="../../d7/d1c/namespacedef_8cpp.html#abf332da6cea56db7e7e6c61889808345">toNamespaceDefMutable</a>(nd);</div>
+<div class="line"><a name="l01367"></a><span class="lineno"> 1367</span>&#160;      <span class="keywordflow">if</span> (ndm)</div>
+<div class="line"><a name="l01368"></a><span class="lineno"> 1368</span>&#160;      {</div>
+<div class="line"><a name="l01369"></a><span class="lineno"> 1369</span>&#160;        ndm-&gt;<a class="code" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">makePartOfGroup</a>(gd);</div>
+<div class="line"><a name="l01370"></a><span class="lineno"> 1370</span>&#160;      }</div>
+<div class="line"><a name="l01371"></a><span class="lineno"> 1371</span>&#160;      <span class="comment">//printf(&quot;Namespace %s: in group %s\n&quot;,qPrint(nd-&gt;name()),qPrint(gd-&gt;name()));</span></div>
+<div class="line"><a name="l01372"></a><span class="lineno"> 1372</span>&#160;    }</div>
+<div class="line"><a name="l01373"></a><span class="lineno"> 1373</span>&#160;  }</div>
+<div class="line"><a name="l01374"></a><span class="lineno"> 1374</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d8/d09/class_group_def.html#ab5143aa261c4a8fb11e11d8fc83a74a4">GroupDef::addNamespace()</a>, <a class="el" href="../../da/de1/linkedmap_8h_source.html#l00060">LinkedMap&lt; T, Hash, KeyEqual, Map &gt;::find()</a>, <a class="el" href="../../d1/da1/doxygen_8h_source.html#l00096">Doxygen::groupLinkedMap</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00095">Grouping::groupname</a>, <a class="el" href="../../d1/dc6/entry_8h_source.html#l00288">Entry::groups</a>, <a class="el" href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">DefinitionMutable::makePartOfGroup()</a> , 以及 <a class="el" href="../../d7/d1c/namespacedef_8cpp_source.html#l01579">toNamespaceDefMutable()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l01648">buildNamespaceList()</a>.</p>
+
+</div>
+</div>
+<a id="a44ef897c17c5f42088f5530e5127c10e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44ef897c17c5f42088f5530e5127c10e">&#9670;&nbsp;</a></span>createGroupDef()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d09/class_group_def.html">GroupDef</a>* createGroupDef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>refFileName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l00162">162</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;{</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="../../db/d22/class_group_def_impl.html">GroupDefImpl</a>(fileName,line,name,title,refFileName);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l00339">buildGroupListFiltered()</a>.</p>
+
+</div>
+</div>
+<a id="a553cf15878cf6e6bdcecf5f8698f4349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a553cf15878cf6e6bdcecf5f8698f4349">&#9670;&nbsp;</a></span>groupClassesWithSameScope()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Vec &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void groupClassesWithSameScope </td>
+          <td>(</td>
+          <td class="paramtype">Vec &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01597">1597</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01598"></a><span class="lineno"> 1598</span>&#160;{</div>
+<div class="line"><a name="l01599"></a><span class="lineno"> 1599</span>&#160;  <span class="keywordtype">bool</span> done=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l01600"></a><span class="lineno"> 1600</span>&#160;  <span class="keywordflow">while</span> (!done) <span class="comment">// for each iteration</span></div>
+<div class="line"><a name="l01601"></a><span class="lineno"> 1601</span>&#160;  {</div>
+<div class="line"><a name="l01602"></a><span class="lineno"> 1602</span>&#160;    done=<span class="keyword">true</span>;</div>
+<div class="line"><a name="l01603"></a><span class="lineno"> 1603</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0; i&lt;vec.size(); i++) <span class="comment">// go through all items</span></div>
+<div class="line"><a name="l01604"></a><span class="lineno"> 1604</span>&#160;    {</div>
+<div class="line"><a name="l01605"></a><span class="lineno"> 1605</span>&#160;      std::string qni = vec[i]-&gt;name().str();</div>
+<div class="line"><a name="l01606"></a><span class="lineno"> 1606</span>&#160;      <span class="keywordtype">size_t</span> posi = qni.rfind(<span class="stringliteral">&quot;::&quot;</span>);</div>
+<div class="line"><a name="l01607"></a><span class="lineno"> 1607</span>&#160;      <span class="keywordflow">if</span> (posi!=std::string::npos)</div>
+<div class="line"><a name="l01608"></a><span class="lineno"> 1608</span>&#160;      {</div>
+<div class="line"><a name="l01609"></a><span class="lineno"> 1609</span>&#160;        std::string scope = qni.substr(0,posi);</div>
+<div class="line"><a name="l01610"></a><span class="lineno"> 1610</span>&#160;        <span class="keyword">auto</span> it = std::find_if( vec.begin(), vec.end(),</div>
+<div class="line"><a name="l01611"></a><span class="lineno"> 1611</span>&#160;            [&amp;](<span class="keyword">typename</span> Vec::Ptr &amp;cd)</div>
+<div class="line"><a name="l01612"></a><span class="lineno"> 1612</span>&#160;            { return cd-&gt;name().str()==scope; });</div>
+<div class="line"><a name="l01613"></a><span class="lineno"> 1613</span>&#160;        <span class="keywordflow">if</span> (it!=vec.end())</div>
+<div class="line"><a name="l01614"></a><span class="lineno"> 1614</span>&#160;        {</div>
+<div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160;          <span class="keywordtype">size_t</span> idx = std::distance(vec.begin(),it);</div>
+<div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;          <span class="keywordflow">if</span> (i&lt;idx) <span class="comment">// parent scope located after child scope</span></div>
+<div class="line"><a name="l01617"></a><span class="lineno"> 1617</span>&#160;          {</div>
+<div class="line"><a name="l01618"></a><span class="lineno"> 1618</span>&#160;            <span class="comment">// to avoid reordering elements with the same parent</span></div>
+<div class="line"><a name="l01619"></a><span class="lineno"> 1619</span>&#160;            <span class="comment">// we skip to the last one with the same scope</span></div>
+<div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160;            <span class="keywordtype">size_t</span> k = idx;</div>
+<div class="line"><a name="l01621"></a><span class="lineno"> 1621</span>&#160;            <span class="keywordflow">while</span> (k&lt;vec.size() &amp;&amp; vec[k]-&gt;name().str().substr(0,posi)==scope)</div>
+<div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;            {</div>
+<div class="line"><a name="l01623"></a><span class="lineno"> 1623</span>&#160;              idx = k;</div>
+<div class="line"><a name="l01624"></a><span class="lineno"> 1624</span>&#160;              k++;</div>
+<div class="line"><a name="l01625"></a><span class="lineno"> 1625</span>&#160;            }</div>
+<div class="line"><a name="l01626"></a><span class="lineno"> 1626</span>&#160;            <span class="comment">// swap the items such that i is inserted after idx</span></div>
+<div class="line"><a name="l01627"></a><span class="lineno"> 1627</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j=i; j&lt;idx; j++)</div>
+<div class="line"><a name="l01628"></a><span class="lineno"> 1628</span>&#160;            {</div>
+<div class="line"><a name="l01629"></a><span class="lineno"> 1629</span>&#160;              std::swap(vec[j],vec[j+1]);</div>
+<div class="line"><a name="l01630"></a><span class="lineno"> 1630</span>&#160;            }</div>
+<div class="line"><a name="l01631"></a><span class="lineno"> 1631</span>&#160;            done=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l01632"></a><span class="lineno"> 1632</span>&#160;          }</div>
+<div class="line"><a name="l01633"></a><span class="lineno"> 1633</span>&#160;          <span class="keywordflow">else</span> <span class="keywordflow">if</span> (idx&lt;i &amp;&amp; vec[i-1]-&gt;name().str().substr(0,posi)!=scope)</div>
+<div class="line"><a name="l01634"></a><span class="lineno"> 1634</span>&#160;          {</div>
+<div class="line"><a name="l01635"></a><span class="lineno"> 1635</span>&#160;            <span class="comment">// parent scope is found before the item, and the item</span></div>
+<div class="line"><a name="l01636"></a><span class="lineno"> 1636</span>&#160;            <span class="comment">// has some other item with a different scope in front of it</span></div>
+<div class="line"><a name="l01637"></a><span class="lineno"> 1637</span>&#160;            <span class="comment">// move idx to the end of range with the same scope</span></div>
+<div class="line"><a name="l01638"></a><span class="lineno"> 1638</span>&#160;            <span class="keywordflow">while</span> (idx&lt;i &amp;&amp; vec[idx]-&gt;name().str().substr(0,posi)==scope)</div>
+<div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;            {</div>
+<div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;              idx++;</div>
+<div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;            }</div>
+<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;            <span class="comment">// swap the items such that i is just after idx</span></div>
+<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j=idx; j&lt;i; j++)</div>
+<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;            {</div>
+<div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;              std::swap(vec[j],vec[j+1]);</div>
+<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160;            }</div>
+<div class="line"><a name="l01647"></a><span class="lineno"> 1647</span>&#160;            done=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;          }</div>
+<div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;        }</div>
+<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;      }</div>
+<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;    }</div>
+<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;  }</div>
+<div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01655">GroupDefImpl::sortMemberLists()</a>.</p>
+
+</div>
+</div>
+<a id="a95f6cd5f66745e3e1fa832af1df1a805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95f6cd5f66745e3e1fa832af1df1a805">&#9670;&nbsp;</a></span>toGroupDef() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d8/d09/class_group_def.html">GroupDef</a>* toGroupDef </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01779">1779</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01780"></a><span class="lineno"> 1780</span>&#160;{</div>
+<div class="line"><a name="l01781"></a><span class="lineno"> 1781</span>&#160;  <span class="keywordflow">if</span> (d==0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01782"></a><span class="lineno"> 1782</span>&#160;  <span class="keywordflow">if</span> (d &amp;&amp; <span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../db/d22/class_group_def_impl.html">GroupDefImpl</a>))</div>
+<div class="line"><a name="l01783"></a><span class="lineno"> 1783</span>&#160;  {</div>
+<div class="line"><a name="l01784"></a><span class="lineno"> 1784</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a>*<span class="keyword">&gt;</span>(d);</div>
+<div class="line"><a name="l01785"></a><span class="lineno"> 1785</span>&#160;  }</div>
+<div class="line"><a name="l01786"></a><span class="lineno"> 1786</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01787"></a><span class="lineno"> 1787</span>&#160;  {</div>
+<div class="line"><a name="l01788"></a><span class="lineno"> 1788</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01789"></a><span class="lineno"> 1789</span>&#160;  }</div>
+<div class="line"><a name="l01790"></a><span class="lineno"> 1790</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae35a881571d26412b9c9d8017ba1e542"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae35a881571d26412b9c9d8017ba1e542">&#9670;&nbsp;</a></span>toGroupDef() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d8/d09/class_group_def.html">GroupDef</a>* toGroupDef </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d5/dcc/class_definition.html">Definition</a> *&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html">groupdef.cpp</a> 第 <a class="el" href="../../d6/d42/groupdef_8cpp_source.html#l01766">1766</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01767"></a><span class="lineno"> 1767</span>&#160;{</div>
+<div class="line"><a name="l01768"></a><span class="lineno"> 1768</span>&#160;  <span class="keywordflow">if</span> (d==0) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01769"></a><span class="lineno"> 1769</span>&#160;  <span class="keywordflow">if</span> (d &amp;&amp; <span class="keyword">typeid</span>(*d)==<span class="keyword">typeid</span>(<a class="code" href="../../db/d22/class_group_def_impl.html">GroupDefImpl</a>))</div>
+<div class="line"><a name="l01770"></a><span class="lineno"> 1770</span>&#160;  {</div>
+<div class="line"><a name="l01771"></a><span class="lineno"> 1771</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d8/d09/class_group_def.html">GroupDef</a>*<span class="keyword">&gt;</span>(d);</div>
+<div class="line"><a name="l01772"></a><span class="lineno"> 1772</span>&#160;  }</div>
+<div class="line"><a name="l01773"></a><span class="lineno"> 1773</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01774"></a><span class="lineno"> 1774</span>&#160;  {</div>
+<div class="line"><a name="l01775"></a><span class="lineno"> 1775</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l01776"></a><span class="lineno"> 1776</span>&#160;  }</div>
+<div class="line"><a name="l01777"></a><span class="lineno"> 1777</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d12/context_8cpp_source.html#l05368">NestingNodeContext::Private::addClasses()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l05401">NestingNodeContext::Private::addConcepts()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l05433">NestingNodeContext::Private::addDirFiles()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l05468">NestingNodeContext::Private::addMembers()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l05460">NestingNodeContext::Private::addModules()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l05409">NestingNodeContext::Private::addNamespaces()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l05447">NestingNodeContext::Private::addPages()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l05577">NestingNodeContext::Private::createModule()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l02386">DocRef::DocRef()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l03151">generateLink()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l01015">DocParser::handleLinkedWord()</a>, <a class="el" href="../../d3/dea/definition_8cpp_source.html#l01337">DefinitionImpl::navigationPathAsString()</a>, <a class="el" href="../../d3/dea/definition_8cpp_source.html#l01299">DefinitionImpl::pathFragment()</a>, <a class="el" href="../../d7/d79/searchindex_8cpp_source.html#l00546">searchName()</a>, <a class="el" href="../../d7/d79/searchindex_8cpp_source.html#l00085">SearchIndex::setCurrentDoc()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l07002">NavPathElemContext::Private::text()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l07495">validatingParseDoc()</a> , 以及 <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l03217">MemberDefImpl::writeDocumentation()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_concept_def_mutable_html"><div class="ttname"><a href="../../d4/deb/class_concept_def_mutable.html">ConceptDefMutable</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/df1/conceptdef_8h_source.html#l00042">conceptdef.h:42</a></div></div>
+<div class="ttc" id="astruct_grouping_html_ae38a9f0b7428a2539810e4e782a740af"><div class="ttname"><a href="../../d7/d59/struct_grouping.html#ae38a9f0b7428a2539810e4e782a740af">Grouping::getGroupPriName</a></div><div class="ttdeci">static const char * getGroupPriName(GroupPri_t priority)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00078">types.h:78</a></div></div>
+<div class="ttc" id="aclass_group_def_html_a0bfa26b9f4fa02aa369796b4881ff1af"><div class="ttname"><a href="../../d8/d09/class_group_def.html#a0bfa26b9f4fa02aa369796b4881ff1af">GroupDef::insertMember</a></div><div class="ttdeci">virtual bool insertMember(const MemberDef *def, bool docOnly=FALSE)=0</div></div>
+<div class="ttc" id="aclass_class_def_mutable_html"><div class="ttname"><a href="../../d0/dc2/class_class_def_mutable.html">ClassDefMutable</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da6/classdef_8h_source.html#l00384">classdef.h:384</a></div></div>
+<div class="ttc" id="amemberdef_8cpp_html_ab7df246eb40992f54d60d8a31f0ad038"><div class="ttname"><a href="../../d0/d72/memberdef_8cpp.html#ab7df246eb40992f54d60d8a31f0ad038">toMemberDefMutable</a></div><div class="ttdeci">MemberDefMutable * toMemberDefMutable(Definition *d)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d72/memberdef_8cpp_source.html#l06125">memberdef.cpp:6125</a></div></div>
+<div class="ttc" id="aclass_entry_html_a81bf40c0a6646dc1e33097d7e2552c96"><div class="ttname"><a href="../../d4/dd7/class_entry.html#a81bf40c0a6646dc1e33097d7e2552c96">Entry::startLine</a></div><div class="ttdeci">int startLine</div><div class="ttdoc">start line of entry in the source</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc6/entry_8h_source.html#l00291">entry.h:291</a></div></div>
+<div class="ttc" id="astruct_grouping_html_aead55d7198ceffe16cb82d2c114e4254"><div class="ttname"><a href="../../d7/d59/struct_grouping.html#aead55d7198ceffe16cb82d2c114e4254">Grouping::pri</a></div><div class="ttdeci">GroupPri_t pri</div><div class="ttdoc">priority of this definition</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00096">types.h:96</a></div></div>
+<div class="ttc" id="aclass_member_def_html_a9ed95e7cef3948c6a978540c0d48bca7"><div class="ttname"><a href="../../da/d09/class_member_def.html#a9ed95e7cef3948c6a978540c0d48bca7">MemberDef::getGroupPri</a></div><div class="ttdeci">virtual Grouping::GroupPri_t getGroupPri() const =0</div></div>
+<div class="ttc" id="aclass_q_c_string_html_ac52596733e9110b778019946d73fb268"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">QCString::length</a></div><div class="ttdeci">uint length() const</div><div class="ttdoc">Returns the length of the string, not counting the 0-terminator.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00147">qcstring.h:147</a></div></div>
+<div class="ttc" id="aclass_member_def_html_acb9da3d6b3e2f3e8102ee9a3380c0746"><div class="ttname"><a href="../../da/d09/class_member_def.html#acb9da3d6b3e2f3e8102ee9a3380c0746">MemberDef::getGroupFileName</a></div><div class="ttdeci">virtual QCString getGroupFileName() const =0</div></div>
+<div class="ttc" id="aclass_q_c_string_html_a621c4090d69ad7d05ef8e5234376c3d8"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">QCString::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Returns TRUE iff the string is empty</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00144">qcstring.h:144</a></div></div>
+<div class="ttc" id="aclass_member_def_html_a1106df55d1622462e441df5e09b42cd3"><div class="ttname"><a href="../../da/d09/class_member_def.html#a1106df55d1622462e441df5e09b42cd3">MemberDef::getClassDefOfAnonymousType</a></div><div class="ttdeci">virtual ClassDef * getClassDefOfAnonymousType() const =0</div></div>
+<div class="ttc" id="aclass_group_def_html_ab5143aa261c4a8fb11e11d8fc83a74a4"><div class="ttname"><a href="../../d8/d09/class_group_def.html#ab5143aa261c4a8fb11e11d8fc83a74a4">GroupDef::addNamespace</a></div><div class="ttdeci">virtual bool addNamespace(const NamespaceDef *def)=0</div></div>
+<div class="ttc" id="astruct_grouping_html"><div class="ttname"><a href="../../d7/d59/struct_grouping.html">Grouping</a></div><div class="ttdoc">Grouping info</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00064">types.h:64</a></div></div>
+<div class="ttc" id="astruct_grouping_html_a9f0ec5ab376b083ebe3274ea79fd2d70a251075fcb0324e4f5f3d7bc8767ca06b"><div class="ttname"><a href="../../d7/d59/struct_grouping.html#a9f0ec5ab376b083ebe3274ea79fd2d70a251075fcb0324e4f5f3d7bc8767ca06b">Grouping::GROUPING_LOWEST</a></div><div class="ttdeci">@ GROUPING_LOWEST</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00069">types.h:69</a></div></div>
+<div class="ttc" id="aclass_group_def_html_ae45ddb8cd0794f2b9763d660ef01cf03"><div class="ttname"><a href="../../d8/d09/class_group_def.html#ae45ddb8cd0794f2b9763d660ef01cf03">GroupDef::addClass</a></div><div class="ttdeci">virtual bool addClass(const ClassDef *def)=0</div></div>
+<div class="ttc" id="aclass_member_def_mutable_html"><div class="ttname"><a href="../../dd/d4b/class_member_def_mutable.html">MemberDefMutable</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d46/memberdef_8h_source.html#l00296">memberdef.h:296</a></div></div>
+<div class="ttc" id="amessage_8cpp_html_ab9900b0a7af62acd881e57901b0418a1"><div class="ttname"><a href="../../d8/d6a/message_8cpp.html#ab9900b0a7af62acd881e57901b0418a1">warn</a></div><div class="ttdeci">void warn(const QCString &amp;file, int line, const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d6a/message_8cpp_source.html#l00151">message.cpp:151</a></div></div>
+<div class="ttc" id="aclass_entry_html_ac02a6c1dd922221351f6de0286d48d77"><div class="ttname"><a href="../../d4/dd7/class_entry.html#ac02a6c1dd922221351f6de0286d48d77">Entry::doc</a></div><div class="ttdeci">QCString doc</div><div class="ttdoc">documentation block (partly parsed)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc6/entry_8h_source.html#l00267">entry.h:267</a></div></div>
+<div class="ttc" id="aclass_group_def_html_ab3aafb766c4b074061d755cf39652040"><div class="ttname"><a href="../../d8/d09/class_group_def.html#ab3aafb766c4b074061d755cf39652040">GroupDef::addConcept</a></div><div class="ttdeci">virtual bool addConcept(const ConceptDef *def)=0</div></div>
+<div class="ttc" id="aclass_group_def_html_a1cefe14a8b4f2004a76bbcca39e5aada"><div class="ttname"><a href="../../d8/d09/class_group_def.html#a1cefe14a8b4f2004a76bbcca39e5aada">GroupDef::addDir</a></div><div class="ttdeci">virtual void addDir(DirDef *dd)=0</div></div>
+<div class="ttc" id="aclass_group_def_html"><div class="ttname"><a href="../../d8/d09/class_group_def.html">GroupDef</a></div><div class="ttdoc">A model of a group of symbols.</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/de6/groupdef_8h_source.html#l00049">groupdef.h:49</a></div></div>
+<div class="ttc" id="anamespacedef_8cpp_html_abf332da6cea56db7e7e6c61889808345"><div class="ttname"><a href="../../d7/d1c/namespacedef_8cpp.html#abf332da6cea56db7e7e6c61889808345">toNamespaceDefMutable</a></div><div class="ttdeci">NamespaceDefMutable * toNamespaceDefMutable(Definition *d)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d1c/namespacedef_8cpp_source.html#l01579">namespacedef.cpp:1579</a></div></div>
+<div class="ttc" id="aclass_class_def_mutable_html_a587dbea5e2811999a97fcedbb5619eff"><div class="ttname"><a href="../../d0/dc2/class_class_def_mutable.html#a587dbea5e2811999a97fcedbb5619eff">ClassDefMutable::setGroupDefForAllMembers</a></div><div class="ttdeci">virtual void setGroupDefForAllMembers(GroupDef *g, Grouping::GroupPri_t pri, const QCString &amp;fileName, int startLine, bool hasDocs)=0</div></div>
+<div class="ttc" id="aclass_definition_mutable_html_a8a631fedd4f1f258fa0d1edc06cefae3"><div class="ttname"><a href="../../d0/d46/class_definition_mutable.html#a8a631fedd4f1f258fa0d1edc06cefae3">DefinitionMutable::makePartOfGroup</a></div><div class="ttdeci">virtual void makePartOfGroup(const GroupDef *gd)=0</div></div>
+<div class="ttc" id="aclass_member_def_html_ac177650dbe186ef098f69f349f7f8cca"><div class="ttname"><a href="../../da/d09/class_member_def.html#ac177650dbe186ef098f69f349f7f8cca">MemberDef::enumFieldList</a></div><div class="ttdeci">virtual const MemberVector &amp; enumFieldList() const =0</div></div>
+<div class="ttc" id="aclass_group_def_impl_html"><div class="ttname"><a href="../../db/d22/class_group_def_impl.html">GroupDefImpl</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d42/groupdef_8cpp_source.html#l00052">groupdef.cpp:52</a></div></div>
+<div class="ttc" id="aclass_member_def_html_a01cb4b118d46ca86b9475e1d243560b1"><div class="ttname"><a href="../../da/d09/class_member_def.html#a01cb4b118d46ca86b9475e1d243560b1">MemberDef::getGroupHasDocs</a></div><div class="ttdeci">virtual bool getGroupHasDocs() const =0</div></div>
+<div class="ttc" id="aclass_group_def_html_a62090524551868d7e7016245b3800d1b"><div class="ttname"><a href="../../d8/d09/class_group_def.html#a62090524551868d7e7016245b3800d1b">GroupDef::removeMember</a></div><div class="ttdeci">virtual void removeMember(MemberDef *md)=0</div></div>
+<div class="ttc" id="aclass_definition_html_a9374fedd7f64fea7e0e164302d1a9e61"><div class="ttname"><a href="../../d5/dcc/class_definition.html#a9374fedd7f64fea7e0e164302d1a9e61">Definition::name</a></div><div class="ttdeci">virtual QCString name() const =0</div></div>
+<div class="ttc" id="aclass_doxygen_html_afd89d49084b42d085e9d40fc2636da9c"><div class="ttname"><a href="../../de/d6a/class_doxygen.html#afd89d49084b42d085e9d40fc2636da9c">Doxygen::groupLinkedMap</a></div><div class="ttdeci">static GroupLinkedMap * groupLinkedMap</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/da1/doxygen_8h_source.html#l00096">doxygen.h:96</a></div></div>
+<div class="ttc" id="aclass_group_def_html_aaed7ecf363f35a6c75f973aa6467e3d6"><div class="ttname"><a href="../../d8/d09/class_group_def.html#aaed7ecf363f35a6c75f973aa6467e3d6">GroupDef::addGroup</a></div><div class="ttdeci">virtual void addGroup(const GroupDef *def)=0</div></div>
+<div class="ttc" id="astruct_grouping_html_a9f0ec5ab376b083ebe3274ea79fd2d70"><div class="ttname"><a href="../../d7/d59/struct_grouping.html#a9f0ec5ab376b083ebe3274ea79fd2d70">Grouping::GroupPri_t</a></div><div class="ttdeci">GroupPri_t</div><div class="ttdoc">Grouping priority</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00067">types.h:67</a></div></div>
+<div class="ttc" id="aclass_member_def_mutable_html_a6b4b95698619165c9c6ce99a1ca4ef58"><div class="ttname"><a href="../../dd/d4b/class_member_def_mutable.html#a6b4b95698619165c9c6ce99a1ca4ef58">MemberDefMutable::setGroupDef</a></div><div class="ttdeci">virtual void setGroupDef(const GroupDef *gd, Grouping::GroupPri_t pri, const QCString &amp;fileName, int startLine, bool hasDocs, MemberDef *member=0)=0</div></div>
+<div class="ttc" id="aqcstring_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00036">qcstring.h:36</a></div></div>
+<div class="ttc" id="aclass_linked_map_html_adc1bfe9084c4b2a9aa97c184f439cc98"><div class="ttname"><a href="../../d0/d2c/class_linked_map.html#adc1bfe9084c4b2a9aa97c184f439cc98">LinkedMap::find</a></div><div class="ttdeci">const T * find(const std::string &amp;key) const</div><div class="ttdoc">Find an object given the key.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de1/linkedmap_8h_source.html#l00060">linkedmap.h:60</a></div></div>
+<div class="ttc" id="aclass_group_def_html_abbfc95b7ea35546a40a4335fd84f7d1c"><div class="ttname"><a href="../../d8/d09/class_group_def.html#abbfc95b7ea35546a40a4335fd84f7d1c">GroupDef::addExample</a></div><div class="ttdeci">virtual void addExample(const PageDef *def)=0</div></div>
+<div class="ttc" id="aclass_member_def_html_adbdbd0e3d3630af579a02e97e162a328"><div class="ttname"><a href="../../da/d09/class_member_def.html#adbdbd0e3d3630af579a02e97e162a328">MemberDef::isStrong</a></div><div class="ttdeci">virtual bool isStrong() const =0</div></div>
+<div class="ttc" id="aclass_entry_html_a736f1dfadfe0c0fabb022c533aa27fdc"><div class="ttname"><a href="../../d4/dd7/class_entry.html#a736f1dfadfe0c0fabb022c533aa27fdc">Entry::fileName</a></div><div class="ttdeci">QCString fileName</div><div class="ttdoc">file this entry was extracted from</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc6/entry_8h_source.html#l00290">entry.h:290</a></div></div>
+<div class="ttc" id="astruct_grouping_html_a05e6a053a86cc2f588d065f3880801dc"><div class="ttname"><a href="../../d7/d59/struct_grouping.html#a05e6a053a86cc2f588d065f3880801dc">Grouping::groupname</a></div><div class="ttdeci">QCString groupname</div><div class="ttdoc">name of the group</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00095">types.h:95</a></div></div>
+<div class="ttc" id="aclass_member_def_html_ab99e728441f3ce7d5784ad6fb6df18f2"><div class="ttname"><a href="../../da/d09/class_member_def.html#ab99e728441f3ce7d5784ad6fb6df18f2">MemberDef::isEnumerate</a></div><div class="ttdeci">virtual bool isEnumerate() const =0</div></div>
+<div class="ttc" id="aqcstring_8h_html_a890ee170378f24ba7c44f92c35ec95ce"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a></div><div class="ttdeci">const char * qPrint(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00589">qcstring.h:589</a></div></div>
+<div class="ttc" id="aclass_namespace_def_mutable_html"><div class="ttname"><a href="../../dd/dd5/class_namespace_def_mutable.html">NamespaceDefMutable</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d97/namespacedef_8h_source.html#l00106">namespacedef.h:106</a></div></div>
+<div class="ttc" id="aclass_member_def_html_a5d3b273949bc92e2b88e981aebc789bd"><div class="ttname"><a href="../../da/d09/class_member_def.html#a5d3b273949bc92e2b88e981aebc789bd">MemberDef::getGroupStartLine</a></div><div class="ttdeci">virtual int getGroupStartLine() const =0</div></div>
+<div class="ttc" id="aclass_group_def_html_abbcaaf2e683208c173158a73d512edd0"><div class="ttname"><a href="../../d8/d09/class_group_def.html#abbcaaf2e683208c173158a73d512edd0">GroupDef::findGroup</a></div><div class="ttdeci">virtual bool findGroup(const GroupDef *def) const =0</div></div>
+<div class="ttc" id="aclassdef_8cpp_html_ae84551f3738567a53c115c84efede554"><div class="ttname"><a href="../../de/d89/classdef_8cpp.html#ae84551f3738567a53c115c84efede554">toClassDefMutable</a></div><div class="ttdeci">ClassDefMutable * toClassDefMutable(Definition *d)</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d89/classdef_8cpp_source.html#l04944">classdef.cpp:4944</a></div></div>
+<div class="ttc" id="aconceptdef_8cpp_html_a4469a1fd260b107eafdc4d31e158ba41"><div class="ttname"><a href="../../d8/d0a/conceptdef_8cpp.html#a4469a1fd260b107eafdc4d31e158ba41">toConceptDefMutable</a></div><div class="ttdeci">ConceptDefMutable * toConceptDefMutable(Definition *d)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0a/conceptdef_8cpp_source.html#l00713">conceptdef.cpp:713</a></div></div>
+<div class="ttc" id="aclass_entry_html_a7a7b0a48faf21641b21124fb8381aa1e"><div class="ttname"><a href="../../d4/dd7/class_entry.html#a7a7b0a48faf21641b21124fb8381aa1e">Entry::groups</a></div><div class="ttdeci">std::vector&lt; Grouping &gt; groups</div><div class="ttdoc">list of groups this entry belongs to</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc6/entry_8h_source.html#l00288">entry.h:288</a></div></div>
+<div class="ttc" id="aclass_member_def_html_a4c0aeff2ad85fd63cf65635b6d1b28cc"><div class="ttname"><a href="../../da/d09/class_member_def.html#a4c0aeff2ad85fd63cf65635b6d1b28cc">MemberDef::getGroupDef</a></div><div class="ttdeci">virtual const GroupDef * getGroupDef() const =0</div></div>
+<div class="ttc" id="aqcstring_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00033">qcstring.h:33</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d6/d42/groupdef_8cpp.html">groupdef.cpp</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:57 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

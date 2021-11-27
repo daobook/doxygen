@@ -1,0 +1,620 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: ParserManager类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d4/d0d/class_parser_manager.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../dd/d50/class_parser_manager-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">ParserManager类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Manages programming language parsers.  
+ <a href="../../d4/d0d/class_parser_manager.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> ParserManager 的协作图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html">ParserPair</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:a4716da035dc5a2d86712c473789235b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#a4716da035dc5a2d86712c473789235b9">ParserManager</a> (<a class="el" href="../../da/d55/parserintf_8h.html#afda01ba4e899f06f0fbbd2b0f79fd5cf">OutlineParserFactory</a> outlineParserFactory, <a class="el" href="../../da/d55/parserintf_8h.html#ab3d33d80825a6d236fc1ca772325c12e">CodeParserFactory</a> codeParserFactory)</td></tr>
+<tr class="memdesc:a4716da035dc5a2d86712c473789235b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the parser manager  <a href="../../d4/d0d/class_parser_manager.html#a4716da035dc5a2d86712c473789235b9">更多...</a><br /></td></tr>
+<tr class="separator:a4716da035dc5a2d86712c473789235b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3fd2274adef4a45c05ee1c56ffedd5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#ae3fd2274adef4a45c05ee1c56ffedd5b">registerParser</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;name, <a class="el" href="../../da/d55/parserintf_8h.html#afda01ba4e899f06f0fbbd2b0f79fd5cf">OutlineParserFactory</a> outlineParserFactory, <a class="el" href="../../da/d55/parserintf_8h.html#ab3d33d80825a6d236fc1ca772325c12e">CodeParserFactory</a> codeParserFactory)</td></tr>
+<tr class="memdesc:ae3fd2274adef4a45c05ee1c56ffedd5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers an additional parser.  <a href="../../d4/d0d/class_parser_manager.html#ae3fd2274adef4a45c05ee1c56ffedd5b">更多...</a><br /></td></tr>
+<tr class="separator:ae3fd2274adef4a45c05ee1c56ffedd5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a150d4d51073cb46cdf38a236cc120d0a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#a150d4d51073cb46cdf38a236cc120d0a">registerExtension</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;extension, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;parserName)</td></tr>
+<tr class="memdesc:a150d4d51073cb46cdf38a236cc120d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a file <em>extension</em> with a parser with name <em>parserName</em>.  <a href="../../d4/d0d/class_parser_manager.html#a150d4d51073cb46cdf38a236cc120d0a">更多...</a><br /></td></tr>
+<tr class="separator:a150d4d51073cb46cdf38a236cc120d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00953c900615c4c72e3a77bd64704da8"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d5/d79/class_outline_parser_interface.html">OutlineParserInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#a00953c900615c4c72e3a77bd64704da8">getOutlineParser</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;extension)</td></tr>
+<tr class="memdesc:a00953c900615c4c72e3a77bd64704da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the interface to the parser associated with a given <em>extension</em>.  <a href="../../d4/d0d/class_parser_manager.html#a00953c900615c4c72e3a77bd64704da8">更多...</a><br /></td></tr>
+<tr class="separator:a00953c900615c4c72e3a77bd64704da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a041a5a0e0fed15c9ec48a8eedd9c32e7"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="../../d4/d65/class_code_parser_interface.html">CodeParserInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#a041a5a0e0fed15c9ec48a8eedd9c32e7">getCodeParser</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;extension)</td></tr>
+<tr class="memdesc:a041a5a0e0fed15c9ec48a8eedd9c32e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the interface to the parser associated with a given <em>extension</em>.  <a href="../../d4/d0d/class_parser_manager.html#a041a5a0e0fed15c9ec48a8eedd9c32e7">更多...</a><br /></td></tr>
+<tr class="separator:a041a5a0e0fed15c9ec48a8eedd9c32e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb2ccc90175c88dcf89566d2a8bc02c8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d55/parserintf_8h.html#ab3d33d80825a6d236fc1ca772325c12e">CodeParserFactory</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#abb2ccc90175c88dcf89566d2a8bc02c8">getCodeParserFactory</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;extension)</td></tr>
+<tr class="memdesc:abb2ccc90175c88dcf89566d2a8bc02c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the factory for create code parser objects with a given <em>extension</em>.  <a href="../../d4/d0d/class_parser_manager.html#abb2ccc90175c88dcf89566d2a8bc02c8">更多...</a><br /></td></tr>
+<tr class="separator:abb2ccc90175c88dcf89566d2a8bc02c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af629ad3cc57868b383cb02601fd9c7b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#af629ad3cc57868b383cb02601fd9c7b4">getParserName</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;extension)</td></tr>
+<tr class="memdesc:af629ad3cc57868b383cb02601fd9c7b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the parser associated with given <em>extension</em>.  <a href="../../d4/d0d/class_parser_manager.html#af629ad3cc57868b383cb02601fd9c7b4">更多...</a><br /></td></tr>
+<tr class="separator:af629ad3cc57868b383cb02601fd9c7b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a28c8d07348e3667d350dc463ab568a84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html">ParserPair</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#a28c8d07348e3667d350dc463ab568a84">getParsers</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;extension)</td></tr>
+<tr class="separator:a28c8d07348e3667d350dc463ab568a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a20879de66f3c9555ec87f31d878e729b"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html">ParserPair</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#a20879de66f3c9555ec87f31d878e729b">m_parsers</a></td></tr>
+<tr class="separator:a20879de66f3c9555ec87f31d878e729b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8743402c91d10a0a1549354ffb1c68d"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <a class="el" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html">ParserPair</a> &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#ad8743402c91d10a0a1549354ffb1c68d">m_extensions</a></td></tr>
+<tr class="separator:ad8743402c91d10a0a1549354ffb1c68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60479453dc57c884b1411f13beedb929"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html">ParserPair</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d0d/class_parser_manager.html#a60479453dc57c884b1411f13beedb929">m_defaultParsers</a></td></tr>
+<tr class="separator:a60479453dc57c884b1411f13beedb929"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Manages programming language parsers. </p>
+<p>This class manages the language parsers in the system. One can register parsers, and obtain a parser given a file extension. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00145">145</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="a4716da035dc5a2d86712c473789235b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4716da035dc5a2d86712c473789235b9">&#9670;&nbsp;</a></span>ParserManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ParserManager::ParserManager </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../da/d55/parserintf_8h.html#afda01ba4e899f06f0fbbd2b0f79fd5cf">OutlineParserFactory</a>&#160;</td>
+          <td class="paramname"><em>outlineParserFactory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d55/parserintf_8h.html#ab3d33d80825a6d236fc1ca772325c12e">CodeParserFactory</a>&#160;</td>
+          <td class="paramname"><em>codeParserFactory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create the parser manager </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">outlineParserFactory</td><td>the fallback outline parser factory to use for unknown extensions </td></tr>
+    <tr><td class="paramname">codeParserFactory</td><td>the fallback code parser factory to use for unknown extensions </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00165">165</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;      : <a class="code" href="../../d4/d0d/class_parser_manager.html#a60479453dc57c884b1411f13beedb929">m_defaultParsers</a>(outlineParserFactory,codeParserFactory, <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>())</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    {</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a041a5a0e0fed15c9ec48a8eedd9c32e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a041a5a0e0fed15c9ec48a8eedd9c32e7">&#9670;&nbsp;</a></span>getCodeParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../d4/d65/class_code_parser_interface.html">CodeParserInterface</a>&gt; ParserManager::getCodeParser </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>extension</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the interface to the parser associated with a given <em>extension</em>. </p>
+<p>If there is no parser explicitly registered for the supplied extension, the interface to the default parser will be returned. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00217">217</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;      <span class="keyword">auto</span> factory = <a class="code" href="../../d4/d0d/class_parser_manager.html#abb2ccc90175c88dcf89566d2a8bc02c8">getCodeParserFactory</a>(extension);</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;      <span class="keywordflow">return</span> factory();</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00224">getCodeParserFactory()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d0/d72/memberdef_8cpp_source.html#l03190">MemberDefImpl::_writeMultiLineInitializer()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l09338">generateExampleDocs()</a>, <a class="el" href="../../db/d12/context_8cpp_source.html#l01280">parseCode()</a>, <a class="el" href="../../d6/ddc/filedef_8cpp_source.html#l01192">FileDefImpl::parseSource()</a>, <a class="el" href="../../d8/d0a/conceptdef_8cpp_source.html#l00394">ConceptDefImpl::writeDefinition()</a>, <a class="el" href="../../d3/dea/definition_8cpp_source.html#l00964">DefinitionImpl::writeInlineCode()</a>, <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l02191">VhdlDocGen::writeSource()</a>, <a class="el" href="../../d6/ddc/filedef_8cpp_source.html#l01134">FileDefImpl::writeSourceBody()</a> , 以及 <a class="el" href="../../d0/dc3/xmlgen_8cpp_source.html#l00440">writeXMLCodeBlock()</a>.</p>
+
+</div>
+</div>
+<a id="abb2ccc90175c88dcf89566d2a8bc02c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb2ccc90175c88dcf89566d2a8bc02c8">&#9670;&nbsp;</a></span>getCodeParserFactory()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d55/parserintf_8h.html#ab3d33d80825a6d236fc1ca772325c12e">CodeParserFactory</a>&amp; ParserManager::getCodeParserFactory </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>extension</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the factory for create code parser objects with a given <em>extension</em>. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00224">224</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    {</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d4/d0d/class_parser_manager.html#a28c8d07348e3667d350dc463ab568a84">getParsers</a>(extension).<a class="code" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html#a249f575b6476cdf5464fbd3004e93c1a">codeParserFactory</a>;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00156">ParserManager::ParserPair::codeParserFactory</a> , 以及 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00239">getParsers()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00217">getCodeParser()</a>.</p>
+
+</div>
+</div>
+<a id="a00953c900615c4c72e3a77bd64704da8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00953c900615c4c72e3a77bd64704da8">&#9670;&nbsp;</a></span>getOutlineParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="../../d5/d79/class_outline_parser_interface.html">OutlineParserInterface</a>&gt; ParserManager::getOutlineParser </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>extension</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the interface to the parser associated with a given <em>extension</em>. </p>
+<p>If there is no parser explicitly registered for the supplied extension, the interface to the default parser will be returned. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00208">208</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    {</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d4/d0d/class_parser_manager.html#a28c8d07348e3667d350dc463ab568a84">getParsers</a>(extension).<a class="code" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html#a9cecf3732bcd6a43e43d5f6e1ff8f5d2">outlineParserFactory</a>();</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00239">getParsers()</a> , 以及 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00155">ParserManager::ParserPair::outlineParserFactory</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../de/dea/vhdldocgen_8cpp_source.html#l02742">VhdlDocGen::createFlowChart()</a>, <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l09816">getParserForFile()</a> , 以及 <a class="el" href="../../de/d04/markdown_8cpp_source.html#l03175">MarkdownOutlineParser::parsePrototype()</a>.</p>
+
+</div>
+</div>
+<a id="af629ad3cc57868b383cb02601fd9c7b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af629ad3cc57868b383cb02601fd9c7b4">&#9670;&nbsp;</a></span>getParserName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> ParserManager::getParserName </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>extension</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the name of the parser associated with given <em>extension</em>. </p>
+<p>If there is no parser explicitly registered for the supplied extension, te empty string will be reurned. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00233">233</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    {</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d4/d0d/class_parser_manager.html#a28c8d07348e3667d350dc463ab568a84">getParsers</a>(extension).<a class="code" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html#ad33d6eddc9ddd59e6ee694152f453e2a">parserName</a>;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00239">getParsers()</a> , 以及 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00157">ParserManager::ParserPair::parserName</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../df/d2d/util_8cpp_source.html#l07156">convertFileNameFortranParserCode()</a>.</p>
+
+</div>
+</div>
+<a id="a28c8d07348e3667d350dc463ab568a84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28c8d07348e3667d350dc463ab568a84">&#9670;&nbsp;</a></span>getParsers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html">ParserPair</a>&amp; ParserManager::getParsers </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>extension</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00239">239</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;      <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> ext = extension.<a class="code" href="../../d9/d45/class_q_c_string.html#a33688239622e659cfb469fbd62c9cccb">lower</a>();</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;      <span class="keywordflow">if</span> (ext.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>()) ext=<span class="stringliteral">&quot;.no_extension&quot;</span>;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;      <span class="keyword">auto</span> it = <a class="code" href="../../d4/d0d/class_parser_manager.html#ad8743402c91d10a0a1549354ffb1c68d">m_extensions</a>.find(ext.<a class="code" href="../../d9/d45/class_q_c_string.html#a84a5aa4da9147a687fa291c844fb5fc1">data</a>());</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;      <span class="keywordflow">if</span> (it==<a class="code" href="../../d4/d0d/class_parser_manager.html#ad8743402c91d10a0a1549354ffb1c68d">m_extensions</a>.end() &amp;&amp; ext.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>()&gt;4)</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;      {</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        it = <a class="code" href="../../d4/d0d/class_parser_manager.html#ad8743402c91d10a0a1549354ffb1c68d">m_extensions</a>.find(ext.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(4).<a class="code" href="../../d9/d45/class_q_c_string.html#a84a5aa4da9147a687fa291c844fb5fc1">data</a>());</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;      }</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;      <span class="keywordflow">return</span> it!=<a class="code" href="../../d4/d0d/class_parser_manager.html#ad8743402c91d10a0a1549354ffb1c68d">m_extensions</a>.end() ? it-&gt;second : <a class="code" href="../../d4/d0d/class_parser_manager.html#a60479453dc57c884b1411f13beedb929">m_defaultParsers</a>;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00153">QCString::data()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00212">QCString::left()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00147">QCString::length()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00232">QCString::lower()</a>, <a class="el" href="../../da/d55/parserintf_8h_source.html#l00253">m_defaultParsers</a> , 以及 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00252">m_extensions</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00224">getCodeParserFactory()</a>, <a class="el" href="../../da/d55/parserintf_8h_source.html#l00208">getOutlineParser()</a> , 以及 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00233">getParserName()</a>.</p>
+
+</div>
+</div>
+<a id="a150d4d51073cb46cdf38a236cc120d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a150d4d51073cb46cdf38a236cc120d0a">&#9670;&nbsp;</a></span>registerExtension()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ParserManager::registerExtension </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>extension</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>parserName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Registers a file <em>extension</em> with a parser with name <em>parserName</em>. </p>
+<p>Returns TRUE if the extension was successfully registered. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00188">188</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    {</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;      <span class="keywordflow">if</span> (parserName.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() || extension.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>()) <span class="keywordflow">return</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> &amp;parserIt = <a class="code" href="../../d4/d0d/class_parser_manager.html#a20879de66f3c9555ec87f31d878e729b">m_parsers</a>.find(parserName.<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>());</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">if</span> (parserIt == <a class="code" href="../../d4/d0d/class_parser_manager.html#a20879de66f3c9555ec87f31d878e729b">m_parsers</a>.end()) <span class="keywordflow">return</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      <span class="keyword">auto</span> extensionIt = <a class="code" href="../../d4/d0d/class_parser_manager.html#ad8743402c91d10a0a1549354ffb1c68d">m_extensions</a>.find(extension.<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>());</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;      <span class="keywordflow">if</span> (extensionIt != <a class="code" href="../../d4/d0d/class_parser_manager.html#ad8743402c91d10a0a1549354ffb1c68d">m_extensions</a>.end()) <span class="comment">// extension already exists</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        <a class="code" href="../../d4/d0d/class_parser_manager.html#ad8743402c91d10a0a1549354ffb1c68d">m_extensions</a>.erase(extensionIt); <span class="comment">// remove it (e.g. user specified extension overrules built in one)</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;      }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;      <a class="code" href="../../d4/d0d/class_parser_manager.html#ad8743402c91d10a0a1549354ffb1c68d">m_extensions</a>.emplace(extension.<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>(),parserIt-&gt;second); <span class="comment">// add new mapping</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00033">FALSE</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../da/d55/parserintf_8h_source.html#l00252">m_extensions</a>, <a class="el" href="../../da/d55/parserintf_8h_source.html#l00251">m_parsers</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00442">QCString::str()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a>.</p>
+
+</div>
+</div>
+<a id="ae3fd2274adef4a45c05ee1c56ffedd5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3fd2274adef4a45c05ee1c56ffedd5b">&#9670;&nbsp;</a></span>registerParser()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ParserManager::registerParser </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d55/parserintf_8h.html#afda01ba4e899f06f0fbbd2b0f79fd5cf">OutlineParserFactory</a>&#160;</td>
+          <td class="paramname"><em>outlineParserFactory</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../da/d55/parserintf_8h.html#ab3d33d80825a6d236fc1ca772325c12e">CodeParserFactory</a>&#160;</td>
+          <td class="paramname"><em>codeParserFactory</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Registers an additional parser. </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>A symbolic name of the parser, i.e. "c", "python", "fortran", "vhdl", ... </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outlineParserFactory</td><td>A factory method to create a language parser (scanner) that is to be used for the given name. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">codeParserFactory</td><td>A factory method to create a code parser that is to be used for the given name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00179">179</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    {</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;      <a class="code" href="../../d4/d0d/class_parser_manager.html#a20879de66f3c9555ec87f31d878e729b">m_parsers</a>.emplace(name.<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>(),ParserPair(outlineParserFactory,codeParserFactory,name));</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00251">m_parsers</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00442">QCString::str()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l10610">initDoxygen()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a60479453dc57c884b1411f13beedb929"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60479453dc57c884b1411f13beedb929">&#9670;&nbsp;</a></span>m_defaultParsers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html">ParserPair</a> ParserManager::m_defaultParsers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00253">253</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00239">getParsers()</a>.</p>
+
+</div>
+</div>
+<a id="ad8743402c91d10a0a1549354ffb1c68d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8743402c91d10a0a1549354ffb1c68d">&#9670;&nbsp;</a></span>m_extensions</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string,<a class="el" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html">ParserPair</a> &amp;&gt; ParserManager::m_extensions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00252">252</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00239">getParsers()</a> , 以及 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00188">registerExtension()</a>.</p>
+
+</div>
+</div>
+<a id="a20879de66f3c9555ec87f31d878e729b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20879de66f3c9555ec87f31d878e729b">&#9670;&nbsp;</a></span>m_parsers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string,<a class="el" href="../../df/d04/struct_parser_manager_1_1_parser_pair.html">ParserPair</a>&gt; ParserManager::m_parsers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a> 第 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00251">251</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00188">registerExtension()</a> , 以及 <a class="el" href="../../da/d55/parserintf_8h_source.html#l00179">registerParser()</a>.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/<a class="el" href="../../da/d55/parserintf_8h_source.html">parserintf.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_parser_manager_html_a60479453dc57c884b1411f13beedb929"><div class="ttname"><a href="../../d4/d0d/class_parser_manager.html#a60479453dc57c884b1411f13beedb929">ParserManager::m_defaultParsers</a></div><div class="ttdeci">ParserPair m_defaultParsers</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d55/parserintf_8h_source.html#l00253">parserintf.h:253</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_ac52596733e9110b778019946d73fb268"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">QCString::length</a></div><div class="ttdeci">uint length() const</div><div class="ttdoc">Returns the length of the string, not counting the 0-terminator.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00147">qcstring.h:147</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a621c4090d69ad7d05ef8e5234376c3d8"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">QCString::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Returns TRUE iff the string is empty</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00144">qcstring.h:144</a></div></div>
+<div class="ttc" id="aclass_parser_manager_html_a28c8d07348e3667d350dc463ab568a84"><div class="ttname"><a href="../../d4/d0d/class_parser_manager.html#a28c8d07348e3667d350dc463ab568a84">ParserManager::getParsers</a></div><div class="ttdeci">ParserPair &amp; getParsers(const QCString &amp;extension)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d55/parserintf_8h_source.html#l00239">parserintf.h:239</a></div></div>
+<div class="ttc" id="aclass_parser_manager_html_a20879de66f3c9555ec87f31d878e729b"><div class="ttname"><a href="../../d4/d0d/class_parser_manager.html#a20879de66f3c9555ec87f31d878e729b">ParserManager::m_parsers</a></div><div class="ttdeci">std::map&lt; std::string, ParserPair &gt; m_parsers</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d55/parserintf_8h_source.html#l00251">parserintf.h:251</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a9824b07232eea418ab3b3e7dc3178eec"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">QCString::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00442">qcstring.h:442</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_aecf8b66312c4e97333219cc344c11a4f"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">QCString::left</a></div><div class="ttdeci">QCString left(size_t len) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00212">qcstring.h:212</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a33688239622e659cfb469fbd62c9cccb"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a33688239622e659cfb469fbd62c9cccb">QCString::lower</a></div><div class="ttdeci">QCString lower() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00232">qcstring.h:232</a></div></div>
+<div class="ttc" id="aclass_parser_manager_html_abb2ccc90175c88dcf89566d2a8bc02c8"><div class="ttname"><a href="../../d4/d0d/class_parser_manager.html#abb2ccc90175c88dcf89566d2a8bc02c8">ParserManager::getCodeParserFactory</a></div><div class="ttdeci">CodeParserFactory &amp; getCodeParserFactory(const QCString &amp;extension)</div><div class="ttdoc">Get the factory for create code parser objects with a given extension.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d55/parserintf_8h_source.html#l00224">parserintf.h:224</a></div></div>
+<div class="ttc" id="astruct_parser_manager_1_1_parser_pair_html_ad33d6eddc9ddd59e6ee694152f453e2a"><div class="ttname"><a href="../../df/d04/struct_parser_manager_1_1_parser_pair.html#ad33d6eddc9ddd59e6ee694152f453e2a">ParserManager::ParserPair::parserName</a></div><div class="ttdeci">QCString parserName</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d55/parserintf_8h_source.html#l00157">parserintf.h:157</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00036">qcstring.h:36</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a84a5aa4da9147a687fa291c844fb5fc1"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a84a5aa4da9147a687fa291c844fb5fc1">QCString::data</a></div><div class="ttdeci">const char * data() const</div><div class="ttdoc">Returns a pointer to the contents of the string in the form of a 0-terminated C string</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00153">qcstring.h:153</a></div></div>
+<div class="ttc" id="aclass_parser_manager_html_ad8743402c91d10a0a1549354ffb1c68d"><div class="ttname"><a href="../../d4/d0d/class_parser_manager.html#ad8743402c91d10a0a1549354ffb1c68d">ParserManager::m_extensions</a></div><div class="ttdeci">std::map&lt; std::string, ParserPair &amp; &gt; m_extensions</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d55/parserintf_8h_source.html#l00252">parserintf.h:252</a></div></div>
+<div class="ttc" id="astruct_parser_manager_1_1_parser_pair_html_a249f575b6476cdf5464fbd3004e93c1a"><div class="ttname"><a href="../../df/d04/struct_parser_manager_1_1_parser_pair.html#a249f575b6476cdf5464fbd3004e93c1a">ParserManager::ParserPair::codeParserFactory</a></div><div class="ttdeci">CodeParserFactory codeParserFactory</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d55/parserintf_8h_source.html#l00156">parserintf.h:156</a></div></div>
+<div class="ttc" id="astruct_parser_manager_1_1_parser_pair_html_a9cecf3732bcd6a43e43d5f6e1ff8f5d2"><div class="ttname"><a href="../../df/d04/struct_parser_manager_1_1_parser_pair.html#a9cecf3732bcd6a43e43d5f6e1ff8f5d2">ParserManager::ParserPair::outlineParserFactory</a></div><div class="ttdeci">OutlineParserFactory outlineParserFactory</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d55/parserintf_8h_source.html#l00155">parserintf.h:155</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00033">qcstring.h:33</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d4/d0d/class_parser_manager.html">ParserManager</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:41:03 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

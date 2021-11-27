@@ -1,0 +1,1397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: TreeDiagram类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d4/dc4/class_tree_diagram.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public 类型</a> &#124;
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="../../db/df7/class_tree_diagram-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">TreeDiagram类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Class representing the tree layout for the built-in class diagram.  
+ <a href="../../d4/dc4/class_tree_diagram.html#details">更多...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public 类型</h2></td></tr>
+<tr class="memitem:a24f44b8b412970f25bb7713658d0e9dc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a24f44b8b412970f25bb7713658d0e9dc">Ptr</a> = std::unique_ptr&lt; <a class="el" href="../../d4/d34/class_diagram_row.html">DiagramRow</a> &gt;</td></tr>
+<tr class="separator:a24f44b8b412970f25bb7713658d0e9dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfc3de9439000aad71ce8d342a0319e1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#acfc3de9439000aad71ce8d342a0319e1">Vec</a> = std::vector&lt; <a class="el" href="../../d4/dc4/class_tree_diagram.html#a24f44b8b412970f25bb7713658d0e9dc">Ptr</a> &gt;</td></tr>
+<tr class="separator:acfc3de9439000aad71ce8d342a0319e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8782f25da29e8a967b2f9620c8fe4d03"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a8782f25da29e8a967b2f9620c8fe4d03">iterator</a> = typename Vec::iterator</td></tr>
+<tr class="separator:a8782f25da29e8a967b2f9620c8fe4d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ab648d038ab3cd0dc8ca7aa632dfcab7b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#ab648d038ab3cd0dc8ca7aa632dfcab7b">TreeDiagram</a> (const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *root, bool doBases)</td></tr>
+<tr class="separator:ab648d038ab3cd0dc8ca7aa632dfcab7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a940a3aaf1985a9f2ff19dc95aa91716b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a940a3aaf1985a9f2ff19dc95aa91716b">computeLayout</a> ()</td></tr>
+<tr class="separator:a940a3aaf1985a9f2ff19dc95aa91716b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5012275fc688c77e729ad40ebf666582"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a5012275fc688c77e729ad40ebf666582">computeRows</a> ()</td></tr>
+<tr class="separator:a5012275fc688c77e729ad40ebf666582"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80bd153a4b94ab9513d9d957b9953b1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a80bd153a4b94ab9513d9d957b9953b1c">moveChildren</a> (<a class="el" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *root, int dx)</td></tr>
+<tr class="separator:a80bd153a4b94ab9513d9d957b9953b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af73eec062500230c3fafe7095192d088"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#af73eec062500230c3fafe7095192d088">computeExtremes</a> (<a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> *labelWidth, <a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> *xpos)</td></tr>
+<tr class="separator:af73eec062500230c3fafe7095192d088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7e4a47a706f354d1014045118d359ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#ae7e4a47a706f354d1014045118d359ca">drawBoxes</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t, <a class="el" href="../../de/d73/class_image.html">Image</a> *image, bool doBase, bool bitmap, <a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> baseRows, <a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> superRows, <a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> cellWidth, <a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> cellHeight, <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> relPath=&quot;&quot;, bool generateMap=<a class="el" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)</td></tr>
+<tr class="separator:ae7e4a47a706f354d1014045118d359ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb63ded17ad8783c7a15cdd01f8c3758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#afb63ded17ad8783c7a15cdd01f8c3758">drawConnectors</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t, <a class="el" href="../../de/d73/class_image.html">Image</a> *image, bool doBase, bool bitmap, <a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> baseRows, <a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> superRows, <a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> cellWidth, <a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> cellheight)</td></tr>
+<tr class="separator:afb63ded17ad8783c7a15cdd01f8c3758"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95bc9421109e0f0a43c153cc64ef19ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d34/class_diagram_row.html">DiagramRow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a> (int index)</td></tr>
+<tr class="separator:a95bc9421109e0f0a43c153cc64ef19ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c63ea32bfc08fafc9cb43a59fd65a86"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a1c63ea32bfc08fafc9cb43a59fd65a86">numRows</a> () const</td></tr>
+<tr class="separator:a1c63ea32bfc08fafc9cb43a59fd65a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d1ba59e5167de13350839aa823c5156"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/d34/class_diagram_row.html">DiagramRow</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a3d1ba59e5167de13350839aa823c5156">addRow</a> (<a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> l)</td></tr>
+<tr class="separator:a3d1ba59e5167de13350839aa823c5156"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af54e6e1bea669bf1290d8587307e4d8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a8782f25da29e8a967b2f9620c8fe4d03">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#af54e6e1bea669bf1290d8587307e4d8e">begin</a> ()</td></tr>
+<tr class="separator:af54e6e1bea669bf1290d8587307e4d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a280423956def2398d3d8b05333615903"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a8782f25da29e8a967b2f9620c8fe4d03">iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a280423956def2398d3d8b05333615903">end</a> ()</td></tr>
+<tr class="separator:a280423956def2398d3d8b05333615903"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:a8a234fa654cd851d7cb3603e3820a5f2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a8a234fa654cd851d7cb3603e3820a5f2">layoutTree</a> (<a class="el" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *root, <a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> <a class="el" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>)</td></tr>
+<tr class="separator:a8a234fa654cd851d7cb3603e3820a5f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb47bcbf7f953ddb2b094478ff0459c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc4/class_tree_diagram.html">TreeDiagram</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#acb47bcbf7f953ddb2b094478ff0459c6">operator=</a> (const <a class="el" href="../../d4/dc4/class_tree_diagram.html">TreeDiagram</a> &amp;)</td></tr>
+<tr class="separator:acb47bcbf7f953ddb2b094478ff0459c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a793a74cfb4d54fb42d6bd5fafcf3de86"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a793a74cfb4d54fb42d6bd5fafcf3de86">TreeDiagram</a> (const <a class="el" href="../../d4/dc4/class_tree_diagram.html">TreeDiagram</a> &amp;)</td></tr>
+<tr class="separator:a793a74cfb4d54fb42d6bd5fafcf3de86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a640c77fec2dc17c487ed70aa0ae78689"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d4/dc4/class_tree_diagram.html#acfc3de9439000aad71ce8d342a0319e1">Vec</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a></td></tr>
+<tr class="separator:a640c77fec2dc17c487ed70aa0ae78689"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Class representing the tree layout for the built-in class diagram. </p>
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00100">100</a> 行定义.</p>
+</div><h2 class="groupheader">成员类型定义说明</h2>
+<a id="a8782f25da29e8a967b2f9620c8fe4d03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8782f25da29e8a967b2f9620c8fe4d03">&#9670;&nbsp;</a></span>iterator</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d4/dc4/class_tree_diagram.html#a8782f25da29e8a967b2f9620c8fe4d03">TreeDiagram::iterator</a> =  typename Vec::iterator</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00105">105</a> 行定义.</p>
+
+</div>
+</div>
+<a id="a24f44b8b412970f25bb7713658d0e9dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24f44b8b412970f25bb7713658d0e9dc">&#9670;&nbsp;</a></span>Ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d4/dc4/class_tree_diagram.html#a24f44b8b412970f25bb7713658d0e9dc">TreeDiagram::Ptr</a> =  std::unique_ptr&lt;<a class="el" href="../../d4/d34/class_diagram_row.html">DiagramRow</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00103">103</a> 行定义.</p>
+
+</div>
+</div>
+<a id="acfc3de9439000aad71ce8d342a0319e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acfc3de9439000aad71ce8d342a0319e1">&#9670;&nbsp;</a></span>Vec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="../../d4/dc4/class_tree_diagram.html#acfc3de9439000aad71ce8d342a0319e1">TreeDiagram::Vec</a> =  std::vector&lt;<a class="el" href="../../d4/dc4/class_tree_diagram.html#a24f44b8b412970f25bb7713658d0e9dc">Ptr</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00104">104</a> 行定义.</p>
+
+</div>
+</div>
+<h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ab648d038ab3cd0dc8ca7aa632dfcab7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab648d038ab3cd0dc8ca7aa632dfcab7b">&#9670;&nbsp;</a></span>TreeDiagram() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TreeDiagram::TreeDiagram </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d1/dcf/class_class_def.html">ClassDef</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>doBases</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00377">377</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;{</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;  <span class="keyword">auto</span> <a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a> = std::make_unique&lt;DiagramRow&gt;(<span class="keyword">this</span>,0);</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;  <a class="code" href="../../d4/d34/class_diagram_row.html">DiagramRow</a> *row_ptr = <a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>.get();</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;  <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.push_back(std::move(<a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>));</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;  row_ptr-&gt;<a class="code" href="../../d4/d34/class_diagram_row.html#a8c301e781bb14b1a23c00974d2050496">insertClass</a>(0,root,doBases,<a class="code" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4deda2d47e20e63deb55d32228fde32f6b513">Public</a>,<a class="code" href="../../d9/d49/types_8h.html#ab16236bdd10ddf4d73a9847350f0017ea5ecbcf0afce98b042f35ec71ba03fa4b">Normal</a>,<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>());</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00335">DiagramRow::insertClass()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00029">Normal</a>, <a class="el" href="../../d9/d49/types_8h_source.html#l00026">Public</a> , 以及 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00121">row()</a>.</p>
+
+</div>
+</div>
+<a id="a793a74cfb4d54fb42d6bd5fafcf3de86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a793a74cfb4d54fb42d6bd5fafcf3de86">&#9670;&nbsp;</a></span>TreeDiagram() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TreeDiagram::TreeDiagram </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dc4/class_tree_diagram.html">TreeDiagram</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="a3d1ba59e5167de13350839aa823c5156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d1ba59e5167de13350839aa823c5156">&#9670;&nbsp;</a></span>addRow()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d34/class_diagram_row.html">DiagramRow</a>* TreeDiagram::addRow </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td>
+          <td class="paramname"><em>l</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00123">123</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    { <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.push_back(std::make_unique&lt;DiagramRow&gt;(<span class="keyword">this</span>,l)); <span class="keywordflow">return</span> <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.back().get(); }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00335">DiagramRow::insertClass()</a>.</p>
+
+</div>
+</div>
+<a id="af54e6e1bea669bf1290d8587307e4d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af54e6e1bea669bf1290d8587307e4d8e">&#9670;&nbsp;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a8782f25da29e8a967b2f9620c8fe4d03">iterator</a> TreeDiagram::begin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00125">125</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.begin();  }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>.</p>
+
+</div>
+</div>
+<a id="af73eec062500230c3fafe7095192d088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73eec062500230c3fafe7095192d088">&#9670;&nbsp;</a></span>computeExtremes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TreeDiagram::computeExtremes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> *&#160;</td>
+          <td class="paramname"><em>labelWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> *&#160;</td>
+          <td class="paramname"><em>xpos</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00515">515</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;{</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;  <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> ml=0,mx=0;</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;dr : <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>) <span class="comment">// for each row</span></div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;  {</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="keywordtype">bool</span> done=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;di : *dr) <span class="comment">// for each item in a row</span></div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    {</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;      <span class="keywordflow">if</span> (di-&gt;isInList()) done=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;      <span class="keywordflow">if</span> (maxXPos) mx=std::max(mx,(<a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>)di-&gt;xPos());</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;      <span class="keywordflow">if</span> (maxLabelLen) ml=std::max(ml,<a class="code" href="../../de/d73/class_image.html#af079f072be99784d939a2a0edf2d730e">Image::stringLength</a>(di-&gt;label()));</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;    }</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;    <span class="keywordflow">if</span> (done) <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;  }</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;  <span class="keywordflow">if</span> (maxLabelLen) *maxLabelLen=ml;</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;  <span class="keywordflow">if</span> (maxXPos)     *maxXPos=mx;</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00033">FALSE</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>, <a class="el" href="../../db/d11/image_8cpp_source.html#l00314">Image::stringLength</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a>.</p>
+
+</div>
+</div>
+<a id="a940a3aaf1985a9f2ff19dc95aa91716b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a940a3aaf1985a9f2ff19dc95aa91716b">&#9670;&nbsp;</a></span>computeLayout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TreeDiagram::computeLayout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00434">434</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;{</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  <span class="keyword">auto</span> it = <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.begin();</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  <span class="keywordflow">while</span> (it!=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.end() &amp;&amp; (*it)-&gt;numItems()&lt;<a class="code" href="../../da/d0d/diagram_8cpp.html#a3aecc8bdec6de29591f6a1cf3577ec52">maxTreeWidth</a>) ++it;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;  <span class="keywordflow">if</span> (it!=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.end())</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  {</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a> = *it;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    <span class="comment">//printf(&quot;computeLayout() list row at %d\n&quot;,row-&gt;number());</span></div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *opi=0;</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordtype">int</span> delta=0;</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="keywordtype">bool</span> first=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;di : *<a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>)</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    {</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;      <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *pi=di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ab2289efb497a6181accc11324b2007bb">parentItem</a>();</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;      <span class="keywordflow">if</span> (pi==opi &amp;&amp; !first) { delta-=<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>; }</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;      first = pi!=opi;</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;      opi=pi;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;      di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aca2295801c4b08a1565e86da1c04c242">move</a>(delta,0); <span class="comment">// collapse all items in the same</span></div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;                         <span class="comment">// list (except the first)</span></div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;      di-&gt;putInList();</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    }</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;  }</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;  <span class="comment">// re-organize the diagram items</span></div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;  <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *root=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.front()-&gt;item(0);</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;  <span class="keywordflow">while</span> (<a class="code" href="../../d4/dc4/class_tree_diagram.html#a8a234fa654cd851d7cb3603e3820a5f2">layoutTree</a>(root,0)) { }</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160; </div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;  <span class="comment">// move first items of the lists</span></div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;  <span class="keywordflow">if</span> (it!=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.end())</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;  {</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a> = *it;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keyword">auto</span> rit = <a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>-&gt;<a class="code" href="../../d4/d34/class_diagram_row.html#a8488330f275e6f40ea01f5c647c0c565">begin</a>();</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    <span class="keywordflow">while</span> (rit!=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>-&gt;<a class="code" href="../../d4/d34/class_diagram_row.html#a849d1f6e44be3be59c6f3b790a61b603">end</a>())</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    {</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;      <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *pi=(*rit)-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ab2289efb497a6181accc11324b2007bb">parentItem</a>();</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;      <span class="keywordflow">if</span> (pi-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a3eabc93518e6ed6a857eb14737d308d9">numChildren</a>()&gt;1)</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;      {</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        (*rit)-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aca2295801c4b08a1565e86da1c04c242">move</a>(<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>,0);</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;        <span class="keywordflow">while</span> (rit!=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>-&gt;<a class="code" href="../../d4/d34/class_diagram_row.html#a849d1f6e44be3be59c6f3b790a61b603">end</a>() &amp;&amp; (*rit)-&gt;parentItem()==pi)</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        {</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;          ++rit;</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        }</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;      }</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;      {</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        ++rit;</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;      }</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    }</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;  }</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00089">DiagramRow::begin()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00090">DiagramRow::end()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00139">gridWidth</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00394">layoutTree()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00138">maxTreeWidth</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00049">DiagramItem::move()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00323">DiagramItem::numChildren()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00047">DiagramItem::parentItem()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00121">row()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a>.</p>
+
+</div>
+</div>
+<a id="a5012275fc688c77e729ad40ebf666582"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5012275fc688c77e729ad40ebf666582">&#9670;&nbsp;</a></span>computeRows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> TreeDiagram::computeRows </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00485">485</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;{</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;  <span class="comment">//printf(&quot;TreeDiagram::computeRows()=%d\n&quot;,count());</span></div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;  <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> count=0;</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;  <span class="keyword">auto</span> it = <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.begin();</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;  <span class="keywordflow">while</span> (it!=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.end() &amp;&amp; !(*it)-&gt;item(0)-&gt;isInList())</div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;  {</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;    ++it;</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    ++count;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  }</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;  <span class="comment">//printf(&quot;count=%d row=%p\n&quot;,count,row);</span></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;  <span class="keywordflow">if</span> (it!=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.end())</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;  {</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a> = *it;</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> maxListLen=0;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> curListLen=0;</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *opi=0;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;di : *<a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>) <span class="comment">// for each item in a row</span></div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    {</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;      <span class="keywordflow">if</span> (di-&gt;parentItem()!=opi) curListLen=1; <span class="keywordflow">else</span> curListLen++;</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;      <span class="keywordflow">if</span> (curListLen&gt;maxListLen) maxListLen=curListLen;</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;      opi=di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ab2289efb497a6181accc11324b2007bb">parentItem</a>();</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    }</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;    <span class="comment">//printf(&quot;maxListLen=%d\n&quot;,maxListLen);</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;    count+=maxListLen;</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;  }</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;  <span class="keywordflow">return</span> count;</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00047">DiagramItem::parentItem()</a> , 以及 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00121">row()</a>.</p>
+
+</div>
+</div>
+<a id="ae7e4a47a706f354d1014045118d359ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7e4a47a706f354d1014045118d359ca">&#9670;&nbsp;</a></span>drawBoxes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TreeDiagram::drawBoxes </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/d73/class_image.html">Image</a> *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>doBase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bitmap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td>
+          <td class="paramname"><em>baseRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td>
+          <td class="paramname"><em>superRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td>
+          <td class="paramname"><em>cellWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td>
+          <td class="paramname"><em>cellHeight</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td>
+          <td class="paramname"><em>relPath</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>generateMap</em> = <code><a class="el" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00568">568</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;{</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;  <span class="keyword">auto</span> it = <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.begin();</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;  <span class="keywordflow">if</span> (it!=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.end() &amp;&amp; !doBase) ++it;</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;  <span class="keywordtype">bool</span> firstRow = doBase;</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;  <span class="keywordtype">bool</span> done=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;  <span class="keywordflow">for</span> (;it!=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.end() &amp;&amp; !done;++it) <span class="comment">// for each row</span></div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;  {</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;dr = *it;</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x=0,y=0;</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;    <span class="keywordtype">float</span> xf=0.0f,yf=0.0f;</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;    <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *firstDi = dr-&gt;item(0);</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;    <span class="keywordflow">if</span> (firstDi-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ac41f2e7b5f1de27cec87bc9a366dc687">isInList</a>()) <span class="comment">// put boxes in a list</span></div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;    {</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;      <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *opi=0;</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;      <a class="code" href="../../dd/d23/class_dual_dir_iterator.html">DualDirIterator&lt;DiagramRow,const std::unique_ptr&lt;DiagramItem&gt;</a>&amp;&gt; dit(*dr,!doBase);</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;      <span class="keywordflow">while</span> (!dit.atEnd())</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;      {</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;        <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *di = (*dit).get();</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;        <span class="keywordflow">if</span> (di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ab2289efb497a6181accc11324b2007bb">parentItem</a>()==opi)</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;        {</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;          <span class="keywordflow">if</span> (bitmap)</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;          {</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;            <span class="keywordflow">if</span> (doBase) y -= cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>;</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;            <span class="keywordflow">else</span>        y += cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>;</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;          }</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;          <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;          {</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;            <span class="keywordflow">if</span> (doBase) yf += 1.0f;</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;            <span class="keywordflow">else</span>        yf -= 1.0f;</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;          }</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        }</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        {</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;          <span class="keywordflow">if</span> (bitmap)</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;          {</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;            x = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()*(cellWidth+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>;</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;            <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;            {</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;              y = image-&gt;<a class="code" href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">height</a>()-</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;                superRows*cellHeight-</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                (superRows-1)*<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>-</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;            }</div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;            {</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;              y = (baseRows-1)*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)+</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;            }</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;          }</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;          <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;          {</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;            xf = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>;</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;            <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;            {</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;              yf = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>+superRows-1;</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;            }</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;            {</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;              yf = superRows-1-di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;            }</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;          }</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;        }</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;        opi=di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ab2289efb497a6181accc11324b2007bb">parentItem</a>();</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; </div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;        <span class="keywordflow">if</span> (bitmap)</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        {</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;          <span class="keywordtype">bool</span> hasDocs=di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a2225004b94ee681adfe3ffdae32e4dd6">getClassDef</a>()-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#a659ebf886a21ea56b51354c22b91b0dc">isLinkable</a>();</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;          <a class="code" href="../../da/d0d/diagram_8cpp.html#a3da7ea1d905d43e78cd8590c2b7609ea">writeBitmapBox</a>(di,image,x,y,cellWidth,cellHeight,firstRow,</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;              hasDocs,di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a3eabc93518e6ed6a857eb14737d308d9">numChildren</a>()&gt;0);</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;          <span class="keywordflow">if</span> (!firstRow &amp;&amp; generateMap)</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            <a class="code" href="../../da/d0d/diagram_8cpp.html#a781e7f173c0e14c4da84388d5b788e21">writeMapArea</a>(t,di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a2225004b94ee681adfe3ffdae32e4dd6">getClassDef</a>(),relPath,x,y,cellWidth,cellHeight);</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;        }</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        {</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;          <a class="code" href="../../da/d0d/diagram_8cpp.html#ac45380e90067e3138b21af2a68dc19f3">writeVectorBox</a>(t,di,xf,yf,di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a3eabc93518e6ed6a857eb14737d308d9">numChildren</a>()&gt;0);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        }</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;        ++dit;</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;      }</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;      done=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    }</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;    <span class="keywordflow">else</span> <span class="comment">// draw a tree of boxes</span></div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;    {</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;di : *dr)</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;      {</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;        <span class="keywordflow">if</span> (bitmap)</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;        {</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;          x = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()*(cellWidth+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>;</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;          <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;          {</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;            y = image-&gt;<a class="code" href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">height</a>()-</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;              superRows*cellHeight-</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;              (superRows-1)*<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>-</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;              di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;          }</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;          <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;          {</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;            y = (baseRows-1)*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)+</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;              di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;          }</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;          <span class="keywordtype">bool</span> hasDocs=di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a2225004b94ee681adfe3ffdae32e4dd6">getClassDef</a>()-&gt;<a class="code" href="../../d1/dcf/class_class_def.html#a659ebf886a21ea56b51354c22b91b0dc">isLinkable</a>();</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;          <a class="code" href="../../da/d0d/diagram_8cpp.html#a3da7ea1d905d43e78cd8590c2b7609ea">writeBitmapBox</a>(di.get(),image,x,y,cellWidth,cellHeight,firstRow,hasDocs);</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;          <span class="keywordflow">if</span> (!firstRow &amp;&amp; generateMap)</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;            <a class="code" href="../../da/d0d/diagram_8cpp.html#a781e7f173c0e14c4da84388d5b788e21">writeMapArea</a>(t,di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a2225004b94ee681adfe3ffdae32e4dd6">getClassDef</a>(),relPath,x,y,cellWidth,cellHeight);</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;        }</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;        {</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;          xf=di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;          <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;          {</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;            yf = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>+superRows-1;</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;          }</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;          <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;          {</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            yf = superRows-1-di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;          }</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;          <a class="code" href="../../da/d0d/diagram_8cpp.html#ac45380e90067e3138b21af2a68dc19f3">writeVectorBox</a>(t,di.get(),xf,yf);</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;        }</div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;      }</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160;    }</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;    firstRow=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;  }</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00553">DualDirIterator&lt; C, I &gt;::atEnd()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00033">FALSE</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00060">DiagramItem::getClassDef()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00140">gridHeight</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00139">gridWidth</a>, <a class="el" href="../../d5/db2/image_8h_source.html#l00061">Image::height()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00059">DiagramItem::isInList()</a>, <a class="el" href="../../d1/dcf/class_class_def.html#a659ebf886a21ea56b51354c22b91b0dc">ClassDef::isLinkable()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00142">labelHorSpacing</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00143">labelVertSpacing</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00323">DiagramItem::numChildren()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00047">DiagramItem::parentItem()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00215">writeBitmapBox()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00245">writeMapArea()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00236">writeVectorBox()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00050">DiagramItem::xPos()</a> , 以及 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00051">DiagramItem::yPos()</a>.</p>
+
+</div>
+</div>
+<a id="afb63ded17ad8783c7a15cdd01f8c3758"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb63ded17ad8783c7a15cdd01f8c3758">&#9670;&nbsp;</a></span>drawConnectors()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TreeDiagram::drawConnectors </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../de/d73/class_image.html">Image</a> *&#160;</td>
+          <td class="paramname"><em>image</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>doBase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bitmap</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td>
+          <td class="paramname"><em>baseRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td>
+          <td class="paramname"><em>superRows</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td>
+          <td class="paramname"><em>cellWidth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td>
+          <td class="paramname"><em>cellheight</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00698">698</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;{</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;  <span class="keywordtype">bool</span> done=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;  <span class="keyword">auto</span> it = <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.begin();</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;  <span class="keywordflow">for</span> (;it!=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.end() &amp;&amp; !done;++it) <span class="comment">// for each row</span></div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160;  {</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;dr = *it;</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;    <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *rootDi = dr-&gt;item(0);</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;    <span class="keywordflow">if</span> (rootDi-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ac41f2e7b5f1de27cec87bc9a366dc687">isInList</a>()) <span class="comment">// row consists of list connectors</span></div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;    {</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;      <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x=0,y=0,ys=0;</div>
+<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;      <span class="keywordtype">float</span> xf=0.0f,yf=0.0f,ysf=0.0f;</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;      <span class="keyword">auto</span> rit = dr-&gt;begin();</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;      <span class="keywordflow">while</span> (rit!=dr-&gt;end())</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;      {</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;        <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *di=(*rit).get();</div>
+<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;        <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *pi=di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ab2289efb497a6181accc11324b2007bb">parentItem</a>();</div>
+<div class="line"><a name="l00718"></a><span class="lineno">  718</span>&#160;        <a class="code" href="../../da/d0d/diagram_8cpp.html#a603348be77849aaf4416a4673fa207b6">DiagramItemList</a> dil=pi-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a48ef173c810becf58f4b38685b778db1">getChildren</a>();</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;        <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *last=dil.back();</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;        <span class="keywordflow">if</span> (di==last) <span class="comment">// single child</span></div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;        {</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;          <span class="keywordflow">if</span> (bitmap) <span class="comment">// draw pixels</span></div>
+<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;          {</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;            x = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()*(cellWidth+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a> + cellWidth/2;</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;            <span class="keywordflow">if</span> (doBase) <span class="comment">// base classes</span></div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;            {</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;              y = image-&gt;<a class="code" href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">height</a>()-</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;                (superRows-1)*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)-</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;                di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;              image-&gt;<a class="code" href="../../de/d73/class_image.html#a4a641afda1828967f9c3d463b6ae0817">drawVertArrow</a>(x,y,y+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2,</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;                                   <a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()),</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;                                   <a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()));</div>
+<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;            }</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;            <span class="keywordflow">else</span> <span class="comment">// super classes</span></div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;            {</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;              y = (baseRows-1)*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)-</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;                <a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2+</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;                di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;              image-&gt;<a class="code" href="../../de/d73/class_image.html#aafce8f135d4b02f0375c2b100dbbabd6">drawVertLine</a>(x,y,y+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2,</div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;                                  <a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()),</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;                                  <a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()));</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;            }</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;          }</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;          <span class="keywordflow">else</span> <span class="comment">// draw vectors</span></div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;          {</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;            t &lt;&lt; <a class="code" href="../../da/d0d/diagram_8cpp.html#ad92050b3f6c2e59066cbf6f03a76c1d8">protToString</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;            <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            {</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;              t &lt;&lt; <span class="stringliteral">&quot;1 &quot;</span> &lt;&lt; (di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;                &lt;&lt; (di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>+superRows-1) &lt;&lt; <span class="stringliteral">&quot; in\n&quot;</span>;</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;            }</div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;            {</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;              t &lt;&lt; <span class="stringliteral">&quot;0 &quot;</span> &lt;&lt; (di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>) &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;                &lt;&lt; ((float)superRows-0.25f-di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>)</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; in\n&quot;</span>;</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;            }</div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;          }</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        }</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;        <span class="keywordflow">else</span> <span class="comment">// multiple children, put them in a vertical list</span></div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;        {</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;          <span class="keywordflow">if</span> (bitmap)</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;          {</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;            x = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ab2289efb497a6181accc11324b2007bb">parentItem</a>()-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()*</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;              (cellWidth+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>+cellWidth/2;</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            <span class="keywordflow">if</span> (doBase) <span class="comment">// base classes</span></div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            {</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;              ys = image-&gt;<a class="code" href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">height</a>()-</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;                (superRows-1)*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)-</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;                di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;              y = ys - cellHeight/2;</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;            }</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;            <span class="keywordflow">else</span> <span class="comment">// super classes</span></div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;            {</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;              ys = (baseRows-1)*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)+</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;              y = ys + cellHeight/2;</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;            }</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;          }</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;          <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;          {</div>
+<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;            xf = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ab2289efb497a6181accc11324b2007bb">parentItem</a>()-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>;</div>
+<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;            <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;            {</div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;              ysf = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>+superRows-1;</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;              yf = ysf + 0.5f;</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;            }</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;            {</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;              ysf = (float)superRows-0.25f-di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;              yf = ysf - 0.25f;</div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;            }</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;          }</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;          <span class="keywordflow">while</span> (di!=last) <span class="comment">// more children to add</span></div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;          {</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;            <span class="keywordflow">if</span> (bitmap)</div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;            {</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;              <span class="keywordflow">if</span> (doBase) <span class="comment">// base classes</span></div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;              {</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                image-&gt;<a class="code" href="../../de/d73/class_image.html#aed29f2abeb0ce6fea7bb553c5ca4e59b">drawHorzArrow</a>(y,x,x+cellWidth/2+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>,</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;                    <a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()),</div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;                    <a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()));</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                y -= cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>;</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;              }</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;              <span class="keywordflow">else</span> <span class="comment">// super classes</span></div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;              {</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;                image-&gt;<a class="code" href="../../de/d73/class_image.html#aa05e82338cdada0f1d12ca338e96ddfc">drawHorzLine</a>(y,x,x+cellWidth/2+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>,</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;                    <a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()),</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                    <a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()));</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;                y += cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>;</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;              }</div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;            }</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;            {</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;              t &lt;&lt; <a class="code" href="../../da/d0d/diagram_8cpp.html#ad92050b3f6c2e59066cbf6f03a76c1d8">protToString</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;              <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;              {</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;                t &lt;&lt; <span class="stringliteral">&quot;1 &quot;</span> &lt;&lt; xf &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; yf &lt;&lt; <span class="stringliteral">&quot; hedge\n&quot;</span>;</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;                yf += 1.0f;</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;              }</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;              <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;              {</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;                t &lt;&lt; <span class="stringliteral">&quot;0 &quot;</span> &lt;&lt; xf &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; yf &lt;&lt; <span class="stringliteral">&quot; hedge\n&quot;</span>;</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;                yf -= 1.0f;</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;              }</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;            }</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;            ++rit;</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;            <span class="keywordflow">if</span> (rit!=dr-&gt;end()) di = (*rit).get(); <span class="keywordflow">else</span> di=0;</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;          }</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;          <span class="comment">// add last horizontal line and a vertical connection line</span></div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;          <span class="keywordflow">if</span> (bitmap)</div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;          {</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;            <span class="keywordflow">if</span> (doBase) <span class="comment">// base classes</span></div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;            {</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;              image-&gt;<a class="code" href="../../de/d73/class_image.html#aed29f2abeb0ce6fea7bb553c5ca4e59b">drawHorzArrow</a>(y,x,x+cellWidth/2+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>,</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()),</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()));</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;              image-&gt;<a class="code" href="../../de/d73/class_image.html#aafce8f135d4b02f0375c2b100dbbabd6">drawVertLine</a>(x,y,ys+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2,</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(<a class="code" href="../../da/d0d/diagram_8cpp.html#aa7edd2f3dfefdfd9655c162adc982e70">getMinProtectionLevel</a>(dil)),</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(<a class="code" href="../../da/d0d/diagram_8cpp.html#aa7edd2f3dfefdfd9655c162adc982e70">getMinProtectionLevel</a>(dil)));</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;            }</div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;            <span class="keywordflow">else</span> <span class="comment">// super classes</span></div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            {</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;              image-&gt;<a class="code" href="../../de/d73/class_image.html#aa05e82338cdada0f1d12ca338e96ddfc">drawHorzLine</a>(y,x,x+cellWidth/2+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>,</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()),</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()));</div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;              image-&gt;<a class="code" href="../../de/d73/class_image.html#aafce8f135d4b02f0375c2b100dbbabd6">drawVertLine</a>(x,ys-<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2,y,</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(<a class="code" href="../../da/d0d/diagram_8cpp.html#aa7edd2f3dfefdfd9655c162adc982e70">getMinProtectionLevel</a>(dil)),</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(<a class="code" href="../../da/d0d/diagram_8cpp.html#aa7edd2f3dfefdfd9655c162adc982e70">getMinProtectionLevel</a>(dil)));</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;            }</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;          }</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;          <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;          {</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;            t &lt;&lt; <a class="code" href="../../da/d0d/diagram_8cpp.html#ad92050b3f6c2e59066cbf6f03a76c1d8">protToString</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;            <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;            {</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;              t &lt;&lt; <span class="stringliteral">&quot;1 &quot;</span> &lt;&lt; xf &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; yf &lt;&lt; <span class="stringliteral">&quot; hedge\n&quot;</span>;</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;            }</div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;            {</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;              t &lt;&lt; <span class="stringliteral">&quot;0 &quot;</span> &lt;&lt; xf &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; yf &lt;&lt; <span class="stringliteral">&quot; hedge\n&quot;</span>;</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;            }</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;            t &lt;&lt; <a class="code" href="../../da/d0d/diagram_8cpp.html#ad92050b3f6c2e59066cbf6f03a76c1d8">protToString</a>(<a class="code" href="../../da/d0d/diagram_8cpp.html#aa7edd2f3dfefdfd9655c162adc982e70">getMinProtectionLevel</a>(dil)) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;            <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;            {</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;              t &lt;&lt; xf &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; ysf &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; yf &lt;&lt; <span class="stringliteral">&quot; vedge\n&quot;</span>;</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;            }</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;            {</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;              t &lt;&lt; xf &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; (ysf + 0.25f) &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; yf &lt;&lt; <span class="stringliteral">&quot; vedge\n&quot;</span>;</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;            }</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;          }</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;        }</div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;        <span class="keywordflow">if</span> (rit!=dr-&gt;end()) ++rit;</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;      }</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;      done=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>; <span class="comment">// the tree is drawn now</span></div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    }</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;    <span class="keywordflow">else</span> <span class="comment">// normal tree connector</span></div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;    {</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;di : *dr)</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;      {</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;        <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> x=0,y=0;</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        <a class="code" href="../../da/d0d/diagram_8cpp.html#a603348be77849aaf4416a4673fa207b6">DiagramItemList</a> dil = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a48ef173c810becf58f4b38685b778db1">getChildren</a>();</div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;        <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *parent  = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ab2289efb497a6181accc11324b2007bb">parentItem</a>();</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;        <span class="keywordflow">if</span> (parent) <span class="comment">// item has a parent -&gt; connect to it</span></div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;        {</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;          <span class="keywordflow">if</span> (bitmap) <span class="comment">// draw pixels</span></div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;          {</div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;            x = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()*(cellWidth+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a> + cellWidth/2;</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;            <span class="keywordflow">if</span> (doBase) <span class="comment">// base classes</span></div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;            {</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;              y = image-&gt;<a class="code" href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">height</a>()-</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;                (superRows-1)*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)-</div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;                di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;              <span class="comment">/* write input line */</span></div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;              image-&gt;<a class="code" href="../../de/d73/class_image.html#a4a641afda1828967f9c3d463b6ae0817">drawVertArrow</a>(x,y,y+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2,</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()),</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()));</div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;            }</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;            <span class="keywordflow">else</span> <span class="comment">// super classes</span></div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;            {</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;              y = (baseRows-1)*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)-</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;                <a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2+</div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;                di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;              <span class="comment">/* write output line */</span></div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;              image-&gt;<a class="code" href="../../de/d73/class_image.html#aafce8f135d4b02f0375c2b100dbbabd6">drawVertLine</a>(x,y,y+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2,</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()),</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;                  <a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()));</div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;            }</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;          }</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;          <span class="keywordflow">else</span> <span class="comment">// draw pixels</span></div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;          {</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;            t &lt;&lt; <a class="code" href="../../da/d0d/diagram_8cpp.html#ad92050b3f6c2e59066cbf6f03a76c1d8">protToString</a>(di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">protection</a>()) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;            <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;            {</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;              t &lt;&lt; <span class="stringliteral">&quot;1 &quot;</span> &lt;&lt; di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;                &lt;&lt; (di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>+superRows-1) &lt;&lt; <span class="stringliteral">&quot; in\n&quot;</span>;</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;            }</div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;            {</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;              t &lt;&lt; <span class="stringliteral">&quot;0 &quot;</span> &lt;&lt; di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;                &lt;&lt; ((<span class="keywordtype">float</span>)superRows-0.25f-di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>)</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; in\n&quot;</span>;</div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;            }</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;          }</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;        }</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;        <span class="keywordflow">if</span> (!dil.empty())</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;        {</div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;          <a class="code" href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4ded">Protection</a> p=<a class="code" href="../../da/d0d/diagram_8cpp.html#aa7edd2f3dfefdfd9655c162adc982e70">getMinProtectionLevel</a>(dil);</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;          <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> mask=<a class="code" href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a>(p);</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;          <a class="code" href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a> col=<a class="code" href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a>(p);</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;          <span class="keywordflow">if</span> (bitmap)</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;          {</div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;            x = di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()*(cellWidth+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a> + cellWidth/2;</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;            <span class="keywordflow">if</span> (doBase) <span class="comment">// base classes</span></div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;            {</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;              y = image-&gt;<a class="code" href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">height</a>()-</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;                (superRows-1)*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)-</div>
+<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160;                cellHeight-<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2-</div>
+<div class="line"><a name="l00940"></a><span class="lineno">  940</span>&#160;                di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160;              image-&gt;<a class="code" href="../../de/d73/class_image.html#aafce8f135d4b02f0375c2b100dbbabd6">drawVertLine</a>(x,y,y+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2-1,col,mask);</div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;            }</div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;            <span class="keywordflow">else</span> <span class="comment">// super classes</span></div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;            {</div>
+<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;              y = (baseRows-1)*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)+</div>
+<div class="line"><a name="l00946"></a><span class="lineno">  946</span>&#160;                cellHeight+</div>
+<div class="line"><a name="l00947"></a><span class="lineno">  947</span>&#160;                di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()*(cellHeight+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>;</div>
+<div class="line"><a name="l00948"></a><span class="lineno">  948</span>&#160;              image-&gt;<a class="code" href="../../de/d73/class_image.html#a4a641afda1828967f9c3d463b6ae0817">drawVertArrow</a>(x,y,y+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2-1,col,mask);</div>
+<div class="line"><a name="l00949"></a><span class="lineno">  949</span>&#160;            }</div>
+<div class="line"><a name="l00950"></a><span class="lineno">  950</span>&#160;          }</div>
+<div class="line"><a name="l00951"></a><span class="lineno">  951</span>&#160;          <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00952"></a><span class="lineno">  952</span>&#160;          {</div>
+<div class="line"><a name="l00953"></a><span class="lineno">  953</span>&#160;            t &lt;&lt; <a class="code" href="../../da/d0d/diagram_8cpp.html#ad92050b3f6c2e59066cbf6f03a76c1d8">protToString</a>(p) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00954"></a><span class="lineno">  954</span>&#160;            <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00955"></a><span class="lineno">  955</span>&#160;            {</div>
+<div class="line"><a name="l00956"></a><span class="lineno">  956</span>&#160;              t &lt;&lt; <span class="stringliteral">&quot;0 &quot;</span> &lt;&lt; di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>  &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00957"></a><span class="lineno">  957</span>&#160;                &lt;&lt; (di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>+superRows-1) &lt;&lt; <span class="stringliteral">&quot; out\n&quot;</span>;</div>
+<div class="line"><a name="l00958"></a><span class="lineno">  958</span>&#160;            }</div>
+<div class="line"><a name="l00959"></a><span class="lineno">  959</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00960"></a><span class="lineno">  960</span>&#160;            {</div>
+<div class="line"><a name="l00961"></a><span class="lineno">  961</span>&#160;              t &lt;&lt; <span class="stringliteral">&quot;1 &quot;</span> &lt;&lt; di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a>  &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00962"></a><span class="lineno">  962</span>&#160;                &lt;&lt; ((<span class="keywordtype">float</span>)superRows-1.75f-di-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>)</div>
+<div class="line"><a name="l00963"></a><span class="lineno">  963</span>&#160;                &lt;&lt; <span class="stringliteral">&quot; out\n&quot;</span>;</div>
+<div class="line"><a name="l00964"></a><span class="lineno">  964</span>&#160;            }</div>
+<div class="line"><a name="l00965"></a><span class="lineno">  965</span>&#160;          }</div>
+<div class="line"><a name="l00966"></a><span class="lineno">  966</span>&#160;          <span class="comment">/* write input line */</span></div>
+<div class="line"><a name="l00967"></a><span class="lineno">  967</span>&#160;          <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *first = dil.front();</div>
+<div class="line"><a name="l00968"></a><span class="lineno">  968</span>&#160;          <a class="code" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *last  = dil.back();</div>
+<div class="line"><a name="l00969"></a><span class="lineno">  969</span>&#160;          <span class="keywordflow">if</span> (first!=last &amp;&amp; !first-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ac41f2e7b5f1de27cec87bc9a366dc687">isInList</a>()) <span class="comment">/* connect with all base classes */</span></div>
+<div class="line"><a name="l00970"></a><span class="lineno">  970</span>&#160;          {</div>
+<div class="line"><a name="l00971"></a><span class="lineno">  971</span>&#160;            <span class="keywordflow">if</span> (bitmap)</div>
+<div class="line"><a name="l00972"></a><span class="lineno">  972</span>&#160;            {</div>
+<div class="line"><a name="l00973"></a><span class="lineno">  973</span>&#160;              <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> xs = first-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()*(cellWidth+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a></div>
+<div class="line"><a name="l00974"></a><span class="lineno">  974</span>&#160;                + cellWidth/2;</div>
+<div class="line"><a name="l00975"></a><span class="lineno">  975</span>&#160;              <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> xe = last-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()*(cellWidth+<a class="code" href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a>)/<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a></div>
+<div class="line"><a name="l00976"></a><span class="lineno">  976</span>&#160;                + cellWidth/2;</div>
+<div class="line"><a name="l00977"></a><span class="lineno">  977</span>&#160;              <span class="keywordflow">if</span> (doBase) <span class="comment">// base classes</span></div>
+<div class="line"><a name="l00978"></a><span class="lineno">  978</span>&#160;              {</div>
+<div class="line"><a name="l00979"></a><span class="lineno">  979</span>&#160;                image-&gt;<a class="code" href="../../de/d73/class_image.html#aa05e82338cdada0f1d12ca338e96ddfc">drawHorzLine</a>(y,xs,xe,col,mask);</div>
+<div class="line"><a name="l00980"></a><span class="lineno">  980</span>&#160;              }</div>
+<div class="line"><a name="l00981"></a><span class="lineno">  981</span>&#160;              <span class="keywordflow">else</span> <span class="comment">// super classes</span></div>
+<div class="line"><a name="l00982"></a><span class="lineno">  982</span>&#160;              {</div>
+<div class="line"><a name="l00983"></a><span class="lineno">  983</span>&#160;                image-&gt;<a class="code" href="../../de/d73/class_image.html#aa05e82338cdada0f1d12ca338e96ddfc">drawHorzLine</a>(y+<a class="code" href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a>/2,xs,xe,col,mask);</div>
+<div class="line"><a name="l00984"></a><span class="lineno">  984</span>&#160;              }</div>
+<div class="line"><a name="l00985"></a><span class="lineno">  985</span>&#160;            }</div>
+<div class="line"><a name="l00986"></a><span class="lineno">  986</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00987"></a><span class="lineno">  987</span>&#160;            {</div>
+<div class="line"><a name="l00988"></a><span class="lineno">  988</span>&#160;              t &lt;&lt; <a class="code" href="../../da/d0d/diagram_8cpp.html#ad92050b3f6c2e59066cbf6f03a76c1d8">protToString</a>(p) &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00989"></a><span class="lineno">  989</span>&#160;              <span class="keywordflow">if</span> (doBase)</div>
+<div class="line"><a name="l00990"></a><span class="lineno">  990</span>&#160;              {</div>
+<div class="line"><a name="l00991"></a><span class="lineno">  991</span>&#160;                t &lt;&lt; first-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00992"></a><span class="lineno">  992</span>&#160;                  &lt;&lt; last-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00993"></a><span class="lineno">  993</span>&#160;                  &lt;&lt; (first-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>+superRows-1)</div>
+<div class="line"><a name="l00994"></a><span class="lineno">  994</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot; conn\n&quot;</span>;</div>
+<div class="line"><a name="l00995"></a><span class="lineno">  995</span>&#160;              }</div>
+<div class="line"><a name="l00996"></a><span class="lineno">  996</span>&#160;              <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00997"></a><span class="lineno">  997</span>&#160;              {</div>
+<div class="line"><a name="l00998"></a><span class="lineno">  998</span>&#160;                t &lt;&lt; first-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l00999"></a><span class="lineno">  999</span>&#160;                  &lt;&lt; last-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a> &lt;&lt; <span class="stringliteral">&quot; &quot;</span></div>
+<div class="line"><a name="l01000"></a><span class="lineno"> 1000</span>&#160;                  &lt;&lt; ((<span class="keywordtype">float</span>)superRows-first-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">yPos</a>()/(float)<a class="code" href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a>)</div>
+<div class="line"><a name="l01001"></a><span class="lineno"> 1001</span>&#160;                  &lt;&lt; <span class="stringliteral">&quot; conn\n&quot;</span>;</div>
+<div class="line"><a name="l01002"></a><span class="lineno"> 1002</span>&#160;              }</div>
+<div class="line"><a name="l01003"></a><span class="lineno"> 1003</span>&#160;            }</div>
+<div class="line"><a name="l01004"></a><span class="lineno"> 1004</span>&#160;          }</div>
+<div class="line"><a name="l01005"></a><span class="lineno"> 1005</span>&#160;        }</div>
+<div class="line"><a name="l01006"></a><span class="lineno"> 1006</span>&#160;      }</div>
+<div class="line"><a name="l01007"></a><span class="lineno"> 1007</span>&#160;    }</div>
+<div class="line"><a name="l01008"></a><span class="lineno"> 1008</span>&#160;  }</div>
+<div class="line"><a name="l01009"></a><span class="lineno"> 1009</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d11/image_8cpp_source.html#l00336">Image::drawHorzArrow()</a>, <a class="el" href="../../db/d11/image_8cpp_source.html#l00326">Image::drawHorzLine()</a>, <a class="el" href="../../db/d11/image_8cpp_source.html#l00356">Image::drawVertArrow()</a>, <a class="el" href="../../db/d11/image_8cpp_source.html#l00347">Image::drawVertLine()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00033">FALSE</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00048">DiagramItem::getChildren()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00195">getMinProtectionLevel()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00140">gridHeight</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00139">gridWidth</a>, <a class="el" href="../../d5/db2/image_8h_source.html#l00061">Image::height()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00059">DiagramItem::isInList()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00142">labelHorSpacing</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00143">labelVertSpacing</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00047">DiagramItem::parentItem()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00056">DiagramItem::protection()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00159">protToColor()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00147">protToMask()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00171">protToString()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00050">DiagramItem::xPos()</a> , 以及 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00051">DiagramItem::yPos()</a>.</p>
+
+</div>
+</div>
+<a id="a280423956def2398d3d8b05333615903"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a280423956def2398d3d8b05333615903">&#9670;&nbsp;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dc4/class_tree_diagram.html#a8782f25da29e8a967b2f9620c8fe4d03">iterator</a> TreeDiagram::end </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00126">126</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.end();    }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>.</p>
+
+</div>
+</div>
+<a id="a8a234fa654cd851d7cb3603e3820a5f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a234fa654cd851d7cb3603e3820a5f2">&#9670;&nbsp;</a></span>layoutTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool TreeDiagram::layoutTree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a>&#160;</td>
+          <td class="paramname"><em>row</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00394">394</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;{</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;  <span class="keywordtype">bool</span> moved=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>;</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;  <span class="comment">//printf(&quot;layoutTree(%s,%d)\n&quot;,qPrint(root-&gt;label()),r);</span></div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;  <span class="keywordflow">if</span> (root-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a3eabc93518e6ed6a857eb14737d308d9">numChildren</a>()&gt;0)</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;  {</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;    <span class="keyword">auto</span> children = root-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a48ef173c810becf58f4b38685b778db1">getChildren</a>();</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> k;</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> pPos=root-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">xPos</a>();</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    <a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> cPos=root-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a5069747e649aa1ad9963d881574aa033">avgChildPos</a>();</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    <span class="keywordflow">if</span> (pPos&gt;cPos) <span class="comment">// move children</span></div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    {</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.at(r+1);</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;      <span class="comment">//printf(&quot;Moving children %d-%d in row %d\n&quot;,</span></div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;      <span class="comment">//    dil-&gt;getFirst()-&gt;number(),row-&gt;count()-1,r+1);</span></div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;      <span class="keywordflow">for</span> (k=children.front()-&gt;number();k&lt;row-&gt;numItems();k++)</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>-&gt;<a class="code" href="../../d4/d34/class_diagram_row.html#ad0e66b56355da88e1ee8b5467eaed3f5">item</a>(k)-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aca2295801c4b08a1565e86da1c04c242">move</a>((<span class="keywordtype">int</span>)(pPos-cPos),0);</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;      moved=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160;    }</div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pPos&lt;cPos) <span class="comment">// move parent</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    {</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>=<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.at(r);</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;      <span class="comment">//printf(&quot;Moving parents %d-%d in row %d\n&quot;,</span></div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;      <span class="comment">//    root-&gt;number(),row-&gt;count()-1,r);</span></div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;      <span class="keywordflow">for</span> (k=root-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#ab2bb3a880d21c21ea88bb6811cb184b8">number</a>();k&lt;row-&gt;numItems();k++)</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <a class="code" href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">row</a>-&gt;<a class="code" href="../../d4/d34/class_diagram_row.html#ad0e66b56355da88e1ee8b5467eaed3f5">item</a>(k)-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#aca2295801c4b08a1565e86da1c04c242">move</a>((<span class="keywordtype">int</span>)(cPos-pPos),0);</div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;      moved=<a class="code" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    }</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160; </div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="comment">// recurse to children</span></div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keyword">auto</span> it = children.begin();</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;    <span class="keywordflow">for</span> (;it!=children.end() &amp;&amp; !moved &amp;&amp; !(*it)-&gt;isInList();++it)</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;    {</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;      moved = <a class="code" href="../../d4/dc4/class_tree_diagram.html#a8a234fa654cd851d7cb3603e3820a5f2">layoutTree</a>(*it,r+1);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    }</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  }</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  <span class="keywordflow">return</span> moved;</div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00309">DiagramItem::avgChildPos()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00033">FALSE</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00048">DiagramItem::getChildren()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00087">DiagramRow::item()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00049">DiagramItem::move()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00055">DiagramItem::number()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00323">DiagramItem::numChildren()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00121">row()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00036">TRUE</a> , 以及 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00050">DiagramItem::xPos()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00434">computeLayout()</a>.</p>
+
+</div>
+</div>
+<a id="a80bd153a4b94ab9513d9d957b9953b1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80bd153a4b94ab9513d9d957b9953b1c">&#9670;&nbsp;</a></span>moveChildren()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TreeDiagram::moveChildren </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d0/d78/class_diagram_item.html">DiagramItem</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>dx</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00385">385</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160;{</div>
+<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;di : root-&gt;<a class="code" href="../../d0/d78/class_diagram_item.html#a48ef173c810becf58f4b38685b778db1">getChildren</a>())</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  {</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    di-&gt;move(dx,0);</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <a class="code" href="../../d4/dc4/class_tree_diagram.html#a80bd153a4b94ab9513d9d957b9953b1c">moveChildren</a>(di,dx);</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  }</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00048">DiagramItem::getChildren()</a>.</p>
+
+</div>
+</div>
+<a id="a1c63ea32bfc08fafc9cb43a59fd65a86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c63ea32bfc08fafc9cb43a59fd65a86">&#9670;&nbsp;</a></span>numRows()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a> TreeDiagram::numRows </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00122">122</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{ <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a><span class="keyword">&gt;</span>(<a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.size()); }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00335">DiagramRow::insertClass()</a>.</p>
+
+</div>
+</div>
+<a id="acb47bcbf7f953ddb2b094478ff0459c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb47bcbf7f953ddb2b094478ff0459c6">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dc4/class_tree_diagram.html">TreeDiagram</a>&amp; TreeDiagram::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d4/dc4/class_tree_diagram.html">TreeDiagram</a> &amp;&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a95bc9421109e0f0a43c153cc64ef19ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95bc9421109e0f0a43c153cc64ef19ff">&#9670;&nbsp;</a></span>row()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/d34/class_diagram_row.html">DiagramRow</a>* TreeDiagram::row </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00121">121</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">m_rows</a>.at(index).get(); }</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">m_rows</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00434">computeLayout()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00485">computeRows()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00335">DiagramRow::insertClass()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00394">layoutTree()</a> , 以及 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00377">TreeDiagram()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a640c77fec2dc17c487ed70aa0ae78689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a640c77fec2dc17c487ed70aa0ae78689">&#9670;&nbsp;</a></span>m_rows</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d4/dc4/class_tree_diagram.html#acfc3de9439000aad71ce8d342a0319e1">Vec</a> TreeDiagram::m_rows</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a> 第 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00131">131</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00123">addRow()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00125">begin()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00515">computeExtremes()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00434">computeLayout()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00485">computeRows()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00568">drawBoxes()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00698">drawConnectors()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00126">end()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00394">layoutTree()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00122">numRows()</a>, <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00121">row()</a> , 以及 <a class="el" href="../../da/d0d/diagram_8cpp_source.html#l00377">TreeDiagram()</a>.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/<a class="el" href="../../da/d0d/diagram_8cpp_source.html">diagram.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_diagram_row_html_ad0e66b56355da88e1ee8b5467eaed3f5"><div class="ttname"><a href="../../d4/d34/class_diagram_row.html#ad0e66b56355da88e1ee8b5467eaed3f5">DiagramRow::item</a></div><div class="ttdeci">DiagramItem * item(int index)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00087">diagram.cpp:87</a></div></div>
+<div class="ttc" id="aclass_diagram_row_html_a849d1f6e44be3be59c6f3b790a61b603"><div class="ttname"><a href="../../d4/d34/class_diagram_row.html#a849d1f6e44be3be59c6f3b790a61b603">DiagramRow::end</a></div><div class="ttdeci">iterator end()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00090">diagram.cpp:90</a></div></div>
+<div class="ttc" id="atypes_8h_html_ab16236bdd10ddf4d73a9847350f0017ea5ecbcf0afce98b042f35ec71ba03fa4b"><div class="ttname"><a href="../../d9/d49/types_8h.html#ab16236bdd10ddf4d73a9847350f0017ea5ecbcf0afce98b042f35ec71ba03fa4b">Normal</a></div><div class="ttdeci">@ Normal</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00029">types.h:29</a></div></div>
+<div class="ttc" id="atypes_8h_html_a90e352184df58cd09455fe9996cd4ded"><div class="ttname"><a href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4ded">Protection</a></div><div class="ttdeci">Protection</div><div class="ttdoc">Protection level of members</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00026">types.h:26</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_aca2295801c4b08a1565e86da1c04c242"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#aca2295801c4b08a1565e86da1c04c242">DiagramItem::move</a></div><div class="ttdeci">void move(int dx, int dy)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00049">diagram.cpp:49</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_aa7edd2f3dfefdfd9655c162adc982e70"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#aa7edd2f3dfefdfd9655c162adc982e70">getMinProtectionLevel</a></div><div class="ttdeci">static Protection getMinProtectionLevel(const DiagramItemList &amp;dil)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00195">diagram.cpp:195</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_a48ef173c810becf58f4b38685b778db1"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#a48ef173c810becf58f4b38685b778db1">DiagramItem::getChildren</a></div><div class="ttdeci">DiagramItemList getChildren()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00048">diagram.cpp:48</a></div></div>
+<div class="ttc" id="aclass_diagram_row_html"><div class="ttname"><a href="../../d4/d34/class_diagram_row.html">DiagramRow</a></div><div class="ttdoc">Class representing a row in the built-in class diagram</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00075">diagram.cpp:75</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_ab2289efb497a6181accc11324b2007bb"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#ab2289efb497a6181accc11324b2007bb">DiagramItem::parentItem</a></div><div class="ttdeci">DiagramItem * parentItem()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00047">diagram.cpp:47</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_a781e7f173c0e14c4da84388d5b788e21"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#a781e7f173c0e14c4da84388d5b788e21">writeMapArea</a></div><div class="ttdeci">static void writeMapArea(TextStream &amp;t, const ClassDef *cd, QCString relPath, uint x, uint y, uint w, uint h)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00245">diagram.cpp:245</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_a3aecc8bdec6de29591f6a1cf3577ec52"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#a3aecc8bdec6de29591f6a1cf3577ec52">maxTreeWidth</a></div><div class="ttdeci">const uint maxTreeWidth</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00138">diagram.cpp:138</a></div></div>
+<div class="ttc" id="aclass_diagram_row_html_a8488330f275e6f40ea01f5c647c0c565"><div class="ttname"><a href="../../d4/d34/class_diagram_row.html#a8488330f275e6f40ea01f5c647c0c565">DiagramRow::begin</a></div><div class="ttdeci">iterator begin()</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00089">diagram.cpp:89</a></div></div>
+<div class="ttc" id="aclass_image_html_af079f072be99784d939a2a0edf2d730e"><div class="ttname"><a href="../../de/d73/class_image.html#af079f072be99784d939a2a0edf2d730e">Image::stringLength</a></div><div class="ttdeci">friend uint stringLength(const QCString &amp;s)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00314">image.cpp:314</a></div></div>
+<div class="ttc" id="aclass_image_html_aafce8f135d4b02f0375c2b100dbbabd6"><div class="ttname"><a href="../../de/d73/class_image.html#aafce8f135d4b02f0375c2b100dbbabd6">Image::drawVertLine</a></div><div class="ttdeci">void drawVertLine(uint x, uint ys, uint ye, uchar colIndex, uint mask)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00347">image.cpp:347</a></div></div>
+<div class="ttc" id="atypes_8h_html_a90e352184df58cd09455fe9996cd4deda2d47e20e63deb55d32228fde32f6b513"><div class="ttname"><a href="../../d9/d49/types_8h.html#a90e352184df58cd09455fe9996cd4deda2d47e20e63deb55d32228fde32f6b513">Public</a></div><div class="ttdeci">@ Public</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/d49/types_8h_source.html#l00026">types.h:26</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_ac41f2e7b5f1de27cec87bc9a366dc687"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#ac41f2e7b5f1de27cec87bc9a366dc687">DiagramItem::isInList</a></div><div class="ttdeci">bool isInList() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00059">diagram.cpp:59</a></div></div>
+<div class="ttc" id="aclass_tree_diagram_html_a640c77fec2dc17c487ed70aa0ae78689"><div class="ttname"><a href="../../d4/dc4/class_tree_diagram.html#a640c77fec2dc17c487ed70aa0ae78689">TreeDiagram::m_rows</a></div><div class="ttdeci">Vec m_rows</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00131">diagram.cpp:131</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_a34e75da9c041d72485c7ff81fd34b2f9"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#a34e75da9c041d72485c7ff81fd34b2f9">DiagramItem::xPos</a></div><div class="ttdeci">uint xPos() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00050">diagram.cpp:50</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a4d3943ddea65db7163a58e6c7e8df95a"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a4d3943ddea65db7163a58e6c7e8df95a">uint</a></div><div class="ttdeci">unsigned uint</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00040">qcstring.h:40</a></div></div>
+<div class="ttc" id="aclass_image_html_a8ca6088143ee3f68ca2e297669a5fea9"><div class="ttname"><a href="../../de/d73/class_image.html#a8ca6088143ee3f68ca2e297669a5fea9">Image::height</a></div><div class="ttdeci">uint height() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/db2/image_8h_source.html#l00061">image.h:61</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_ab2bb3a880d21c21ea88bb6811cb184b8"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#ab2bb3a880d21c21ea88bb6811cb184b8">DiagramItem::number</a></div><div class="ttdeci">uint number() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00055">diagram.cpp:55</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a65f85814a8290f9797005d3b28e7e5fc"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a65f85814a8290f9797005d3b28e7e5fc">uchar</a></div><div class="ttdeci">unsigned char uchar</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00038">qcstring.h:38</a></div></div>
+<div class="ttc" id="aclass_tree_diagram_html_a80bd153a4b94ab9513d9d957b9953b1c"><div class="ttname"><a href="../../d4/dc4/class_tree_diagram.html#a80bd153a4b94ab9513d9d957b9953b1c">TreeDiagram::moveChildren</a></div><div class="ttdeci">void moveChildren(DiagramItem *root, int dx)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00385">diagram.cpp:385</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_aaca11d38f246c2a3f673d29720cc0426"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#aaca11d38f246c2a3f673d29720cc0426">DiagramItem::protection</a></div><div class="ttdeci">Protection protection() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00056">diagram.cpp:56</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_a3eabc93518e6ed6a857eb14737d308d9"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#a3eabc93518e6ed6a857eb14737d308d9">DiagramItem::numChildren</a></div><div class="ttdeci">uint numChildren() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00323">diagram.cpp:323</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_ad5de5180d446e5debf2a96ded1684cb3"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#ad5de5180d446e5debf2a96ded1684cb3">protToMask</a></div><div class="ttdeci">static uint protToMask(Protection p)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00147">diagram.cpp:147</a></div></div>
+<div class="ttc" id="aclass_image_html_aa05e82338cdada0f1d12ca338e96ddfc"><div class="ttname"><a href="../../de/d73/class_image.html#aa05e82338cdada0f1d12ca338e96ddfc">Image::drawHorzLine</a></div><div class="ttdeci">void drawHorzLine(uint y, uint xs, uint xe, uchar colIndex, uint mask)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00326">image.cpp:326</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_a9a383dc0400438268b6bc495ddd1ac0a"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#a9a383dc0400438268b6bc495ddd1ac0a">labelHorSpacing</a></div><div class="ttdeci">const uint labelHorSpacing</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00142">diagram.cpp:142</a></div></div>
+<div class="ttc" id="aclass_dual_dir_iterator_html"><div class="ttname"><a href="../../dd/d23/class_dual_dir_iterator.html">DualDirIterator</a></div><div class="ttdoc">helper class representing an iterator that can iterate forwards or backwards</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00535">diagram.cpp:535</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00036">qcstring.h:36</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_a795da6949338dce366860ca9f7807662"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#a795da6949338dce366860ca9f7807662">protToColor</a></div><div class="ttdeci">static uchar protToColor(Protection p)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00159">diagram.cpp:159</a></div></div>
+<div class="ttc" id="aclass_image_html_a4a641afda1828967f9c3d463b6ae0817"><div class="ttname"><a href="../../de/d73/class_image.html#a4a641afda1828967f9c3d463b6ae0817">Image::drawVertArrow</a></div><div class="ttdeci">void drawVertArrow(uint x, uint ys, uint ye, uchar colIndex, uint mask)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00356">image.cpp:356</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_aad49c081bad61b6922fb5f93e47ac98c"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#aad49c081bad61b6922fb5f93e47ac98c">gridHeight</a></div><div class="ttdeci">const uint gridHeight</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00140">diagram.cpp:140</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_a4a52b9661a35ad00b7eb93cc326b9147"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#a4a52b9661a35ad00b7eb93cc326b9147">DiagramItem::yPos</a></div><div class="ttdeci">uint yPos() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00051">diagram.cpp:51</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_a3da7ea1d905d43e78cd8590c2b7609ea"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#a3da7ea1d905d43e78cd8590c2b7609ea">writeBitmapBox</a></div><div class="ttdeci">static void writeBitmapBox(DiagramItem *di, Image *image, uint x, uint y, uint w, uint h, bool firstRow, bool hasDocs, bool children=FALSE)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00215">diagram.cpp:215</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_ad92050b3f6c2e59066cbf6f03a76c1d8"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#ad92050b3f6c2e59066cbf6f03a76c1d8">protToString</a></div><div class="ttdeci">static QCString protToString(Protection p)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00171">diagram.cpp:171</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_a798b8cc660cdf609063e37c80cea00f5"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#a798b8cc660cdf609063e37c80cea00f5">labelVertSpacing</a></div><div class="ttdeci">const uint labelVertSpacing</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00143">diagram.cpp:143</a></div></div>
+<div class="ttc" id="aclass_tree_diagram_html_a8a234fa654cd851d7cb3603e3820a5f2"><div class="ttname"><a href="../../d4/dc4/class_tree_diagram.html#a8a234fa654cd851d7cb3603e3820a5f2">TreeDiagram::layoutTree</a></div><div class="ttdeci">bool layoutTree(DiagramItem *root, uint row)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00394">diagram.cpp:394</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_a333d34d729f3ad6a666642fd9e461ec6"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#a333d34d729f3ad6a666642fd9e461ec6">gridWidth</a></div><div class="ttdeci">const uint gridWidth</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00139">diagram.cpp:139</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_a2225004b94ee681adfe3ffdae32e4dd6"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#a2225004b94ee681adfe3ffdae32e4dd6">DiagramItem::getClassDef</a></div><div class="ttdeci">const ClassDef * getClassDef() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00060">diagram.cpp:60</a></div></div>
+<div class="ttc" id="adiagram_8cpp_html_a603348be77849aaf4416a4673fa207b6"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#a603348be77849aaf4416a4673fa207b6">DiagramItemList</a></div><div class="ttdeci">std::vector&lt; DiagramItem * &gt; DiagramItemList</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00037">diagram.cpp:37</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html_a5069747e649aa1ad9963d881574aa033"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html#a5069747e649aa1ad9963d881574aa033">DiagramItem::avgChildPos</a></div><div class="ttdeci">uint avgChildPos() const</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00309">diagram.cpp:309</a></div></div>
+<div class="ttc" id="aclass_diagram_row_html_a8c301e781bb14b1a23c00974d2050496"><div class="ttname"><a href="../../d4/d34/class_diagram_row.html#a8c301e781bb14b1a23c00974d2050496">DiagramRow::insertClass</a></div><div class="ttdeci">void insertClass(DiagramItem *parent, const ClassDef *cd, bool doBases, Protection prot, Specifier virt, const QCString &amp;ts)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00335">diagram.cpp:335</a></div></div>
+<div class="ttc" id="aclass_image_html_aed29f2abeb0ce6fea7bb553c5ca4e59b"><div class="ttname"><a href="../../de/d73/class_image.html#aed29f2abeb0ce6fea7bb553c5ca4e59b">Image::drawHorzArrow</a></div><div class="ttdeci">void drawHorzArrow(uint y, uint xs, uint xe, uchar colIndex, uint mask)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d11/image_8cpp_source.html#l00336">image.cpp:336</a></div></div>
+<div class="ttc" id="aclass_class_def_html_a659ebf886a21ea56b51354c22b91b0dc"><div class="ttname"><a href="../../d1/dcf/class_class_def.html#a659ebf886a21ea56b51354c22b91b0dc">ClassDef::isLinkable</a></div><div class="ttdeci">virtual bool isLinkable() const =0</div><div class="ttdoc">return TRUE iff a link to this class is possible (either within this project, or as a cross-reference...</div></div>
+<div class="ttc" id="adiagram_8cpp_html_ac45380e90067e3138b21af2a68dc19f3"><div class="ttname"><a href="../../da/d0d/diagram_8cpp.html#ac45380e90067e3138b21af2a68dc19f3">writeVectorBox</a></div><div class="ttdeci">static void writeVectorBox(TextStream &amp;t, DiagramItem *di, float x, float y, bool children=FALSE)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00236">diagram.cpp:236</a></div></div>
+<div class="ttc" id="aclass_tree_diagram_html_a95bc9421109e0f0a43c153cc64ef19ff"><div class="ttname"><a href="../../d4/dc4/class_tree_diagram.html#a95bc9421109e0f0a43c153cc64ef19ff">TreeDiagram::row</a></div><div class="ttdeci">DiagramRow * row(int index)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00121">diagram.cpp:121</a></div></div>
+<div class="ttc" id="aclass_diagram_item_html"><div class="ttname"><a href="../../d0/d78/class_diagram_item.html">DiagramItem</a></div><div class="ttdoc">Class representing a single node in the built-in class diagram</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d0d/diagram_8cpp_source.html#l00040">diagram.cpp:40</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00033">qcstring.h:33</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../d4/dc4/class_tree_diagram.html">TreeDiagram</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:41:08 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

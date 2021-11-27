@@ -1,0 +1,9 @@
+digraph "类继承关系图"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="details::HelperRecT\l\< n, F, Ts... \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d5c/structdetails_1_1_helper_rec_t_3_01n_00_01_f_00_01_ts_8_8_8_01_4.html",tooltip="Recursive template definition for multiple arguments."];
+}

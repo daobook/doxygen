@@ -1,0 +1,9 @@
+digraph "类继承关系图"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="VariantType\< index,\l Items \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/d80/struct_variant_type.html",tooltip="Generic declaration of a template type wrapper where VariantType<index,...>::type represents the type..."];
+}

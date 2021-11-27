@@ -1,0 +1,839 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: HtmlEntityMapper类 参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('db/d5f/class_html_entity_mapper.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public 成员函数</a> &#124;
+<a href="#pub-static-methods">静态 Public 成员函数</a> &#124;
+<a href="#pri-methods">Private 成员函数</a> &#124;
+<a href="#pri-attribs">Private 属性</a> &#124;
+<a href="#pri-static-attribs">静态 Private 属性</a> &#124;
+<a href="../../d1/d0c/class_html_entity_mapper-members.html">所有成员列表</a>  </div>
+  <div class="headertitle">
+<div class="title">HtmlEntityMapper类 参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Singleton helper class to map html entities to other formats  
+ <a href="../../db/d5f/class_html_entity_mapper.html#details">更多...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../db/dc6/htmlentity_8h_source.html">htmlentity.h</a>&gt;</code></p>
+<div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> HtmlEntityMapper 的协作图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+<center><span class="legend">[<a target="top" href="../../graph_legend.html">图例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public 成员函数</h2></td></tr>
+<tr class="memitem:ae5a015b9df7e2e99420e8fe7d4adbd71"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#ae5a015b9df7e2e99420e8fe7d4adbd71">name2sym</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;symName) const</td></tr>
+<tr class="memdesc:ae5a015b9df7e2e99420e8fe7d4adbd71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Give code of the requested HTML entity name  <a href="../../db/d5f/class_html_entity_mapper.html#ae5a015b9df7e2e99420e8fe7d4adbd71">更多...</a><br /></td></tr>
+<tr class="separator:ae5a015b9df7e2e99420e8fe7d4adbd71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d0e89e08829cb5fbef56e63b145405e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#a4d0e89e08829cb5fbef56e63b145405e">utf8</a> (<a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a> symb, bool useInPrintf=<a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>) const</td></tr>
+<tr class="memdesc:a4d0e89e08829cb5fbef56e63b145405e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access routine to the UTF8 code of the HTML entity  <a href="../../db/d5f/class_html_entity_mapper.html#a4d0e89e08829cb5fbef56e63b145405e">更多...</a><br /></td></tr>
+<tr class="separator:a4d0e89e08829cb5fbef56e63b145405e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a779e8427a7ad17c5ff767d7e8c34b6"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#a6a779e8427a7ad17c5ff767d7e8c34b6">html</a> (<a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a> symb, bool useInPrintf=<a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>) const</td></tr>
+<tr class="memdesc:a6a779e8427a7ad17c5ff767d7e8c34b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access routine to the html code of the HTML entity  <a href="../../db/d5f/class_html_entity_mapper.html#a6a779e8427a7ad17c5ff767d7e8c34b6">更多...</a><br /></td></tr>
+<tr class="separator:a6a779e8427a7ad17c5ff767d7e8c34b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a852eee7360169f75ae1a24b5e503bfd9"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#a852eee7360169f75ae1a24b5e503bfd9">xml</a> (<a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a> symb) const</td></tr>
+<tr class="memdesc:a852eee7360169f75ae1a24b5e503bfd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access routine to the XML code of the HTML entity  <a href="../../db/d5f/class_html_entity_mapper.html#a852eee7360169f75ae1a24b5e503bfd9">更多...</a><br /></td></tr>
+<tr class="separator:a852eee7360169f75ae1a24b5e503bfd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d9fa38da68c64008be2a971953c5ca"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#aa6d9fa38da68c64008be2a971953c5ca">docbook</a> (<a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a> symb) const</td></tr>
+<tr class="memdesc:aa6d9fa38da68c64008be2a971953c5ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access routine to the docbook code of the HTML entity  <a href="../../db/d5f/class_html_entity_mapper.html#aa6d9fa38da68c64008be2a971953c5ca">更多...</a><br /></td></tr>
+<tr class="separator:aa6d9fa38da68c64008be2a971953c5ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1a658dacc27f6300042318c4dda97cf"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#ae1a658dacc27f6300042318c4dda97cf">latex</a> (<a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a> symb) const</td></tr>
+<tr class="memdesc:ae1a658dacc27f6300042318c4dda97cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access routine to the LaTeX code of the HTML entity  <a href="../../db/d5f/class_html_entity_mapper.html#ae1a658dacc27f6300042318c4dda97cf">更多...</a><br /></td></tr>
+<tr class="separator:ae1a658dacc27f6300042318c4dda97cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0c9a67c19af23ac55194d75a900d39f"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#aa0c9a67c19af23ac55194d75a900d39f">man</a> (<a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a> symb) const</td></tr>
+<tr class="memdesc:aa0c9a67c19af23ac55194d75a900d39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access routine to the man code of the HTML entity  <a href="../../db/d5f/class_html_entity_mapper.html#aa0c9a67c19af23ac55194d75a900d39f">更多...</a><br /></td></tr>
+<tr class="separator:aa0c9a67c19af23ac55194d75a900d39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1e5d81261fbbe19364c6c4f5b9947df"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#aa1e5d81261fbbe19364c6c4f5b9947df">rtf</a> (<a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a> symb) const</td></tr>
+<tr class="memdesc:aa1e5d81261fbbe19364c6c4f5b9947df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access routine to the RTF code of the HTML entity  <a href="../../db/d5f/class_html_entity_mapper.html#aa1e5d81261fbbe19364c6c4f5b9947df">更多...</a><br /></td></tr>
+<tr class="separator:aa1e5d81261fbbe19364c6c4f5b9947df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff1f6887be8ea6433a2cb33994aba368"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="../../d7/dfc/struct_doc_symbol_1_1_perl_symb.html">DocSymbol::PerlSymb</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#aff1f6887be8ea6433a2cb33994aba368">perl</a> (<a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a> symb) const</td></tr>
+<tr class="memdesc:aff1f6887be8ea6433a2cb33994aba368"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access routine to the perl struct with the perl code of the HTML entity  <a href="../../db/d5f/class_html_entity_mapper.html#aff1f6887be8ea6433a2cb33994aba368">更多...</a><br /></td></tr>
+<tr class="separator:aff1f6887be8ea6433a2cb33994aba368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c7b82a1151c72c7df57732517379a14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#a7c7b82a1151c72c7df57732517379a14">writeXMLSchema</a> (<a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;t)</td></tr>
+<tr class="separator:a7c7b82a1151c72c7df57732517379a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+静态 Public 成员函数</h2></td></tr>
+<tr class="memitem:ae6ddba77b763691a6e3a1c9021e8d944"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../db/d5f/class_html_entity_mapper.html">HtmlEntityMapper</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#ae6ddba77b763691a6e3a1c9021e8d944">instance</a> ()</td></tr>
+<tr class="memdesc:ae6ddba77b763691a6e3a1c9021e8d944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the one and only instance of the HTML entity mapper  <a href="../../db/d5f/class_html_entity_mapper.html#ae6ddba77b763691a6e3a1c9021e8d944">更多...</a><br /></td></tr>
+<tr class="separator:ae6ddba77b763691a6e3a1c9021e8d944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa45124007f692528edfa91ffbcb21f12"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#aa45124007f692528edfa91ffbcb21f12">deleteInstance</a> ()</td></tr>
+<tr class="memdesc:aa45124007f692528edfa91ffbcb21f12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the one and only instance of the HTML entity mapper  <a href="../../db/d5f/class_html_entity_mapper.html#aa45124007f692528edfa91ffbcb21f12">更多...</a><br /></td></tr>
+<tr class="separator:aa45124007f692528edfa91ffbcb21f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private 成员函数</h2></td></tr>
+<tr class="memitem:ac80b42ee1d05037eed6e1c88bc844ece"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#ac80b42ee1d05037eed6e1c88bc844ece">validate</a> ()</td></tr>
+<tr class="memdesc:ac80b42ee1d05037eed6e1c88bc844ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Routine to check if the entries of the html_entities are numbered correctly  <a href="../../db/d5f/class_html_entity_mapper.html#ac80b42ee1d05037eed6e1c88bc844ece">更多...</a><br /></td></tr>
+<tr class="separator:ac80b42ee1d05037eed6e1c88bc844ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac16b10159880f0dcd9bf4e0449f7e21e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#ac16b10159880f0dcd9bf4e0449f7e21e">HtmlEntityMapper</a> ()</td></tr>
+<tr class="separator:ac16b10159880f0dcd9bf4e0449f7e21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fb3bfaff647723db532f2dec86d446e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#a2fb3bfaff647723db532f2dec86d446e">~HtmlEntityMapper</a> ()</td></tr>
+<tr class="separator:a2fb3bfaff647723db532f2dec86d446e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private 属性</h2></td></tr>
+<tr class="memitem:a191e7ff6aab6a24b3caf372fe51674c2"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, <a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#a191e7ff6aab6a24b3caf372fe51674c2">m_name2sym</a></td></tr>
+<tr class="separator:a191e7ff6aab6a24b3caf372fe51674c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-attribs"></a>
+静态 Private 属性</h2></td></tr>
+<tr class="memitem:a2bd728bca7f82356189881d34d9e6776"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../db/d5f/class_html_entity_mapper.html">HtmlEntityMapper</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d5f/class_html_entity_mapper.html#a2bd728bca7f82356189881d34d9e6776">s_instance</a> = 0</td></tr>
+<tr class="separator:a2bd728bca7f82356189881d34d9e6776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">详细描述</h2>
+<div class="textblock"><p>Singleton helper class to map html entities to other formats </p>
+
+<p class="definition">在文件 <a class="el" href="../../db/dc6/htmlentity_8h_source.html">htmlentity.h</a> 第 <a class="el" href="../../db/dc6/htmlentity_8h_source.html#l00026">26</a> 行定义.</p>
+</div><h2 class="groupheader">构造及析构函数说明</h2>
+<a id="ac16b10159880f0dcd9bf4e0449f7e21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac16b10159880f0dcd9bf4e0449f7e21e">&#9670;&nbsp;</a></span>HtmlEntityMapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HtmlEntityMapper::HtmlEntityMapper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00326">326</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;{</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a64d4ba5f5dbb1af5e62722d685a1cb8a">g_numHtmlEntities</a>; i++)</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;  {</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <a class="code" href="../../db/d5f/class_html_entity_mapper.html#a191e7ff6aab6a24b3caf372fe51674c2">m_name2sym</a>.insert(std::make_pair(<a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[i].item,<a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[i].symb));</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  }</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  <a class="code" href="../../db/d5f/class_html_entity_mapper.html#ac80b42ee1d05037eed6e1c88bc844ece">validate</a>();</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>, <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00322">g_numHtmlEntities</a>, <a class="el" href="../../db/dc6/htmlentity_8h_source.html#l00046">m_name2sym</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00493">validate()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00341">instance()</a>.</p>
+
+</div>
+</div>
+<a id="a2fb3bfaff647723db532f2dec86d446e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2fb3bfaff647723db532f2dec86d446e">&#9670;&nbsp;</a></span>~HtmlEntityMapper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">HtmlEntityMapper::~HtmlEntityMapper </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00336">336</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;{</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">成员函数说明</h2>
+<a id="aa45124007f692528edfa91ffbcb21f12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa45124007f692528edfa91ffbcb21f12">&#9670;&nbsp;</a></span>deleteInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HtmlEntityMapper::deleteInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deletes the one and only instance of the HTML entity mapper </p>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00351">351</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;{</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;  <span class="keyword">delete</span> <a class="code" href="../../db/d5f/class_html_entity_mapper.html#a2bd728bca7f82356189881d34d9e6776">s_instance</a>;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  <a class="code" href="../../db/d5f/class_html_entity_mapper.html#a2bd728bca7f82356189881d34d9e6776">s_instance</a>=0;</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/dc6/htmlentity_8h_source.html#l00045">s_instance</a>.</p>
+
+</div>
+</div>
+<a id="aa6d9fa38da68c64008be2a971953c5ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6d9fa38da68c64008be2a971953c5ca">&#9670;&nbsp;</a></span>docbook()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * HtmlEntityMapper::docbook </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a>&#160;</td>
+          <td class="paramname"><em>symb</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access routine to the docbook code of the HTML entity </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symb</td><td>Code of the requested HTML entity </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the docbook code of the HTML entity, in case the docbook code is unknown <code>NULL</code> is returned. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00415">415</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;{</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[symb].<a class="code" href="../../d2/d34/structhtml_entity_info.html#a2e771d33c92272005dde6ebd091248b3">docbook</a>;</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00034">htmlEntityInfo::docbook</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d05/docbookvisitor_8cpp_source.html#l00199">DocbookDocVisitor::visit()</a>.</p>
+
+</div>
+</div>
+<a id="a6a779e8427a7ad17c5ff767d7e8c34b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a779e8427a7ad17c5ff767d7e8c34b6">&#9670;&nbsp;</a></span>html()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * HtmlEntityMapper::html </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a>&#160;</td>
+          <td class="paramname"><em>symb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useInPrintf</em> = <code><a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access routine to the html code of the HTML entity </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symb</td><td>Code of the requested HTML entity </td></tr>
+    <tr><td class="paramname">useInPrintf</td><td>If TRUE the result will be escaped such that it can be used in a printf string pattern </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the html representation of the HTML entity, in case the html code is unknown <code>NULL</code> is returned. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00386">386</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;{</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;  <span class="keywordflow">if</span> (useInPrintf &amp;&amp; symb==<a class="code" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2acfb18918292865cb6f675e1938460dc7">DocSymbol::Sym_Percent</a>)</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;  {</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;%%&quot;</span>; <span class="comment">// escape for printf</span></div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;  }</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;  {</div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[symb].<a class="code" href="../../d2/d34/structhtml_entity_info.html#a25277263c40c82d1c59b7264fb9c2fe7">html</a>;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;  }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>, <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00032">htmlEntityInfo::html</a> , 以及 <a class="el" href="../../de/d9c/docparser_8h_source.html#l00446">DocSymbol::Sym_Percent</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../da/db0/htmldocvisitor_8cpp_source.html#l00308">HtmlDocVisitor::visit()</a> , 以及 <a class="el" href="../../d3/da6/textdocvisitor_8cpp_source.html#l00027">TextDocVisitor::visit()</a>.</p>
+
+</div>
+</div>
+<a id="ae6ddba77b763691a6e3a1c9021e8d944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae6ddba77b763691a6e3a1c9021e8d944">&#9670;&nbsp;</a></span>instance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d5f/class_html_entity_mapper.html">HtmlEntityMapper</a> * HtmlEntityMapper::instance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the one and only instance of the HTML entity mapper </p>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00341">341</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;{</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="../../db/d5f/class_html_entity_mapper.html#a2bd728bca7f82356189881d34d9e6776">s_instance</a>==0)</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;  {</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <a class="code" href="../../db/d5f/class_html_entity_mapper.html#a2bd728bca7f82356189881d34d9e6776">s_instance</a> = <span class="keyword">new</span> <a class="code" href="../../db/d5f/class_html_entity_mapper.html#ac16b10159880f0dcd9bf4e0449f7e21e">HtmlEntityMapper</a>;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  }</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../db/d5f/class_html_entity_mapper.html#a2bd728bca7f82356189881d34d9e6776">s_instance</a>;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00326">HtmlEntityMapper()</a> , 以及 <a class="el" href="../../db/dc6/htmlentity_8h_source.html#l00045">s_instance</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../df/d2d/util_8cpp_source.html#l04170">convertCharEntitiesToUTF8()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l03999">convertToDocBook()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l01713">DocSymbol::decodeSymbol()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l04934">filterLatexString()</a>, <a class="el" href="../../d0/dc3/xmlgen_8cpp_source.html#l01888">generateXML()</a>, <a class="el" href="../../da/db0/htmldocvisitor_8cpp_source.html#l00308">HtmlDocVisitor::visit()</a>, <a class="el" href="../../dc/d05/docbookvisitor_8cpp_source.html#l00199">DocbookDocVisitor::visit()</a>, <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00218">LatexDocVisitor::visit()</a>, <a class="el" href="../../d8/dde/mandocvisitor_8cpp_source.html#l00075">ManDocVisitor::visit()</a>, <a class="el" href="../../de/d9a/rtfdocvisitor_8cpp_source.html#l00127">RTFDocVisitor::visit()</a>, <a class="el" href="../../dd/db6/xmldocvisitor_8cpp_source.html#l00132">XmlDocVisitor::visit()</a>, <a class="el" href="../../d3/da6/textdocvisitor_8cpp_source.html#l00027">TextDocVisitor::visit()</a> , 以及 <a class="el" href="../../de/dd0/perlmodgen_8cpp_source.html#l00542">PerlModDocVisitor::visit()</a>.</p>
+
+</div>
+</div>
+<a id="ae1a658dacc27f6300042318c4dda97cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1a658dacc27f6300042318c4dda97cf">&#9670;&nbsp;</a></span>latex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * HtmlEntityMapper::latex </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a>&#160;</td>
+          <td class="paramname"><em>symb</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access routine to the LaTeX code of the HTML entity </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symb</td><td>Code of the requested HTML entity </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the LaTeX code of the HTML entity, in case the LaTeX code is unknown <code>NULL</code> is returned. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00426">426</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;{</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[symb].<a class="code" href="../../d2/d34/structhtml_entity_info.html#afe79b1519786e47dd7191f575d73a55a">latex</a>;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00035">htmlEntityInfo::latex</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../df/d2d/util_8cpp_source.html#l04934">filterLatexString()</a> , 以及 <a class="el" href="../../d1/d4e/latexdocvisitor_8cpp_source.html#l00218">LatexDocVisitor::visit()</a>.</p>
+
+</div>
+</div>
+<a id="aa0c9a67c19af23ac55194d75a900d39f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0c9a67c19af23ac55194d75a900d39f">&#9670;&nbsp;</a></span>man()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * HtmlEntityMapper::man </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a>&#160;</td>
+          <td class="paramname"><em>symb</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access routine to the man code of the HTML entity </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symb</td><td>Code of the requested HTML entity </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the man of the HTML entity, in case the man code is unknown <code>NULL</code> is returned. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00437">437</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;{</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[symb].<a class="code" href="../../d2/d34/structhtml_entity_info.html#abf7df55d6a691137ed9aa121f167f155">man</a>;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00036">htmlEntityInfo::man</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d8/dde/mandocvisitor_8cpp_source.html#l00075">ManDocVisitor::visit()</a>.</p>
+
+</div>
+</div>
+<a id="ae5a015b9df7e2e99420e8fe7d4adbd71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5a015b9df7e2e99420e8fe7d4adbd71">&#9670;&nbsp;</a></span>name2sym()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a> HtmlEntityMapper::name2sym </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>symName</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Give code of the requested HTML entity name </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symName</td><td>HTML entity name without <code>&amp;</code> and <code></code>; </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the code for the requested HTML entity name, in case the requested HTML item does not exist <code>DocSymbol::Sym_unknown</code> is returned. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00471">471</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;{</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;  <span class="keyword">auto</span> it = <a class="code" href="../../db/d5f/class_html_entity_mapper.html#a191e7ff6aab6a24b3caf372fe51674c2">m_name2sym</a>.find(symName.<a class="code" href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">str</a>());</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;  <span class="keywordflow">return</span> it!=<a class="code" href="../../db/d5f/class_html_entity_mapper.html#a191e7ff6aab6a24b3caf372fe51674c2">m_name2sym</a>.end() ? it-&gt;second : <a class="code" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2a8b503beccff4744604bc910445e909c1">DocSymbol::Sym_Unknown</a>;</div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/dc6/htmlentity_8h_source.html#l00046">m_name2sym</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00442">QCString::str()</a> , 以及 <a class="el" href="../../de/d9c/docparser_8h_source.html#l00388">DocSymbol::Sym_Unknown</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../df/d2d/util_8cpp_source.html#l04170">convertCharEntitiesToUTF8()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l03999">convertToDocBook()</a>, <a class="el" href="../../da/d17/docparser_8cpp_source.html#l01713">DocSymbol::decodeSymbol()</a> , 以及 <a class="el" href="../../df/d2d/util_8cpp_source.html#l04934">filterLatexString()</a>.</p>
+
+</div>
+</div>
+<a id="aff1f6887be8ea6433a2cb33994aba368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff1f6887be8ea6433a2cb33994aba368">&#9670;&nbsp;</a></span>perl()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="../../d7/dfc/struct_doc_symbol_1_1_perl_symb.html">DocSymbol::PerlSymb</a> * HtmlEntityMapper::perl </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a>&#160;</td>
+          <td class="paramname"><em>symb</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access routine to the perl struct with the perl code of the HTML entity </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symb</td><td>Code of the requested HTML entity </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the pointer to perl struct with the perl code of the HTML entity, in case the perl code does not exists the NULL pointer is entered in the <code>symb</code> field and in the <code><a class="el" href="../../d7/d67/class_doc_symbol.html#a513eebcda007c5999064ab5de1d1e847a0a5a5284026a93c0d41427779e98e211">DocSymbol::Perl_unknown</a></code> in the <code>type</code> field. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00460">460</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;{</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;  <span class="keywordflow">return</span> &amp;<a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[symb].<a class="code" href="../../d2/d34/structhtml_entity_info.html#a4ad6a72d50e3794d483e8bcde1f41812">perl</a>;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00038">htmlEntityInfo::perl</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../de/dd0/perlmodgen_8cpp_source.html#l00542">PerlModDocVisitor::visit()</a>.</p>
+
+</div>
+</div>
+<a id="aa1e5d81261fbbe19364c6c4f5b9947df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1e5d81261fbbe19364c6c4f5b9947df">&#9670;&nbsp;</a></span>rtf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * HtmlEntityMapper::rtf </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a>&#160;</td>
+          <td class="paramname"><em>symb</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access routine to the RTF code of the HTML entity </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symb</td><td>Code of the requested HTML entity </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the RTF of the HTML entity, in case the RTF code is unknown <code>NULL</code> is returned. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00448">448</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;{</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[symb].<a class="code" href="../../d2/d34/structhtml_entity_info.html#a717674e8dfc6fe98d15cd355acaa6f47">rtf</a>;</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00037">htmlEntityInfo::rtf</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../de/d9a/rtfdocvisitor_8cpp_source.html#l00127">RTFDocVisitor::visit()</a>.</p>
+
+</div>
+</div>
+<a id="a4d0e89e08829cb5fbef56e63b145405e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d0e89e08829cb5fbef56e63b145405e">&#9670;&nbsp;</a></span>utf8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * HtmlEntityMapper::utf8 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a>&#160;</td>
+          <td class="paramname"><em>symb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useInPrintf</em> = <code><a class="el" href="../../d7/d5c/qcstring_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access routine to the UTF8 code of the HTML entity </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symb</td><td>Code of the requested HTML entity </td></tr>
+    <tr><td class="paramname">useInPrintf</td><td>If TRUE the result will be escaped such that it can be used in a printf string pattern </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the UTF8 code of the HTML entity, in case the UTF code is unknown <code>NULL</code> is returned. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00366">366</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;{</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;  <span class="keywordflow">if</span> (useInPrintf &amp;&amp; symb==<a class="code" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2acfb18918292865cb6f675e1938460dc7">DocSymbol::Sym_Percent</a>)</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;  {</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;%%&quot;</span>; <span class="comment">// escape for printf</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  }</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  {</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[symb].<a class="code" href="../../d2/d34/structhtml_entity_info.html#ada90d83cde3fa45e52909e091d79955c">UTF8</a>;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>, <a class="el" href="../../de/d9c/docparser_8h_source.html#l00446">DocSymbol::Sym_Percent</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00031">htmlEntityInfo::UTF8</a>.</p>
+
+</div>
+</div>
+<a id="ac80b42ee1d05037eed6e1c88bc844ece"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac80b42ee1d05037eed6e1c88bc844ece">&#9670;&nbsp;</a></span>validate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HtmlEntityMapper::validate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Routine to check if the entries of the html_entities are numbered correctly </p>
+<p>in case of a mismatch a warning message is given. </p>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00493">493</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;{</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a64d4ba5f5dbb1af5e62722d685a1cb8a">g_numHtmlEntities</a>; i++)</div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;  {</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;    <span class="keywordflow">if</span> (i != <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[i].symb)</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;    {</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;      <a class="code" href="../../d8/d6a/message_8cpp.html#a1fd98c6976d3826490804976e17eb83f">warn_uncond</a>(<span class="stringliteral">&quot;Internal inconsistency, htmlentries code %d (item=%s)\n&quot;</span>,i,<a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[i].item);</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;    }</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;  }</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>, <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00322">g_numHtmlEntities</a> , 以及 <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00194">warn_uncond()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00326">HtmlEntityMapper()</a>.</p>
+
+</div>
+</div>
+<a id="a7c7b82a1151c72c7df57732517379a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c7b82a1151c72c7df57732517379a14">&#9670;&nbsp;</a></span>writeXMLSchema()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void HtmlEntityMapper::writeXMLSchema </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00477">477</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;{</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;<a class="code" href="../../d2/db2/htmlentity_8cpp.html#a64d4ba5f5dbb1af5e62722d685a1cb8a">g_numHtmlEntities</a> - <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a038714c15d7d6e94422d60f6efd01a50">g_numberHtmlMappedCmds</a>;i++)</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;  {</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> bareName = <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[i].<a class="code" href="../../d2/d34/structhtml_entity_info.html#a48bab0fee64fb833ae8dd9034a8a3e68">xml</a>;</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <span class="keywordflow">if</span> (!bareName.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>() &amp;&amp; bareName.<a class="code" href="../../d9/d45/class_q_c_string.html#a6b3cacab2df2f8cda280e83d474d57fa">at</a>(0)==<span class="charliteral">&#39;&lt;&#39;</span> &amp;&amp; bareName.<a class="code" href="../../d9/d45/class_q_c_string.html#a8f4aa5417f6a834f28c7148a1fe262d5">right</a>(2)==<span class="stringliteral">&quot;/&gt;&quot;</span>)</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;    {</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;      bareName = bareName.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(1,bareName.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>()-3); <span class="comment">// strip &lt; and /&gt;</span></div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;      t &lt;&lt; <span class="stringliteral">&quot;      &lt;xsd:element name=\&quot;&quot;</span> &lt;&lt; bareName &lt;&lt; <span class="stringliteral">&quot;\&quot; type=\&quot;docEmptyType\&quot; /&gt;\n&quot;</span>;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    }</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;  }</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00477">QCString::at()</a>, <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>, <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00021">g_numberHtmlMappedCmds</a>, <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00322">g_numHtmlEntities</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00147">QCString::length()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00224">QCString::mid()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00217">QCString::right()</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00033">htmlEntityInfo::xml</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d0/dc3/xmlgen_8cpp_source.html#l01888">generateXML()</a>.</p>
+
+</div>
+</div>
+<a id="a852eee7360169f75ae1a24b5e503bfd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a852eee7360169f75ae1a24b5e503bfd9">&#9670;&nbsp;</a></span>xml()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * HtmlEntityMapper::xml </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a>&#160;</td>
+          <td class="paramname"><em>symb</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Access routine to the XML code of the HTML entity </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">symb</td><td>Code of the requested HTML entity </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>the XML code of the HTML entity, in case the XML code is unknown <code>NULL</code> is returned. </dd></dl>
+
+<p class="definition">在文件 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a> 第 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00404">404</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;{</div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a>[symb].<a class="code" href="../../d2/d34/structhtml_entity_info.html#a48bab0fee64fb833ae8dd9034a8a3e68">xml</a>;</div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00033">htmlEntityInfo::xml</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dd/db6/xmldocvisitor_8cpp_source.html#l00132">XmlDocVisitor::visit()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">类成员变量说明</h2>
+<a id="a191e7ff6aab6a24b3caf372fe51674c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a191e7ff6aab6a24b3caf372fe51674c2">&#9670;&nbsp;</a></span>m_name2sym</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unordered_map&lt;std::string,<a class="el" href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2">DocSymbol::SymType</a>&gt; HtmlEntityMapper::m_name2sym</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc6/htmlentity_8h_source.html">htmlentity.h</a> 第 <a class="el" href="../../db/dc6/htmlentity_8h_source.html#l00046">46</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00326">HtmlEntityMapper()</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00471">name2sym()</a>.</p>
+
+</div>
+</div>
+<a id="a2bd728bca7f82356189881d34d9e6776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bd728bca7f82356189881d34d9e6776">&#9670;&nbsp;</a></span>s_instance</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../db/d5f/class_html_entity_mapper.html">HtmlEntityMapper</a> * HtmlEntityMapper::s_instance = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/dc6/htmlentity_8h_source.html">htmlentity.h</a> 第 <a class="el" href="../../db/dc6/htmlentity_8h_source.html#l00045">45</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00351">deleteInstance()</a> , 以及 <a class="el" href="../../d2/db2/htmlentity_8cpp_source.html#l00341">instance()</a>.</p>
+
+</div>
+</div>
+<hr/>该类的文档由以下文件生成:<ul>
+<li>src/<a class="el" href="../../db/dc6/htmlentity_8h_source.html">htmlentity.h</a></li>
+<li>src/<a class="el" href="../../d2/db2/htmlentity_8cpp_source.html">htmlentity.cpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="ahtmlentity_8cpp_html_a038714c15d7d6e94422d60f6efd01a50"><div class="ttname"><a href="../../d2/db2/htmlentity_8cpp.html#a038714c15d7d6e94422d60f6efd01a50">g_numberHtmlMappedCmds</a></div><div class="ttdeci">static const int g_numberHtmlMappedCmds</div><div class="ttdoc">Number of doxygen commands mapped as if it were HTML entities</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00021">htmlentity.cpp:21</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_ac52596733e9110b778019946d73fb268"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">QCString::length</a></div><div class="ttdeci">uint length() const</div><div class="ttdoc">Returns the length of the string, not counting the 0-terminator.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00147">qcstring.h:147</a></div></div>
+<div class="ttc" id="aclass_html_entity_mapper_html_ac16b10159880f0dcd9bf4e0449f7e21e"><div class="ttname"><a href="../../db/d5f/class_html_entity_mapper.html#ac16b10159880f0dcd9bf4e0449f7e21e">HtmlEntityMapper::HtmlEntityMapper</a></div><div class="ttdeci">HtmlEntityMapper()</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00326">htmlentity.cpp:326</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a621c4090d69ad7d05ef8e5234376c3d8"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">QCString::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Returns TRUE iff the string is empty</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00144">qcstring.h:144</a></div></div>
+<div class="ttc" id="astructhtml_entity_info_html_afe79b1519786e47dd7191f575d73a55a"><div class="ttname"><a href="../../d2/d34/structhtml_entity_info.html#afe79b1519786e47dd7191f575d73a55a">htmlEntityInfo::latex</a></div><div class="ttdeci">const char * latex</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00035">htmlentity.cpp:35</a></div></div>
+<div class="ttc" id="aclass_doc_symbol_html_abea9ba345564542cc6b65ae4c76be6c2acfb18918292865cb6f675e1938460dc7"><div class="ttname"><a href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2acfb18918292865cb6f675e1938460dc7">DocSymbol::Sym_Percent</a></div><div class="ttdeci">@ Sym_Percent</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d9c/docparser_8h_source.html#l00446">docparser.h:446</a></div></div>
+<div class="ttc" id="astructhtml_entity_info_html_abf7df55d6a691137ed9aa121f167f155"><div class="ttname"><a href="../../d2/d34/structhtml_entity_info.html#abf7df55d6a691137ed9aa121f167f155">htmlEntityInfo::man</a></div><div class="ttdeci">const char * man</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00036">htmlentity.cpp:36</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a9824b07232eea418ab3b3e7dc3178eec"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a9824b07232eea418ab3b3e7dc3178eec">QCString::str</a></div><div class="ttdeci">std::string str() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00442">qcstring.h:442</a></div></div>
+<div class="ttc" id="ahtmlentity_8cpp_html_a64d4ba5f5dbb1af5e62722d685a1cb8a"><div class="ttname"><a href="../../d2/db2/htmlentity_8cpp.html#a64d4ba5f5dbb1af5e62722d685a1cb8a">g_numHtmlEntities</a></div><div class="ttdeci">static const int g_numHtmlEntities</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00322">htmlentity.cpp:322</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a6b3cacab2df2f8cda280e83d474d57fa"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a6b3cacab2df2f8cda280e83d474d57fa">QCString::at</a></div><div class="ttdeci">char &amp; at(size_t i)</div><div class="ttdoc">Returns a reference to the character at index i.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00477">qcstring.h:477</a></div></div>
+<div class="ttc" id="astructhtml_entity_info_html_a717674e8dfc6fe98d15cd355acaa6f47"><div class="ttname"><a href="../../d2/d34/structhtml_entity_info.html#a717674e8dfc6fe98d15cd355acaa6f47">htmlEntityInfo::rtf</a></div><div class="ttdeci">const char * rtf</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00037">htmlentity.cpp:37</a></div></div>
+<div class="ttc" id="astructhtml_entity_info_html_a25277263c40c82d1c59b7264fb9c2fe7"><div class="ttname"><a href="../../d2/d34/structhtml_entity_info.html#a25277263c40c82d1c59b7264fb9c2fe7">htmlEntityInfo::html</a></div><div class="ttdeci">const char * html</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00032">htmlentity.cpp:32</a></div></div>
+<div class="ttc" id="amessage_8cpp_html_a1fd98c6976d3826490804976e17eb83f"><div class="ttname"><a href="../../d8/d6a/message_8cpp.html#a1fd98c6976d3826490804976e17eb83f">warn_uncond</a></div><div class="ttdeci">void warn_uncond(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d6a/message_8cpp_source.html#l00194">message.cpp:194</a></div></div>
+<div class="ttc" id="ahtmlentity_8cpp_html_a252df117b5247e83567be54adc11751e"><div class="ttname"><a href="../../d2/db2/htmlentity_8cpp.html#a252df117b5247e83567be54adc11751e">g_htmlEntities</a></div><div class="ttdeci">static struct htmlEntityInfo g_htmlEntities[]</div></div>
+<div class="ttc" id="aclass_doc_symbol_html_abea9ba345564542cc6b65ae4c76be6c2a8b503beccff4744604bc910445e909c1"><div class="ttname"><a href="../../d7/d67/class_doc_symbol.html#abea9ba345564542cc6b65ae4c76be6c2a8b503beccff4744604bc910445e909c1">DocSymbol::Sym_Unknown</a></div><div class="ttdeci">@ Sym_Unknown</div><div class="ttdef"><b>Definition:</b> <a href="../../de/d9c/docparser_8h_source.html#l00388">docparser.h:388</a></div></div>
+<div class="ttc" id="astructhtml_entity_info_html_a2e771d33c92272005dde6ebd091248b3"><div class="ttname"><a href="../../d2/d34/structhtml_entity_info.html#a2e771d33c92272005dde6ebd091248b3">htmlEntityInfo::docbook</a></div><div class="ttdeci">const char * docbook</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00034">htmlentity.cpp:34</a></div></div>
+<div class="ttc" id="astructhtml_entity_info_html_ada90d83cde3fa45e52909e091d79955c"><div class="ttname"><a href="../../d2/d34/structhtml_entity_info.html#ada90d83cde3fa45e52909e091d79955c">htmlEntityInfo::UTF8</a></div><div class="ttdeci">const char * UTF8</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00031">htmlentity.cpp:31</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a27136caf9c0bc4daca574cda6f113551"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">QCString::mid</a></div><div class="ttdeci">QCString mid(size_t index, size_t len=static_cast&lt; size_t &gt;(-1)) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00224">qcstring.h:224</a></div></div>
+<div class="ttc" id="astructhtml_entity_info_html_a48bab0fee64fb833ae8dd9034a8a3e68"><div class="ttname"><a href="../../d2/d34/structhtml_entity_info.html#a48bab0fee64fb833ae8dd9034a8a3e68">htmlEntityInfo::xml</a></div><div class="ttdeci">const char * xml</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00033">htmlentity.cpp:33</a></div></div>
+<div class="ttc" id="aclass_html_entity_mapper_html_a191e7ff6aab6a24b3caf372fe51674c2"><div class="ttname"><a href="../../db/d5f/class_html_entity_mapper.html#a191e7ff6aab6a24b3caf372fe51674c2">HtmlEntityMapper::m_name2sym</a></div><div class="ttdeci">std::unordered_map&lt; std::string, DocSymbol::SymType &gt; m_name2sym</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dc6/htmlentity_8h_source.html#l00046">htmlentity.h:46</a></div></div>
+<div class="ttc" id="aclass_html_entity_mapper_html_ac80b42ee1d05037eed6e1c88bc844ece"><div class="ttname"><a href="../../db/d5f/class_html_entity_mapper.html#ac80b42ee1d05037eed6e1c88bc844ece">HtmlEntityMapper::validate</a></div><div class="ttdeci">void validate()</div><div class="ttdoc">Routine to check if the entries of the html_entities are numbered correctly</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00493">htmlentity.cpp:493</a></div></div>
+<div class="ttc" id="astructhtml_entity_info_html_a4ad6a72d50e3794d483e8bcde1f41812"><div class="ttname"><a href="../../d2/d34/structhtml_entity_info.html#a4ad6a72d50e3794d483e8bcde1f41812">htmlEntityInfo::perl</a></div><div class="ttdeci">DocSymbol::PerlSymb perl</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db2/htmlentity_8cpp_source.html#l00038">htmlentity.cpp:38</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a8f4aa5417f6a834f28c7148a1fe262d5"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a8f4aa5417f6a834f28c7148a1fe262d5">QCString::right</a></div><div class="ttdeci">QCString right(size_t len) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00217">qcstring.h:217</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<div class="ttc" id="aclass_html_entity_mapper_html_a2bd728bca7f82356189881d34d9e6776"><div class="ttname"><a href="../../db/d5f/class_html_entity_mapper.html#a2bd728bca7f82356189881d34d9e6776">HtmlEntityMapper::s_instance</a></div><div class="ttdeci">static HtmlEntityMapper * s_instance</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dc6/htmlentity_8h_source.html#l00045">htmlentity.h:45</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../db/d5f/class_html_entity_mapper.html">HtmlEntityMapper</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:41:01 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+digraph "DotClassGraph"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="DotClassGraph",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Representation of a class inheritance or dependency graph"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="DotGraph",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d0/d32/class_dot_graph.html",tooltip="A dot graph"];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_fileName\nm_relPath\nm_baseName\nm_absPath\nm_theGraph" ,fontname="Helvetica"];
+  Node3 [label="QCString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d9/d45/class_q_c_string.html",tooltip="This is an alternative implementation of QCString."];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_dir" ,fontname="Helvetica"];
+  Node4 [label="Dir",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d2/dc2/class_dir.html",tooltip="Class representing a directory in the file system"];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_inheritFileName\nm_collabFileName" ,fontname="Helvetica"];
+  Node5 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_startNode" ,fontname="Helvetica"];
+  Node5 [label="DotNode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dd/d7e/class_dot_node.html",tooltip="A node in a dot graph"];
+  Node3 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_label\nm_url\nm_tooltip" ,fontname="Helvetica"];
+  Node6 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_classDef" ,fontname="Helvetica"];
+  Node6 [label="ClassDef",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d1/dcf/class_class_def.html",tooltip="A abstract class representing of a compound symbol."];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Definition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d5/dcc/class_definition.html",tooltip="The common base class of all entity definitions found in the sources."];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_usedNodes" ,fontname="Helvetica"];
+  Node8 [label="DotNodeMap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d6/dbb/class_dot_node_map.html",tooltip=" "];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="std::map\< std::string,\l DotNode * \>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

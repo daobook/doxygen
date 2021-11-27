@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/cite.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d7/d69/cite_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">cite.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d7/d69/cite_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright (C) 2020 by Dimitri van Heesch</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Based on a patch by David Munger</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * Permission to use, copy, modify, and distribute this software and its</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * documentation under the terms of the GNU General Public License is hereby</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * granted. No representations are made about the suitability of this software</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * for any purpose. It is provided &quot;as is&quot; without express or implied warranty.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * See the GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * Documents produced by Doxygen are derivative works derived from the</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * input used in their production; they are not affected by this license.</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef CITE_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define CITE_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d5c/qcstring_8h.html">qcstring.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="comment">/// Citation-related data.</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../df/d40/struct_cite_info.html">   25</a></span>&#160;<span class="comment"></span><span class="keyword">struct </span><a class="code" href="../../df/d40/struct_cite_info.html">CiteInfo</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../df/d40/struct_cite_info.html#aa7d4904992954faf2f552c608e4f8fed">~CiteInfo</a>() {}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../df/d40/struct_cite_info.html#a73b0f4274d2fcf8f2486f0178203d369">label</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../df/d40/struct_cite_info.html#a529432d49773c937493ebfedcdb27cbb">text</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;};</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="comment">/**</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment"> * @brief Citation manager class.</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment"> * @details This class provides access do the database of bibliographic</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"> * references through the bibtex backend.</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../de/dff/class_citation_manager.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../de/dff/class_citation_manager.html">CitationManager</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;{</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../de/dff/class_citation_manager.html">CitationManager</a> &amp;<a class="code" href="../../de/dff/class_citation_manager.html#a4934f7fbd6a387b7cc2ea0a12a2e04b5">instance</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="../../df/d40/struct_cite_info.html#aa7d4904992954faf2f552c608e4f8fed">   41</a></span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    /** Insert a citation identified by \a label into the database */</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dff/class_citation_manager.html#acbc101ba2926c6324a479b572ff3c377">insert</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;label);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    /** Return the citation info for a given \a label.</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">     *  Ownership of the info stays with the manager.</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../df/d40/struct_cite_info.html">CiteInfo</a> *<a class="code" href="../../de/dff/class_citation_manager.html#a2904843bbc4e5d707386d5dce049692e">find</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;label) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">    /** Generate the citations page */</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dff/class_citation_manager.html#aeea4b3347215e1eb97b639c96a1dcadd">generatePage</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">    /** clears the database */</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dff/class_citation_manager.html#a5064df0802f4ce881cbe5d1d9757cc86">clear</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">    /** return TRUE if there are no citations.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../de/dff/class_citation_manager.html#ade88ab31021df991b8f2b6b31e9c24e4">isEmpty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">    /** lists the bibtex cite files in a comma separated list</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../de/dff/class_citation_manager.html#a37a4055f986c73a8de48cd5d19bdd2dc">latexBibFiles</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../de/dff/class_citation_manager.html#ade05cab342d2aec59e05a3b7ec166a19">fileName</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../de/dff/class_citation_manager.html#a10ba17e783f502c2998a7432c84fd462">anchorPrefix</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">private</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">    /** Create the database, with an expected maximum of \a size entries */</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <a class="code" href="../../de/dff/class_citation_manager.html#ace9a73a9c71111d88ec3eb90eeb92b26">CitationManager</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../de/dff/class_citation_manager.html#a07ca80df8cb26c1c11d0cb22e326b01d">insertCrossReferencesForBibFile</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;bibFile);</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="../../de/dff/class_citation_manager.html#a269b4218fe0f0e33894756bf6bd2cbef">   71</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../da/d4e/struct_citation_manager_1_1_private.html">Private</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::unique_ptr&lt;Private&gt; <a class="code" href="../../de/dff/class_citation_manager.html#a269b4218fe0f0e33894756bf6bd2cbef">p</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif // CITE_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_citation_manager_html_a2904843bbc4e5d707386d5dce049692e"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#a2904843bbc4e5d707386d5dce049692e">CitationManager::find</a></div><div class="ttdeci">const CiteInfo * find(const QCString &amp;label) const</div><div class="ttdoc">Return the citation info for a given label.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00075">cite.cpp:75</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html_a5064df0802f4ce881cbe5d1d9757cc86"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#a5064df0802f4ce881cbe5d1d9757cc86">CitationManager::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">clears the database</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00085">cite.cpp:85</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html_a4934f7fbd6a387b7cc2ea0a12a2e04b5"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#a4934f7fbd6a387b7cc2ea0a12a2e04b5">CitationManager::instance</a></div><div class="ttdeci">static CitationManager &amp; instance()</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00056">cite.cpp:56</a></div></div>
+<div class="ttc" id="aqcstring_8h_html"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html">qcstring.h</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html_a37a4055f986c73a8de48cd5d19bdd2dc"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#a37a4055f986c73a8de48cd5d19bdd2dc">CitationManager::latexBibFiles</a></div><div class="ttdeci">QCString latexBibFiles()</div><div class="ttdoc">lists the bibtex cite files in a comma separated list</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00384">cite.cpp:384</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html_a269b4218fe0f0e33894756bf6bd2cbef"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#a269b4218fe0f0e33894756bf6bd2cbef">CitationManager::p</a></div><div class="ttdeci">std::unique_ptr&lt; Private &gt; p</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d69/cite_8h_source.html#l00071">cite.h:71</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html_ace9a73a9c71111d88ec3eb90eeb92b26"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#ace9a73a9c71111d88ec3eb90eeb92b26">CitationManager::CitationManager</a></div><div class="ttdeci">CitationManager()</div><div class="ttdoc">Create the database, with an expected maximum of size entries</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00062">cite.cpp:62</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html"><div class="ttname"><a href="../../de/dff/class_citation_manager.html">CitationManager</a></div><div class="ttdoc">Citation manager class.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d69/cite_8h_source.html#l00037">cite.h:37</a></div></div>
+<div class="ttc" id="astruct_cite_info_html_a73b0f4274d2fcf8f2486f0178203d369"><div class="ttname"><a href="../../df/d40/struct_cite_info.html#a73b0f4274d2fcf8f2486f0178203d369">CiteInfo::label</a></div><div class="ttdeci">virtual QCString label() const =0</div></div>
+<div class="ttc" id="aclass_citation_manager_html_acbc101ba2926c6324a479b572ff3c377"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#acbc101ba2926c6324a479b572ff3c377">CitationManager::insert</a></div><div class="ttdeci">void insert(const QCString &amp;label)</div><div class="ttdoc">Insert a citation identified by label into the database</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00066">cite.cpp:66</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html_ade88ab31021df991b8f2b6b31e9c24e4"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#ade88ab31021df991b8f2b6b31e9c24e4">CitationManager::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">return TRUE if there are no citations.</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00090">cite.cpp:90</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html_aeea4b3347215e1eb97b639c96a1dcadd"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#aeea4b3347215e1eb97b639c96a1dcadd">CitationManager::generatePage</a></div><div class="ttdeci">void generatePage()</div><div class="ttdoc">Generate the citations page</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00192">cite.cpp:192</a></div></div>
+<div class="ttc" id="astruct_citation_manager_1_1_private_html"><div class="ttname"><a href="../../da/d4e/struct_citation_manager_1_1_private.html">CitationManager::Private</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00051">cite.cpp:51</a></div></div>
+<div class="ttc" id="astruct_cite_info_html"><div class="ttname"><a href="../../df/d40/struct_cite_info.html">CiteInfo</a></div><div class="ttdoc">Citation-related data.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d69/cite_8h_source.html#l00025">cite.h:25</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html_a07ca80df8cb26c1c11d0cb22e326b01d"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#a07ca80df8cb26c1c11d0cb22e326b01d">CitationManager::insertCrossReferencesForBibFile</a></div><div class="ttdeci">void insertCrossReferencesForBibFile(const QCString &amp;bibFile)</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00106">cite.cpp:106</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html_ade05cab342d2aec59e05a3b7ec166a19"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#ade05cab342d2aec59e05a3b7ec166a19">CitationManager::fileName</a></div><div class="ttdeci">QCString fileName() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00096">cite.cpp:96</a></div></div>
+<div class="ttc" id="astruct_cite_info_html_a529432d49773c937493ebfedcdb27cbb"><div class="ttname"><a href="../../df/d40/struct_cite_info.html#a529432d49773c937493ebfedcdb27cbb">CiteInfo::text</a></div><div class="ttdeci">virtual QCString text() const =0</div></div>
+<div class="ttc" id="astruct_cite_info_html_aa7d4904992954faf2f552c608e4f8fed"><div class="ttname"><a href="../../df/d40/struct_cite_info.html#aa7d4904992954faf2f552c608e4f8fed">CiteInfo::~CiteInfo</a></div><div class="ttdeci">virtual ~CiteInfo()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d69/cite_8h_source.html#l00041">cite.h:41</a></div></div>
+<div class="ttc" id="aclass_citation_manager_html_a10ba17e783f502c2998a7432c84fd462"><div class="ttname"><a href="../../de/dff/class_citation_manager.html#a10ba17e783f502c2998a7432c84fd462">CitationManager::anchorPrefix</a></div><div class="ttdeci">QCString anchorPrefix() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d0b/cite_8cpp_source.html#l00101">cite.cpp:101</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d7/d69/cite_8h.html">cite.h</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:51 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

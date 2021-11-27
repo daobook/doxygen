@@ -1,0 +1,21 @@
+digraph "src/dotgfxhierarchytable.h"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="src/dotgfxhierarchytable.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="src/context.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d1e/context_8h.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="src/context.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d12/context_8cpp.html",tooltip=" "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="src/doxygen.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$dc/d98/doxygen_8cpp.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="src/dotgfxhierarchytable.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d4/d09/dotgfxhierarchytable_8cpp.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="src/htmlgen.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$d8/d6e/htmlgen_8cpp.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/index.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$db/d14/index_8cpp.html",tooltip="This file contains functions for the various index pages."];
+}

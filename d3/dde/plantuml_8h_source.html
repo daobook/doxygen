@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/plantuml.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('d3/dde/plantuml_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">plantuml.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d3/dde/plantuml_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright (C) 1997-2015 by Dimitri van Heesch.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Permission to use, copy, modify, and distribute this software and its</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * documentation under the terms of the GNU General Public License is hereby</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * granted. No representations are made about the suitability of this software</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * for any purpose. It is provided &quot;as is&quot; without express or implied warranty.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * See the GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Documents produced by Doxygen are derivative works derived from the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * input used in their production; they are not affected by this license.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef PLANTUML_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define PLANTUML_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d5/d75/containers_8h.html">containers.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d7/d5c/qcstring_8h.html">qcstring.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d3/dde/plantuml_8h.html#a50e02956bf6166d05d803ed4627cc7fa">   25</a></span>&#160;<span class="preprocessor">#define DIVIDE_COUNT            4</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d3/dde/plantuml_8h.html#a3d5795b8e080f4ce56ea0df22a0bb929">   26</a></span>&#160;<span class="preprocessor">#define MIN_PLANTUML_COUNT      8</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d2/d23/struct_plantuml_content.html">   29</a></span>&#160;<span class="keyword">struct </span><a class="code" href="../../d2/d23/struct_plantuml_content.html">PlantumlContent</a></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d2/d23/struct_plantuml_content.html#afadd2d0f1a42d9a092b4a68d98f544b6">   31</a></span>&#160;  <a class="code" href="../../d2/d23/struct_plantuml_content.html#afadd2d0f1a42d9a092b4a68d98f544b6">PlantumlContent</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;content_, <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;outDir_, <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;srcFile_, <span class="keywordtype">int</span> srcLine_)</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;     : <a class="code" href="../../d2/d23/struct_plantuml_content.html#ae524c2dcc6627afc48c7330d075e644f">content</a>(content_), <a class="code" href="../../d2/d23/struct_plantuml_content.html#a7fa27a91f9b6267a46abcea77b867c18">outDir</a>(outDir_), <a class="code" href="../../d2/d23/struct_plantuml_content.html#a4c6687d2b665f51f631ac384e197394b">srcFile</a>(srcFile_), <a class="code" href="../../d2/d23/struct_plantuml_content.html#a4aa74c2430af8576d46aff1758a3a68b">srcLine</a>(srcLine_) {}</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d2/d23/struct_plantuml_content.html#ae524c2dcc6627afc48c7330d075e644f">   33</a></span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../d2/d23/struct_plantuml_content.html#ae524c2dcc6627afc48c7330d075e644f">content</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d2/d23/struct_plantuml_content.html#a7fa27a91f9b6267a46abcea77b867c18">   34</a></span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../d2/d23/struct_plantuml_content.html#a7fa27a91f9b6267a46abcea77b867c18">outDir</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d2/d23/struct_plantuml_content.html#a4c6687d2b665f51f631ac384e197394b">   35</a></span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../d2/d23/struct_plantuml_content.html#a4c6687d2b665f51f631ac384e197394b">srcFile</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d2/d23/struct_plantuml_content.html#a4aa74c2430af8576d46aff1758a3a68b">   36</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="../../d2/d23/struct_plantuml_content.html#a4aa74c2430af8576d46aff1758a3a68b">srcLine</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/** Singleton that manages plantuml relation actions */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d1/dd9/class_plantuml_manager.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d1/dd9/class_plantuml_manager.html">PlantumlManager</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span>:<span class="comment"></span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    /** Plant UML output image formats */</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5a49f2c9b51c65731b8708f8c193a63ccf">   44</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5">OutputFormat</a> { <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5a1414704243dc148d478bed8064a73046">PUML_BITMAP</a>, <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5aef367a42db272e040b6fec4c65f52b36">PUML_EPS</a>, <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5a49f2c9b51c65731b8708f8c193a63ccf">PUML_SVG</a> };</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">static</span> <a class="code" href="../../d1/dd9/class_plantuml_manager.html">PlantumlManager</a> &amp;<a class="code" href="../../d1/dd9/class_plantuml_manager.html#ae264d99d8756b63a55c341b4768ad28b">instance</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">    /** Run plant UML tool for all images */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/dd9/class_plantuml_manager.html#af38a83e442553a769951c724353cbe6a">run</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="comment">    /** Write a PlantUML compatible file.</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">     *  @param[in] outDir   the output directory to write the file to.</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="comment">     *  @param[in] fileName the name of the file. If empty a name will be chosen automatically.</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">     *  @param[in] content  the contents of the PlantUML file.</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="comment">     *  @param[in] format   the image format to generate.</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">     *  @param[in] engine   the plantuml engine to use.</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">     *  @param[in] srcFile  the source file resulting in the write command.</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">     *  @param[in] srcLine  the line number resulting in the write command.</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="comment">     *  @returns The name of the generated file.</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a130528e98a8216e9c63b7a0c9f1966d9">writePlantUMLSource</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;outDir,<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;fileName,</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                                 <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;content, <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5">OutputFormat</a> format,</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                                 <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;engine,<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;srcFile,</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                                 <span class="keywordtype">int</span> srcLine);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment">    /** Convert a PlantUML file to an image.</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">     *  @param[in] baseName the name of the generated file (as returned by writePlantUMLSource())</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="comment">     *  @param[in] outDir   the directory to write the resulting image into.</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="comment">     *  @param[in] format   the image format to generate.</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">     */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/dd9/class_plantuml_manager.html#af6f1c6249e4127996095d0086442fa0f">generatePlantUMLOutput</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;baseName,<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;outDir,<a class="code" href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5">OutputFormat</a> format);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="../../d1/dd9/class_plantuml_manager.html#a048a99dc52eba3af7f76da9ec19932c1">   73</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a048a99dc52eba3af7f76da9ec19932c1">FilesMap</a>   = std::map&lt; std::string, StringVector    &gt;;</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="../../d1/dd9/class_plantuml_manager.html#a37056adb8bfd9b17785be907ff97a588">   74</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a37056adb8bfd9b17785be907ff97a588">ContentMap</a> = std::map&lt; std::string, PlantumlContent &gt;;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="../../d1/dd9/class_plantuml_manager.html#ae35b3023efc4c8d1e609fa220c17b59d">PlantumlManager</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d1/dd9/class_plantuml_manager.html#aa83ff077c80d8e2dc04a28e1629cff12">insert</a>(<span class="keyword">const</span> std::string &amp;key,</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">const</span> std::string &amp;value,</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;outDir,</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5">OutputFormat</a> format,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;puContent,</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;srcFile,</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordtype">int</span> srcLine);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="../../d1/dd9/class_plantuml_manager.html#ac86affddc4db57978e98e4ad07951bd0">   85</a></span>&#160;    <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a048a99dc52eba3af7f76da9ec19932c1">FilesMap</a>   <a class="code" href="../../d1/dd9/class_plantuml_manager.html#ac86affddc4db57978e98e4ad07951bd0">m_pngPlantumlFiles</a>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../d1/dd9/class_plantuml_manager.html#aeae4a1ea8542946832f282102993acd7">   86</a></span>&#160;    <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a048a99dc52eba3af7f76da9ec19932c1">FilesMap</a>   <a class="code" href="../../d1/dd9/class_plantuml_manager.html#aeae4a1ea8542946832f282102993acd7">m_svgPlantumlFiles</a>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="../../d1/dd9/class_plantuml_manager.html#af736b55d9c30405deb9333eb840339da">   87</a></span>&#160;    <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a048a99dc52eba3af7f76da9ec19932c1">FilesMap</a>   <a class="code" href="../../d1/dd9/class_plantuml_manager.html#af736b55d9c30405deb9333eb840339da">m_epsPlantumlFiles</a>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="../../d1/dd9/class_plantuml_manager.html#a0df82d91beec8a3021e470aa2574c662">   88</a></span>&#160;    <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a37056adb8bfd9b17785be907ff97a588">ContentMap</a> <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a0df82d91beec8a3021e470aa2574c662">m_pngPlantumlContent</a>;               <span class="comment">// use circular queue for using multi-processor (multi threading)</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="../../d1/dd9/class_plantuml_manager.html#ac4dff5e930bca84db261f047c7801e67">   89</a></span>&#160;    <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a37056adb8bfd9b17785be907ff97a588">ContentMap</a> <a class="code" href="../../d1/dd9/class_plantuml_manager.html#ac4dff5e930bca84db261f047c7801e67">m_svgPlantumlContent</a>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="../../d1/dd9/class_plantuml_manager.html#a865f02cdc1a05826e893485e9df32022">   90</a></span>&#160;    <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a37056adb8bfd9b17785be907ff97a588">ContentMap</a> <a class="code" href="../../d1/dd9/class_plantuml_manager.html#a865f02cdc1a05826e893485e9df32022">m_epsPlantumlContent</a>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_plantuml_manager_html_a865f02cdc1a05826e893485e9df32022"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#a865f02cdc1a05826e893485e9df32022">PlantumlManager::m_epsPlantumlContent</a></div><div class="ttdeci">ContentMap m_epsPlantumlContent</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00090">plantuml.h:90</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_a130528e98a8216e9c63b7a0c9f1966d9"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#a130528e98a8216e9c63b7a0c9f1966d9">PlantumlManager::writePlantUMLSource</a></div><div class="ttdeci">QCString writePlantUMLSource(const QCString &amp;outDir, const QCString &amp;fileName, const QCString &amp;content, OutputFormat format, const QCString &amp;engine, const QCString &amp;srcFile, int srcLine)</div><div class="ttdoc">Write a PlantUML compatible file.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5b/plantuml_8cpp_source.html#l00026">plantuml.cpp:26</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_ae35b3023efc4c8d1e609fa220c17b59d"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#ae35b3023efc4c8d1e609fa220c17b59d">PlantumlManager::PlantumlManager</a></div><div class="ttdeci">PlantumlManager()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5b/plantuml_8cpp_source.html#l00130">plantuml.cpp:130</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_af736b55d9c30405deb9333eb840339da"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#af736b55d9c30405deb9333eb840339da">PlantumlManager::m_epsPlantumlFiles</a></div><div class="ttdeci">FilesMap m_epsPlantumlFiles</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00087">plantuml.h:87</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_a73ccdfc6400a28af7d9d2f92215b9af5"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5">PlantumlManager::OutputFormat</a></div><div class="ttdeci">OutputFormat</div><div class="ttdoc">Plant UML output image formats</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00044">plantuml.h:44</a></div></div>
+<div class="ttc" id="astruct_plantuml_content_html_afadd2d0f1a42d9a092b4a68d98f544b6"><div class="ttname"><a href="../../d2/d23/struct_plantuml_content.html#afadd2d0f1a42d9a092b4a68d98f544b6">PlantumlContent::PlantumlContent</a></div><div class="ttdeci">PlantumlContent(const QCString &amp;content_, const QCString &amp;outDir_, const QCString &amp;srcFile_, int srcLine_)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00031">plantuml.h:31</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_ac86affddc4db57978e98e4ad07951bd0"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#ac86affddc4db57978e98e4ad07951bd0">PlantumlManager::m_pngPlantumlFiles</a></div><div class="ttdeci">FilesMap m_pngPlantumlFiles</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00085">plantuml.h:85</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_a37056adb8bfd9b17785be907ff97a588"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#a37056adb8bfd9b17785be907ff97a588">PlantumlManager::ContentMap</a></div><div class="ttdeci">std::map&lt; std::string, PlantumlContent &gt; ContentMap</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00074">plantuml.h:74</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_ae264d99d8756b63a55c341b4768ad28b"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#ae264d99d8756b63a55c341b4768ad28b">PlantumlManager::instance</a></div><div class="ttdeci">static PlantumlManager &amp; instance()</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5b/plantuml_8cpp_source.html#l00124">plantuml.cpp:124</a></div></div>
+<div class="ttc" id="aqcstring_8h_html"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html">qcstring.h</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_a0df82d91beec8a3021e470aa2574c662"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#a0df82d91beec8a3021e470aa2574c662">PlantumlManager::m_pngPlantumlContent</a></div><div class="ttdeci">ContentMap m_pngPlantumlContent</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00088">plantuml.h:88</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_ac4dff5e930bca84db261f047c7801e67"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#ac4dff5e930bca84db261f047c7801e67">PlantumlManager::m_svgPlantumlContent</a></div><div class="ttdeci">ContentMap m_svgPlantumlContent</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00089">plantuml.h:89</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_aeae4a1ea8542946832f282102993acd7"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#aeae4a1ea8542946832f282102993acd7">PlantumlManager::m_svgPlantumlFiles</a></div><div class="ttdeci">FilesMap m_svgPlantumlFiles</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00086">plantuml.h:86</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_a73ccdfc6400a28af7d9d2f92215b9af5a1414704243dc148d478bed8064a73046"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5a1414704243dc148d478bed8064a73046">PlantumlManager::PUML_BITMAP</a></div><div class="ttdeci">@ PUML_BITMAP</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00044">plantuml.h:44</a></div></div>
+<div class="ttc" id="astruct_plantuml_content_html_a7fa27a91f9b6267a46abcea77b867c18"><div class="ttname"><a href="../../d2/d23/struct_plantuml_content.html#a7fa27a91f9b6267a46abcea77b867c18">PlantumlContent::outDir</a></div><div class="ttdeci">QCString outDir</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00034">plantuml.h:34</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_aa83ff077c80d8e2dc04a28e1629cff12"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#aa83ff077c80d8e2dc04a28e1629cff12">PlantumlManager::insert</a></div><div class="ttdeci">void insert(const std::string &amp;key, const std::string &amp;value, const QCString &amp;outDir, OutputFormat format, const QCString &amp;puContent, const QCString &amp;srcFile, int srcLine)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5b/plantuml_8cpp_source.html#l00340">plantuml.cpp:340</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_a048a99dc52eba3af7f76da9ec19932c1"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#a048a99dc52eba3af7f76da9ec19932c1">PlantumlManager::FilesMap</a></div><div class="ttdeci">std::map&lt; std::string, StringVector &gt; FilesMap</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00073">plantuml.h:73</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html">PlantumlManager</a></div><div class="ttdoc">Singleton that manages plantuml relation actions</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00040">plantuml.h:40</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_af38a83e442553a769951c724353cbe6a"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#af38a83e442553a769951c724353cbe6a">PlantumlManager::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Run plant UML tool for all images</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5b/plantuml_8cpp_source.html#l00282">plantuml.cpp:282</a></div></div>
+<div class="ttc" id="acontainers_8h_html"><div class="ttname"><a href="../../d5/d75/containers_8h.html">containers.h</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_a73ccdfc6400a28af7d9d2f92215b9af5aef367a42db272e040b6fec4c65f52b36"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5aef367a42db272e040b6fec4c65f52b36">PlantumlManager::PUML_EPS</a></div><div class="ttdeci">@ PUML_EPS</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00044">plantuml.h:44</a></div></div>
+<div class="ttc" id="astruct_plantuml_content_html"><div class="ttname"><a href="../../d2/d23/struct_plantuml_content.html">PlantumlContent</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00029">plantuml.h:29</a></div></div>
+<div class="ttc" id="astruct_plantuml_content_html_a4c6687d2b665f51f631ac384e197394b"><div class="ttname"><a href="../../d2/d23/struct_plantuml_content.html#a4c6687d2b665f51f631ac384e197394b">PlantumlContent::srcFile</a></div><div class="ttdeci">QCString srcFile</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00035">plantuml.h:35</a></div></div>
+<div class="ttc" id="astruct_plantuml_content_html_a4aa74c2430af8576d46aff1758a3a68b"><div class="ttname"><a href="../../d2/d23/struct_plantuml_content.html#a4aa74c2430af8576d46aff1758a3a68b">PlantumlContent::srcLine</a></div><div class="ttdeci">int srcLine</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00036">plantuml.h:36</a></div></div>
+<div class="ttc" id="astruct_plantuml_content_html_ae524c2dcc6627afc48c7330d075e644f"><div class="ttname"><a href="../../d2/d23/struct_plantuml_content.html#ae524c2dcc6627afc48c7330d075e644f">PlantumlContent::content</a></div><div class="ttdeci">QCString content</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00033">plantuml.h:33</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_a73ccdfc6400a28af7d9d2f92215b9af5a49f2c9b51c65731b8708f8c193a63ccf"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#a73ccdfc6400a28af7d9d2f92215b9af5a49f2c9b51c65731b8708f8c193a63ccf">PlantumlManager::PUML_SVG</a></div><div class="ttdeci">@ PUML_SVG</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dde/plantuml_8h_source.html#l00044">plantuml.h:44</a></div></div>
+<div class="ttc" id="aclass_plantuml_manager_html_af6f1c6249e4127996095d0086442fa0f"><div class="ttname"><a href="../../d1/dd9/class_plantuml_manager.html#af6f1c6249e4127996095d0086442fa0f">PlantumlManager::generatePlantUMLOutput</a></div><div class="ttdeci">void generatePlantUMLOutput(const QCString &amp;baseName, const QCString &amp;outDir, OutputFormat format)</div><div class="ttdoc">Convert a PlantUML file to an image.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5b/plantuml_8cpp_source.html#l00091">plantuml.cpp:91</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d3/dde/plantuml_8h.html">plantuml.h</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:54 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

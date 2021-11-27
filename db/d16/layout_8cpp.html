@@ -1,0 +1,1053 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/layout.cpp 文件参考</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('db/d16/layout_8cpp.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">类</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">layout.cpp 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;array&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d51/layout_8h_source.html">layout.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d2/d0d/message_8h_source.html">message.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/dce/language_8h_source.html">language.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../dd/dec/vhdldocgen_8h_source.html">vhdldocgen.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d8/d3c/util_8h_source.html">util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d1/da1/doxygen_8h_source.html">doxygen.h</a>&quot;</code><br />
+<code>#include &quot;version.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d16/config_8h_source.html">config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d0/d62/xml_8h_source.html">xml.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../d6/d07/resourcemgr_8h_source.html">resourcemgr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="../../db/d16/debug_8h_source.html">debug.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="../../closed.png" alt="+"/> layout.cpp 的引用(Include)关系图:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><!-- SVG 0 -->
+</div>
+</div>
+</div>
+<p><a href="../../db/d16/layout_8cpp_source.html">浏览源代码.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+类</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/de9/class_layout_parser.html">LayoutParser</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d30/struct_element_callbacks.html">ElementCallbacks</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/da4/class_layout_doc_manager_1_1_private.html">LayoutDocManager::Private</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:ab0be32e17659ff359e79e3c10244b5ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#ab0be32e17659ff359e79e3c10244b5ed">compileOptions</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;def)</td></tr>
+<tr class="separator:ab0be32e17659ff359e79e3c10244b5ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69491156cedaf02dc6443e685d158087"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a69491156cedaf02dc6443e685d158087">compileOptions</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;def, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId1, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value1)</td></tr>
+<tr class="separator:a69491156cedaf02dc6443e685d158087"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adca7a84ec7d9e70efe47d6e395be099f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#adca7a84ec7d9e70efe47d6e395be099f">compileOptions</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;def, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId1, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value1, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId2, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value2)</td></tr>
+<tr class="separator:adca7a84ec7d9e70efe47d6e395be099f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bb486e09bd72d913eaee12efabae171"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a4bb486e09bd72d913eaee12efabae171">compileOptions</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;def, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId1, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value1, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId2, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value2, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId3, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value3)</td></tr>
+<tr class="separator:a4bb486e09bd72d913eaee12efabae171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81e09fc4923e15a55d0e269ddef08e5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a81e09fc4923e15a55d0e269ddef08e5d">compileOptions</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;def, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId1, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value1, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId2, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value2, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId3, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value3, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId4, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value4)</td></tr>
+<tr class="separator:a81e09fc4923e15a55d0e269ddef08e5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab89d76e38155d470797f5d7bcdc1b74c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#ab89d76e38155d470797f5d7bcdc1b74c">compileOptions</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;def, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId1, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value1, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId2, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value2, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId3, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value3, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId4, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value4, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> langId5, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;value5)</td></tr>
+<tr class="separator:ab89d76e38155d470797f5d7bcdc1b74c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a655e33094d44e8925db5939ca9d68d36"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a655e33094d44e8925db5939ca9d68d36">elemIsVisible</a> (const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;attrib, bool defVal=<a class="el" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>)</td></tr>
+<tr class="separator:a655e33094d44e8925db5939ca9d68d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14e54384cfc9f2d640c8d9489ea2e4bc"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#aa0906172ac0c83d33d3bf2df5ccfbee3">ElementCallbacks::StartCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a14e54384cfc9f2d640c8d9489ea2e4bc">startCb</a> (void(LayoutParser::*fn)(const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;))</td></tr>
+<tr class="separator:a14e54384cfc9f2d640c8d9489ea2e4bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad68076f895d8a93abab10350e9aad483"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#aa0906172ac0c83d33d3bf2df5ccfbee3">ElementCallbacks::StartCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#ad68076f895d8a93abab10350e9aad483">startCb</a> (void(LayoutParser::*fn)(<a class="el" href="../../d9/dba/struct_layout_doc_entry.html#a89dcbe762ed7e7f7790d8c034cf8ea01">LayoutDocEntry::Kind</a>, const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;), <a class="el" href="../../d9/dba/struct_layout_doc_entry.html#a89dcbe762ed7e7f7790d8c034cf8ea01">LayoutDocEntry::Kind</a> kind)</td></tr>
+<tr class="separator:ad68076f895d8a93abab10350e9aad483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36a1784290378f6feba398d357fa1ed2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#aa0906172ac0c83d33d3bf2df5ccfbee3">ElementCallbacks::StartCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a36a1784290378f6feba398d357fa1ed2">startCb</a> (void(LayoutParser::*fn)(<a class="el" href="../../d9/dba/struct_layout_doc_entry.html#a89dcbe762ed7e7f7790d8c034cf8ea01">LayoutDocEntry::Kind</a>, const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;), <a class="el" href="../../d9/dba/struct_layout_doc_entry.html#a89dcbe762ed7e7f7790d8c034cf8ea01">LayoutDocEntry::Kind</a> kind, std::function&lt; <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()&gt; title)</td></tr>
+<tr class="separator:a36a1784290378f6feba398d357fa1ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0120a2965d5b5d0cf5273773d1b54eba"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#aa0906172ac0c83d33d3bf2df5ccfbee3">ElementCallbacks::StartCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a0120a2965d5b5d0cf5273773d1b54eba">startCb</a> (void(LayoutParser::*fn)(const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;, <a class="el" href="../../d9/d49/types_8h.html#abe8ad5992f8938a28f918f51b199aa19">MemberListType</a>, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;), <a class="el" href="../../d9/d49/types_8h.html#abe8ad5992f8938a28f918f51b199aa19">MemberListType</a> type, std::function&lt; <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()&gt; title)</td></tr>
+<tr class="separator:a0120a2965d5b5d0cf5273773d1b54eba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d76a40646943e8bbf908c31c917b564"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#aa0906172ac0c83d33d3bf2df5ccfbee3">ElementCallbacks::StartCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a9d76a40646943e8bbf908c31c917b564">startCb</a> (void(LayoutParser::*fn)(const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;, <a class="el" href="../../d9/d49/types_8h.html#abe8ad5992f8938a28f918f51b199aa19">MemberListType</a>, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;), <a class="el" href="../../d9/d49/types_8h.html#abe8ad5992f8938a28f918f51b199aa19">MemberListType</a> type, std::function&lt; <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()&gt; title, std::function&lt; <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()&gt; subtitle)</td></tr>
+<tr class="separator:a9d76a40646943e8bbf908c31c917b564"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac844ad38d63166ade497c349d3efbfef"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#a13372b4c9b68ad386e2422e252a5cc4e">ElementCallbacks::EndCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#ac844ad38d63166ade497c349d3efbfef">endCb</a> (void(LayoutParser::*fn)())</td></tr>
+<tr class="separator:ac844ad38d63166ade497c349d3efbfef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72145317ef2912d609cc55f550beae76"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#a13372b4c9b68ad386e2422e252a5cc4e">ElementCallbacks::EndCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a72145317ef2912d609cc55f550beae76">endCb</a> ()</td></tr>
+<tr class="separator:a72145317ef2912d609cc55f550beae76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ccb483586d18bd75a15720be22f90cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a8ccb483586d18bd75a15720be22f90cb">writeDefaultLayoutFile</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;fileName)</td></tr>
+<tr class="separator:a8ccb483586d18bd75a15720be22f90cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af079449c7fca1ffd687c7b964cceb15c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#af079449c7fca1ffd687c7b964cceb15c">extractLanguageSpecificTitle</a> (const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;input, <a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a> lang)</td></tr>
+<tr class="separator:af079449c7fca1ffd687c7b964cceb15c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a1fda77298d662475e65c3a75d47a6a88"><td class="memItemLeft" align="right" valign="top">static const std::map&lt; std::string, <a class="el" href="../../d4/d30/struct_element_callbacks.html">ElementCallbacks</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d16/layout_8cpp.html#a1fda77298d662475e65c3a75d47a6a88">g_elementHandlers</a></td></tr>
+<tr class="separator:a1fda77298d662475e65c3a75d47a6a88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">函数说明</h2>
+<a id="ab0be32e17659ff359e79e3c10244b5ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0be32e17659ff359e79e3c10244b5ed">&#9670;&nbsp;</a></span>compileOptions() <span class="overload">[1/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> compileOptions </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>def</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00035">35</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">return</span> def;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00040">compileOptions()</a>.</p>
+
+</div>
+</div>
+<a id="a69491156cedaf02dc6443e685d158087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69491156cedaf02dc6443e685d158087">&#9670;&nbsp;</a></span>compileOptions() <span class="overload">[2/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> compileOptions </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value1</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00040">40</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;{</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../db/d16/layout_8cpp.html#ab0be32e17659ff359e79e3c10244b5ed">compileOptions</a>(def)+<span class="stringliteral">&quot;|&quot;</span>+<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>().<a class="code" href="../../d9/d45/class_q_c_string.html#a312500856f72eaf8300b1681f2e10c52">setNum</a>(langId1)+<span class="stringliteral">&quot;=&quot;</span>+value1;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00035">compileOptions()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00372">QCString::setNum()</a>.</p>
+
+</div>
+</div>
+<a id="adca7a84ec7d9e70efe47d6e395be099f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adca7a84ec7d9e70efe47d6e395be099f">&#9670;&nbsp;</a></span>compileOptions() <span class="overload">[3/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> compileOptions </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00045">45</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../db/d16/layout_8cpp.html#ab0be32e17659ff359e79e3c10244b5ed">compileOptions</a>(def,langId1,value1)+</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;         <span class="stringliteral">&quot;|&quot;</span>+<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>().<a class="code" href="../../d9/d45/class_q_c_string.html#a312500856f72eaf8300b1681f2e10c52">setNum</a>(langId2)+<span class="stringliteral">&quot;=&quot;</span>+value2;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00035">compileOptions()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00372">QCString::setNum()</a>.</p>
+
+</div>
+</div>
+<a id="a4bb486e09bd72d913eaee12efabae171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4bb486e09bd72d913eaee12efabae171">&#9670;&nbsp;</a></span>compileOptions() <span class="overload">[4/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> compileOptions </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00052">52</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../db/d16/layout_8cpp.html#ab0be32e17659ff359e79e3c10244b5ed">compileOptions</a>(def,langId1,value1,langId2,value2)+</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;         <span class="stringliteral">&quot;|&quot;</span>+<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>().<a class="code" href="../../d9/d45/class_q_c_string.html#a312500856f72eaf8300b1681f2e10c52">setNum</a>(langId3)+<span class="stringliteral">&quot;=&quot;</span>+value3;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00035">compileOptions()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00372">QCString::setNum()</a>.</p>
+
+</div>
+</div>
+<a id="a81e09fc4923e15a55d0e269ddef08e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a81e09fc4923e15a55d0e269ddef08e5d">&#9670;&nbsp;</a></span>compileOptions() <span class="overload">[5/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> compileOptions </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value4</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00060">60</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../db/d16/layout_8cpp.html#ab0be32e17659ff359e79e3c10244b5ed">compileOptions</a>(def,langId1,value1,langId2,value2,langId3,value3)+</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;         <span class="stringliteral">&quot;|&quot;</span>+<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>().<a class="code" href="../../d9/d45/class_q_c_string.html#a312500856f72eaf8300b1681f2e10c52">setNum</a>(langId4)+<span class="stringliteral">&quot;=&quot;</span>+value4;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00035">compileOptions()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00372">QCString::setNum()</a>.</p>
+
+</div>
+</div>
+<a id="ab89d76e38155d470797f5d7bcdc1b74c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab89d76e38155d470797f5d7bcdc1b74c">&#9670;&nbsp;</a></span>compileOptions() <span class="overload">[6/6]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> compileOptions </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>def</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>langId5</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>value5</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00069">69</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../db/d16/layout_8cpp.html#ab0be32e17659ff359e79e3c10244b5ed">compileOptions</a>(def,langId1,value1,langId2,value2,langId3,value3,langId4,value4)+</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;         <span class="stringliteral">&quot;|&quot;</span>+<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>().<a class="code" href="../../d9/d45/class_q_c_string.html#a312500856f72eaf8300b1681f2e10c52">setNum</a>(langId5)+<span class="stringliteral">&quot;=&quot;</span>+value5;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00035">compileOptions()</a> , 以及 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00372">QCString::setNum()</a>.</p>
+
+</div>
+</div>
+<a id="a655e33094d44e8925db5939ca9d68d36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a655e33094d44e8925db5939ca9d68d36">&#9670;&nbsp;</a></span>elemIsVisible()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool elemIsVisible </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;&#160;</td>
+          <td class="paramname"><em>attrib</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>defVal</em> = <code><a class="el" href="../../d7/d5c/qcstring_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00080">80</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> visible = <a class="code" href="../../dc/dea/class_x_m_l_handlers.html#ad2d3b265aa5d98961404eb3ebd539921">XMLHandlers::value</a>(attrib,<span class="stringliteral">&quot;visible&quot;</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">if</span> (visible.<a class="code" href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">isEmpty</a>()) <span class="keywordflow">return</span> defVal;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordflow">if</span> (visible.<a class="code" href="../../d9/d45/class_q_c_string.html#a6b3cacab2df2f8cda280e83d474d57fa">at</a>(0)==<span class="charliteral">&#39;$&#39;</span> &amp;&amp; visible.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>()&gt;1)</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <span class="keywordtype">id</span> = visible.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(1);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">const</span> ConfigValues::Info *opt = ConfigValues::instance().get(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span> (opt &amp;&amp; opt-&gt;type==ConfigValues::Info::Bool)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    {</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;      <span class="keywordflow">return</span> ConfigValues::instance().*(opt-&gt;value.b);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (opt &amp;&amp; opt-&gt;type==ConfigValues::Info::String)</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keywordflow">return</span> ConfigValues::instance().*(opt-&gt;value.s) != <span class="stringliteral">&quot;NO&quot;</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!opt)</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;      <a class="code" href="../../d8/d6a/message_8cpp.html#aede5746344fdce99647541101eaa7f06">err</a>(<span class="stringliteral">&quot;found unsupported value %s for visible attribute in layout file\n&quot;</span>,</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;          <a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(visible));</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  }</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <span class="keywordflow">return</span> visible!=<span class="stringliteral">&quot;no&quot;</span> &amp;&amp; visible!=<span class="stringliteral">&quot;0&quot;</span>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00477">QCString::at()</a>, <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00203">err()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00144">QCString::isEmpty()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00147">QCString::length()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00224">QCString::mid()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00589">qPrint()</a> , 以及 <a class="el" href="../../d0/d62/xml_8h_source.html#l00057">XMLHandlers::value()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00265">LayoutParser::startNavEntry()</a>, <a class="el" href="../../db/d16/layout_8cpp_source.html#l00196">LayoutParser::startSectionEntry()</a> , 以及 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00184">LayoutParser::startSimpleEntry()</a>.</p>
+
+</div>
+</div>
+<a id="a72145317ef2912d609cc55f550beae76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72145317ef2912d609cc55f550beae76">&#9670;&nbsp;</a></span>endCb() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#a13372b4c9b68ad386e2422e252a5cc4e">ElementCallbacks::EndCallback</a> endCb </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00764">764</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;{</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;  <span class="keywordflow">return</span> [](<a class="code" href="../../d3/de9/class_layout_parser.html">LayoutParser</a> &amp;){};</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac844ad38d63166ade497c349d3efbfef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac844ad38d63166ade497c349d3efbfef">&#9670;&nbsp;</a></span>endCb() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#a13372b4c9b68ad386e2422e252a5cc4e">ElementCallbacks::EndCallback</a> endCb </td>
+          <td>(</td>
+          <td class="paramtype">void(LayoutParser::*)()&#160;</td>
+          <td class="paramname"><em>fn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00759">759</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;{</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;  <span class="keywordflow">return</span> [fn](<a class="code" href="../../d3/de9/class_layout_parser.html">LayoutParser</a> &amp;parser) { (parser.*fn)(); };</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af079449c7fca1ffd687c7b964cceb15c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af079449c7fca1ffd687c7b964cceb15c">&#9670;&nbsp;</a></span>extractLanguageSpecificTitle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> extractLanguageSpecificTitle </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>input</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#a9974623ce72fc23df5d64426b9178bf2">SrcLangExt</a>&#160;</td>
+          <td class="paramname"><em>lang</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l01638">1638</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01639"></a><span class="lineno"> 1639</span>&#160;{</div>
+<div class="line"><a name="l01640"></a><span class="lineno"> 1640</span>&#160;  <span class="keywordtype">int</span> i,s=0,e=input.<a class="code" href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">find</a>(<span class="charliteral">&#39;|&#39;</span>);</div>
+<div class="line"><a name="l01641"></a><span class="lineno"> 1641</span>&#160;  <span class="keywordflow">if</span> (e==-1) <span class="keywordflow">return</span> input; <span class="comment">// simple title case</span></div>
+<div class="line"><a name="l01642"></a><span class="lineno"> 1642</span>&#160;  <span class="keywordtype">int</span> e1=e;</div>
+<div class="line"><a name="l01643"></a><span class="lineno"> 1643</span>&#160;  <span class="keywordflow">while</span> (e!=-1) <span class="comment">// look for &#39;number=title&#39; pattern separated by &#39;|&#39;</span></div>
+<div class="line"><a name="l01644"></a><span class="lineno"> 1644</span>&#160;  {</div>
+<div class="line"><a name="l01645"></a><span class="lineno"> 1645</span>&#160;    s=e+1;</div>
+<div class="line"><a name="l01646"></a><span class="lineno"> 1646</span>&#160;    e=input.<a class="code" href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">find</a>(<span class="charliteral">&#39;|&#39;</span>,s);</div>
+<div class="line"><a name="l01647"></a><span class="lineno"> 1647</span>&#160;    i=input.<a class="code" href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">find</a>(<span class="charliteral">&#39;=&#39;</span>,s);</div>
+<div class="line"><a name="l01648"></a><span class="lineno"> 1648</span>&#160;    assert(i&gt;s);</div>
+<div class="line"><a name="l01649"></a><span class="lineno"> 1649</span>&#160;    <span class="keywordtype">int</span> key=input.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(s,i-s).<a class="code" href="../../d9/d45/class_q_c_string.html#a8ab7ce60a26cdd29e1cf743664d0f6be">toInt</a>();</div>
+<div class="line"><a name="l01650"></a><span class="lineno"> 1650</span>&#160;    <span class="keywordflow">if</span> (key==(<span class="keywordtype">int</span>)lang) <span class="comment">// found matching key</span></div>
+<div class="line"><a name="l01651"></a><span class="lineno"> 1651</span>&#160;    {</div>
+<div class="line"><a name="l01652"></a><span class="lineno"> 1652</span>&#160;      <span class="keywordflow">if</span> (e==-1) e=input.<a class="code" href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">length</a>();</div>
+<div class="line"><a name="l01653"></a><span class="lineno"> 1653</span>&#160;      <span class="keywordflow">return</span> input.<a class="code" href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">mid</a>(i+1,e-i-1);</div>
+<div class="line"><a name="l01654"></a><span class="lineno"> 1654</span>&#160;    }</div>
+<div class="line"><a name="l01655"></a><span class="lineno"> 1655</span>&#160;  }</div>
+<div class="line"><a name="l01656"></a><span class="lineno"> 1656</span>&#160;  <span class="keywordflow">return</span> input.<a class="code" href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">left</a>(e1); <span class="comment">// fallback, no explicit language key found</span></div>
+<div class="line"><a name="l01657"></a><span class="lineno"> 1657</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d5/d3e/qcstring_8cpp_source.html#l00038">QCString::find()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00212">QCString::left()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00147">QCString::length()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00224">QCString::mid()</a> , 以及 <a class="el" href="../../d5/d3e/qcstring_8cpp_source.html#l00244">QCString::toInt()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d16/layout_8cpp_source.html#l01673">LayoutDocEntryMemberDecl::subtitle()</a>, <a class="el" href="../../db/d16/layout_8cpp_source.html#l01661">LayoutDocEntrySection::title()</a>, <a class="el" href="../../db/d16/layout_8cpp_source.html#l01668">LayoutDocEntryMemberDecl::title()</a> , 以及 <a class="el" href="../../db/d16/layout_8cpp_source.html#l01680">LayoutDocEntryMemberDef::title()</a>.</p>
+
+</div>
+</div>
+<a id="a14e54384cfc9f2d640c8d9489ea2e4bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14e54384cfc9f2d640c8d9489ea2e4bc">&#9670;&nbsp;</a></span>startCb() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#aa0906172ac0c83d33d3bf2df5ccfbee3">ElementCallbacks::StartCallback</a> startCb </td>
+          <td>(</td>
+          <td class="paramtype">void(LayoutParser::*)(const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;)&#160;</td>
+          <td class="paramname"><em>fn</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00723">723</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;{</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;  <span class="keywordflow">return</span> [fn](<a class="code" href="../../d3/de9/class_layout_parser.html">LayoutParser</a> &amp;parser,<span class="keyword">const</span> <a class="code" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;attr) { (parser.*fn)(attr); };</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0120a2965d5b5d0cf5273773d1b54eba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0120a2965d5b5d0cf5273773d1b54eba">&#9670;&nbsp;</a></span>startCb() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#aa0906172ac0c83d33d3bf2df5ccfbee3">ElementCallbacks::StartCallback</a> startCb </td>
+          <td>(</td>
+          <td class="paramtype">void(LayoutParser::*)(const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;, <a class="el" href="../../d9/d49/types_8h.html#abe8ad5992f8938a28f918f51b199aa19">MemberListType</a>, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;)&#160;</td>
+          <td class="paramname"><em>fn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#abe8ad5992f8938a28f918f51b199aa19">MemberListType</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()&gt;&#160;</td>
+          <td class="paramname"><em>title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00741">741</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;{</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;  <span class="keywordflow">return</span> [fn,type,title](<a class="code" href="../../d3/de9/class_layout_parser.html">LayoutParser</a> &amp;parser,<span class="keyword">const</span> <a class="code" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;attr) { (parser.*fn)(attr,type,title(),<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>()); };</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9d76a40646943e8bbf908c31c917b564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d76a40646943e8bbf908c31c917b564">&#9670;&nbsp;</a></span>startCb() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#aa0906172ac0c83d33d3bf2df5ccfbee3">ElementCallbacks::StartCallback</a> startCb </td>
+          <td>(</td>
+          <td class="paramtype">void(LayoutParser::*)(const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;, <a class="el" href="../../d9/d49/types_8h.html#abe8ad5992f8938a28f918f51b199aa19">MemberListType</a>, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;)&#160;</td>
+          <td class="paramname"><em>fn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/d49/types_8h.html#abe8ad5992f8938a28f918f51b199aa19">MemberListType</a>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()&gt;&#160;</td>
+          <td class="paramname"><em>title</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()&gt;&#160;</td>
+          <td class="paramname"><em>subtitle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00749">749</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;{</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;  <span class="keywordflow">return</span> [fn,type,title,subtitle](<a class="code" href="../../d3/de9/class_layout_parser.html">LayoutParser</a> &amp;parser,<span class="keyword">const</span> <a class="code" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;attr) { (parser.*fn)(attr,type,title(),subtitle()); };</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad68076f895d8a93abab10350e9aad483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad68076f895d8a93abab10350e9aad483">&#9670;&nbsp;</a></span>startCb() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#aa0906172ac0c83d33d3bf2df5ccfbee3">ElementCallbacks::StartCallback</a> startCb </td>
+          <td>(</td>
+          <td class="paramtype">void(LayoutParser::*)(<a class="el" href="../../d9/dba/struct_layout_doc_entry.html#a89dcbe762ed7e7f7790d8c034cf8ea01">LayoutDocEntry::Kind</a>, const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;)&#160;</td>
+          <td class="paramname"><em>fn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/dba/struct_layout_doc_entry.html#a89dcbe762ed7e7f7790d8c034cf8ea01">LayoutDocEntry::Kind</a>&#160;</td>
+          <td class="paramname"><em>kind</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00728">728</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;{</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;  <span class="keywordflow">return</span> [fn,kind](<a class="code" href="../../d3/de9/class_layout_parser.html">LayoutParser</a> &amp;parser,<span class="keyword">const</span> <a class="code" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;attr) { (parser.*fn)(kind,attr); };</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a36a1784290378f6feba398d357fa1ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36a1784290378f6feba398d357fa1ed2">&#9670;&nbsp;</a></span>startCb() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d4/d30/struct_element_callbacks.html#aa0906172ac0c83d33d3bf2df5ccfbee3">ElementCallbacks::StartCallback</a> startCb </td>
+          <td>(</td>
+          <td class="paramtype">void(LayoutParser::*)(<a class="el" href="../../d9/dba/struct_layout_doc_entry.html#a89dcbe762ed7e7f7790d8c034cf8ea01">LayoutDocEntry::Kind</a>, const <a class="el" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;, const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;)&#160;</td>
+          <td class="paramname"><em>fn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d9/dba/struct_layout_doc_entry.html#a89dcbe762ed7e7f7790d8c034cf8ea01">LayoutDocEntry::Kind</a>&#160;</td>
+          <td class="paramname"><em>kind</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a>()&gt;&#160;</td>
+          <td class="paramname"><em>title</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00733">733</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;{</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;  <span class="keywordflow">return</span> [fn,kind,title](<a class="code" href="../../d3/de9/class_layout_parser.html">LayoutParser</a> &amp;parser,<span class="keyword">const</span> <a class="code" href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a> &amp;attr) { (parser.*fn)(kind,attr,title()); };</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a8ccb483586d18bd75a15720be22f90cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ccb483586d18bd75a15720be22f90cb">&#9670;&nbsp;</a></span>writeDefaultLayoutFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeDefaultLayoutFile </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l01614">1614</a> 行定义.</p>
+<div class="fragment"><div class="line"><a name="l01615"></a><span class="lineno"> 1615</span>&#160;{</div>
+<div class="line"><a name="l01616"></a><span class="lineno"> 1616</span>&#160;  std::ofstream f;</div>
+<div class="line"><a name="l01617"></a><span class="lineno"> 1617</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="../../df/d2d/util_8cpp.html#a5c6662051d765cb0a355382ab05c14a1">openOutputFile</a>(fileName,f))</div>
+<div class="line"><a name="l01618"></a><span class="lineno"> 1618</span>&#160;  {</div>
+<div class="line"><a name="l01619"></a><span class="lineno"> 1619</span>&#160;    <a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> t(&amp;f);</div>
+<div class="line"><a name="l01620"></a><span class="lineno"> 1620</span>&#160;    <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> layout_default = <a class="code" href="../../d6/d12/class_resource_mgr.html#a02fb3176893696eaf659d680c8b08064">ResourceMgr::instance</a>().<a class="code" href="../../d6/d12/class_resource_mgr.html#aa60ef164e79a11cfa31de29221db11aa">getAsString</a>(<span class="stringliteral">&quot;layout_default.xml&quot;</span>);</div>
+<div class="line"><a name="l01621"></a><span class="lineno"> 1621</span>&#160;    t &lt;&lt; <a class="code" href="../../d5/d3e/qcstring_8cpp.html#a99187f0723aa35b7f06be3a5506b1285">substitute</a>(layout_default,<span class="stringliteral">&quot;$doxygenversion&quot;</span>,getDoxygenVersion());</div>
+<div class="line"><a name="l01622"></a><span class="lineno"> 1622</span>&#160;  }</div>
+<div class="line"><a name="l01623"></a><span class="lineno"> 1623</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l01624"></a><span class="lineno"> 1624</span>&#160;  {</div>
+<div class="line"><a name="l01625"></a><span class="lineno"> 1625</span>&#160;    <a class="code" href="../../d8/d6a/message_8cpp.html#aede5746344fdce99647541101eaa7f06">err</a>(<span class="stringliteral">&quot;Failed to open file %s for writing!\n&quot;</span>,<a class="code" href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a>(fileName));</div>
+<div class="line"><a name="l01626"></a><span class="lineno"> 1626</span>&#160;    <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l01627"></a><span class="lineno"> 1627</span>&#160;  }</div>
+<div class="line"><a name="l01628"></a><span class="lineno"> 1628</span>&#160;  f.close();</div>
+<div class="line"><a name="l01629"></a><span class="lineno"> 1629</span>&#160;}</div>
+</div><!-- fragment -->
+<p class="reference">引用了 <a class="el" href="../../d8/d6a/message_8cpp_source.html#l00203">err()</a>, <a class="el" href="../../d6/dde/resourcemgr_8cpp_source.html#l00192">ResourceMgr::getAsString()</a>, <a class="el" href="../../d6/dde/resourcemgr_8cpp_source.html#l00032">ResourceMgr::instance()</a>, <a class="el" href="../../df/d2d/util_8cpp_source.html#l07039">openOutputFile()</a>, <a class="el" href="../../d7/d5c/qcstring_8h_source.html#l00589">qPrint()</a> , 以及 <a class="el" href="../../d5/d3e/qcstring_8cpp_source.html#l00465">substitute()</a>.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../dc/d98/doxygen_8cpp_source.html#l10738">readConfiguration()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a1fda77298d662475e65c3a75d47a6a88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fda77298d662475e65c3a75d47a6a88">&#9670;&nbsp;</a></span>g_elementHandlers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::map&lt; std::string, <a class="el" href="../../d4/d30/struct_element_callbacks.html">ElementCallbacks</a> &gt; g_elementHandlers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">在文件 <a class="el" href="../../db/d16/layout_8cpp_source.html">layout.cpp</a> 第 <a class="el" href="../../db/d16/layout_8cpp_source.html#l00769">769</a> 行定义.</p>
+
+<p class="reference">被这些函数引用 <a class="el" href="../../db/d16/layout_8cpp_source.html#l01518">LayoutParser::endElement()</a> , 以及 <a class="el" href="../../db/d16/layout_8cpp_source.html#l01502">LayoutParser::startElement()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_resource_mgr_html_a02fb3176893696eaf659d680c8b08064"><div class="ttname"><a href="../../d6/d12/class_resource_mgr.html#a02fb3176893696eaf659d680c8b08064">ResourceMgr::instance</a></div><div class="ttdeci">static ResourceMgr &amp; instance()</div><div class="ttdoc">Returns the one and only instance of this class</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dde/resourcemgr_8cpp_source.html#l00032">resourcemgr.cpp:32</a></div></div>
+<div class="ttc" id="aclass_x_m_l_handlers_html_a15cedeea046e36465580e5654121387e"><div class="ttname"><a href="../../dc/dea/class_x_m_l_handlers.html#a15cedeea046e36465580e5654121387e">XMLHandlers::Attributes</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::string &gt; Attributes</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d62/xml_8h_source.html#l00042">xml.h:42</a></div></div>
+<div class="ttc" id="aclass_resource_mgr_html_aa60ef164e79a11cfa31de29221db11aa"><div class="ttname"><a href="../../d6/d12/class_resource_mgr.html#aa60ef164e79a11cfa31de29221db11aa">ResourceMgr::getAsString</a></div><div class="ttdeci">QCString getAsString(const QCString &amp;name) const</div><div class="ttdoc">Gets the resource data as a C string</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/dde/resourcemgr_8cpp_source.html#l00192">resourcemgr.cpp:192</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_ac52596733e9110b778019946d73fb268"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#ac52596733e9110b778019946d73fb268">QCString::length</a></div><div class="ttdeci">uint length() const</div><div class="ttdoc">Returns the length of the string, not counting the 0-terminator.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00147">qcstring.h:147</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a621c4090d69ad7d05ef8e5234376c3d8"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a621c4090d69ad7d05ef8e5234376c3d8">QCString::isEmpty</a></div><div class="ttdeci">bool isEmpty() const</div><div class="ttdoc">Returns TRUE iff the string is empty</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00144">qcstring.h:144</a></div></div>
+<div class="ttc" id="aclass_layout_parser_html"><div class="ttname"><a href="../../d3/de9/class_layout_parser.html">LayoutParser</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/layout_8cpp_source.html#l00163">layout.cpp:163</a></div></div>
+<div class="ttc" id="amessage_8cpp_html_aede5746344fdce99647541101eaa7f06"><div class="ttname"><a href="../../d8/d6a/message_8cpp.html#aede5746344fdce99647541101eaa7f06">err</a></div><div class="ttdeci">void err(const char *fmt,...)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d6a/message_8cpp_source.html#l00203">message.cpp:203</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a6b3cacab2df2f8cda280e83d474d57fa"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a6b3cacab2df2f8cda280e83d474d57fa">QCString::at</a></div><div class="ttdeci">char &amp; at(size_t i)</div><div class="ttdoc">Returns a reference to the character at index i.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00477">qcstring.h:477</a></div></div>
+<div class="ttc" id="aclass_text_stream_html"><div class="ttname"><a href="../../d3/d30/class_text_stream.html">TextStream</a></div><div class="ttdoc">Text streaming class that buffers data.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00033">textstream.h:33</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a0182ece6b76dad6475dafb53e2faaf10"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a0182ece6b76dad6475dafb53e2faaf10">QCString::find</a></div><div class="ttdeci">int find(char c, int index=0, bool cs=TRUE) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d3e/qcstring_8cpp_source.html#l00038">qcstring.cpp:38</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_aecf8b66312c4e97333219cc344c11a4f"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#aecf8b66312c4e97333219cc344c11a4f">QCString::left</a></div><div class="ttdeci">QCString left(size_t len) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00212">qcstring.h:212</a></div></div>
+<div class="ttc" id="alayout_8cpp_html_ab0be32e17659ff359e79e3c10244b5ed"><div class="ttname"><a href="../../db/d16/layout_8cpp.html#ab0be32e17659ff359e79e3c10244b5ed">compileOptions</a></div><div class="ttdeci">QCString compileOptions(const QCString &amp;def)</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d16/layout_8cpp_source.html#l00035">layout.cpp:35</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a8ab7ce60a26cdd29e1cf743664d0f6be"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a8ab7ce60a26cdd29e1cf743664d0f6be">QCString::toInt</a></div><div class="ttdeci">int toInt(bool *ok=0, int base=10) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d3e/qcstring_8cpp_source.html#l00244">qcstring.cpp:244</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a312500856f72eaf8300b1681f2e10c52"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a312500856f72eaf8300b1681f2e10c52">QCString::setNum</a></div><div class="ttdeci">QCString &amp; setNum(short n)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00372">qcstring.h:372</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html_a27136caf9c0bc4daca574cda6f113551"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html#a27136caf9c0bc4daca574cda6f113551">QCString::mid</a></div><div class="ttdeci">QCString mid(size_t index, size_t len=static_cast&lt; size_t &gt;(-1)) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00224">qcstring.h:224</a></div></div>
+<div class="ttc" id="aqcstring_8cpp_html_a99187f0723aa35b7f06be3a5506b1285"><div class="ttname"><a href="../../d5/d3e/qcstring_8cpp.html#a99187f0723aa35b7f06be3a5506b1285">substitute</a></div><div class="ttdeci">QCString substitute(const QCString &amp;s, const QCString &amp;src, const QCString &amp;dst)</div><div class="ttdoc">substitute all occurrences of src in s by dst</div><div class="ttdef"><b>Definition:</b> <a href="../../d5/d3e/qcstring_8cpp_source.html#l00465">qcstring.cpp:465</a></div></div>
+<div class="ttc" id="aqcstring_8h_html_a890ee170378f24ba7c44f92c35ec95ce"><div class="ttname"><a href="../../d7/d5c/qcstring_8h.html#a890ee170378f24ba7c44f92c35ec95ce">qPrint</a></div><div class="ttdeci">const char * qPrint(const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00589">qcstring.h:589</a></div></div>
+<div class="ttc" id="autil_8cpp_html_a5c6662051d765cb0a355382ab05c14a1"><div class="ttname"><a href="../../df/d2d/util_8cpp.html#a5c6662051d765cb0a355382ab05c14a1">openOutputFile</a></div><div class="ttdeci">bool openOutputFile(const QCString &amp;outFile, std::ofstream &amp;f)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d2d/util_8cpp_source.html#l07039">util.cpp:7039</a></div></div>
+<div class="ttc" id="aclass_x_m_l_handlers_html_ad2d3b265aa5d98961404eb3ebd539921"><div class="ttname"><a href="../../dc/dea/class_x_m_l_handlers.html#ad2d3b265aa5d98961404eb3ebd539921">XMLHandlers::value</a></div><div class="ttdeci">static std::string value(const Attributes &amp;attrib, const std::string &amp;key)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d62/xml_8h_source.html#l00057">xml.h:57</a></div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../db/d16/layout_8cpp.html">layout.cpp</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:57 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

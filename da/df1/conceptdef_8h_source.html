@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/conceptdef.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('da/df1/conceptdef_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">conceptdef.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../da/df1/conceptdef_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright (C) 1997-2021 by Dimitri van Heesch.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Permission to use, copy, modify, and distribute this software and its</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * documentation under the terms of the GNU General Public License is hereby</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * granted. No representations are made about the suitability of this software</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * for any purpose. It is provided &quot;as is&quot; without express or implied warranty.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * See the GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Documents produced by Doxygen are derivative works derived from the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * input used in their production; they are not affected by this license.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef CONCEPTDEF_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define CONCEPTDEF_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/da1/definition_8h.html">definition.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d4/d3a/filedef_8h.html">filedef.h</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d6/d8d/class_concept_def.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d6/d8d/class_concept_def.html">ConceptDef</a> : <span class="keyword">public</span> <a class="code" href="../../d5/dcc/class_definition.html">Definition</a></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d5/dcc/class_definition.html#aa41b6bc53dcf93ecf745698aaf15ef8e">DefType</a> <a class="code" href="../../d6/d8d/class_concept_def.html#aac16c45e3c85d63aea96208b3d435052">definitionType</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../d6/d8d/class_concept_def.html#ad694ad46f46434352e8fb1650d867c5b">getOutputFileBase</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d6/d8d/class_concept_def.html#accb00801461a766bf65806e07f241faa">hasDetailedDescription</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../d6/d8d/class_concept_def.html#ad6deb6fcee930e4e58bb188ad64f18d6">displayName</a>(<span class="keywordtype">bool</span> includeScope=<span class="keyword">true</span>) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="../../d5/dc1/struct_include_info.html">IncludeInfo</a> *<a class="code" href="../../d6/d8d/class_concept_def.html#a5458ffd0c445ebf12e3231b0f24726f7">includeInfo</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d7/df8/class_argument_list.html">ArgumentList</a> <a class="code" href="../../d6/d8d/class_concept_def.html#a3dc85d76254ee240faaf13633a0639ba">getTemplateParameterList</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../d6/d8d/class_concept_def.html#a59e9b6a7ed4fbf557a98554203041ddb">anchor</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d6/d8d/class_concept_def.html#a02d42e5214ac1a2bc776284d55c324fd">isLinkableInProject</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code" href="../../d6/d8d/class_concept_def.html#a7d30ea7de8b9cb1ac13eb70a64be0cec">isLinkable</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../d6/d8d/class_concept_def.html#a1d3f52dc1f9634dfa1f1c0702f918e81">initializer</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d6/d8d/class_concept_def.html#a825b1919254a35b14906922cc2fb2c60">writeDeclarationLink</a>(<a class="code" href="../../df/dc8/class_output_list.html">OutputList</a> &amp;ol,<span class="keywordtype">bool</span> &amp;found,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                              <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;header,<span class="keywordtype">bool</span> localNames) <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="../../d0/d07/class_namespace_def.html">NamespaceDef</a> *<a class="code" href="../../d6/d8d/class_concept_def.html#a7216b0c20a6149716a7cabc6cbc48ee5">getNamespaceDef</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <span class="keyword">const</span> <a class="code" href="../../de/db0/class_file_def.html">FileDef</a> *<a class="code" href="../../d6/d8d/class_concept_def.html#aac3b9604fbfa6b18a6456af12eb8e191">getFileDef</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> <a class="code" href="../../d6/d8d/class_concept_def.html#aa525b7f265d7f3d5ccb94b368cd2386f">title</a>() <span class="keyword">const</span> = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;};</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../d4/deb/class_concept_def_mutable.html">   42</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/deb/class_concept_def_mutable.html">ConceptDefMutable</a> : <span class="keyword">public</span> <a class="code" href="../../d0/d46/class_definition_mutable.html">DefinitionMutable</a>, <span class="keyword">public</span> <a class="code" href="../../d6/d8d/class_concept_def.html">ConceptDef</a></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/deb/class_concept_def_mutable.html#a8529a2b82c87e29a8745644bf48ddf98">setIncludeFile</a>(<a class="code" href="../../de/db0/class_file_def.html">FileDef</a> *fd,<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;incName,<span class="keywordtype">bool</span> local,<span class="keywordtype">bool</span> force) = 0;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/deb/class_concept_def_mutable.html#afb821b50428c9a2f1db4b15590152168">setTemplateArguments</a>(<span class="keyword">const</span> <a class="code" href="../../d7/df8/class_argument_list.html">ArgumentList</a> &amp;al) = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/deb/class_concept_def_mutable.html#afea314262cd0e59dcacd0fef974e0891">setNamespace</a>(<a class="code" href="../../d0/d07/class_namespace_def.html">NamespaceDef</a> *nd) = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/deb/class_concept_def_mutable.html#a70261b250e44a6ea6217b70167e58711">setFileDef</a>(<a class="code" href="../../de/db0/class_file_def.html">FileDef</a> *fd) = 0;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/deb/class_concept_def_mutable.html#a7ff1e192cf1e4d4ce9c809d0e487d538">writeTagFile</a>(<a class="code" href="../../d3/d30/class_text_stream.html">TextStream</a> &amp;) = 0;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/deb/class_concept_def_mutable.html#ad3ac93bdff9848bc001e93f55ccb4d71">writeDocumentation</a>(<a class="code" href="../../df/dc8/class_output_list.html">OutputList</a> &amp;ol) = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/deb/class_concept_def_mutable.html#a83f5756b0da1dc49c05e9eb6af214016">setInitializer</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;<a class="code" href="../../d0/d31/namespace_config.html#a91bcb187ed95ec673137e413a4d77203">init</a>) = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="../../d4/deb/class_concept_def_mutable.html#afa9c676ae5e9ac665306b370a1959446">findSectionsInDocumentation</a>() = 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<a class="code" href="../../d4/deb/class_concept_def_mutable.html">ConceptDefMutable</a> *<a class="code" href="../../da/df1/conceptdef_8h.html#ab65f1571270806e35645a520a715eda7">createConceptDef</a>(</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;fileName,<span class="keywordtype">int</span> startLine,<span class="keywordtype">int</span> startColumn,<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;name,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;tagRef=<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>(),<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;tagFile=<a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a>());</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<a class="code" href="../../d6/d8d/class_concept_def.html">ConceptDef</a> *<a class="code" href="../../da/df1/conceptdef_8h.html#ab50696b702cb6544cd3811bf2d3ed3d2">createConceptDefAlias</a>(<span class="keyword">const</span> <a class="code" href="../../d5/dcc/class_definition.html">Definition</a> *newScope,<span class="keyword">const</span> <a class="code" href="../../d6/d8d/class_concept_def.html">ConceptDef</a> *cd);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="comment">// ---- Map</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../db/ded/class_concept_linked_map.html">   63</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../db/ded/class_concept_linked_map.html">ConceptLinkedMap</a> : <span class="keyword">public</span> <a class="code" href="../../d0/d2c/class_linked_map.html">LinkedMap</a>&lt;ConceptDef&gt;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="../../d4/daa/class_concept_linked_ref_map.html">   67</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d4/daa/class_concept_linked_ref_map.html">ConceptLinkedRefMap</a> : <span class="keyword">public</span> <a class="code" href="../../d2/db7/class_linked_ref_map.html">LinkedRefMap</a>&lt;const ConceptDef&gt;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d4/daa/class_concept_linked_ref_map.html#a6e7ac01918b370ac96818557ef87bf49">declVisible</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/daa/class_concept_linked_ref_map.html#a0b784a4bcc64f3284b548fdf10a37b88">writeDeclaration</a>(<a class="code" href="../../df/dc8/class_output_list.html">OutputList</a> &amp;ol,<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;header,<span class="keywordtype">bool</span> localNames) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d4/daa/class_concept_linked_ref_map.html#a8b877edda233d39bac6b257663579929">writeDocumentation</a>(<a class="code" href="../../df/dc8/class_output_list.html">OutputList</a> &amp;ol,<span class="keyword">const</span> <a class="code" href="../../d5/dcc/class_definition.html">Definition</a> * container=0) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// ---- Cast functions</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<a class="code" href="../../d6/d8d/class_concept_def.html">ConceptDef</a>        *<a class="code" href="../../da/df1/conceptdef_8h.html#a5f3f7f8bc80515c2d849c60ac4e2ca12">toConceptDef</a>(<a class="code" href="../../d5/dcc/class_definition.html">Definition</a> *d);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<a class="code" href="../../d6/d8d/class_concept_def.html">ConceptDef</a>        *<a class="code" href="../../da/df1/conceptdef_8h.html#a5f3f7f8bc80515c2d849c60ac4e2ca12">toConceptDef</a>(<a class="code" href="../../d0/d46/class_definition_mutable.html">DefinitionMutable</a> *d);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">const</span> <a class="code" href="../../d6/d8d/class_concept_def.html">ConceptDef</a>  *<a class="code" href="../../da/df1/conceptdef_8h.html#a5f3f7f8bc80515c2d849c60ac4e2ca12">toConceptDef</a>(<span class="keyword">const</span> <a class="code" href="../../d5/dcc/class_definition.html">Definition</a> *d);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<a class="code" href="../../d4/deb/class_concept_def_mutable.html">ConceptDefMutable</a> *<a class="code" href="../../da/df1/conceptdef_8h.html#a4469a1fd260b107eafdc4d31e158ba41">toConceptDefMutable</a>(<a class="code" href="../../d5/dcc/class_definition.html">Definition</a> *d);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<a class="code" href="../../d4/deb/class_concept_def_mutable.html">ConceptDefMutable</a> *<a class="code" href="../../da/df1/conceptdef_8h.html#a4469a1fd260b107eafdc4d31e158ba41">toConceptDefMutable</a>(<span class="keyword">const</span> <a class="code" href="../../d5/dcc/class_definition.html">Definition</a> *d);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">// --- Helpers</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<a class="code" href="../../d6/d8d/class_concept_def.html">ConceptDef</a> *<a class="code" href="../../da/df1/conceptdef_8h.html#afb10a38b105e1a8e75cb82af96383557">getConcept</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;key);</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="../../da/df1/conceptdef_8h.html#a443902a946c88b052ffa0fe651b7a986">   86</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="../../d4/deb/class_concept_def_mutable.html">ConceptDefMutable</a> *<a class="code" href="../../da/df1/conceptdef_8h.html#a443902a946c88b052ffa0fe651b7a986">getConceptMutable</a>(<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;key)</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="../../da/df1/conceptdef_8h.html#a4469a1fd260b107eafdc4d31e158ba41">toConceptDefMutable</a>(<a class="code" href="../../da/df1/conceptdef_8h.html#afb10a38b105e1a8e75cb82af96383557">getConcept</a>(key));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<a class="code" href="../../d6/d8d/class_concept_def.html">ConceptDef</a> *<a class="code" href="../../da/df1/conceptdef_8h.html#a469e15f9e188ad7f83533378530d77af">getResolvedConcept</a>(<span class="keyword">const</span> <a class="code" href="../../d5/dcc/class_definition.html">Definition</a> *scope,<span class="keyword">const</span> <a class="code" href="../../d9/d45/class_q_c_string.html">QCString</a> &amp;name);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_concept_def_mutable_html"><div class="ttname"><a href="../../d4/deb/class_concept_def_mutable.html">ConceptDefMutable</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/df1/conceptdef_8h_source.html#l00042">conceptdef.h:42</a></div></div>
+<div class="ttc" id="anamespace_config_html_a91bcb187ed95ec673137e413a4d77203"><div class="ttname"><a href="../../d0/d31/namespace_config.html#a91bcb187ed95ec673137e413a4d77203">Config::init</a></div><div class="ttdeci">void init()</div></div>
+<div class="ttc" id="aclass_concept_def_html_ad694ad46f46434352e8fb1650d867c5b"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#ad694ad46f46434352e8fb1650d867c5b">ConceptDef::getOutputFileBase</a></div><div class="ttdeci">virtual QCString getOutputFileBase() const =0</div></div>
+<div class="ttc" id="aclass_linked_ref_map_html"><div class="ttname"><a href="../../d2/db7/class_linked_ref_map.html">LinkedRefMap</a></div><div class="ttdoc">Container class representing a vector of objects with keys.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de1/linkedmap_8h_source.html#l00231">linkedmap.h:231</a></div></div>
+<div class="ttc" id="aconceptdef_8h_html_a5f3f7f8bc80515c2d849c60ac4e2ca12"><div class="ttname"><a href="../../da/df1/conceptdef_8h.html#a5f3f7f8bc80515c2d849c60ac4e2ca12">toConceptDef</a></div><div class="ttdeci">ConceptDef * toConceptDef(Definition *d)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0a/conceptdef_8cpp_source.html#l00676">conceptdef.cpp:676</a></div></div>
+<div class="ttc" id="aclass_concept_def_html_ad6deb6fcee930e4e58bb188ad64f18d6"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#ad6deb6fcee930e4e58bb188ad64f18d6">ConceptDef::displayName</a></div><div class="ttdeci">virtual QCString displayName(bool includeScope=true) const =0</div></div>
+<div class="ttc" id="aclass_concept_linked_ref_map_html_a0b784a4bcc64f3284b548fdf10a37b88"><div class="ttname"><a href="../../d4/daa/class_concept_linked_ref_map.html#a0b784a4bcc64f3284b548fdf10a37b88">ConceptLinkedRefMap::writeDeclaration</a></div><div class="ttdeci">void writeDeclaration(OutputList &amp;ol, const QCString &amp;header, bool localNames) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0a/conceptdef_8cpp_source.html#l00662">conceptdef.cpp:662</a></div></div>
+<div class="ttc" id="aclass_concept_def_html"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html">ConceptDef</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/df1/conceptdef_8h_source.html#l00022">conceptdef.h:22</a></div></div>
+<div class="ttc" id="aconceptdef_8h_html_a469e15f9e188ad7f83533378530d77af"><div class="ttname"><a href="../../da/df1/conceptdef_8h.html#a469e15f9e188ad7f83533378530d77af">getResolvedConcept</a></div><div class="ttdeci">ConceptDef * getResolvedConcept(const Definition *scope, const QCString &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0a/conceptdef_8cpp_source.html#l00745">conceptdef.cpp:745</a></div></div>
+<div class="ttc" id="aclass_definition_html"><div class="ttname"><a href="../../d5/dcc/class_definition.html">Definition</a></div><div class="ttdoc">The common base class of all entity definitions found in the sources.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/da1/definition_8h_source.html#l00076">definition.h:76</a></div></div>
+<div class="ttc" id="aclass_namespace_def_html"><div class="ttname"><a href="../../d0/d07/class_namespace_def.html">NamespaceDef</a></div><div class="ttdoc">An abstract interface of a namespace symbol.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d97/namespacedef_8h_source.html#l00054">namespacedef.h:54</a></div></div>
+<div class="ttc" id="aclass_concept_linked_ref_map_html_a8b877edda233d39bac6b257663579929"><div class="ttname"><a href="../../d4/daa/class_concept_linked_ref_map.html#a8b877edda233d39bac6b257663579929">ConceptLinkedRefMap::writeDocumentation</a></div><div class="ttdeci">void writeDocumentation(OutputList &amp;ol, const Definition *container=0) const</div></div>
+<div class="ttc" id="aclass_argument_list_html"><div class="ttname"><a href="../../d7/df8/class_argument_list.html">ArgumentList</a></div><div class="ttdoc">This class represents an function or template argument list.</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9b/arguments_8h_source.html#l00059">arguments.h:59</a></div></div>
+<div class="ttc" id="aclass_concept_def_html_a02d42e5214ac1a2bc776284d55c324fd"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#a02d42e5214ac1a2bc776284d55c324fd">ConceptDef::isLinkableInProject</a></div><div class="ttdeci">virtual bool isLinkableInProject() const =0</div></div>
+<div class="ttc" id="aconceptdef_8h_html_afb10a38b105e1a8e75cb82af96383557"><div class="ttname"><a href="../../da/df1/conceptdef_8h.html#afb10a38b105e1a8e75cb82af96383557">getConcept</a></div><div class="ttdeci">ConceptDef * getConcept(const QCString &amp;key)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0a/conceptdef_8cpp_source.html#l00739">conceptdef.cpp:739</a></div></div>
+<div class="ttc" id="aconceptdef_8h_html_ab50696b702cb6544cd3811bf2d3ed3d2"><div class="ttname"><a href="../../da/df1/conceptdef_8h.html#ab50696b702cb6544cd3811bf2d3ed3d2">createConceptDefAlias</a></div><div class="ttdeci">ConceptDef * createConceptDefAlias(const Definition *newScope, const ConceptDef *cd)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0a/conceptdef_8cpp_source.html#l00139">conceptdef.cpp:139</a></div></div>
+<div class="ttc" id="aclass_concept_def_html_a5458ffd0c445ebf12e3231b0f24726f7"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#a5458ffd0c445ebf12e3231b0f24726f7">ConceptDef::includeInfo</a></div><div class="ttdeci">virtual const IncludeInfo * includeInfo() const =0</div></div>
+<div class="ttc" id="aconceptdef_8h_html_a4469a1fd260b107eafdc4d31e158ba41"><div class="ttname"><a href="../../da/df1/conceptdef_8h.html#a4469a1fd260b107eafdc4d31e158ba41">toConceptDefMutable</a></div><div class="ttdeci">ConceptDefMutable * toConceptDefMutable(Definition *d)</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0a/conceptdef_8cpp_source.html#l00713">conceptdef.cpp:713</a></div></div>
+<div class="ttc" id="aclass_concept_def_html_a7216b0c20a6149716a7cabc6cbc48ee5"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#a7216b0c20a6149716a7cabc6cbc48ee5">ConceptDef::getNamespaceDef</a></div><div class="ttdeci">virtual const NamespaceDef * getNamespaceDef() const =0</div></div>
+<div class="ttc" id="aclass_concept_def_html_a59e9b6a7ed4fbf557a98554203041ddb"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#a59e9b6a7ed4fbf557a98554203041ddb">ConceptDef::anchor</a></div><div class="ttdeci">virtual QCString anchor() const =0</div></div>
+<div class="ttc" id="aclass_text_stream_html"><div class="ttname"><a href="../../d3/d30/class_text_stream.html">TextStream</a></div><div class="ttdoc">Text streaming class that buffers data.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d7d/textstream_8h_source.html#l00033">textstream.h:33</a></div></div>
+<div class="ttc" id="aclass_concept_def_html_a825b1919254a35b14906922cc2fb2c60"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#a825b1919254a35b14906922cc2fb2c60">ConceptDef::writeDeclarationLink</a></div><div class="ttdeci">virtual void writeDeclarationLink(OutputList &amp;ol, bool &amp;found, const QCString &amp;header, bool localNames) const =0</div></div>
+<div class="ttc" id="aclass_concept_linked_ref_map_html_a6e7ac01918b370ac96818557ef87bf49"><div class="ttname"><a href="../../d4/daa/class_concept_linked_ref_map.html#a6e7ac01918b370ac96818557ef87bf49">ConceptLinkedRefMap::declVisible</a></div><div class="ttdeci">bool declVisible() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0a/conceptdef_8cpp_source.html#l00648">conceptdef.cpp:648</a></div></div>
+<div class="ttc" id="aclass_concept_def_mutable_html_a70261b250e44a6ea6217b70167e58711"><div class="ttname"><a href="../../d4/deb/class_concept_def_mutable.html#a70261b250e44a6ea6217b70167e58711">ConceptDefMutable::setFileDef</a></div><div class="ttdeci">virtual void setFileDef(FileDef *fd)=0</div></div>
+<div class="ttc" id="aclass_concept_def_html_accb00801461a766bf65806e07f241faa"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#accb00801461a766bf65806e07f241faa">ConceptDef::hasDetailedDescription</a></div><div class="ttdeci">virtual bool hasDetailedDescription() const =0</div></div>
+<div class="ttc" id="aclass_output_list_html"><div class="ttname"><a href="../../df/dc8/class_output_list.html">OutputList</a></div><div class="ttdoc">Class representing a list of output generators that are written to in parallel.</div><div class="ttdef"><b>Definition:</b> <a href="../../d2/db9/outputlist_8h_source.html#l00037">outputlist.h:37</a></div></div>
+<div class="ttc" id="aclass_concept_def_mutable_html_afa9c676ae5e9ac665306b370a1959446"><div class="ttname"><a href="../../d4/deb/class_concept_def_mutable.html#afa9c676ae5e9ac665306b370a1959446">ConceptDefMutable::findSectionsInDocumentation</a></div><div class="ttdeci">virtual void findSectionsInDocumentation()=0</div></div>
+<div class="ttc" id="aclass_concept_def_html_a1d3f52dc1f9634dfa1f1c0702f918e81"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#a1d3f52dc1f9634dfa1f1c0702f918e81">ConceptDef::initializer</a></div><div class="ttdeci">virtual QCString initializer() const =0</div></div>
+<div class="ttc" id="aconceptdef_8h_html_a443902a946c88b052ffa0fe651b7a986"><div class="ttname"><a href="../../da/df1/conceptdef_8h.html#a443902a946c88b052ffa0fe651b7a986">getConceptMutable</a></div><div class="ttdeci">ConceptDefMutable * getConceptMutable(const QCString &amp;key)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/df1/conceptdef_8h_source.html#l00086">conceptdef.h:86</a></div></div>
+<div class="ttc" id="aclass_concept_def_html_a3dc85d76254ee240faaf13633a0639ba"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#a3dc85d76254ee240faaf13633a0639ba">ConceptDef::getTemplateParameterList</a></div><div class="ttdeci">virtual ArgumentList getTemplateParameterList() const =0</div></div>
+<div class="ttc" id="astruct_include_info_html"><div class="ttname"><a href="../../d5/dc1/struct_include_info.html">IncludeInfo</a></div><div class="ttdoc">Class representing the data associated with a #include statement.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3a/filedef_8h_source.html#l00048">filedef.h:48</a></div></div>
+<div class="ttc" id="aclass_definition_mutable_html"><div class="ttname"><a href="../../d0/d46/class_definition_mutable.html">DefinitionMutable</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/da1/definition_8h_source.html#l00308">definition.h:308</a></div></div>
+<div class="ttc" id="aclass_concept_def_mutable_html_a83f5756b0da1dc49c05e9eb6af214016"><div class="ttname"><a href="../../d4/deb/class_concept_def_mutable.html#a83f5756b0da1dc49c05e9eb6af214016">ConceptDefMutable::setInitializer</a></div><div class="ttdeci">virtual void setInitializer(const QCString &amp;init)=0</div></div>
+<div class="ttc" id="aclass_concept_def_mutable_html_afea314262cd0e59dcacd0fef974e0891"><div class="ttname"><a href="../../d4/deb/class_concept_def_mutable.html#afea314262cd0e59dcacd0fef974e0891">ConceptDefMutable::setNamespace</a></div><div class="ttdeci">virtual void setNamespace(NamespaceDef *nd)=0</div></div>
+<div class="ttc" id="afiledef_8h_html"><div class="ttname"><a href="../../d4/d3a/filedef_8h.html">filedef.h</a></div></div>
+<div class="ttc" id="aclass_definition_html_aa41b6bc53dcf93ecf745698aaf15ef8e"><div class="ttname"><a href="../../d5/dcc/class_definition.html#aa41b6bc53dcf93ecf745698aaf15ef8e">Definition::DefType</a></div><div class="ttdeci">DefType</div><div class="ttdef"><b>Definition:</b> <a href="../../df/da1/definition_8h_source.html#l00085">definition.h:85</a></div></div>
+<div class="ttc" id="aclass_concept_linked_map_html"><div class="ttname"><a href="../../db/ded/class_concept_linked_map.html">ConceptLinkedMap</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/df1/conceptdef_8h_source.html#l00063">conceptdef.h:63</a></div></div>
+<div class="ttc" id="aclass_concept_def_html_aa525b7f265d7f3d5ccb94b368cd2386f"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#aa525b7f265d7f3d5ccb94b368cd2386f">ConceptDef::title</a></div><div class="ttdeci">virtual QCString title() const =0</div></div>
+<div class="ttc" id="aconceptdef_8h_html_ab65f1571270806e35645a520a715eda7"><div class="ttname"><a href="../../da/df1/conceptdef_8h.html#ab65f1571270806e35645a520a715eda7">createConceptDef</a></div><div class="ttdeci">ConceptDefMutable * createConceptDef(const QCString &amp;fileName, int startLine, int startColumn, const QCString &amp;name, const QCString &amp;tagRef=QCString(), const QCString &amp;tagFile=QCString())</div><div class="ttdef"><b>Definition:</b> <a href="../../d8/d0a/conceptdef_8cpp_source.html#l00084">conceptdef.cpp:84</a></div></div>
+<div class="ttc" id="aclass_concept_def_mutable_html_a8529a2b82c87e29a8745644bf48ddf98"><div class="ttname"><a href="../../d4/deb/class_concept_def_mutable.html#a8529a2b82c87e29a8745644bf48ddf98">ConceptDefMutable::setIncludeFile</a></div><div class="ttdeci">virtual void setIncludeFile(FileDef *fd, const QCString &amp;incName, bool local, bool force)=0</div></div>
+<div class="ttc" id="aclass_concept_def_html_a7d30ea7de8b9cb1ac13eb70a64be0cec"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#a7d30ea7de8b9cb1ac13eb70a64be0cec">ConceptDef::isLinkable</a></div><div class="ttdeci">virtual bool isLinkable() const =0</div></div>
+<div class="ttc" id="adefinition_8h_html"><div class="ttname"><a href="../../df/da1/definition_8h.html">definition.h</a></div></div>
+<div class="ttc" id="aclass_concept_def_mutable_html_a7ff1e192cf1e4d4ce9c809d0e487d538"><div class="ttname"><a href="../../d4/deb/class_concept_def_mutable.html#a7ff1e192cf1e4d4ce9c809d0e487d538">ConceptDefMutable::writeTagFile</a></div><div class="ttdeci">virtual void writeTagFile(TextStream &amp;)=0</div></div>
+<div class="ttc" id="aclass_concept_linked_ref_map_html"><div class="ttname"><a href="../../d4/daa/class_concept_linked_ref_map.html">ConceptLinkedRefMap</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/df1/conceptdef_8h_source.html#l00067">conceptdef.h:67</a></div></div>
+<div class="ttc" id="aclass_concept_def_html_aac16c45e3c85d63aea96208b3d435052"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#aac16c45e3c85d63aea96208b3d435052">ConceptDef::definitionType</a></div><div class="ttdeci">virtual DefType definitionType() const =0</div></div>
+<div class="ttc" id="aclass_file_def_html"><div class="ttname"><a href="../../de/db0/class_file_def.html">FileDef</a></div><div class="ttdoc">A model of a file symbol.</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d3a/filedef_8h_source.html#l00073">filedef.h:73</a></div></div>
+<div class="ttc" id="aclass_linked_map_html"><div class="ttname"><a href="../../d0/d2c/class_linked_map.html">LinkedMap</a></div><div class="ttdoc">Container class representing a vector of objects with keys.</div><div class="ttdef"><b>Definition:</b> <a href="../../da/de1/linkedmap_8h_source.html#l00035">linkedmap.h:35</a></div></div>
+<div class="ttc" id="aclass_concept_def_html_aac3b9604fbfa6b18a6456af12eb8e191"><div class="ttname"><a href="../../d6/d8d/class_concept_def.html#aac3b9604fbfa6b18a6456af12eb8e191">ConceptDef::getFileDef</a></div><div class="ttdeci">virtual const FileDef * getFileDef() const =0</div></div>
+<div class="ttc" id="aclass_concept_def_mutable_html_ad3ac93bdff9848bc001e93f55ccb4d71"><div class="ttname"><a href="../../d4/deb/class_concept_def_mutable.html#ad3ac93bdff9848bc001e93f55ccb4d71">ConceptDefMutable::writeDocumentation</a></div><div class="ttdeci">virtual void writeDocumentation(OutputList &amp;ol)=0</div></div>
+<div class="ttc" id="aclass_concept_def_mutable_html_afb821b50428c9a2f1db4b15590152168"><div class="ttname"><a href="../../d4/deb/class_concept_def_mutable.html#afb821b50428c9a2f1db4b15590152168">ConceptDefMutable::setTemplateArguments</a></div><div class="ttdeci">virtual void setTemplateArguments(const ArgumentList &amp;al)=0</div></div>
+<div class="ttc" id="aclass_q_c_string_html"><div class="ttname"><a href="../../d9/d45/class_q_c_string.html">QCString</a></div><div class="ttdoc">This is an alternative implementation of QCString.</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/d5c/qcstring_8h_source.html#l00108">qcstring.h:108</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../da/df1/conceptdef_8h.html">conceptdef.h</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:51 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

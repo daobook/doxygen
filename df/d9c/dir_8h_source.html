@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Doxygen: src/dir.h 源文件</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link rel="search" href="../../search_opensearch.php?v=opensearch.xml" type="application/opensearchdescription+xml" title="Doxygen"/>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Doxygen
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'搜索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,true,'search.php','搜索');
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(function() {
+    if ($('.searchresults').length > 0) { searchBox.DOMSearchField().focus(); }
+  });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('df/d9c/dir_8h_source.html','../../'); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">dir.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../df/d9c/dir_8h.html">浏览该文件的文档.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Copyright (C) 1997-2021 by Dimitri van Heesch.</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Permission to use, copy, modify, and distribute this software and its</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * documentation under the terms of the GNU General Public License is hereby</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * granted. No representations are made about the suitability of this software</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * for any purpose. It is provided &quot;as is&quot; without express or implied warranty.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> * See the GNU General Public License for more details.</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * Documents produced by Doxygen are derivative works derived from the</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * input used in their production; they are not affected by this license.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#ifndef DIR_H</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define DIR_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../df/d45/fileinfo_8h.html">fileinfo.h</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d9/dd5/class_dir_entry.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d9/dd5/class_dir_entry.html">DirEntry</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;   <a class="code" href="../../d9/dd5/class_dir_entry.html#a010b1c84f2bd5743458d8a626cece46d">~DirEntry</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d9/dd5/class_dir_entry.html#a195ba799a139d08af4c53c63e453c971">is_directory</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d9/dd5/class_dir_entry.html#a2d5d18d5054f7349ee226b28352b26b9">is_regular_file</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d9/dd5/class_dir_entry.html#ad9ec459dc0de49292ada5d2d4dbff21c">is_symlink</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::string <a class="code" href="../../d9/dd5/class_dir_entry.html#a4894a6a99948ea8aa42e61583d66b62f">path</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="../../d9/dd5/class_dir_entry.html#ae3ffd7594cfebff13d4a01dcd157dcc2">DirEntry</a>();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d4/d32/struct_dir_entry_1_1_private.html">Private</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::unique_ptr&lt;Private&gt; <a class="code" href="../../d9/dd5/class_dir_entry.html#a54bac62e6a53ac51fd6abb447a578b09">p</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="../../da/da3/class_dir_iterator.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;{</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="../../da/da3/class_dir_iterator.html#a144120a41958226a725d3d2533a7c783">   42</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/dd5/class_dir_entry.html">value_type</a> = <a class="code" href="../../d9/dd5/class_dir_entry.html">DirEntry</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="../../da/da3/class_dir_iterator.html#a1220d59d9dfb89d43504c5e9466364d7">   43</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../da/da3/class_dir_iterator.html#a1220d59d9dfb89d43504c5e9466364d7">difference_type</a> = std::ptrdiff_t;</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="../../da/da3/class_dir_iterator.html#ad11200453a8ff0bf95cbaedb50dff510">   44</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/dd5/class_dir_entry.html">pointer</a> = <a class="code" href="../../d9/dd5/class_dir_entry.html">value_type</a>*;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="../../da/da3/class_dir_iterator.html#a2715f06935759c6e7996c6cc26691514">   45</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../d9/dd5/class_dir_entry.html">reference</a> = <a class="code" href="../../d9/dd5/class_dir_entry.html">value_type</a>&amp;;</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="../../da/da3/class_dir_iterator.html#a1ce3bd2279cef163ec80d5b74da4276d">   46</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="../../da/da3/class_dir_iterator.html#a1ce3bd2279cef163ec80d5b74da4276d">iterator_category</a> = std::input_iterator_tag;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="../../da/da3/class_dir_iterator.html#a0bee75c75ab8c043e77564196f39bff7">DirIterator</a>(<span class="keyword">const</span> <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> &amp;it);</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="../../d9/dd5/class_dir_entry.html#a54bac62e6a53ac51fd6abb447a578b09">   48</a></span>&#160;    <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> &amp;<a class="code" href="../../da/da3/class_dir_iterator.html#aa6af63e61d1cd8a695c70210d1200696">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> &amp;it);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> <a class="code" href="../../da/da3/class_dir_iterator.html#a21357cd7836791a40ecd6db98fa864f2">operator++</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../da/da3/class_dir_iterator.html#a144120a41958226a725d3d2533a7c783">value_type</a> &amp;<a class="code" href="../../da/da3/class_dir_iterator.html#a54db35ff62b7ab4045a593b92ac8780d">operator*</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">const</span> <a class="code" href="../../da/da3/class_dir_iterator.html#a144120a41958226a725d3d2533a7c783">value_type</a> *<a class="code" href="../../da/da3/class_dir_iterator.html#a6956f8bf3894639348454cb62784c74f">operator-&gt;</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="../../da/da3/class_dir_iterator.html#a9285cecfcff40959eed73e1da7d139da">operator==</a>(<span class="keyword">const</span> <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> &amp;it1,<span class="keyword">const</span> <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> &amp;it2);</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keyword">friend</span> <span class="keywordtype">bool</span> <a class="code" href="../../da/da3/class_dir_iterator.html#acde2fab844e4f384c5d715f06f0835f4">operator!=</a>(<span class="keyword">const</span> <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> &amp;it1,<span class="keyword">const</span> <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> &amp;it2);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">friend</span> <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> <a class="code" href="../../da/da3/class_dir_iterator.html#a6c544e0039887bf39e3c9e85f55d8ebc">begin</a>(<a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> it) noexcept;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">friend</span> <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> <a class="code" href="../../da/da3/class_dir_iterator.html#abb4720f72b574f81dc4f7aea0e653a64">end</a>(<span class="keyword">const</span> <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> &amp;) noexcept;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;   <a class="code" href="../../da/da3/class_dir_iterator.html#a2d20623f235e252893d994957ec2a9f6">~DirIterator</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="../../da/da3/class_dir_iterator.html#a9c037aa57ccb12f75092ea55062c933e">   60</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="../../d2/dc2/class_dir.html">Dir</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="../../da/da3/class_dir_iterator.html#a0bee75c75ab8c043e77564196f39bff7">DirIterator</a>();</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="../../da/da3/class_dir_iterator.html#a0bee75c75ab8c043e77564196f39bff7">DirIterator</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>);</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="../../da/da3/class_dir_iterator.html#a9cc9594d5fab0c475a2de2db483f13a9">   63</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d2/d3c/struct_dir_iterator_1_1_private.html">Private</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::unique_ptr&lt;Private&gt; <a class="code" href="../../da/da3/class_dir_iterator.html#a9cc9594d5fab0c475a2de2db483f13a9">p</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/** Class representing a directory in the file system */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="../../d2/dc2/class_dir.html">   68</a></span>&#160;<span class="keyword">class </span><a class="code" href="../../d2/dc2/class_dir.html">Dir</a> final</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="../../d2/dc2/class_dir.html#a115c8eedb11ea03f79338a780920ae84">Dir</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="../../d2/dc2/class_dir.html#a115c8eedb11ea03f79338a780920ae84">Dir</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="../../d2/dc2/class_dir.html#a115c8eedb11ea03f79338a780920ae84">Dir</a>(<span class="keyword">const</span> <a class="code" href="../../d2/dc2/class_dir.html">Dir</a> &amp;d);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="../../d2/dc2/class_dir.html">Dir</a> &amp;<a class="code" href="../../d2/dc2/class_dir.html#a1ab17baf6d6b6c4bd1a46893151f6fad">operator=</a>(<span class="keyword">const</span> <a class="code" href="../../d2/dc2/class_dir.html">Dir</a> &amp;d);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   <a class="code" href="../../d2/dc2/class_dir.html#a427bcc717e5668e764fa1a4432c74b54">~Dir</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../d2/dc2/class_dir.html#a2bb647584a701cb526874a8c0cd68c13">setPath</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::string <a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="../../da/da3/class_dir_iterator.html">DirIterator</a> <a class="code" href="../../d2/dc2/class_dir.html#aa20a9ce6fb86596abe5047d96b2f6624">iterator</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#a117f773f834b8fdf99aac033fe12ecfb">isEmpty</a>(<span class="keyword">const</span> std::string subdir) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#ac6bf80b5b3a034e8c144c86ef48ae309">exists</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    std::string <a class="code" href="../../d2/dc2/class_dir.html#a9648972511650311756008587b2ef819">filePath</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>,<span class="keywordtype">bool</span> acceptsAbsPath=<span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#ac6bf80b5b3a034e8c144c86ef48ae309">exists</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>,<span class="keywordtype">bool</span> acceptsAbsPath=<span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#a286f4b1852b489ffcc8b6837c7e6bd8e">mkdir</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>,<span class="keywordtype">bool</span> acceptsAbsPath=<span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#ab0dd8833adb3178d976d3125955fbe8c">rmdir</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>,<span class="keywordtype">bool</span> acceptsAbsPath=<span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#a5a64060f8e1731e8f00da7e8f7051e4b">remove</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>,<span class="keywordtype">bool</span> acceptsAbsPath=<span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#ab14881c67dae32902aa709517177e5ce">rename</a>(<span class="keyword">const</span> std::string &amp;orgName,<span class="keyword">const</span> std::string &amp;newName,</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;                <span class="keywordtype">bool</span> acceptsAbsPath=<span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#a9030897a481039125a70690719bc720d">copy</a>(<span class="keyword">const</span> std::string &amp;src,<span class="keyword">const</span> std::string &amp;dest,<span class="keywordtype">bool</span> acceptsAbsPath=<span class="keyword">true</span>) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    std::string <a class="code" href="../../d2/dc2/class_dir.html#a226b0db1117e46393bbb241e545f8609">absPath</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#a540dfe05e13dfbacf37b778978747eff">isRelative</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#a30fb0271610a8148e2c5b31ec2e4299d">isRelativePath</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="../../d2/dc2/class_dir.html#a0f62ab07068c5f966bca7ce280f4ed49">currentDirPath</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="../../d2/dc2/class_dir.html#ab3b09edc88159dc30426999bdc7d6d7b">setCurrent</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keyword">static</span> std::string <a class="code" href="../../d2/dc2/class_dir.html#ab25b50ffd43d7163ea07a6625dfe9088">cleanDirPath</a>(<span class="keyword">const</span> std::string &amp;<a class="code" href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">path</a>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="../../d2/dc2/class_dir.html#acd061df5fc05925b6cf49e0819bdb619">  101</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d3/d74/struct_dir_1_1_private.html">Private</a>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::unique_ptr&lt;Private&gt; <a class="code" href="../../d2/dc2/class_dir.html#acd061df5fc05925b6cf49e0819bdb619">p</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aclass_dir_html_a0f62ab07068c5f966bca7ce280f4ed49"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a0f62ab07068c5f966bca7ce280f4ed49">Dir::currentDirPath</a></div><div class="ttdeci">static std::string currentDirPath()</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00282">dir.cpp:282</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a9cc9594d5fab0c475a2de2db483f13a9"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a9cc9594d5fab0c475a2de2db483f13a9">DirIterator::p</a></div><div class="ttdeci">std::unique_ptr&lt; Private &gt; p</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/dir_8h_source.html#l00063">dir.h:63</a></div></div>
+<div class="ttc" id="aclass_dir_html_a9030897a481039125a70690719bc720d"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a9030897a481039125a70690719bc720d">Dir::copy</a></div><div class="ttdeci">bool copy(const std::string &amp;src, const std::string &amp;dest, bool acceptsAbsPath=true) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00272">dir.cpp:272</a></div></div>
+<div class="ttc" id="afileinfo_8h_html"><div class="ttname"><a href="../../df/d45/fileinfo_8h.html">fileinfo.h</a></div></div>
+<div class="ttc" id="astruct_dir_1_1_private_html"><div class="ttname"><a href="../../d3/d74/struct_dir_1_1_private.html">Dir::Private</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00137">dir.cpp:137</a></div></div>
+<div class="ttc" id="astruct_dir_iterator_1_1_private_html"><div class="ttname"><a href="../../d2/d3c/struct_dir_iterator_1_1_private.html">DirIterator::Private</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00060">dir.cpp:60</a></div></div>
+<div class="ttc" id="aclass_dir_html_a9648972511650311756008587b2ef819"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a9648972511650311756008587b2ef819">Dir::filePath</a></div><div class="ttdeci">std::string filePath(const std::string &amp;path, bool acceptsAbsPath=true) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00222">dir.cpp:222</a></div></div>
+<div class="ttc" id="aclass_dir_html_a5a64060f8e1731e8f00da7e8f7051e4b"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a5a64060f8e1731e8f00da7e8f7051e4b">Dir::remove</a></div><div class="ttdeci">bool remove(const std::string &amp;path, bool acceptsAbsPath=true) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00256">dir.cpp:256</a></div></div>
+<div class="ttc" id="aclass_dir_html"><div class="ttname"><a href="../../d2/dc2/class_dir.html">Dir</a></div><div class="ttdoc">Class representing a directory in the file system</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/dir_8h_source.html#l00068">dir.h:68</a></div></div>
+<div class="ttc" id="aclass_dir_entry_html_a2d5d18d5054f7349ee226b28352b26b9"><div class="ttname"><a href="../../d9/dd5/class_dir_entry.html#a2d5d18d5054f7349ee226b28352b26b9">DirEntry::is_regular_file</a></div><div class="ttdeci">bool is_regular_file() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00043">dir.cpp:43</a></div></div>
+<div class="ttc" id="aclass_dir_entry_html_a54bac62e6a53ac51fd6abb447a578b09"><div class="ttname"><a href="../../d9/dd5/class_dir_entry.html#a54bac62e6a53ac51fd6abb447a578b09">DirEntry::p</a></div><div class="ttdeci">std::unique_ptr&lt; Private &gt; p</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/dir_8h_source.html#l00048">dir.h:48</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a2d20623f235e252893d994957ec2a9f6"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a2d20623f235e252893d994957ec2a9f6">DirIterator::~DirIterator</a></div><div class="ttdeci">~DirIterator()</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00081">dir.cpp:81</a></div></div>
+<div class="ttc" id="aclass_dir_entry_html"><div class="ttname"><a href="../../d9/dd5/class_dir_entry.html">DirEntry</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/dir_8h_source.html#l00024">dir.h:24</a></div></div>
+<div class="ttc" id="astruct_dir_entry_1_1_private_html"><div class="ttname"><a href="../../d4/d32/struct_dir_entry_1_1_private.html">DirEntry::Private</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00025">dir.cpp:25</a></div></div>
+<div class="ttc" id="aclass_dir_entry_html_a4894a6a99948ea8aa42e61583d66b62f"><div class="ttname"><a href="../../d9/dd5/class_dir_entry.html#a4894a6a99948ea8aa42e61583d66b62f">DirEntry::path</a></div><div class="ttdeci">std::string path() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00053">dir.cpp:53</a></div></div>
+<div class="ttc" id="aclass_dir_entry_html_ae3ffd7594cfebff13d4a01dcd157dcc2"><div class="ttname"><a href="../../d9/dd5/class_dir_entry.html#ae3ffd7594cfebff13d4a01dcd157dcc2">DirEntry::DirEntry</a></div><div class="ttdeci">DirEntry()</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00030">dir.cpp:30</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a6956f8bf3894639348454cb62784c74f"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a6956f8bf3894639348454cb62784c74f">DirIterator::operator-&gt;</a></div><div class="ttdeci">const value_type * operator-&gt;() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00107">dir.cpp:107</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a6c544e0039887bf39e3c9e85f55d8ebc"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a6c544e0039887bf39e3c9e85f55d8ebc">DirIterator::begin</a></div><div class="ttdeci">friend DirIterator begin(DirIterator it) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00123">dir.cpp:123</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a1ce3bd2279cef163ec80d5b74da4276d"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a1ce3bd2279cef163ec80d5b74da4276d">DirIterator::iterator_category</a></div><div class="ttdeci">std::input_iterator_tag iterator_category</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/dir_8h_source.html#l00046">dir.h:46</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a21357cd7836791a40ecd6db98fa864f2"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a21357cd7836791a40ecd6db98fa864f2">DirIterator::operator++</a></div><div class="ttdeci">DirIterator operator++()</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00094">dir.cpp:94</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_acde2fab844e4f384c5d715f06f0835f4"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#acde2fab844e4f384c5d715f06f0835f4">DirIterator::operator!=</a></div><div class="ttdeci">friend bool operator!=(const DirIterator &amp;it1, const DirIterator &amp;it2)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00118">dir.cpp:118</a></div></div>
+<div class="ttc" id="aclass_dir_html_a30fb0271610a8148e2c5b31ec2e4299d"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a30fb0271610a8148e2c5b31ec2e4299d">Dir::isRelativePath</a></div><div class="ttdeci">static bool isRelativePath(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00217">dir.cpp:217</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a9285cecfcff40959eed73e1da7d139da"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a9285cecfcff40959eed73e1da7d139da">DirIterator::operator==</a></div><div class="ttdeci">friend bool operator==(const DirIterator &amp;it1, const DirIterator &amp;it2)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00113">dir.cpp:113</a></div></div>
+<div class="ttc" id="aclass_dir_html_ab14881c67dae32902aa709517177e5ce"><div class="ttname"><a href="../../d2/dc2/class_dir.html#ab14881c67dae32902aa709517177e5ce">Dir::rename</a></div><div class="ttdeci">bool rename(const std::string &amp;orgName, const std::string &amp;newName, bool acceptsAbsPath=true) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00263">dir.cpp:263</a></div></div>
+<div class="ttc" id="aclass_dir_html_ac277cdc273640905e941d9e6262bc594"><div class="ttname"><a href="../../d2/dc2/class_dir.html#ac277cdc273640905e941d9e6262bc594">Dir::path</a></div><div class="ttdeci">std::string path() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00176">dir.cpp:176</a></div></div>
+<div class="ttc" id="aclass_dir_html_a427bcc717e5668e764fa1a4432c74b54"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a427bcc717e5668e764fa1a4432c74b54">Dir::~Dir</a></div><div class="ttdeci">~Dir()</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00167">dir.cpp:167</a></div></div>
+<div class="ttc" id="aclass_dir_html_a226b0db1117e46393bbb241e545f8609"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a226b0db1117e46393bbb241e545f8609">Dir::absPath</a></div><div class="ttdeci">std::string absPath() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00305">dir.cpp:305</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a54db35ff62b7ab4045a593b92ac8780d"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a54db35ff62b7ab4045a593b92ac8780d">DirIterator::operator*</a></div><div class="ttdeci">const value_type &amp; operator*() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00101">dir.cpp:101</a></div></div>
+<div class="ttc" id="aclass_dir_entry_html_a010b1c84f2bd5743458d8a626cece46d"><div class="ttname"><a href="../../d9/dd5/class_dir_entry.html#a010b1c84f2bd5743458d8a626cece46d">DirEntry::~DirEntry</a></div><div class="ttdeci">~DirEntry()</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00034">dir.cpp:34</a></div></div>
+<div class="ttc" id="aclass_dir_html_a115c8eedb11ea03f79338a780920ae84"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a115c8eedb11ea03f79338a780920ae84">Dir::Dir</a></div><div class="ttdeci">Dir()</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00142">dir.cpp:142</a></div></div>
+<div class="ttc" id="aclass_dir_html_ab3b09edc88159dc30426999bdc7d6d7b"><div class="ttname"><a href="../../d2/dc2/class_dir.html#ab3b09edc88159dc30426999bdc7d6d7b">Dir::setCurrent</a></div><div class="ttdeci">static bool setCurrent(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00290">dir.cpp:290</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_aa6af63e61d1cd8a695c70210d1200696"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#aa6af63e61d1cd8a695c70210d1200696">DirIterator::operator=</a></div><div class="ttdeci">DirIterator &amp; operator=(const DirIterator &amp;it)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00085">dir.cpp:85</a></div></div>
+<div class="ttc" id="aclass_dir_entry_html_a195ba799a139d08af4c53c63e453c971"><div class="ttname"><a href="../../d9/dd5/class_dir_entry.html#a195ba799a139d08af4c53c63e453c971">DirEntry::is_directory</a></div><div class="ttdeci">bool is_directory() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00038">dir.cpp:38</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html">DirIterator</a></div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/dir_8h_source.html#l00039">dir.h:39</a></div></div>
+<div class="ttc" id="aclass_dir_html_a117f773f834b8fdf99aac033fe12ecfb"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a117f773f834b8fdf99aac033fe12ecfb">Dir::isEmpty</a></div><div class="ttdeci">bool isEmpty(const std::string subdir) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00205">dir.cpp:205</a></div></div>
+<div class="ttc" id="aclass_dir_html_a1ab17baf6d6b6c4bd1a46893151f6fad"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a1ab17baf6d6b6c4bd1a46893151f6fad">Dir::operator=</a></div><div class="ttdeci">Dir &amp; operator=(const Dir &amp;d)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00153">dir.cpp:153</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a1220d59d9dfb89d43504c5e9466364d7"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a1220d59d9dfb89d43504c5e9466364d7">DirIterator::difference_type</a></div><div class="ttdeci">std::ptrdiff_t difference_type</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/dir_8h_source.html#l00043">dir.h:43</a></div></div>
+<div class="ttc" id="aclass_dir_entry_html_ad9ec459dc0de49292ada5d2d4dbff21c"><div class="ttname"><a href="../../d9/dd5/class_dir_entry.html#ad9ec459dc0de49292ada5d2d4dbff21c">DirEntry::is_symlink</a></div><div class="ttdeci">bool is_symlink() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00048">dir.cpp:48</a></div></div>
+<div class="ttc" id="aclass_dir_html_a540dfe05e13dfbacf37b778978747eff"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a540dfe05e13dfbacf37b778978747eff">Dir::isRelative</a></div><div class="ttdeci">bool isRelative() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00212">dir.cpp:212</a></div></div>
+<div class="ttc" id="aclass_dir_html_a2bb647584a701cb526874a8c0cd68c13"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a2bb647584a701cb526874a8c0cd68c13">Dir::setPath</a></div><div class="ttdeci">void setPath(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00171">dir.cpp:171</a></div></div>
+<div class="ttc" id="aclass_dir_html_ac6bf80b5b3a034e8c144c86ef48ae309"><div class="ttname"><a href="../../d2/dc2/class_dir.html#ac6bf80b5b3a034e8c144c86ef48ae309">Dir::exists</a></div><div class="ttdeci">bool exists() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00199">dir.cpp:199</a></div></div>
+<div class="ttc" id="aclass_dir_html_aa20a9ce6fb86596abe5047d96b2f6624"><div class="ttname"><a href="../../d2/dc2/class_dir.html#aa20a9ce6fb86596abe5047d96b2f6624">Dir::iterator</a></div><div class="ttdeci">DirIterator iterator() const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00181">dir.cpp:181</a></div></div>
+<div class="ttc" id="aclass_dir_html_ab0dd8833adb3178d976d3125955fbe8c"><div class="ttname"><a href="../../d2/dc2/class_dir.html#ab0dd8833adb3178d976d3125955fbe8c">Dir::rmdir</a></div><div class="ttdeci">bool rmdir(const std::string &amp;path, bool acceptsAbsPath=true) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00251">dir.cpp:251</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_abb4720f72b574f81dc4f7aea0e653a64"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#abb4720f72b574f81dc4f7aea0e653a64">DirIterator::end</a></div><div class="ttdeci">friend DirIterator end(const DirIterator &amp;) noexcept</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00128">dir.cpp:128</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a0bee75c75ab8c043e77564196f39bff7"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a0bee75c75ab8c043e77564196f39bff7">DirIterator::DirIterator</a></div><div class="ttdeci">DirIterator()</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00068">dir.cpp:68</a></div></div>
+<div class="ttc" id="aclass_dir_iterator_html_a144120a41958226a725d3d2533a7c783"><div class="ttname"><a href="../../da/da3/class_dir_iterator.html#a144120a41958226a725d3d2533a7c783">DirIterator::value_type</a></div><div class="ttdeci">DirEntry value_type</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/dir_8h_source.html#l00042">dir.h:42</a></div></div>
+<div class="ttc" id="aclass_dir_html_a286f4b1852b489ffcc8b6837c7e6bd8e"><div class="ttname"><a href="../../d2/dc2/class_dir.html#a286f4b1852b489ffcc8b6837c7e6bd8e">Dir::mkdir</a></div><div class="ttdeci">bool mkdir(const std::string &amp;path, bool acceptsAbsPath=true) const</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00237">dir.cpp:237</a></div></div>
+<div class="ttc" id="aclass_dir_html_ab25b50ffd43d7163ea07a6625dfe9088"><div class="ttname"><a href="../../d2/dc2/class_dir.html#ab25b50ffd43d7163ea07a6625dfe9088">Dir::cleanDirPath</a></div><div class="ttdeci">static std::string cleanDirPath(const std::string &amp;path)</div><div class="ttdef"><b>Definition:</b> <a href="../../d3/d48/dir_8cpp_source.html#l00297">dir.cpp:297</a></div></div>
+<div class="ttc" id="aclass_dir_html_acd061df5fc05925b6cf49e0819bdb619"><div class="ttname"><a href="../../d2/dc2/class_dir.html#acd061df5fc05925b6cf49e0819bdb619">Dir::p</a></div><div class="ttdeci">std::unique_ptr&lt; Private &gt; p</div><div class="ttdef"><b>Definition:</b> <a href="../../df/d9c/dir_8h_source.html#l00101">dir.h:101</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../df/d9c/dir_8h.html">dir.h</a></li>
+    <li class="footer">生成于 2021年 十一月 27日 星期六 08:40:52 , 为 Doxygen使用 
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="../../doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

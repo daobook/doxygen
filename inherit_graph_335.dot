@@ -1,0 +1,9 @@
+digraph "类继承关系图"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node0 [label="details::TMax\< arg1,\l arg2, others... \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$df/d65/structdetails_1_1_t_max_3_01arg1_00_01arg2_00_01others_8_8_8_01_4.html",tooltip="recursive definition for multiple arguments"];
+}
