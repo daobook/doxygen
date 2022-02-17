@@ -107,7 +107,7 @@ def fill(s):
         line = lst.pop(0)   # no separation space in front of the first word
         for word in lst:
             if len(line) + len(word) < 70:
-                line += ' ' + word
+                line += f' {word}'
             else:
                 lines.append(line)  # another full line formed
                 line = word         # next line started
@@ -254,7 +254,7 @@ class Transl:
 
                     # If it is a comment that contains the self.translateMeText
                     # string, set the flag -- the situation will be reported.
-                    if tokenId == 'comment' and tokenStr.find(self.translateMeText) >= 0:
+                    if tokenId == 'comment' and self.translateMeText in tokenStr:
                         self.translateMeFlag = True
 
                     tokenId = None
@@ -304,17 +304,17 @@ class Transl:
 
                 pos += 1                 # move position in any case
 
-            elif status == 1:            # possibly a comment
-                if c == '/':             # ... definitely the C++ comment
-                    tokenId = 'comment'
-                    tokenStr += c
-                    pos += 1
-                    status = 2
-                elif c == '*':           # ... definitely the C comment
+            elif status == 1:    # possibly a comment
+                if c == '*':
                     tokenId = 'comment'
                     tokenStr += c
                     pos += 1
                     status = 3
+                elif c == '/':
+                    tokenId = 'comment'
+                    tokenStr += c
+                    pos += 1
+                    status = 2
                 else:
                     status = 0           # unrecognized, don't move pos
 
@@ -325,23 +325,20 @@ class Transl:
                     tokenStr += c        # collect the C++ comment
                 pos += 1
 
-            elif status == 3:            # inside the C comment
-                if c == '*':             # possibly the end of the C comment
-                    tokenStr += c
+            elif status == 3:    # inside the C comment
+                if c == '*': # possibly the end of the C comment
                     status = 4
-                else:
-                    tokenStr += c        # collect the C comment
+                tokenStr += c
                 pos += 1
 
-            elif status == 4:            # possibly the end of the C comment
-                if c == '/':             # definitely the end of the C comment
-                    tokenStr += c
+            elif status == 4:    # possibly the end of the C comment
+                if c == '*':
+                    pass
+                elif c == '/':
                     status = 0           # yield the token
-                elif c == '*':           # more stars inside the comment
-                    tokenStr += c
                 else:
-                    tokenStr += c        # this cannot be the end of comment
                     status = 3
+                tokenStr += c
                 pos += 1
 
             elif status == 5:            # inside the preprocessor directive
@@ -351,15 +348,12 @@ class Transl:
                     tokenStr += c        # collect the preproc
                 pos += 1
 
-            elif status == 6:            # inside the string
-                if c == '\\':            # escaped char inside the string
-                    tokenStr += c
+            elif status == 6:    # inside the string
+                if c == '\\':
                     status = 7
-                elif c == '"':           # end of the string
-                    tokenStr += c
+                elif c == '"':
                     status = 0
-                else:
-                    tokenStr += c        # collect the chars of the string
+                tokenStr += c
                 pos += 1
 
             elif status == 7:            # escaped char inside the string
@@ -372,16 +366,13 @@ class Transl:
                 status = 9
                 pos += 1
 
-            elif status == 9:            # end of char literal expected
-                if c == "'":             # ... and found
-                    tokenStr += c
-                    status = 0
+            elif status == 9:    # end of char literal expected
+                if c == "'": # ... and found
                     pos += 1
                 else:
                     tokenId = 'error'    # end of literal was expected
-                    tokenStr += c
-                    status = 0
-
+                status = 0
+                tokenStr += c
             elif status == 333:          # start of the unknown token
                 if c.isspace():
                     pos += 1
@@ -457,9 +448,7 @@ class Transl:
             elif status == 5:  # expecting the curly brace and quitting
                 if tokenId == 'lcurly':
                     status = 777        # correctly finished
-                elif tokenId == 'comment':
-                    pass
-                else:
+                elif tokenId != 'comment':
                     self.__unexpectedToken(status, tokenId, tokenLineNo)
 
         # Extract the status of the TranslatorXxxx class. The readable form
@@ -471,11 +460,11 @@ class Transl:
                 self.readableStatus = 'up-to-date'
                 self.status = ''
             elif lst[0] == 'TranslatorAdapter':
-                self.status = lst[1] + '.' + lst[2]
+                self.status = f'{lst[1]}.{lst[2]}'
                 self.readableStatus = self.status
                 if len(lst) > 3:        # add the last part of the number
                     self.status += '.' + ('%02d' % int(lst[3]))
-                    self.readableStatus += '.' + lst[3]
+                    self.readableStatus += f'.{lst[3]}'
                 else:
                     self.status += '.00'
             elif lst[0] == 'TranslatorEnglish':
@@ -488,7 +477,7 @@ class Transl:
                     self.status = '0.0.00'
 
             # Check whether status was set, or set 'strange'.
-            if self.status == None:
+            if self.status is None:
                 self.status = 'strange'
             if not self.readableStatus:
                 self.readableStatus = 'strange'
@@ -509,7 +498,7 @@ class Transl:
         import inspect
         calledFrom = inspect.stack()[1][3]
         msg = "\a\nUnexpected token '%s' on the line %d in '%s'.\n"
-        msg = msg % (tokenId, tokenLineNo, self.fname)
+        msg %= (tokenId, tokenLineNo, self.fname)
         msg += 'status = %d in %s()\n' % (status, calledFrom)
         sys.stderr.write(msg)
         sys.exit(1)

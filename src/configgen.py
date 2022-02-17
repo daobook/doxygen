@@ -87,46 +87,49 @@ def transformDocs(doc):
     split_doc = []
     for line in doc:
         split_doc += textwrap.wrap(line, 78)
-    # replace \ by \\, replace " by \", and '  ' by a newline with end string
-    # and start string at next line
-    docC = []
-    for line in split_doc:
-        if (line.strip() != "<br/>"):
-            docC.append(line.strip().replace('\\', '\\\\').
-                    replace('"', '\\"').replace("<br>", ""))
-    return docC
+    return [
+        line.strip()
+        .replace('\\', '\\\\')
+        .replace('"', '\\"')
+        .replace("<br>", "")
+        for line in split_doc
+        if (line.strip() != "<br/>")
+    ]
 
 
 def collectValues(node):
     values = []
     for n in node.childNodes:
-        if (n.nodeName == "value"):
-            if n.nodeType == Node.ELEMENT_NODE:
-                if n.getAttribute('name') != "":
-                    if n.getAttribute('show_docu') != "NO":
-                        name = "<code>" + n.getAttribute('name') + "</code>"
-                        desc = n.getAttribute('desc')
-                        if (desc != ""):
-                            name += " " + desc
-                        values.append(name)
+        if (
+            (n.nodeName == "value")
+            and n.nodeType == Node.ELEMENT_NODE
+            and n.getAttribute('name') != ""
+            and n.getAttribute('show_docu') != "NO"
+        ):
+            name = "<code>" + n.getAttribute('name') + "</code>"
+            desc = n.getAttribute('desc')
+            if (desc != ""):
+                name += f' {desc}'
+            values.append(name)
     return values
 
 
 def addValues(var, node):
     for n in node.childNodes:
-        if (n.nodeName == "value"):
-            if n.nodeType == Node.ELEMENT_NODE:
-                name = n.getAttribute('name')
-                print("  %s->addValue(\"%s\");" % (var, name))
+        if (n.nodeName == "value") and n.nodeType == Node.ELEMENT_NODE:
+            name = n.getAttribute('name')
+            print("  %s->addValue(\"%s\");" % (var, name))
 
 
 def parseHeader(node,objName):
-    doc = ""
-    for n in node.childNodes:
-        if n.nodeType == Node.ELEMENT_NODE:
-            if (n.nodeName == "docs"):
-                if (n.getAttribute('doxyfile') != "0"):
-                    doc += parseDocs(n)
+    doc = "".join(
+        parseDocs(n)
+        for n in node.childNodes
+        if n.nodeType == Node.ELEMENT_NODE
+        and (n.nodeName == "docs")
+        and (n.getAttribute('doxyfile') != "0")
+    )
+
     docC = transformDocs(doc)
     print("  %s->setHeader(" % (objName))
     rng = len(docC)
@@ -666,27 +669,37 @@ def parseDocs(node):
 
 
 def parseHeaderDoc(node):
-    doc = ""
-    for n in node.childNodes:
-        if n.nodeType == Node.ELEMENT_NODE:
-            if (n.nodeName == "docs"):
-                if (n.getAttribute('documentation') != "0"):
-                    doc += parseDocs(n)
+    doc = "".join(
+        parseDocs(n)
+        for n in node.childNodes
+        if n.nodeType == Node.ELEMENT_NODE
+        and (n.nodeName == "docs")
+        and (n.getAttribute('documentation') != "0")
+    )
+
     print(doc)
 
 
 def parseFooterDoc(node):
-    doc = ""
-    for n in node.childNodes:
-        if n.nodeType == Node.ELEMENT_NODE:
-            if (n.nodeName == "docs"):
-                if (n.getAttribute('documentation') != "0"):
-                    doc += parseDocs(n)
+    doc = "".join(
+        parseDocs(n)
+        for n in node.childNodes
+        if n.nodeType == Node.ELEMENT_NODE
+        and (n.nodeName == "docs")
+        and (n.getAttribute('documentation') != "0")
+    )
+
     print(doc)
 
 
 def main():
-    if len(sys.argv)<3 or (not sys.argv[1] in ['-doc','-cpp','-wiz','-maph','-maps']):
+    if len(sys.argv) < 3 or sys.argv[1] not in [
+        '-doc',
+        '-cpp',
+        '-wiz',
+        '-maph',
+        '-maps',
+    ]:
         sys.exit('Usage: %s -doc|-cpp|-wiz|-maph|-maps config.xml' % sys.argv[0])
     try:
         doc = xml.dom.minidom.parse(sys.argv[2])
@@ -704,30 +717,26 @@ def main():
         print(" */")
         # process header
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "header"):
-                    parseHeaderDoc(n)
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "header"):
+                parseHeaderDoc(n)
         # generate list with all commands
         commandsList = ()
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "group"):
-                    commandsList = parseGroupsList(n, commandsList)
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "group"):
+                commandsList = parseGroupsList(n, commandsList)
         print("\\secreflist")
         for x in sorted(commandsList):
             print("\\refitem cfg_%s %s" % (x.lower(), x))
         print("\\endsecreflist")
         # process groups and options
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "group"):
-                    parseGroupsDoc(n)
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "group"):
+                parseGroupsDoc(n)
         # process footers
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "footer"):
-                    parseFooterDoc(n)
-    elif (sys.argv[1] == "-maph"):
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "footer"):
+                parseFooterDoc(n)
+    elif sys.argv[1] == "-maph":
         print("/* WARNING: This file is generated!")
         print(" * Do not edit this file, but edit config.xml instead and run")
         print(" * python configgen.py -map config.xml to regenerate this file!")
@@ -741,22 +750,19 @@ def main():
         print("#include \"containers.h\"")
         print("#include \"settings.h\"")
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if n.nodeName == "group":
-                    parseGroupMapEnums(n)
+            if n.nodeType == Node.ELEMENT_NODE and n.nodeName == "group":
+                parseGroupMapEnums(n)
         print("")
         print("class ConfigValues")
         print("{")
         print("  public:")
         print("    static ConfigValues &instance() { static ConfigValues theInstance; return theInstance; }")
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if n.nodeName == "group":
-                    parseGroupMapGetter(n)
+            if n.nodeType == Node.ELEMENT_NODE and n.nodeName == "group":
+                parseGroupMapGetter(n)
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if n.nodeName == "group":
-                    parseGroupMapSetter(n)
+            if n.nodeType == Node.ELEMENT_NODE and n.nodeName == "group":
+                parseGroupMapSetter(n)
         print("    void init();")
         print("    StringVector fields() const;")
         print("    struct Info")
@@ -782,13 +788,12 @@ def main():
         print("    const Info *get(const QCString &tag) const;")
         print("  private:")
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "group"):
-                    parseGroupMapVar(n)
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "group"):
+                parseGroupMapVar(n)
         print("};")
         print("")
         print("#endif")
-    elif (sys.argv[1] == "-maps"):
+    elif sys.argv[1] == "-maps":
         print("/* WARNING: This file is generated!")
         print(" * Do not edit this file, but edit config.xml instead and run")
         print(" * python configgen.py -maps config.xml to regenerate this file!")
@@ -802,9 +807,8 @@ def main():
         print("  static const std::unordered_map< std::string, Info > configMap =");
         print("  {");
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "group"):
-                    parseGroupMapInit(n)
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "group"):
+                parseGroupMapInit(n)
         print("  };");
         print("  auto it = configMap.find(tag.str());");
         print("  return it!=configMap.end() ? &it->second : nullptr;");
@@ -817,9 +821,8 @@ def main():
         print("  first = FALSE;")
         print("")
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "group"):
-                    parseGroupInit(n)
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "group"):
+                parseGroupInit(n)
         print("}")
         print("")
         print("StringVector ConfigValues::fields() const")
@@ -827,21 +830,20 @@ def main():
         print("  return {");
         first=True
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "group"):
-                    for c in n.childNodes:
-                        if c.nodeType == Node.ELEMENT_NODE:
-                            name = c.getAttribute('id')
-                            type = c.getAttribute('type')
-                            if type!='obsolete':
-                                if not first:
-                                    print(",")
-                                first=False
-                                sys.stdout.write('    "'+name+'"')
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "group"):
+                for c in n.childNodes:
+                    if c.nodeType == Node.ELEMENT_NODE:
+                        name = c.getAttribute('id')
+                        type = c.getAttribute('type')
+                        if type!='obsolete':
+                            if not first:
+                                print(",")
+                            first=False
+                            sys.stdout.write('    "'+name+'"')
         print("")
         print("  };")
         print("}")
-    elif (sys.argv[1] == "-cpp"):
+    elif sys.argv[1] == "-cpp":
         print("/* WARNING: This file is generated!")
         print(" * Do not edit this file, but edit config.xml instead and run")
         print(" * python configgen.py -cpp config.xml to regenerate this file!")
@@ -862,15 +864,13 @@ def main():
         print("")
         # process header
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "header"):
-                    parseHeader(n,'cfg')
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "header"):
+                parseHeader(n,'cfg')
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "group"):
-                    parseGroups(n)
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "group"):
+                parseGroups(n)
         print("}")
-    elif (sys.argv[1] == "-wiz"):
+    elif sys.argv[1] == "-wiz":
         print("/* WARNING: This file is generated!")
         print(" * Do not edit this file, but edit config.xml instead and run")
         print(" * python configgen.py -wiz config.xml to regenerate this file!")
@@ -881,13 +881,11 @@ def main():
         print("void addConfigDocs(DocIntf *doc)")
         print("{")
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "header"):
-                    parseHeader(n,'doc')
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "header"):
+                parseHeader(n,'doc')
         for n in elem.childNodes:
-            if n.nodeType == Node.ELEMENT_NODE:
-                if (n.nodeName == "group"):
-                    parseGroupCDocs(n)
+            if n.nodeType == Node.ELEMENT_NODE and (n.nodeName == "group"):
+                parseGroupCDocs(n)
         print("}")
 
 if __name__ == '__main__':

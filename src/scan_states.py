@@ -37,8 +37,6 @@ def main():
                     print("    case %s: return \"%s\";" % (state,state))
                 elif re.search(r'^%%', line):
                     break
-                else:
-                    pass
             f.close()
         #write post
         print("  }")

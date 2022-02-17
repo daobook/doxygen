@@ -79,13 +79,13 @@ class Metrics:
 
 
 def description_is_empty(description):
-    for content in description.content_:
-        if content.getCategory()==MixedContainer.CategoryText:
-            if not content.getValue().isspace():
-                return False # non space-only text
-        elif not content.getCategory()==MixedContainer.CategoryNone:
-            return False # some internal object like a paragraph
-    return True
+    return not any(
+        content.getCategory() == MixedContainer.CategoryText
+        and not content.getValue().isspace()
+        or content.getCategory()
+        not in [MixedContainer.CategoryText, MixedContainer.CategoryNone]
+        for content in description.content_
+    )
 
 def is_documented(definition):
     return not description_is_empty(definition.get_briefdescription()) or \
@@ -172,7 +172,7 @@ def parse_sections(compounddef,metrics):
         parse_members(compounddef,sectiondef,metrics)
 
 def parse_compound(inDirName,baseName,metrics):
-    rootObj = doxmlparser.compound.parse(inDirName+"/"+baseName+".xml",True)
+    rootObj = doxmlparser.compound.parse(f'{inDirName}/{baseName}.xml', True)
     for compounddef in rootObj.get_compounddef():
        kind = compounddef.get_kind()
        if kind==DoxCompoundKind.CLASS:
@@ -203,7 +203,7 @@ def parse_compound(inDirName,baseName,metrics):
 
 def parse_index(inDirName):
     metrics = Metrics()
-    rootObj = doxmlparser.index.parse(inDirName+"/index.xml",True)
+    rootObj = doxmlparser.index.parse(f'{inDirName}/index.xml', True)
     for compound in rootObj.get_compound(): # for each compound defined in the index
         print("Processing {0}...".format(compound.get_name()))
         parse_compound(inDirName,compound.get_refid(),metrics)

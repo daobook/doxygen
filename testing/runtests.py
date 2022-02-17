@@ -30,13 +30,12 @@ def xpopen(cmd, cmd1="",encoding='utf-8-sig', getStderr=False):
 
 	if sys.version_info[0] == 2:
 		return os.popen(cmd).read() # Python 2 without encoding
+	if (getStderr):
+		proc = subprocess.Popen(shlex.split(cmd1),stdout=subprocess.PIPE,stderr=subprocess.PIPE,encoding=encoding) # Python 3 with encoding
+		return proc.stderr.read()
 	else:
-		if (getStderr):
-			proc = subprocess.Popen(shlex.split(cmd1),stdout=subprocess.PIPE,stderr=subprocess.PIPE,encoding=encoding) # Python 3 with encoding
-			return proc.stderr.read()
-		else:
-			proc = subprocess.Popen(shlex.split(cmd),stdout=subprocess.PIPE,stderr=subprocess.PIPE,encoding=encoding) # Python 3 with encoding
-			return proc.stdout.read()
+		proc = subprocess.Popen(shlex.split(cmd),stdout=subprocess.PIPE,stderr=subprocess.PIPE,encoding=encoding) # Python 3 with encoding
+		return proc.stdout.read()
 
 def clean_header(errmsg):
 	# messages (due to the usage of more) have a contents like:
@@ -48,10 +47,9 @@ def clean_header(errmsg):
 	rtnmsg = ""
 	cnt = -1
 	for o in msg:
-		if (o):
-			if (cnt == -1):
-				if o.startswith(":::::::"):
-					cnt = 3
+		if o:
+			if (cnt == -1) and o.startswith(":::::::"):
+				cnt = 3
 			if (cnt > 0):
 				cnt-=1
 			else:
@@ -67,9 +65,9 @@ class Tester:
 		self.test_name = '[%s]: %s' % (self.test,self.config['objective'][0])
 		self.test_id   = self.test.split('_')[0]
 		if self.update:
-			self.test_out = self.args.inputdir+'/'+self.test_id
+			self.test_out = f'{self.args.inputdir}/{self.test_id}'
 		else:
-			self.test_out = self.args.outputdir+'/test_output_'+self.test_id
+			self.test_out = f'{self.args.outputdir}/test_output_{self.test_id}'
 		self.prepare_test()
 
 	def compare_ok(self,got_file,expected_file,name):
@@ -87,13 +85,10 @@ class Tester:
 		msg = errmsg.split('\n')
 		rtnmsg = ""
 		for o in msg:
-			if (o):
-				if (o.startswith("I/O error : Attempt")):
-					pass
-				else:
-					if (rtnmsg):
-						rtnmsg += '\n'
-					rtnmsg += o
+			if o and not (o.startswith("I/O error : Attempt")):
+				if (rtnmsg):
+					rtnmsg += '\n'
+				rtnmsg += o
 		return rtnmsg
 
 	def cleanup_xmllint_docbook(self,errmsg):
@@ -102,10 +97,9 @@ class Tester:
 		rtnmsg = ""
 		cnt = 0
 		for o in msg:
-			if (o):
-				if (cnt):
+			if o:
+				if cnt:
 					cnt -= 1
-					pass
 				elif (o.endswith("does not validate")):
 					pass
 				elif (o.find("no DTD found!")!=-1):
@@ -120,10 +114,9 @@ class Tester:
 
 	def get_config(self):
 		config = {}
-		with xopen(self.args.inputdir+'/'+self.test,'r') as f:
+		with xopen(f'{self.args.inputdir}/{self.test}', 'r') as f:
 			for line in f.readlines():
-				m = config_reg.match(line)
-				if m:
+				if m := config_reg.match(line):
 					key   = m.group('name')
 					value = m.group('value')
 					if (key=='config'):
@@ -136,8 +129,8 @@ class Tester:
 		# prepare test environment
 		shutil.rmtree(self.test_out,ignore_errors=True)
 		os.mkdir(self.test_out)
-		shutil.copy(self.args.inputdir+'/Doxyfile',self.test_out)
-		with xopen(self.test_out+'/Doxyfile','a') as f:
+		shutil.copy(f'{self.args.inputdir}/Doxyfile', self.test_out)
+		with xopen(f'{self.test_out}/Doxyfile', 'a') as f:
 			print('INPUT=%s/%s' % (self.args.inputdir,self.test), file=f)
 			print('STRIP_FROM_PATH=%s' % self.args.inputdir, file=f)
 			print('EXAMPLE_PATH=%s' % self.args.inputdir, file=f)
@@ -227,12 +220,13 @@ class Tester:
 				#print(hyper_res)
 				return (False, "RTF: Not all used hyperlinks have been defined")
 		pageref_res = sorted(set(pageref_res))
-		for p in pageref_res:
-			if p not in bkmk_res:
-				#print(bkmk_res)
-				#print(pageref_res)
-				return (False, "RTF: Not all used page reference bookmarks have been defined")
-		return (True,"")
+		return next(
+		    ((
+		        False,
+		        "RTF: Not all used page reference bookmarks have been defined",
+		    ) for p in pageref_res if p not in bkmk_res),
+		    (True, ""),
+		)
 
 
 	# update the reference data for this test
@@ -257,8 +251,8 @@ class Tester:
 				out_file='%s/%s' % (self.test_out,check)
 				with xopen(out_file,'w') as f:
 					print(data,file=f)
-		shutil.rmtree(self.test_out+'/out',ignore_errors=True)
-		os.remove(self.test_out+'/Doxyfile')
+		shutil.rmtree(f'{self.test_out}/out', ignore_errors=True)
+		os.remove(f'{self.test_out}/Doxyfile')
 		return True
 
 	# check the relevant files of a doxygen run with the reference material

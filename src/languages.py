@@ -7,9 +7,10 @@ import os
 import re
 
 files = [f for f in os.listdir('.') if re.match(r'translator_[a-z][a-z]\.h', f)]
-new_list = []
-for f in files:
-    new_list.append([f,(os.path.splitext(f)[0]).replace("translator_","").upper()])
+new_list = [
+    [f, (os.path.splitext(f)[0]).replace("translator_", "").upper()]
+    for f in files
+]
 
 #
 # generating file is lang_cfg.py
@@ -62,15 +63,15 @@ for f in new_list:
         fil = open(f[0], 'r')
         tmp = ""
         for line in fil:
-          if "idLanguage" in line:
-             tmp = line
-             if "}" in line:
-               break
-          elif (tmp != ""):
-             tmp += line
-             if "}" in line:
-               break
-    
+            if "idLanguage" in line:
+                tmp = line
+                if "}" in tmp:
+                    break
+            elif (tmp != ""):
+               tmp += line
+               if "}" in line:
+                 break
+
         tmp = tmp.replace("\n","")
         l = re.sub('[^"]*"([^"]*)".*','\\1',tmp)
         l1 = l.replace("-","")

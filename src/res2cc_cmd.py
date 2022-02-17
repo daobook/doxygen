@@ -30,17 +30,17 @@ class File(object):
 		self.inputFile = open(filePath,mode)
 
 	def formatByte(self,byte):
-		if isinstance(byte,int):
-			return "%02x" % byte
-		else:
-			return format(ord(byte),'02x')
+		return "%02x" % byte if isinstance(byte,int) else format(ord(byte),'02x')
 
 	def writeBytes(self,data,outputFile):
 		bytes_per_line=16
 		print("static const unsigned char %s_data[] = " % self.bareName,file=outputFile)
 		print("{",file=outputFile)
 		lines = [data[x:x+bytes_per_line] for x in range(0,len(data),bytes_per_line)]
-		linesAsString = ',\n  '.join([', '.join(['0x'+self.formatByte(byte) for byte in line]) for line in lines])
+		linesAsString = ',\n  '.join([
+		    ', '.join([f'0x{self.formatByte(byte)}' for byte in line])
+		    for line in lines
+		])
 		print('  %s' % linesAsString,file=outputFile)
 		print("};",file=outputFile)
 		print("const int %s_len = %d;\n" % (self.bareName,len(data)),file=outputFile)
@@ -111,7 +111,7 @@ def main():
 			subdir = dirName[len(directory)+1:] if dirName.startswith(directory) else dirName
 			if subdir:
 				files.append(File.factory(directory,subdir,fname))
-	files.sort(key=lambda f: f.subdir + "/" + f.fileName)
+	files.sort(key=lambda f: f'{f.subdir}/{f.fileName}')
 	outputFile = open(sys.argv[2],"w")
 	print("#include \"resourcemgr.h\"\n",file=outputFile)
 	for f in files:
